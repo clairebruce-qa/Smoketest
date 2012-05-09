@@ -1,0 +1,132 @@
+import junit.framework.Assert;
+
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+import com.thoughtworks.selenium.DefaultSelenium;
+
+import lib.Helper;
+import lib.Tb;
+
+
+public class TestGuestPortal extends TeraBoxTestCase {
+
+	String password = "prueba";
+	String userEmail	= "teraboxr2esemail@incognitomail.org";
+	String userEmailSinDomain	= "teraboxr2esemail";
+	String guestPassword 	= "";
+	String newGuestPassword  = "1234testabil";
+	String account 		= "Usuario_tb_9@movistar.es";
+	
+	@Test
+	public void TB1227() throws Exception {
+		selenium.deleteAllVisibleCookies();
+		String message = null;
+		int timeouttime = 0;
+		int indice = 0;
+		
+		Tb.login(selenium, username, password);
+		
+		Tb.deleteAllGuest(selenium);
+		Tb.gotoHomePage(selenium);
+		
+		//clear
+		Tb.deleteAllOnlineFiles(selenium);
+		//upload a txt file
+		Tb.uploadFile(selenium,"dns.txt");
+		
+		//selecciono el archivo seleccionando a todos
+		selenium.click("ctl00_BodyPlaceHolder_DirectoryContents_DirectoryContentsGrid_GridHeaderCheckBox");
+		Thread.sleep(3000);
+		Assert.assertTrue(Tb.isLinkActive(selenium, "button-grey btn-share-file left", "Click here to share selected files."));
+		//click to share
+		selenium.click("link=share");
+
+		//wait for the add to album windows
+		Helper.waitForElement(selenium, "//*[@id='ctl00_PopupPlaceHolder_ModalPopup_ModalPanel']", "Share files windows is not shown in " + selenium.getLocation());
+	
+		//Type the email to send the sharing proposal in textarea field
+		selenium.type("//textarea[@class='EmailBox NormalReturnKey']", userEmail);
+		
+		
+		//click the share button
+		selenium.click("//*[@id='PopupActionButtons']/span[2]/a/span/span/span/span/span/span/span");
+		
+		Helper.waitForElement(selenium, "//div[@class='VaultHeaderContents']/h2", "File Manager page do not appear");
+		
+		//Tb.logout(selenium);
+
+		//creo la cuenta de incognitomamail.com
+		selenium.open("http://www.incognitomail.com/");
+		Helper.log("Open page http://www.incognitomail.com/");
+		Helper.waitForElement(selenium, "//*[@id='t12l_body']", "incognitomail page not found");
+		
+		//selenium.type("//*[@type='text']", userEmailSinDomain);
+		if(selenium.isTextPresent("Random e-mail address")){
+			Helper.waitForElement(selenium, "//*[@name='setemailaddress']", "el textbox setemailaddress no aparece");
+			selenium.type("//*[@name='setemailaddress']", userEmailSinDomain);
+			selenium.click("setemail");
+		}else{
+			Helper.waitForElement(selenium, "ditchemail", "el link ditchemail no aparece");
+			selenium.click("ditchemail");
+			Thread.sleep(4000);
+			Helper.waitForElement(selenium, "//*[@name='setemailaddress']", "el textbox setemailaddress no aparece");
+			selenium.type("//*[@name='setemailaddress']", userEmailSinDomain);
+			selenium.click("setemail");			
+		}
+		
+		Thread.sleep(1000);
+
+		while(!selenium.isTextPresent("Show") && timeouttime < 180){
+			Helper.waitForElement(selenium, "//img[@alt='Reload']", "el botón reload no aparece");
+			selenium.click("//img[@alt='Reload']");
+			timeouttime = timeouttime + 1;
+			Thread.sleep(1000);
+		}
+		//Helper.waitForElement(selenium, "//div[@email_message_list']/h2", "no se reciben emails");
+		selenium.click("link=Show");
+		//message = selenium.getText("email_message_list");
+		message = selenium.getTable("//table[@class='t12l_mail_details'].3.1");
+
+		indice = message.indexOf("Password:") + 10;      
+		guestPassword = message.substring(indice, indice + 8);
+		
+		selenium.open(TeraBoxUrl);
+		
+		Tb.guestLogin(selenium, userEmail, guestPassword, account);
+		
+		Thread.sleep(5000);
+		//empty fields, and click on aceptar
+		Assert.assertEquals("Escriba su antigua contraseña.", Tb.guestSetPassword(selenium, "" , "" , ""));
+
+		Thread.sleep(5000);
+		//In the "antigua contraseña" field put a invalid password, and put a new password in the following fields
+		Assert.assertEquals("La antigua contraseña es incorrecta. Inténtelo nuevamente.", Tb.guestSetPassword(selenium, "invalid" , "newPassword" , "newPassword"));
+
+		Thread.sleep(5000);
+		//In the "antigua contraseña" field Put a valid password, and in the following filed put new password with ONLY  two character
+		Assert.assertEquals("Escriba una contraseña de al menos 6 caracteres.", Tb.guestSetPassword(selenium, guestPassword , "12" , "12"));
+		
+		Thread.sleep(5000);
+		//In the "antigua contraseña" field Put a valid password, and in the following filed put a Different  password for each field
+		Assert.assertEquals("Los valores de nueva contraseña no coinciden.", Tb.guestSetPassword(selenium, guestPassword , "123456" , "654321"));
+
+		Thread.sleep(5000);
+		//change the password to newPassword
+		Assert.assertEquals("guestSetPasswordOk", Tb.guestSetPassword(selenium, guestPassword, newGuestPassword, newGuestPassword));
+		
+		Thread.sleep(5000);
+		//logout
+		Tb.logout(selenium);
+		
+		//login with the new password
+		Tb.guestLogin(selenium, userEmail, newGuestPassword, account);
+		
+		Thread.sleep(5000);		
+		Assert.assertEquals("guestSetPasswordOk", Tb.guestSetPassword(selenium, newGuestPassword, guestPassword, guestPassword));
+		Thread.sleep(5000);
+		
+		Tb.logout(selenium);
+	}
+}

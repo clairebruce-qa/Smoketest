@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/automation/!svn/ver/18/R2tbtestingES/lib
+END
+selenium-java-client-driver.jar
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/automation/!svn/ver/18/R2tbtestingES/lib/selenium-java-client-driver.jar
+END
+ws-commons-util-1.0.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/automation/!svn/ver/18/R2tbtestingES/lib/ws-commons-util-1.0.2.jar
+END
+xmlrpc-common-3.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/automation/!svn/ver/18/R2tbtestingES/lib/xmlrpc-common-3.1.jar
+END
+xmlrpc-common-3.1-sources.jar
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/automation/!svn/ver/18/R2tbtestingES/lib/xmlrpc-common-3.1-sources.jar
+END
+testlink-api-client-2.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/automation/!svn/ver/18/R2tbtestingES/lib/testlink-api-client-2.0.jar
+END
+junit-4.8.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/automation/!svn/ver/18/R2tbtestingES/lib/junit-4.8.1.jar
+END
+xmlrpc-client-3.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/automation/!svn/ver/18/R2tbtestingES/lib/xmlrpc-client-3.1.jar
+END
+xmlrpc-client-3.1-sources.jar
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/automation/!svn/ver/18/R2tbtestingES/lib/xmlrpc-client-3.1-sources.jar
+END
+logging-selenium-1.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/automation/!svn/ver/18/R2tbtestingES/lib/logging-selenium-1.2.jar
+END

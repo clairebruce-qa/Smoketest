@@ -1,0 +1,43 @@
+import org.junit.Assert;
+import org.junit.Test;
+import lib.Tb;
+
+
+public class TestFileManager extends TeraBoxTestCase {
+	//Clase adaptada a R2
+
+	@Test
+	public void test502() throws Exception  {
+	
+	//TB-502:File Manager:Duplicate Folder
+	
+	Tb.login(selenium, username, password);
+	
+	Tb.deleteAllOnlineFiles(selenium);
+	
+	Assert.assertEquals("ok", Tb.createFolder(selenium, "test"));
+	
+	Assert.assertEquals("A folder with the same name already exists in this directory. Please try another name.", Tb.createFolder(selenium, "test"));
+		
+	Tb.logout(selenium);
+	
+	
+	}
+
+	@Test
+	public void test503() throws Exception  {
+	
+	//TB-503:File Manager:New Folder SC
+	
+	Tb.login(selenium, username, password);
+	
+	Tb.deleteAllOnlineFiles(selenium);
+		
+	Assert.assertEquals("ok", Tb.createFolder(selenium, "test"));
+		
+	Tb.logout(selenium);
+	
+	
+	}
+
+}
