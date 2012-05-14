@@ -19,7 +19,7 @@ public class CBT16_Test_User_Addres_Modify_1_Edit_Shipping_Address_User_with_Emp
 	
 	
 	@Test
-	public void CBT17() throws Exception{
+	public void CBT16() throws Exception{
 		
 		
 	

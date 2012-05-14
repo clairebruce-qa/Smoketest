@@ -10,7 +10,7 @@ import basics.ClaireandbruceTestCase;
 public class CBT90_Test_NavigationByCategoryHeader extends ClaireandbruceTestCase {
 		
 	@Test
-	public void test_NavigationByCategoryHeader() throws Exception{
+	public void CBT90() throws Exception{
 		selenium.open("");
 		selenium.waitForPageToLoad("15000");
 		Helper.log("Ambiente de prueba: "+selenium.getLocation());

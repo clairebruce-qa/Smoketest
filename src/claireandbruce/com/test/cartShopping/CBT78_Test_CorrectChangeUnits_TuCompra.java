@@ -13,7 +13,7 @@ CBT79_Test_CorrectAddProduct_Cart_LogonUser preReq = new CBT79_Test_CorrectAddPr
 		
 	
 	@Test
-	public void testPruebas() throws Exception{
+	public void CBT78() throws Exception{
 		
 		//Previo ingreso a la pagina c+b
 		if(!selenium.isTextPresent("Salir")){
@@ -21,7 +21,7 @@ CBT79_Test_CorrectAddProduct_Cart_LogonUser preReq = new CBT79_Test_CorrectAddPr
 		}
 		
 		if(selenium.isTextPresent("0 artículos 0 €")) {
-			preReq.test_CorrectAddProduct_Cart_LogonUser();
+			preReq.CBT79();
 		}
 		
 		

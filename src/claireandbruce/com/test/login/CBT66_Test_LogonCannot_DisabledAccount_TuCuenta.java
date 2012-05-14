@@ -39,7 +39,7 @@ public class CBT66_Test_LogonCannot_DisabledAccount_TuCuenta  extends Claireandb
 	
 	
 	@Test
-	public void CBT13() throws Exception{
+	public void CBT66() throws Exception{
 	
 		
 		//-------Despligue Interfaz Principal-------
@@ -47,7 +47,7 @@ public class CBT66_Test_LogonCannot_DisabledAccount_TuCuenta  extends Claireandb
 		Helper.log("Test in : "+selenium.getLocation());
 		//-------Autenticar Usuario--------
 		
-		 tb11.CBT11();
+		 tb11.CBT64();
 		 
 		 username2=tb11.username2;
 		 System.out.println("Este es el usuario de prueba "+tb11.username2);

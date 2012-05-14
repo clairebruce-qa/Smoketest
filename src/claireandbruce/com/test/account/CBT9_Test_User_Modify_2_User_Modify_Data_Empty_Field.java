@@ -11,7 +11,7 @@ import basics.ClaireandbruceTestCase;
 public class CBT9_Test_User_Modify_2_User_Modify_Data_Empty_Field extends ClaireandbruceTestCase{
 
 	@Test
-	public void test_User_Modify_2_User_Modify_Data_Empty_Field () throws Exception{
+	public void CBT9 () throws Exception{
 		Claireandbruce.login(selenium, username,password);
 		//selenium.waitForPageToLoad("10000");
 		//Click en el link "Tu cuenta" Pagina Tu cuenta

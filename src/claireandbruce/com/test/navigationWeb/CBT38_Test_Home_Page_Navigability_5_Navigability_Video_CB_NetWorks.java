@@ -12,7 +12,7 @@ public class CBT38_Test_Home_Page_Navigability_5_Navigability_Video_CB_NetWorks 
 	private String mensage;
 
 	@Test
-	public void CBT39() throws Exception{
+	public void CBT38() throws Exception{
 		
 	//Se despliega la ventana principal de C+B
 	selenium.open("/es_es/");

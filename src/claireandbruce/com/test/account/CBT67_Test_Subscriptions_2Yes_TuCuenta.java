@@ -15,7 +15,7 @@ public class CBT67_Test_Subscriptions_2Yes_TuCuenta extends ClaireandbruceTestCa
 	
 
 	@Test
-	public void CBT14() throws Exception {
+	public void CBT67() throws Exception {
 		
 		//Despliega la pagina de Claireandbruce
 		selenium.open("");

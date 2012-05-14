@@ -23,7 +23,7 @@ public class CBT81_Test_Subscriptions_YesNo_TuCuenta extends ClaireandbruceTestC
 	 * */
 
 	@Test
-	public void CBT28() throws Exception {
+	public void CBT81() throws Exception {
 		
 		//Despliega la pagina de Claireandbruce
 		selenium.open("");

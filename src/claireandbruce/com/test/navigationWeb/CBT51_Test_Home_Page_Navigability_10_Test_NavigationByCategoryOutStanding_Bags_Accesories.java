@@ -9,7 +9,7 @@ import basics.ClaireandbruceTestCase;
 
 public class CBT51_Test_Home_Page_Navigability_10_Test_NavigationByCategoryOutStanding_Bags_Accesories extends ClaireandbruceTestCase{
 	@Test
-	public void CBT52() throws Exception {
+	public void CBT51() throws Exception {
 		
 		selenium.open("/es_es/");
 		int i=1;

@@ -17,7 +17,7 @@ public class CBT22_Test_Shopping_Cart_1_Add_Other_Item_Shopping_Cart extends Cla
 
 	
 	@Test
-	public void CBT23() throws Exception{
+	public void CBT22() throws Exception{
 	
 		
 		//Previo ingreso a la pagina c+b

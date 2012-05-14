@@ -11,7 +11,7 @@ import basics.ClaireandbruceTestCase;
 public class CBT10_Test_User_Modify_3_User_Modify_Data_Invalid_Name_Field extends ClaireandbruceTestCase {
 
 	@Test
-	public void test_User_Modify_3_User_Modify_Data_Invalid_Name_Field () throws Exception{
+	public void CBT10 () throws Exception{
 Claireandbruce.login(selenium, username,password);
 		
 		//Click en el link "Tu cuenta" Pagina Tu cuenta

@@ -18,7 +18,7 @@ import basics.ClaireandbruceTestCase;
 public class CBT14_Test_User_Addres_1_Add_Shipping_Address_User_with_Valid_Fields extends ClaireandbruceTestCase {
 		
 	@Test
-	public void test_User_Addres_1_Add_Shipping_Address_User_with_Valid_Fields() throws Exception{
+	public void CBT14() throws Exception{
 		selenium.open("");
 		selenium.waitForPageToLoad("15000");
 		

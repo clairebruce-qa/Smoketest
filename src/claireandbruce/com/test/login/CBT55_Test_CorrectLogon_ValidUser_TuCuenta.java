@@ -17,7 +17,7 @@ import basics.ClaireandbruceTestCase;
 public class CBT55_Test_CorrectLogon_ValidUser_TuCuenta extends ClaireandbruceTestCase {
 
 	@Test
-	public void testLogin() throws Exception {
+	public void CBT55() throws Exception {
 		String mensaje = null;
 		Claireandbruce.login(selenium, username,password);
 		

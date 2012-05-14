@@ -19,7 +19,7 @@ import basics.ClaireandbruceTestCase;
 public class CBT82_Test_EditionAddress_CancelButton_TuCuenta extends ClaireandbruceTestCase {
 		
 	@Test
-	public void test_EditionAddress_CancelButton_TuCuenta() throws Exception{
+	public void CBT82() throws Exception{
 		Claireandbruce.login(selenium, username, password);
 		Helper.log("Ambiente de prueba "+selenium.getLocation());
 		
@@ -34,7 +34,7 @@ public class CBT82_Test_EditionAddress_CancelButton_TuCuenta extends Claireandbr
 		
 		if(selenium.isTextPresent("No tienes ninguna dirección de envío por defecto en tu libreta de direcciones.")){
 			CBT13_Test_User_Addres_1_Add_Shipping_Address_User_with_Valid_Fields tb = new CBT13_Test_User_Addres_1_Add_Shipping_Address_User_with_Valid_Fields();
-			tb.test_User_Addres_1_Add_Shipping_Address_User_with_Valid_Fields();
+			tb.CBT13();
 			Helper.log("Address was added");
 		}
 		

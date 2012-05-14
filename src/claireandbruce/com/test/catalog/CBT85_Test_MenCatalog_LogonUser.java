@@ -10,7 +10,7 @@ import basics.ClaireandbruceTestCase;
 
 public class CBT85_Test_MenCatalog_LogonUser extends ClaireandbruceTestCase {
 	@Test
-	public void test() throws Exception{
+	public void CBT85() throws Exception{
 		selenium.open("");
 		selenium.waitForPageToLoad("15000");
 		

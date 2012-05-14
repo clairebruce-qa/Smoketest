@@ -13,7 +13,7 @@ import basics.ClaireandbruceTestCase;
 public class CBT1_Test_Shoppin_Cart_User_Login_Valid_Fields_With_Paypal extends ClaireandbruceTestCase{
 	
 	@Test
-	public void TestShoppingPaypalUserLogin() throws Exception{
+	public void CBT1() throws Exception{
 	
 		selenium.deleteAllVisibleCookies();  
 		 

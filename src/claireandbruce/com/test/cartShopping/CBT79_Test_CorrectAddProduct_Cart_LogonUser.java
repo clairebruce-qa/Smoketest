@@ -13,7 +13,7 @@ import basics.ClaireandbruceTestCase;
 public class CBT79_Test_CorrectAddProduct_Cart_LogonUser extends ClaireandbruceTestCase {
 	
 	@Test
-	public void test_CorrectAddProduct_Cart_LogonUser() throws Exception{
+	public void CBT79() throws Exception{
 		
 		//Previo ingreso a la pagina c+b con usuario logeado
 		Claireandbruce.login(selenium, username, password);

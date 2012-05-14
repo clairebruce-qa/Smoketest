@@ -20,7 +20,7 @@ import basics.ClaireandbruceTestCase;
 public class CBT57_Test_IncorrectLogon_InvalidPassword_TuCuenta extends ClaireandbruceTestCase{
 	
 	@Test
-	public void testIncorrectLogon_InvalidUserFormat() throws Exception {
+	public void CBT57() throws Exception {
 			
 		Claireandbruce.login(selenium, "claireandbruceqa@gmail.com", "zxcvbn");
 			

@@ -10,7 +10,7 @@ import basics.ClaireandbruceTestCase;
 public class CBT31_Test_Home_Page_Navigability_1_Navigability_for_Look_Not_Login extends ClaireandbruceTestCase {
 
 	@Test
-	public void test_Home_Page_Navigability_1_Navigability_for_Look_Not_Login () throws Exception{
+	public void CBT31 () throws Exception{
 		
 		selenium.open("");
 		selenium.waitForPageToLoad("20000");

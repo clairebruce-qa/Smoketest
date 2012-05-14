@@ -18,7 +18,7 @@ import basics.ClaireandbruceTestCase;
 public class CBT56_Test_IncorrectLogon_InvalidUserFormat_TuCuenta extends ClaireandbruceTestCase{
 	
 	@Test
-	public void testIncorrectLogon_InvalidUserFormat() throws Exception {
+	public void CBT56() throws Exception {
 		
 		Claireandbruce.login(selenium, "claireandbruce@gmailcom", "123456");
 		

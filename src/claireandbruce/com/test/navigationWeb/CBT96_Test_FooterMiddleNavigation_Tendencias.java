@@ -10,7 +10,7 @@ import basics.ClaireandbruceTestCase;
 public class CBT96_Test_FooterMiddleNavigation_Tendencias extends ClaireandbruceTestCase {
 		
 	@Test
-	public void test_FooterMiddleNavigation_Tendencias() throws Exception{
+	public void CBT96() throws Exception{
 		selenium.open("");
 		selenium.waitForPageToLoad("15000");
 		

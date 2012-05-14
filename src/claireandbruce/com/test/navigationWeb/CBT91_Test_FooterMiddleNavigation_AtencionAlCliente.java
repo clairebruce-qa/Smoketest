@@ -19,7 +19,7 @@ public class CBT91_Test_FooterMiddleNavigation_AtencionAlCliente  extends Claire
 	
 	
 	@Test
-	public void CBT38() throws Exception{
+	public void CBT91() throws Exception{
 		
 		selenium.deleteAllVisibleCookies();
 		

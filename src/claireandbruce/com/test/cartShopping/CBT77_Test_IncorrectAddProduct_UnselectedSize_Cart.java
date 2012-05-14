@@ -33,7 +33,7 @@ public class CBT77_Test_IncorrectAddProduct_UnselectedSize_Cart extends Clairean
 	}
 	
 	@Test
-	public void test_IncorrectAddProduct_UnselectedSize_Cart() throws Exception{
+	public void CBT77() throws Exception{
 		//Se ingresa al primer producto
 		String texto = selenium.getText("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul[1]/li[1]/div[3]"); //Nombre de la prenda
 		Helper.clickAndVerify(selenium, "//li/div/a/img", texto, "class=breadcrumbs-present");

@@ -9,7 +9,7 @@ import basics.ClaireandbruceTestCase;
 public class CBT92_Test_NavigationTopQuestions extends ClaireandbruceTestCase {
 		
 	@Test
-	public void test_NavigationTopQuestions() throws Exception{
+	public void CBT92() throws Exception{
 		selenium.open("");
 		selenium.waitForPageToLoad("15000");
 		

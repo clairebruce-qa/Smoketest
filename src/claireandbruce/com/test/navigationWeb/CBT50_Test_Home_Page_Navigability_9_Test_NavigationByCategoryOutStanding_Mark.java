@@ -9,7 +9,7 @@ import basics.ClaireandbruceTestCase;
 
 public class CBT50_Test_Home_Page_Navigability_9_Test_NavigationByCategoryOutStanding_Mark extends ClaireandbruceTestCase {
 	@Test
-	public void test_Home_Page_Navigability_9_Test_NavigationByCategoryOutStanding_Mark() throws Exception{
+	public void CBT50() throws Exception{
 		selenium.open("");
 		selenium.waitForPageToLoad("15000");
 		

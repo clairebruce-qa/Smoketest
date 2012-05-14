@@ -26,7 +26,7 @@ public class CBT30_Test_Magazin_Home_Page_1_Navegability_Magazin_User_No_Login e
 	private String message;
 
 	@Test
-	public void CBT31() throws Exception{
+	public void CBT30() throws Exception{
 		
 		
 		selenium.open("");

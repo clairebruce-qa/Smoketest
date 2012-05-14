@@ -10,7 +10,7 @@ import basics.ClaireandbruceTestCase;
 public class CBT95_Test_FooterMiddleNavigation_Marcas extends ClaireandbruceTestCase {
 	
 	@Test
-	public void test_FooterMiddleNavigation_Marcas() throws Exception{
+	public void CBT95() throws Exception{
 		selenium.open("");
 		selenium.waitForPageToLoad("15000");
 		

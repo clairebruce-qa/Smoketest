@@ -10,7 +10,7 @@ import basics.ClaireandbruceTestCase;
 public class CBT93_Test_FooterTopNavigation extends ClaireandbruceTestCase {
 	
 	@Test
-	public void CBT40M() throws Exception {
+	public void CBT93() throws Exception {
 		
 		
 		//Validacion del Menu de Navegacion del Footer AYUDAS, Condiciones de Uso, Politicas de Privacidad

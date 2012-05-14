@@ -13,7 +13,7 @@ import basics.ClaireandbruceTestCase;
 public class CBT42_Test_Home_Page_Navegability_7_Navigability_Menu_Languaje extends ClaireandbruceTestCase {
 
 	@Test
-	public void CBT43() throws Exception {
+	public void CBT42() throws Exception {
 		
 		
 		//se despliega la pagina de claire and bruce en idioma español

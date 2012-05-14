@@ -18,7 +18,7 @@ public class CBT8_Test_User_Modify_1_User_Modify_Data_valid_Field extends Claire
 	
 	
 	@Test
-	public void CBT9() throws Exception{
+	public void CBT8() throws Exception{
 		
 	//Despliega la pagina de Claireandbruce
 	selenium.open("");

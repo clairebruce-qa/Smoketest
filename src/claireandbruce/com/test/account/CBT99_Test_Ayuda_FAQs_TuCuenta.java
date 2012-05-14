@@ -12,7 +12,7 @@ public class CBT99_Test_Ayuda_FAQs_TuCuenta extends ClaireandbruceTestCase{
 	
 	
 	@Test
-	public void CBT46() throws Exception
+	public void CBT99() throws Exception
 	{
 		//Despliega la pagina de Claireandbruce
 		selenium.open("");

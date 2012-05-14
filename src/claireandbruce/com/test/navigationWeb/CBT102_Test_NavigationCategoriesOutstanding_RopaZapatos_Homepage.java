@@ -22,7 +22,7 @@ import basics.ClaireandbruceTestCase;
 public class CBT102_Test_NavigationCategoriesOutstanding_RopaZapatos_Homepage extends ClaireandbruceTestCase {
 	
 	@Test
-	public void test_NavigationCategoriesOutstanding_RopaZapatos_Homepage() throws Exception{
+	public void CBT102() throws Exception{
 		selenium.open("");
 		selenium.waitForPageToLoad("15000");
 		Helper.log("AMBIENTE DE PRUEBA: "+selenium.getLocation()+"\n");

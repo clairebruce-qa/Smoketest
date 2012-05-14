@@ -9,7 +9,7 @@ import basics.ClaireandbruceTestCase;
 public class CBT94_Test_FooterMiddleNavigation_Mujer extends ClaireandbruceTestCase{
 	
 	@Test
-	public void CBT41() throws Exception{
+	public void CBT94() throws Exception{
 		
 		
 		selenium.open("");

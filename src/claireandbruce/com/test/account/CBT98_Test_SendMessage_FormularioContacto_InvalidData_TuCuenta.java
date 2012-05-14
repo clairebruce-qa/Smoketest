@@ -17,7 +17,7 @@ import basics.ClaireandbruceTestCase;
 public class CBT98_Test_SendMessage_FormularioContacto_InvalidData_TuCuenta  extends ClaireandbruceTestCase {
 
 	@Test
-	public void test_SendMessage_FormularioContacto_InvalidData_TuCuenta() throws Exception{
+	public void CBT98() throws Exception{
 		
 		Claireandbruce.login(selenium, username, password);
 		

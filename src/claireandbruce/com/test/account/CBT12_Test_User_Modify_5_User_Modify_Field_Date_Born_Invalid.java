@@ -10,7 +10,7 @@ import basics.ClaireandbruceTestCase;
 public class CBT12_Test_User_Modify_5_User_Modify_Field_Date_Born_Invalid extends ClaireandbruceTestCase {
 
 	@Test
-	public void test_User_Modify_5_User_Modify_Field_Date_Born_Invalid () throws Exception{
+	public void CBT12 () throws Exception{
 		Claireandbruce.login(selenium, username,password);
 		
 		//Click en el link "Tu cuenta" Pagina Tu cuenta

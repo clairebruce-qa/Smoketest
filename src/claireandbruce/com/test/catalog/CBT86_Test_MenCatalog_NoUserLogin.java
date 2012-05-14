@@ -11,7 +11,7 @@ import basics.ClaireandbruceTestCase;
 
 public class CBT86_Test_MenCatalog_NoUserLogin extends ClaireandbruceTestCase {
 	@Test
-	public void test_MenCatalog_NoUserLogin() throws Exception{
+	public void CBT86() throws Exception{
 		selenium.open("");
 		selenium.waitForPageToLoad("15000");
 		

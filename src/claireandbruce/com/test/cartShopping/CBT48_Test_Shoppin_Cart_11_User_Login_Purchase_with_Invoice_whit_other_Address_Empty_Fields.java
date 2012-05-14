@@ -10,9 +10,9 @@ public class CBT48_Test_Shoppin_Cart_11_User_Login_Purchase_with_Invoice_whit_ot
 
 	CBT22_Test_Shopping_Cart_1_Add_Other_Item_Shopping_Cart tb = new CBT22_Test_Shopping_Cart_1_Add_Other_Item_Shopping_Cart();
 	@Test
-	public void testCBT49() throws Exception {
+	public void CBT48() throws Exception {
 		 
-		tb.CBT23();
+		tb.CBT22();
 		selenium.click("link=Compra ahora");
 		selenium.waitForPageToLoad("30000");
 		selenium.click("css=span.nobr > cufon.cufon.cufon-canvas > canvas");

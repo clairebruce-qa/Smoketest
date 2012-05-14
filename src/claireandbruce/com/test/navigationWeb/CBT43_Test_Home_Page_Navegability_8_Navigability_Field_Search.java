@@ -10,7 +10,7 @@ import basics.ClaireandbruceTestCase;
 public class CBT43_Test_Home_Page_Navegability_8_Navigability_Field_Search extends ClaireandbruceTestCase {
 	
 	@Test
-	public void CBT44() throws Exception{
+	public void CBT43() throws Exception{
 		
 		//Se desplega la ventana de navegacion
 		selenium.open("/es_es/");

@@ -29,7 +29,7 @@ public class CBT64_Test_CorrectDeleteAccount_TuCuenta extends ClaireandbruceTest
 	 * 
 	 * */
 	@Test
-	public void CBT11() throws Exception{
+	public void CBT64() throws Exception{
 		
 		//Despliega la pagina de Claireandbruce
 		selenium.open("");

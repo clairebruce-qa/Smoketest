@@ -21,7 +21,7 @@ public class CBT65_Test_IncorrectDeleteAccount_Reason_TuCuenta extends Claireand
 
 	
 	@Test
-	public void CBT11() throws Exception{
+	public void CBT65() throws Exception{
 		
 		//Despliega la pagina de Claireandbruce
 		selenium.open("");

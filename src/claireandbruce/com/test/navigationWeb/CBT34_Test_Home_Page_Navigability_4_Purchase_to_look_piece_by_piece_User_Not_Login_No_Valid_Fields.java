@@ -14,7 +14,7 @@ public class CBT34_Test_Home_Page_Navigability_4_Purchase_to_look_piece_by_piece
 	private String message;
 
 	@Test
-	public void CBT35() throws Exception
+	public void CBT34() throws Exception
 	{
 		selenium.open("");
 		

@@ -19,7 +19,7 @@ import basics.ClaireandbruceTestCase;
 public class CBT100_Test_HeaderHomePageNavigation_Tendencias extends ClaireandbruceTestCase {
 		
 	@Test
-	public void test_HeaderHomePageNavigation_Tendencias() throws Exception{
+	public void CBT100() throws Exception{
 		selenium.open("");
 		selenium.waitForPageToLoad("15000");
 		Helper.log("AMBIENTE DE PRUEBA: "+selenium.getLocation()+"\n");
