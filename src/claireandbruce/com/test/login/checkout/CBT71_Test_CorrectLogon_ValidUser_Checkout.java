@@ -26,7 +26,7 @@ public class CBT71_Test_CorrectLogon_ValidUser_Checkout extends ClaireandbruceTe
 	CBT76_Test_CorrectAddProduct_Cart_NoLoginUser tb23=new CBT76_Test_CorrectAddProduct_Cart_NoLoginUser();
 	
 	@Test
-	public void CBT76() throws Exception
+	public void CBT71() throws Exception
 	{
 
 		
@@ -51,7 +51,7 @@ public class CBT71_Test_CorrectLogon_ValidUser_Checkout extends ClaireandbruceTe
 				selenium.waitForPageToLoad("10000");
 			}}
 		
-		tb23.beforeTest();
+
 		tb23.CBT76();
 		String text= selenium.getText("xpath=.//*[@id='cartHeader']");
 		assertTrue(selenium.isElementPresent("link=Compra ahora"));

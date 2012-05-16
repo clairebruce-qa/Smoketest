@@ -31,7 +31,7 @@ public class CBT81_Test_Subscriptions_YesNo_TuCuenta extends ClaireandbruceTestC
 		
 		
 		//-----------------------------------Autentica el Usuario----------------------------------
-		if(!selenium.isTextPresent("Salir")){
+		if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
 			  Claireandbruce.login(selenium, username, password);
 			  
 		  }
@@ -88,7 +88,7 @@ public class CBT81_Test_Subscriptions_YesNo_TuCuenta extends ClaireandbruceTestC
 		//-----------------------------------------------------------PARA ABRIR EL E-MAIL------------------------------------------------------------------------
 		
 		//selenium.type("xpath=(//input[@id='email'])[2]", "gmail.com");
-
+/*
 		
 		String  GmailUrl	=	"http://www.gmail.com";
 		String seleniumUrl =	"localhost";
@@ -120,7 +120,7 @@ public class CBT81_Test_Subscriptions_YesNo_TuCuenta extends ClaireandbruceTestC
 		
 		//assertTrue(selenium.isTextPresent("CLAIRE+BRUCE"));
 		
-		selenium.stop();
+		selenium.stop();*/
 		
 		
 	}

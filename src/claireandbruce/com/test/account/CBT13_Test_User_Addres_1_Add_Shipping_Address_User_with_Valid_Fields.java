@@ -1,5 +1,6 @@
 package claireandbruce.com.test.account;
 
+import static org.junit.Assert.*;
 import lib.Claireandbruce;
 import lib.Helper;
 
@@ -22,9 +23,11 @@ public class CBT13_Test_User_Addres_1_Add_Shipping_Address_User_with_Valid_Field
 		selenium.open("");
 		selenium.waitForPageToLoad("15000");
 		
-		if(!selenium.isTextPresent("Salir")){			
+		//El usuario no debe tener su sesión iniciada
+		if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
 			Claireandbruce.login(selenium, username, password);
 		}
+		
 		
 		Helper.log("Ambiente de prueba: "+selenium.getLocation());
 		//Ingresar a traves del botón 'TUS DIRECCIONES' Área privada'
@@ -34,8 +37,8 @@ public class CBT13_Test_User_Addres_1_Add_Shipping_Address_User_with_Valid_Field
 			selenium.click("xpath=html/body/div/div[2]/div[2]/div[1]/div[2]/ul/div[3]/li/a/span");
 		}
 		
-		selenium.waitForPageToLoad("15000");
-		selenium.click("xpath=.//*[@id='spanNewAddress']");
+		selenium.waitForPageToLoad("30000");
+		/*selenium.click("xpath=.//*[@id='spanNewAddress']");
 		
 		selenium.type("xpath=.//*[@id='firstname']","Sandra Milena"); //Nombre
 		selenium.type("xpath=.//*[@id='lastname']","Torres Valencia"); //Apellidos
@@ -50,13 +53,72 @@ public class CBT13_Test_User_Addres_1_Add_Shipping_Address_User_with_Valid_Field
 		selenium.click("xpath=.//*[@id='primary_shipping']"); //Marcar por defecto
 		
 		selenium.click("xpath=.//*[@id='form-validate-']/div[2]/button[2]"); //Click en botón Guardar
-		selenium.waitForPageToLoad("15000");
+		selenium.waitForPageToLoad("30000");
 		
 		if(!selenium.isTextPresent("Se guardó la dirección.")){
 			Assert.fail("The address was not added");
+			
+			
 		} else {
 			Helper.log("Address was added Ok");
+			
 		}
+		/*
+		.edit
+	
+		selenium.open("/es_es/customer/address/");
+		
+		
+		
+		if(!selenium.isElementPresent("html/body/div/div[2]/div[1]/div/div[2]/div[2]/div[3]/div[1]/div[5]/span[1]")){
+			selenium.click("html/body/div/div[2]/div[1]/div/div[2]/div[2]/div[3]/div[1]/div[5]/span[1]");
+			
+			if(selenium.getValue("xpath=(//input[@id='primary_shipping'])[3]").equals("off"))
+			{	
+			selenium.click("xpath=(//input[@id='primary_shipping'])[3]");
+			
+			selenium.click("css=#form-validate-2466 > div.buttons-set.form-buttons > button.button");
+			selenium.waitForPageToLoad("30000");
+			selenium.click("//span[@onclick=\"return deleteAddress('2506');\"]");
+			assertTrue(selenium.getConfirmation().matches("¿Estás seguro de querer borrar esta dirección[\\s\\S]$"));
+			
+			}
+		}
+		else
+		{
+			Helper.log("Error: element no found");
+			
+		}
+		
+	*/	
+	selenium.click("//span[@onclick=\"changeVisibilityEditAddress('edit-2466')\"]");
+	selenium.click("xpath=.//*[@id='primary_shipping']");
+	
+	selenium.click("css=button");
+	selenium.waitForPageToLoad("50000");
+	
+	while(!selenium.isTextPresent("Sandra Milena Torres Valencia")){
+		
+		
+		//Remover articulos mientras el carrito no este vacío
+		
+		selenium.click("class=.delete");
+		assertTrue(selenium.getConfirmation().matches("¿Estás seguro de querer borrar esta dirección[\\s\\S]$"));
+		selenium.waitForPageToLoad("10000");
 	}
+	/*	
+		
+		selenium.click("xpath=.//*[@id='primary_shipping']");
+		
+		selenium.click("css=button");
+		selenium.waitForPageToLoad("50000");
+		
+		selenium.click("html/body/div/div[2]/div[1]/div/div[2]/div[2]/div[3]/div[17]/div[5]/span[2]");
+	
+		
+		assertTrue(selenium.getConfirmation().matches("¿Estás seguro de querer borrar esta dirección[\\s\\S]$"));
+		*/
+		
+			}
 
 }

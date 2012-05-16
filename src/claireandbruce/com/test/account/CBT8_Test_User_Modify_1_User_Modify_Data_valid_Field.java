@@ -25,7 +25,7 @@ public class CBT8_Test_User_Modify_1_User_Modify_Data_valid_Field extends Claire
 		
 			
 	//-----------------------------------Autentica el Usuario----------------------------------
-	if(!selenium.isTextPresent("Salir")){
+	if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
 		
 			Claireandbruce.login(selenium, username, password);
 		

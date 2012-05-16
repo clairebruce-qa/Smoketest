@@ -39,21 +39,21 @@ public class Claireandbruce {
 			if (selenium.isElementPresent("xpath=//a[@id='overridelink']")){
 				selenium.click("//a[@id='overridelink']");
 			}
-			selenium.waitForPageToLoad("30000");
+			//selenium.waitForPageToLoad("60000");
 			//check Autenticacion con cuenta is on the page
 			Helper.waitForElement(selenium, "//a[contains(text(), 'Tu cuenta')]", "Inicio de sesion  not found in "+ selenium.getLocation());
 	
 			selenium.click("//a[contains(text(), 'Tu cuenta')]");
-			selenium.waitForPageToLoad("25000");			
+			//selenium.waitForPageToLoad("60000");			
 		}
-		selenium.waitForPageToLoad("10000");
+		selenium.waitForPageToLoad("60000");
 		
-		selenium.type("xpath=//*[@id='email']", username);
-		selenium.type("xpath=//*[@id='pass']", password);		
+		selenium.type("xpath=.//*[@id='email']", username);
+		selenium.type("xpath=.//*[@id='pass']", password);		
 		selenium.click("//button[contains(@id,'send2')]");		
 		
 		if (!selenium.isElementPresent( "class=validation-advice")){
-			selenium.waitForPageToLoad("15000");
+			selenium.waitForPageToLoad("60000");
 			
 			if (selenium.isTextPresent("Salir")){
 				message = "loginOk";

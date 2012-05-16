@@ -20,7 +20,7 @@ public class CBT99_Test_Ayuda_FAQs_TuCuenta extends ClaireandbruceTestCase{
 		
 		
 		//-----------------------------------Autentica el Usuario----------------------------------
-		if(!selenium.isTextPresent("Salir")){
+		if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
 			  Claireandbruce.login(selenium, username, password);
 			  
 		}

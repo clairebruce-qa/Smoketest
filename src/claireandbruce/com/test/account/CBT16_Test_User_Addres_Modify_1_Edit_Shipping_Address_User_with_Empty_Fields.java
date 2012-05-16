@@ -30,10 +30,11 @@ public class CBT16_Test_User_Addres_Modify_1_Edit_Shipping_Address_User_with_Emp
 	Helper.log("Test in :"+selenium.getLocation());
 	
 	//-----------------------------------Autentica el Usuario----------------------------------
-	if(!selenium.isTextPresent("Salir")){
-		  Claireandbruce.login(selenium, username, password);
-		  
-	  }
+
+	if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
+		Claireandbruce.login(selenium, username, password);
+	}
+	
 	
 	
 		assertTrue(selenium.isElementPresent("class=item my-address active"));

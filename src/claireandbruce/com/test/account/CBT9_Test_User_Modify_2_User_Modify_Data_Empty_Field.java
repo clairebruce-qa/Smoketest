@@ -12,7 +12,10 @@ public class CBT9_Test_User_Modify_2_User_Modify_Data_Empty_Field extends Claire
 
 	@Test
 	public void CBT9 () throws Exception{
+		
+		
 		Claireandbruce.login(selenium, username,password);
+	
 		//selenium.waitForPageToLoad("10000");
 		//Click en el link "Tu cuenta" Pagina Tu cuenta
 		Helper.clickAndVerify(selenium, "class=item account-configuration", "", "//form[@id='form-validate']/div/div/div/cufon[3]/canvas");

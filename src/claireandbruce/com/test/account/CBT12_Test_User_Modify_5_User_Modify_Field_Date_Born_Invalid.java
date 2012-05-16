@@ -61,6 +61,7 @@ public class CBT12_Test_User_Modify_5_User_Modify_Field_Date_Born_Invalid extend
 		selenium.click("xpath=//span[3]/div/div/div[2]");
 		selenium.click("xpath=//div[@value='2009']");		
 		
+		selenium.waitForPageToLoad("30000");
 		//Se da click en el boton GUARDA TUS DATOS
 		selenium.click("css=button.button");
 		

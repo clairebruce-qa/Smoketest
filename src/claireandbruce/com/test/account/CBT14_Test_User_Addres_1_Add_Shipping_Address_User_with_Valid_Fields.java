@@ -20,11 +20,13 @@ public class CBT14_Test_User_Addres_1_Add_Shipping_Address_User_with_Valid_Field
 	@Test
 	public void CBT14() throws Exception{
 		selenium.open("");
-		selenium.waitForPageToLoad("15000");
+		selenium.waitForPageToLoad("30000");
 		
-		if(!selenium.isTextPresent("Salir")){			
+		//El usuario no debe tener su sesión iniciada
+		if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
 			Claireandbruce.login(selenium, username, password);
 		}
+		
 		
 		Helper.log("Ambiente de prueba: "+selenium.getLocation());
 		//Ingresar a traves del botón 'TUS DIRECCIONES' Área privada'

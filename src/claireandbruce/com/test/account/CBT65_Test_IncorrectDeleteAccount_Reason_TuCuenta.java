@@ -25,17 +25,14 @@ public class CBT65_Test_IncorrectDeleteAccount_Reason_TuCuenta extends Claireand
 		
 		//Despliega la pagina de Claireandbruce
 		selenium.open("");
-		
-		selenium.deleteAllVisibleCookies();  
-		selenium.open("");
-		  if (selenium.isElementPresent("xpath=//a[@id='overridelink']")){
-		   selenium.click("//a[@id='overridelink']");
-		   System.out.print("Si entra");
-		  }	
-	
-		
+
+		selenium.waitForPageToLoad("15000");
+		if (selenium.isElementPresent("xpath=//a[@id='overridelink']")){
+			selenium.click("//a[@id='overridelink']");
+		}
+		selenium.waitForPageToLoad("30000");	
 		//-----------------------------------Autenticar el Usuario----------------------------------
-		if(!selenium.isTextPresent("Salir")){
+		if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
 			
 			int i =(int)(Math.random()*100);
 			String username = System.getProperty("my.username","usuarioQa"+i+"@gmail.com");

@@ -1,17 +1,21 @@
 package claireandbruce.com.test.account;
 
+
 import static org.junit.Assert.*;
 import lib.Claireandbruce;
 import lib.Helper;
 
+import org.junit.Assert;
 import org.junit.Test;
 
+
+import basics.AfterFailure;
 import basics.ClaireandbruceTestCase;
 
 /**
  * 
  * Caso de prueba diseñado para verificar el correcto despliegue y funcionamiento 
- * de la interfaz del formulario de contacto "Contáctenos".
+ * de la interfaz del formulario "Contáctenos".
  * @author María Fernanda Rodríguez Vargas
  *
  */
@@ -24,7 +28,7 @@ public class CBT97_Test_SendMessage_FormularioContacto_TuCuenta extends Clairean
 		
 		//Se obtienen los datos basicos del usuario para comparar en [Contactenos]
 		selenium.click("xpath=html/body/div/div[2]/div[1]/div/div/div[2]/a[1]/div/div/p");
-		selenium.waitForPageToLoad("15000");
+		selenium.waitForPageToLoad("50000");
 		String nombre = selenium.getValue("xpath=.//*[@id='firstname']");
 		String apellidos = selenium.getValue("xpath=.//*[@id='lastname']");
 		
@@ -46,8 +50,23 @@ public class CBT97_Test_SendMessage_FormularioContacto_TuCuenta extends Clairean
 		selenium.type("xpath=.//*[@id='comment']", "Mensaje prueba QA");
 		//Click en boton enviar
 		selenium.click("xpath=.//*[@id='contactForm']/div[2]/button");
-		selenium.waitForPageToLoad("15000");
-		assertTrue(selenium.getTitle().startsWith("help"));
+		selenium.waitForPageToLoad("30000");
+		if((selenium.getTitle().startsWith("help")))
+		{
+			
+			selenium.click("//a[contains(text(), 'Tu cuenta')]");
+			
+			if(!selenium.isTextPresent("Su solicitud ha sido enviada y le responderemos con la mayor brevedad posible.Gracias por contactar con nosotros")){
+				Assert.fail(" Error " + selenium.getLocation());
+			}
+		}
+		else
+		{
+			Assert.fail(" Error: Page no found : " + selenium.getLocation());
+			
+		}
+		
+		
 	}
 
 }

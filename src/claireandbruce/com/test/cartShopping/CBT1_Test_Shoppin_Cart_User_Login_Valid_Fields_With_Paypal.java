@@ -12,6 +12,8 @@ import basics.ClaireandbruceTestCase;
 
 public class CBT1_Test_Shoppin_Cart_User_Login_Valid_Fields_With_Paypal extends ClaireandbruceTestCase{
 	
+	private CBT76_Test_CorrectAddProduct_Cart_NoLoginUser cbt76;
+
 	@Test
 	public void CBT1() throws Exception{
 	
@@ -23,29 +25,8 @@ public class CBT1_Test_Shoppin_Cart_User_Login_Valid_Fields_With_Paypal extends 
 	Claireandbruce.login(selenium, username, password);
 	
 	String message=null;	
-
-	
-	selenium.click("css=span > cufon.cufon.cufon-canvas > canvas");
-	selenium.waitForPageToLoad("50000");
-	//assertTrue(selenium.isTextPresent("> Ropa"));
-	selenium.click("css=div.div-filter > div");
-	selenium.waitForPageToLoad("30000");
-	assertTrue(selenium.isElementPresent("css=div.div-filter > div > strong"));
-	selenium.click("class=product");
-	selenium.waitForPageToLoad("30000");
-	assertTrue(selenium.isTextPresent("> T-SHIRT Tank NAVY"));
-	selenium.click("css=div.selreplace_selectinner");
-	selenium.click("//div[@value='952']");
-	for (int second = 0;; second++) {
-		if (second >= 60) fail("timeout");
-		try { if ("S".equals(selenium.getText("css=div.selreplace_selectinner"))) break; } catch (Exception e) {}
-		Thread.sleep(1000);
-	}
-
-	selenium.click("css=div.add-to-box > div.add-to-cart > button.button");
-	selenium.click("id=cartHeader");
-	
-	assertTrue(selenium.isElementPresent("//*[@id='mini-cart']/div/li/div/p[1]/a"));
+	// Se instancia el caso numero CBT76 para agregar productos al carrito de compras
+	cbt76 = new CBT76_Test_CorrectAddProduct_Cart_NoLoginUser();
 	
 	selenium.click("//*[@id='quick-access']/div[1]/div");
 	
