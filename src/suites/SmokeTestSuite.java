@@ -14,8 +14,7 @@ import claireandbruce.com.test.register.*;
 
 /**
  * 
- * 	Login.class,
- *
+ * 	Login.class
  * 
  * @author Administrator
  *
@@ -24,6 +23,7 @@ import claireandbruce.com.test.register.*;
 @Suite.SuiteClasses({
 	
 	//se declaran las clases que contienen cada una un testcase
+	/*
 	CBT1_Test_Shoppin_Cart_User_Login_Valid_Fields_With_Paypal.class,
 	CBT2_Test_User_Register_1_User_registration_valid_field.class,
 	CBT3_Test_User_Register_2_User_Registration_Empty_Field.class,
@@ -39,7 +39,7 @@ import claireandbruce.com.test.register.*;
 	CBT22_Test_Shopping_Cart_1_Add_Other_Item_Shopping_Cart.class,
 	CBT30_Test_Magazin_Home_Page_1_Navegability_Magazin_User_No_Login.class,
 	CBT31_Test_Home_Page_Navigability_1_Navigability_for_Look_Not_Login.class,
-	CBT32_Test_Home_Page_Navigability_2_Purchase_to_Complete_look_Not_Login_Valid_Fields.class,
+	CBT32_Test_Home_Page_Navigability_2_Purchase_to_Complete_look_Not_Login_Valid_Fields.class,*/
 	CBT33_Test_Home_Page_Navigability_3_Purchase_to_Complete_look_Not_Login_No_valid_Field.class,
 	CBT34_Test_Home_Page_Navigability_4_Purchase_to_look_piece_by_piece_User_Not_Login_No_Valid_Fields.class,
 	CBT38_Test_Home_Page_Navigability_5_Navigability_Video_CB_NetWorks.class,

@@ -38,7 +38,7 @@ public class CBT64_Test_CorrectDeleteAccount_TuCuenta extends ClaireandbruceTest
 		if (selenium.isElementPresent("xpath=//a[@id='overridelink']")){
 			selenium.click("//a[@id='overridelink']");
 		}
-		selenium.waitForPageToLoad("30000");		
+		selenium.waitForPageToLoad("20000");		
 		//-----------------------------------Autenticar el Usuario----------------------------------
 		if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
 			
