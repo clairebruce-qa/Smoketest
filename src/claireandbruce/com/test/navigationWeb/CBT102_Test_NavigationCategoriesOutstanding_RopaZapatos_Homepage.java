@@ -24,7 +24,7 @@ public class CBT102_Test_NavigationCategoriesOutstanding_RopaZapatos_Homepage ex
 	@Test
 	public void CBT102() throws Exception{
 		selenium.open("");
-		selenium.waitForPageToLoad("15000");
+	
 		Helper.log("AMBIENTE DE PRUEBA: "+selenium.getLocation()+"\n");
 		
 		if(selenium.isTextPresent("Salir")){

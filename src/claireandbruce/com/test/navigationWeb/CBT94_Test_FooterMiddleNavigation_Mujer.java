@@ -1,5 +1,6 @@
 package claireandbruce.com.test.navigationWeb;
 
+import static org.junit.Assert.*;
 import lib.Helper;
 
 import org.junit.Test;
@@ -16,6 +17,7 @@ public class CBT94_Test_FooterMiddleNavigation_Mujer extends ClaireandbruceTestC
 		int i=1;
 		
 		//Verificación de la presencia de los enlaces en la pagina de bienvenida
+		assertTrue(selenium.isElementPresent("xpath=html/body/div/div[2]/div/div/div[1]/div[5]/div[1]/ul/li["+i+"]/a"));
 		while(selenium.isElementPresent("xpath=html/body/div/div[2]/div/div/div[1]/div[5]/div[1]/ul/li["+i+"]/a")){
 		
 			//Obtiene el texto de cada link para verificarlo en la ventana de despliegue

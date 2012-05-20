@@ -1,4 +1,4 @@
-package testcases;
+package claireandbruce.com.test.cartShopping;
 
 import junit.framework.Assert;
 import lib.Claireandbruce;
@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import basics.ClaireandbruceTestCase;
 
-public class TestHistorialPedidosAbiertosUserLogin extends ClaireandbruceTestCase{
+public class CBT49_Test_IncidentsPurchaseorders_1_ViewOrderhistory extends ClaireandbruceTestCase{
 
 	
 	@Test
