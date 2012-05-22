@@ -18,6 +18,7 @@ import basics.ClaireandbruceTestCase;
  *  observar el producto en la cesta al hacer clic en el link de artículos  ubicado 
  *  en el header.
  *  
+ *  
  * */
 
 public class CBT76_Test_CorrectAddProduct_Cart_NoLoginUser extends ClaireandbruceTestCase {
