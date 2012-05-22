@@ -27,7 +27,15 @@ public class CBT24_Test_Shopping_Cart_3_Deleter__All_Item_Shopping_Cart extends 
 		
 		//----------***** SE DESPLIEGA LA VENTANA *****---------------------\\
 		
-	
+		
+		// SE PONE EN COMENTARIO CUANDO SE CORRA EN EL FLUJO, SE ACTIVA CUANDO SE CORRE UNITARIO
+		
+		
+		/*selenium.open("");
+		if (selenium.isElementPresent("xpath=//a[@id='overridelink']")){
+		selenium.click("//a[@id='overridelink']");
+		}
+		*/
 		
 		//------------Se verifica que el carrito de compras contenga productos-------
 		
@@ -36,12 +44,14 @@ public class CBT24_Test_Shopping_Cart_3_Deleter__All_Item_Shopping_Cart extends 
 	
 		if(selenium.isElementPresent("class=btn-remove")){
 			
-			selenium.click("class=btn-remove");
-			
-			// El sistema confirma que se eliminará el producto
-			assertTrue(selenium.getConfirmation().matches("¿Está seguro de que desea eliminar este artículo de la cesta de la compra[\\s\\S]$"));
-			selenium.waitForPageToLoad("10000");
-			
+			while(!selenium.isTextPresent("0 artículos 0 €")){
+				
+				//Remover  todos los artículos mientras el carrito no este vacío
+				selenium.click("id=cartHeader");
+				selenium.click("class=btn-remove");
+				assertTrue(selenium.getConfirmation().matches("¿Está seguro de que desea eliminar este artículo de la cesta de la compra[\\s\\S]$"));
+				selenium.waitForPageToLoad("10000");
+			}
 			
 		}
 		else
@@ -58,6 +68,12 @@ public class CBT24_Test_Shopping_Cart_3_Deleter__All_Item_Shopping_Cart extends 
 
 	}
 	
+//  SE PONE EN COMENTARIO PARA CORRER EN EL FLUJO
+	/*
+	@After
+	public void afterTest(){
+		selenium.stop();
+	}*/
 	
 	
 	
