@@ -1,4 +1,4 @@
-package claireandbruce.com.test.flujo1;
+package claireandbruce.com.test.basicosFlujos;
 
 import static org.junit.Assert.assertTrue;
 

@@ -1,4 +1,4 @@
-package claireandbruce.com.test.login;
+package claireandbruce.com.test.basicosFlujos;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
