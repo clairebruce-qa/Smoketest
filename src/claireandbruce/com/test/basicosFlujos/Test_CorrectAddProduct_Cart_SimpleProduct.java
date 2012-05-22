@@ -30,4 +30,6 @@ public class Test_CorrectAddProduct_Cart_SimpleProduct extends ClaireandbruceTes
 		}
 	}
 	
+	
+	//producto
 }
