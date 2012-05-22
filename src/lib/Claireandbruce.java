@@ -56,7 +56,7 @@ public class Claireandbruce {
 		selenium.click("//button[contains(@id,'send2')]");		
 		
 		if (!selenium.isElementPresent( "class=validation-advice")){
-			selenium.waitForPageToLoad("60000");
+		
 			
 			if (selenium.isTextPresent("Salir")){
 				message = "loginOk";

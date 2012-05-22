@@ -1,6 +1,7 @@
 package claireandbruce.com.test.basicosFlujos;
 import static org.junit.Assert.assertEquals;
 
+import org.junit.After;
 import org.junit.Test;
 import junit.framework.Assert;
 import lib.*;
@@ -19,7 +20,61 @@ public class CBT55_Test_CorrectLogon_ValidUser_TuCuenta extends ClaireandbruceTe
 	@Test
 	public void CBT55() throws Exception {
 		String mensaje = null;
-		Claireandbruce.login(selenium, username,password);
+		
+		// Elimina las cookies
+		selenium.deleteAllVisibleCookies();
+		
+		selenium.open("");
+
+		selenium.waitForPageToLoad("15000");
+		if (selenium.isElementPresent("xpath=//a[@id='overridelink']")){
+			selenium.click("//a[@id='overridelink']");
+		}
+		
+		 if(selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
+				selenium.click("xpath=//a[contains(@href, '/customer/account/logout/')]");
+				selenium.waitForPageToLoad("30000");
+				if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")) {
+					Helper.log("Logout done!");
+				} else {
+					Helper.log("NO Logout!");
+				}
+		  }
+		  
+			//R2
+			String message = null;
+			Helper.log("Open Homepage");
+			
+			//Si no esta presente el formulario para ingresar los datos de usuario
+			if(!selenium.isElementPresent("xpath=.//*[@id='login-form']/div")) {
+					
+				//check Autenticacion con cuenta is on the page
+				Helper.waitForElement(selenium, "//a[contains(text(), 'Tu cuenta')]", "Inicio de sesion  not found in "+ selenium.getLocation());
+		
+				selenium.click("//a[contains(text(), 'Tu cuenta')]");
+					
+			}
+			selenium.waitForPageToLoad("60000");
+			
+			selenium.type("xpath=.//*[@id='email']", username);
+			selenium.type("xpath=.//*[@id='pass']", password);		
+			selenium.click("//button[contains(@id,'send2')]");	
+			selenium.waitForPageToLoad("30000");
+			
+			if (!selenium.isElementPresent( "class=validation-advice")){
+		
+				if (selenium.isTextPresent("Salir")){
+					message = "loginOk";
+				}else if (selenium.isElementPresent("//div[@id='error-message-login']")){
+					message = "Fail";
+				}
+			}
+			
+			if(message == null){
+				Helper.log("Login Error " + selenium.getLocation());
+				//Assert.fail("Login Error " + selenium.getLocation());
+			}
+		
 		
 		//Se comprueba en caso tal de que el usuario no se encuentre creado.
 		if(selenium.isTextPresent("Usuario o contraseña inválido")) {
@@ -44,9 +99,9 @@ public class CBT55_Test_CorrectLogon_ValidUser_TuCuenta extends ClaireandbruceTe
 	
 	//	SE PONE EN COMENTARIO PARA CORRER EN EL FLUJO
 	// 	PARA PRUEBAS UNITARIAS SE ACTIVA
-	/*
+	
 	@After
 	public void afterTest(){
 		selenium.stop();
-	}*/
+	}
 }
