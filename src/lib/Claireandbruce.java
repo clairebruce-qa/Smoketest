@@ -31,7 +31,8 @@ public class Claireandbruce {
 		
 		//Si no esta presente el formulario para ingresar los datos de usuario
 		if(!selenium.isElementPresent("xpath=//form[@id='login-form']/div/cufon[3]/canvas")) {
-			//selenium.deleteAllVisibleCookies();
+			
+			selenium.deleteAllVisibleCookies();
 			
 			selenium.open("");
 
