@@ -42,14 +42,14 @@ public class Claireandbruce {
 			if (selenium.isElementPresent("xpath=//a[@id='overridelink']")){
 				selenium.click("//a[@id='overridelink']");
 			}
-			//selenium.waitForPageToLoad("60000");
+		
 			//check Autenticacion con cuenta is on the page
 			Helper.waitForElement(selenium, "//a[contains(text(), 'Tu cuenta')]", "Inicio de sesion  not found in "+ selenium.getLocation());
 	
 			selenium.click("//a[contains(text(), 'Tu cuenta')]");
 			//selenium.waitForPageToLoad("60000");			
 		}
-		selenium.waitForPageToLoad("60000");
+		selenium.waitForPageToLoad("30000");
 		
 		selenium.type("xpath=.//*[@id='email']", username);
 		selenium.type("xpath=.//*[@id='pass']", password);		
