@@ -53,6 +53,7 @@ public class CBT71_Test_CorrectLogon_ValidUser_Checkout extends ClaireandbruceTe
 		
 
 		tb23.CBT76();
+		
 		String text= selenium.getText("xpath=.//*[@id='cartHeader']");
 		assertTrue(selenium.isElementPresent("link=Compra ahora"));
 		

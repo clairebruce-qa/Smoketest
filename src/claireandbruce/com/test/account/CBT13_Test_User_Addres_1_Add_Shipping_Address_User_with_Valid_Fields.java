@@ -64,35 +64,8 @@ public class CBT13_Test_User_Addres_1_Add_Shipping_Address_User_with_Valid_Field
 			
 		}
 		
-		/*
-		.edit
 	
-		selenium.open("/es_es/customer/address/");
-		
-		
-		
-		if(!selenium.isElementPresent("html/body/div/div[2]/div[1]/div/div[2]/div[2]/div[3]/div[1]/div[5]/span[1]")){
-			selenium.click("html/body/div/div[2]/div[1]/div/div[2]/div[2]/div[3]/div[1]/div[5]/span[1]");
-			
-			if(selenium.getValue("xpath=(//input[@id='primary_shipping'])[3]").equals("off"))
-			{	
-			selenium.click("xpath=(//input[@id='primary_shipping'])[3]");
-			
-			selenium.click("css=#form-validate-2466 > div.buttons-set.form-buttons > button.button");
-			selenium.waitForPageToLoad("30000");
-			selenium.click("//span[@onclick=\"return deleteAddress('2506');\"]");
-			assertTrue(selenium.getConfirmation().matches("¿Estás seguro de querer borrar esta dirección[\\s\\S]$"));
-			
-			}
-		}
-		else
-		{
-			Helper.log("Error: element no found");
-			
-		}
-		
-	*/	
-	if(selenium.isElementPresent("xpath=//div[3]/div/div[5]/span")){
+		if(selenium.isElementPresent("xpath=//div[3]/div/div[5]/span")){
 		
 		
 		//Se elimina la dirección creada
@@ -113,32 +86,13 @@ public class CBT13_Test_User_Addres_1_Add_Shipping_Address_User_with_Valid_Field
 		Helper.log("Se eliminó la dirección");
 		}
 	
-	//selenium.click("css=button");
-	//selenium.waitForPageToLoad("50000");
 	
-	//while(!selenium.isTextPresent("Sandra Milena Torres Valencia")){
+		}else{
+			Helper.log("Error: Element not found");
+			Assert.fail("Error Element not found");
+		}
 		
 		
-		//Remover articulos mientras el carrito no este vacío
-		
-		//selenium.click("class=.delete");
-		//assertTrue(selenium.getConfirmation().matches("¿Estás seguro de querer borrar esta dirección[\\s\\S]$"));
-		//selenium.waitForPageToLoad("10000");
-	}else{
-		Helper.log("Error: Element not found");
 	}
-	/*	
-		
-		selenium.click("xpath=.//*[@id='primary_shipping']");
-		
-		selenium.click("css=button");
-		selenium.waitForPageToLoad("50000");
-		
-		selenium.click("html/body/div/div[2]/div[1]/div/div[2]/div[2]/div[3]/div[17]/div[5]/span[2]");
-	
-		
-		*/
-		
-			}
 
 }

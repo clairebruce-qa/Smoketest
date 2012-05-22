@@ -35,7 +35,7 @@ public class CBT76_Test_CorrectAddProduct_Cart_NoLoginUser extends Claireandbruc
 			Claireandbruce.logout(selenium);
 		}
 		
-		selenium.waitForPageToLoad("15000");
+		
 		
 		//Se verifica que se encuentre vacío el carrito de compras.
 		while(!selenium.isTextPresent("0 artículos 0 €")){
@@ -77,7 +77,7 @@ public class CBT76_Test_CorrectAddProduct_Cart_NoLoginUser extends Claireandbruc
 		 String texto = selenium.getText("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul[1]/li["+i+"]/div[3]/a");
 			
 			Helper.clickAndVerify(selenium, "//li["+i+"]/div/a/img[2]", texto, "class=breadcrumbs-present");
-			selenium.waitForPageToLoad("60000");
+			selenium.waitForPageToLoad("30000");
 		
 		//Se verifica que el artículo tenga la opción de seleccionar talla de lo contrario pasa directo al boton añadir a la cesta
 		//Esto debido a que existen productos simples, y productos configurables
@@ -90,7 +90,7 @@ public class CBT76_Test_CorrectAddProduct_Cart_NoLoginUser extends Claireandbruc
 				{//Se selecciona la primera talla encontrada del producto y se verifica que se seleccionó correctamente		
 				Helper.clickAndVerify(selenium, "xpath=/html/body/div/div[3]/div/div/form/div[3]/div[3]/div/div[9]/div[4]/div/div/div["+i+"]",selenium.getText("xpath=/html/body/div/div[3]/div/div/form/div[3]/div[3]/div/div[9]/div[4]/div/div/div["+i+"]") , "//div[contains(@class, 'selreplace_selectinner')]");}
 				else{
-					Helper.clickAndVerify(selenium, "//div[contains(@class, 'selreplace_option')]",selenium.getText("//div[contains(@class, 'selreplace_option')]") , "//div[contains(@class, 'selreplace_selectinner')]");
+					Helper.clickAndVerify(selenium, "class=selreplace_option",selenium.getText("//div[contains(@class, 'selreplace_option')]") , "xpath=.//*[@id='product_addtocart_form']/div[3]/div[3]/div/div[9]/div[3]/div/div[1]");
 				}
 			}
 		
