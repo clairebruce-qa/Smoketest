@@ -39,6 +39,14 @@ public class CBT55_Test_CorrectLogon_ValidUser_TuCuenta extends ClaireandbruceTe
 			Assert.fail("Login Error " + selenium.getLocation());
 		}
 		Helper.log("Login message is "+mensaje);
-		Claireandbruce.logout(selenium);	
+	
 	}
+	
+	//	SE PONE EN COMENTARIO PARA CORRER EN EL FLUJO
+	// 	PARA PRUEBAS UNITARIAS SE ACTIVA
+	/*
+	@After
+	public void afterTest(){
+		selenium.stop();
+	}*/
 }
