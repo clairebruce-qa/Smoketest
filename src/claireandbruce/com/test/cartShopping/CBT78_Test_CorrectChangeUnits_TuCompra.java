@@ -9,7 +9,6 @@ import org.junit.Test;
 import basics.ClaireandbruceTestCase;
 
 public class CBT78_Test_CorrectChangeUnits_TuCompra extends ClaireandbruceTestCase {
-CBT79_Test_CorrectAddProduct_Cart_LogonUser preReq = new CBT79_Test_CorrectAddProduct_Cart_LogonUser();
 		
 	
 	@Test
@@ -21,7 +20,7 @@ CBT79_Test_CorrectAddProduct_Cart_LogonUser preReq = new CBT79_Test_CorrectAddPr
 		}
 		
 		if(selenium.isTextPresent("0 artículos 0 €")) {
-			preReq.CBT79();
+			//preReq.CBT79();
 		}
 		
 		
