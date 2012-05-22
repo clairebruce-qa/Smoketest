@@ -14,7 +14,7 @@ public class Test_Address_Exist extends ClaireandbruceTestCase {
 	
 	public void CBT_Addres() throws Exception{
 		
-	
+	//ok///
 	selenium.open("");
 	selenium.waitForPageToLoad("15000");
 	int i =(int)(Math.random()*100);
