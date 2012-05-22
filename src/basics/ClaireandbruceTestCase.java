@@ -36,7 +36,8 @@ public class ClaireandbruceTestCase{
 	static String seleniumUrl =	"localhost";
 
 	//static String seleniumBrowser = System.getProperty("my.browser","*googlechrome");
-	static String seleniumBrowser = System.getProperty("my.browser","*chrome");
+	//static String seleniumBrowser = System.getProperty("my.browser","*chrome");
+	static String seleniumBrowser = System.getProperty("my.browser","*iexplore");
 
 	public static DefaultSelenium selenium = new DefaultSelenium(seleniumUrl, 4444, seleniumBrowser,ClaireandbruceUrl );
 	
