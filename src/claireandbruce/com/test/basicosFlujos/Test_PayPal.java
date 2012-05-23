@@ -18,7 +18,7 @@ import basics.ClaireandbruceTestCase;
  */
 public class Test_PayPal extends ClaireandbruceTestCase {
 
-	
+	///prueba
 	private CBT55_Test_CorrectLogon_ValidUser_TuCuenta cbt55;
 
 	@Test
