@@ -19,8 +19,8 @@ public class Test_CorrectAddProduct_Cart_SimpleProduct extends ClaireandbruceTes
 	public void CBT_SimpleProduct() {
 		
 		//Para efecto de la prueba
-		selenium.open("http://pre-cb.newshore.es/es_es/");
-		selenium.waitForPageToLoad("15000");
+		selenium.open("");
+		selenium.waitForPageToLoad("30000");
 		
 		//Se selecciona una categoría entre Bolsos y Accesorios (Categorías que poseen productos simples)
 		int categoria = 3;
@@ -54,14 +54,12 @@ public class Test_CorrectAddProduct_Cart_SimpleProduct extends ClaireandbruceTes
 					Helper.log("Producto actual: "+selenium.getTitle());						
 				}
 				
-			} else {
-				Assert.fail("ERROR. Categoría no encontrada");
-				
-			}
-		} while(selenium.isElementPresent("class=selreplace_select"));
+			} 
+		} while(selenium.isElementPresent("class=selreplace_select") || !selenium.isElementPresent("xpath=//div[7]/div/button") );
 		
 		if(!selenium.isElementPresent("class=selreplace_select")){
 			//Clic en botón "AÑADIR A LA CESTA"
+
 			selenium.click("xpath=//div[7]/div/button");
 			Helper.log(nombreProducto);
 		} 
