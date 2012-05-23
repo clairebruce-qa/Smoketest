@@ -14,11 +14,12 @@ import basics.ClaireandbruceTestCase;
  */
 public class Test_CorrectAddProduct_Cart_SimpleProduct extends ClaireandbruceTestCase {
 
+	
 	@Test
 	public void CBT_SimpleProduct() {
 		
 		//Para efecto de la prueba
-		selenium.open("");
+		selenium.open("http://pre-cb.newshore.es/es_es/");
 		selenium.waitForPageToLoad("15000");
 		
 		//Se selecciona una categoría entre Bolsos y Accesorios (Categorías que poseen productos simples)
@@ -47,20 +48,22 @@ public class Test_CorrectAddProduct_Cart_SimpleProduct extends ClaireandbruceTes
 					int filaArticulo = (int)(Math.random()*(2))+1;
 					Helper.log("Subcategoría actual: "+selenium.getTitle());
 					Helper.log("Producto: "+columnaArticulo+" en la fila: "+filaArticulo);
+					nombreProducto = selenium.getText("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul["+filaArticulo+"]/li["+columnaArticulo+"]/div[3]/a");
 					selenium.click("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul["+filaArticulo+"]/li["+columnaArticulo+"]/div[3]/a");
-					selenium.waitForPageToLoad("20000");
-					Helper.log("Producto actual: "+selenium.getTitle());	
-							
+					//selenium.waitForPageToLoad("15000");
+					Helper.log("Producto actual: "+selenium.getTitle());						
 				}
 				
 			} else {
 				Assert.fail("ERROR. Categoría no encontrada");
+				
 			}
 		} while(selenium.isElementPresent("class=selreplace_select"));
 		
 		if(!selenium.isElementPresent("class=selreplace_select")){
 			//Clic en botón "AÑADIR A LA CESTA"
-			selenium.click("xpath=//div[7]/div/button");	
-		}		
+			selenium.click("xpath=//div[7]/div/button");
+			Helper.log(nombreProducto);
+		} 
 	}	
 }
