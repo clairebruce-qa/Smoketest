@@ -34,10 +34,11 @@ public class CBT13_Test_User_Addres_1_Add_Shipping_Address_User_with_Valid_Field
 		if(selenium.isElementPresent("xpath=html/body/div/div[2]/div[1]/div/div/div[2]/a[2]/div/div/p")){
 			selenium.click("xpath=html/body/div/div[2]/div[1]/div/div/div[2]/a[2]/div/div/p");
 		} else {//Ingresar a través del link 'Modificar o añadir dirección'
-			selenium.click("xpath=html/body/div/div[2]/div[2]/div[1]/div[2]/ul/div[3]/li/a/span");
+			//selenium.click("xpath=html/body/div/div[2]/div[2]/div[1]/div[2]/ul/div[3]/li/a/span");
 		}
 		
-		selenium.waitForPageToLoad("30000");
+		selenium.waitForPageToLoad("60000");
+		
 		selenium.click("xpath=.//*[@id='spanNewAddress']");
 		
 		selenium.type("xpath=.//*[@id='firstname']","Sandra Milena"); //Nombre
@@ -77,22 +78,24 @@ public class CBT13_Test_User_Addres_1_Add_Shipping_Address_User_with_Valid_Field
 		selenium.click("xpath=//div[2]/div/form/div[2]/button[2]");
 		selenium.waitForPageToLoad("50000");
 		assertTrue(selenium.isTextPresent("Se guardó la dirección"));	
+		if(selenium.isElementPresent("class=delete")){
+			while(selenium.isElementPresent("class=delete")){
+				selenium.click("class=delete");
+				assertTrue(selenium.getConfirmation().matches("¿Estás seguro de querer borrar esta dirección[\\s\\S]$"));
+				selenium.waitForPageToLoad("30000");
+				assertTrue(selenium.isTextPresent("Se eliminó la dirección"));
+				Helper.log("Se eliminó la dirección");
+		}
 		
-		while(selenium.isElementPresent("class=delete")){
-		selenium.click("class=delete");
-		assertTrue(selenium.getConfirmation().matches("¿Estás seguro de querer borrar esta dirección[\\s\\S]$"));
-		selenium.waitForPageToLoad("30000");
-		assertTrue(selenium.isTextPresent("Se eliminó la dirección"));
-		Helper.log("Se eliminó la dirección");
 		}
 	
 	
-		}else{
-			Helper.log("Error: Element not found");
-			Assert.fail("Error Element not found");
+		else{
+			Helper.log("Error: No existen direcciones para borrar");
+			
 		}
 		
 		
 	}
-
+	}
 }

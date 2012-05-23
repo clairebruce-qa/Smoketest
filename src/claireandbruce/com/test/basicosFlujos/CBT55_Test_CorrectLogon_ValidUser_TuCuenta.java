@@ -1,5 +1,6 @@
 package claireandbruce.com.test.basicosFlujos;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.After;
 import org.junit.Test;
@@ -49,19 +50,36 @@ public class CBT55_Test_CorrectLogon_ValidUser_TuCuenta extends ClaireandbruceTe
 			//Si no esta presente el formulario para ingresar los datos de usuario
 			if(!selenium.isElementPresent("xpath=.//*[@id='login-form']/div")) {
 					
-				//check Autenticacion con cuenta is on the page
-				Helper.waitForElement(selenium, "//a[contains(text(), 'Tu cuenta')]", "Inicio de sesion  not found in "+ selenium.getLocation());
-		
+				
 				selenium.click("//a[contains(text(), 'Tu cuenta')]");
-				selenium.waitForPageToLoad("60000");
+				selenium.waitForPageToLoad("30000");
+				//check Autenticacion con cuenta is on the page
+				//Helper.waitForElement(selenium, "//a[contains(text(), 'Tu cuenta')]", "Inicio de sesion  not found in "+ selenium.getLocation());
+		/*
+				if(selenium.isTextPresent("Existe un problema con el certificado de seguridad de este sitio web."))
+				{
+				
+					selenium.click("//a[contains(text(), 'Vaya a este sitio web (no recomendado).')]");
+					selenium.waitForPageToLoad("40000");
 					
+					//if(selenium.isElementPresent("//*[contains(text(), 'Mostrar contenido')]")|| selenium.isElementPresent("//*[contains(text(), 'Mostrar todo el  contenido')]"))
+					selenium.click("//*@button[contains(text(), 'Mostrar contenido')]");
+					selenium.waitForPageToLoad("30000");
+					selenium.click("//*[contains(text(), 'Mostrar todo el contenido')]");
+					selenium.waitForPageToLoad("30000");
+				}
+				else
+				{
+					Assert.fail("Error: excepción de seguridad, contenido bloqueado");
+				}
+			*/		
 			}
 			
 			
 			selenium.type("xpath=.//*[@id='email']", username);
 			selenium.type("xpath=.//*[@id='pass']", password);		
 			selenium.click("//button[contains(@id,'send2')]");	
-			selenium.waitForPageToLoad("30000");
+			selenium.waitForPageToLoad("20000");
 			
 			if (!selenium.isElementPresent( "class=validation-advice")){
 		

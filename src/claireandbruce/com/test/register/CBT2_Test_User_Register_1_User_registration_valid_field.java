@@ -43,7 +43,7 @@ public class CBT2_Test_User_Register_1_User_registration_valid_field extends Cla
 		  if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
 				
 				int i =(int)(Math.random()*100);
-				username2 = System.getProperty("my.username","usuarioQa"+i+"@gmail.com");
+				username2 = System.getProperty("my.username","stress_test_qa"+i+"@claireandbruce.com");
 				//String username= "usuarioQa"+i+"@gmail.com";
 				System.out.println(username2);
 				

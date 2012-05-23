@@ -21,7 +21,7 @@ public class ClaireandbruceTestCase{
      
 	static String tc;
 
-	public static String username = System.getProperty("my.username","claireandbruceqa@gmail.com"); 
+	public static String username = System.getProperty("my.username","stress_test_qa@claireandbruce.com"); 
 	public static String password = System.getProperty("my.userpassword","123456");
 	static String  ClaireandbruceUrl	=	"http://pre-cb.newshore.es/";
 	//static String  ClaireandbruceUrl	=	"http://int2-cb.newshore.es/";
@@ -36,8 +36,8 @@ public class ClaireandbruceTestCase{
 	static String seleniumUrl =	"localhost";
 
 	//static String seleniumBrowser = System.getProperty("my.browser","*googlechrome");
-	//static String seleniumBrowser = System.getProperty("my.browser","*chrome");
-	static String seleniumBrowser = System.getProperty("my.browser","*iexplore");
+	static String seleniumBrowser = System.getProperty("my.browser","*chrome");
+//	public static String seleniumBrowser = System.getProperty("my.browser","*iexplore");
 
 	public static DefaultSelenium selenium = new DefaultSelenium(seleniumUrl, 4444, seleniumBrowser,ClaireandbruceUrl );
 	
