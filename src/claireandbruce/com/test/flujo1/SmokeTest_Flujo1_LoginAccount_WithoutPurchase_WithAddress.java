@@ -10,7 +10,7 @@ public class SmokeTest_Flujo1_LoginAccount_WithoutPurchase_WithAddress extends C
 
 	@Test
 	public void flujo1_LoginAccount_WithoutPurchase_WithAddress(){
-		//CBT55_Test_CorrectLogon_ValidUser_TuCuenta login = new CBT55_Test_CorrectLogon_ValidUser_TuCuenta();
+		CBT55_Test_CorrectLogon_ValidUser_TuCuenta login = new CBT55_Test_CorrectLogon_ValidUser_TuCuenta();
 		Test_CorrectAddProduct_Cart_SimpleProduct addSimpleProduct = new Test_CorrectAddProduct_Cart_SimpleProduct();
 	}
 	
