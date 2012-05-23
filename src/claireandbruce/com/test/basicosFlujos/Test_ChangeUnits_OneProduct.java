@@ -9,10 +9,35 @@ import basics.ClaireandbruceTestCase;
 
 public class Test_ChangeUnits_OneProduct extends ClaireandbruceTestCase{
 
+	private CBT55_Test_CorrectLogon_ValidUser_TuCuenta cbt55;
+
 	@Test
 	public void changeUnits() throws Exception{
-		selenium.open("");
-		selenium.waitForPageToLoad("10000");
+		
+		
+		//cbt55= new CBT55_Test_CorrectLogon_ValidUser_TuCuenta();
+		//selenium.open("");
+		
+		//selenium.waitForPageToLoad("10000");
+		
+		
+		//if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
+			
+			
+			//cbt55 .CBT55();// Se comenta para la prueba de flujo 
+			//cbtPS.CBT_SimpleProduct();//Carga un producto simple
+			//Assert.fail("El usuario no esta autenticado");
+		//}
+
+		if(!("Compra ahora").equals(selenium.getTitle()))
+		{
+			selenium.click("xpath=.//*[@id='quick-access']/div[1]/div/a");
+			
+			selenium.waitForPageToLoad("15000");
+			selenium.click("xpath=html/body/div/div[3]/div[1]/div/div[6]/ul[1]/li[1]/button");
+			selenium.waitForPageToLoad("20000");
+			
+		}
 		
 		//Se declaran variables string para separar los caracteres que pertenecen al precio sin unidad de moneda
 		String precio, precioTotal;

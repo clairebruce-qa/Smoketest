@@ -23,14 +23,16 @@ public class Test_CorrectAddProduct_Cart_SimpleProduct extends ClaireandbruceTes
 		selenium.waitForPageToLoad("30000");
 		
 		//Se selecciona una categoría entre Bolsos y Accesorios (Categorías que poseen productos simples)
-		int categoria = 3;
+		
 		
 		//Haga mientras encuentre el menú de selección de talla (producto configurable)
 		do {
 
-			categoria = (int) (Math.random()*(4-3+1))+3;
+			int categoria = (int) (Math.random()*(4-3+1))+3;
 			Helper.log("Categoría "+categoria);
+			
 			if(selenium.isElementPresent("xpath=.//*[@id='nav']/li["+categoria+"]/h2/a/span/cufon/canvas")){
+
 				selenium.click("xpath=.//*[@id='nav']/li["+categoria+"]/h2/a/span/cufon/canvas");
 				//selenium.waitForPageToLoad("10000");
 				
@@ -41,7 +43,7 @@ public class Test_CorrectAddProduct_Cart_SimpleProduct extends ClaireandbruceTes
 				if(selenium.isElementPresent("xpath=html/body/div/div[3]/div[2]/div[2]/div[1]/a["+subcategoria+"]/div/div")){
 										
 					selenium.click("xpath=html/body/div/div[3]/div[2]/div[2]/div[1]/a["+subcategoria+"]/div/div");
-					//selenium.waitForPageToLoad("10000");					
+					selenium.waitForPageToLoad("30000");					
 						
 					//Se selecciona uno de los artículos de ésta subcategoría
 					int columnaArticulo = (int)(Math.random()*(3))+1;
@@ -49,7 +51,13 @@ public class Test_CorrectAddProduct_Cart_SimpleProduct extends ClaireandbruceTes
 					Helper.log("Subcategoría actual: "+selenium.getTitle());
 					Helper.log("Producto: "+columnaArticulo+" en la fila: "+filaArticulo);
 					nombreProducto = selenium.getText("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul["+filaArticulo+"]/li["+columnaArticulo+"]/div[3]/a");
-					selenium.click("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul["+filaArticulo+"]/li["+columnaArticulo+"]/div[3]/a");
+					if(!selenium.isElementPresent("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul["+filaArticulo+"]/li["+columnaArticulo+"]/div[3]/a")){
+						Helper.log("no se encontro el nombre del producto");
+					}
+					else{
+						selenium.click("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul["+filaArticulo+"]/li["+columnaArticulo+"]/div[3]/a");
+					}
+				
 					//selenium.waitForPageToLoad("15000");
 					Helper.log("Producto actual: "+selenium.getTitle());						
 				}
