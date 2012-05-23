@@ -14,10 +14,6 @@ public class Test_ChangeUnits_OneProduct extends ClaireandbruceTestCase{
 		selenium.open("http://pre-cb.newshore.es/es_es/checkout/cart/");
 		selenium.waitForPageToLoad("10000");
 		
-		//Posición del campo cantidad a modificar.
-		//int fila=2;	
-		//int filaPrecio=4;
-		
 		//Se declaran variables string para separar los caracteres que pertenecen al precio sin unidad de moneda
 		String precio, precioTotal;
 		if(selenium.isElementPresent("//table[@id='shopping-cart-table']/tbody/tr[2]/td[2]/input")){
