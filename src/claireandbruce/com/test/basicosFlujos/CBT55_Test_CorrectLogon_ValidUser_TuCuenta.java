@@ -32,7 +32,8 @@ public class CBT55_Test_CorrectLogon_ValidUser_TuCuenta extends ClaireandbruceTe
 		}
 		
 		 if(selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
-				selenium.click("xpath=//a[contains(@href, '/customer/account/logout/')]");
+			 
+				selenium.click("//a[contains(text(), 'Salir')]");
 				selenium.waitForPageToLoad("30000");
 				if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")) {
 					Helper.log("Logout done!");
@@ -52,9 +53,10 @@ public class CBT55_Test_CorrectLogon_ValidUser_TuCuenta extends ClaireandbruceTe
 				Helper.waitForElement(selenium, "//a[contains(text(), 'Tu cuenta')]", "Inicio de sesion  not found in "+ selenium.getLocation());
 		
 				selenium.click("//a[contains(text(), 'Tu cuenta')]");
+				selenium.waitForPageToLoad("60000");
 					
 			}
-			selenium.waitForPageToLoad("60000");
+			
 			
 			selenium.type("xpath=.//*[@id='email']", username);
 			selenium.type("xpath=.//*[@id='pass']", password);		
@@ -99,9 +101,9 @@ public class CBT55_Test_CorrectLogon_ValidUser_TuCuenta extends ClaireandbruceTe
 	
 	//	SE PONE EN COMENTARIO PARA CORRER EN EL FLUJO
 	// 	PARA PRUEBAS UNITARIAS SE ACTIVA
-	
+	/*
 	@After
 	public void afterTest(){
 		selenium.stop();
-	}
+	}*/
 }

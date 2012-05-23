@@ -23,9 +23,9 @@ public class ClaireandbruceTestCase{
 
 	public static String username = System.getProperty("my.username","claireandbruceqa@gmail.com"); 
 	public static String password = System.getProperty("my.userpassword","123456");
-	//static String  ClaireandbruceUrl	=	"http://pre-cb.newshore.es/";
+	static String  ClaireandbruceUrl	=	"http://pre-cb.newshore.es/";
 	//static String  ClaireandbruceUrl	=	"http://int2-cb.newshore.es/";
-	static String  ClaireandbruceUrl	=	"http://www.claireandbruce.com/";
+	//static String  ClaireandbruceUrl	=	"http://www.claireandbruce.com/";
 	
 	
 	/*	Selenium RC settings

@@ -1,8 +1,6 @@
 package claireandbruce.com.test.basicosFlujos;
 
 import junit.framework.Assert;
-
-import org.junit.After;
 import org.junit.Test;
 
 import lib.Claireandbruce;
@@ -24,7 +22,7 @@ public class Test_Address_Exist extends ClaireandbruceTestCase {
 	@Test
 	public void CBT_Address() throws Exception{
 		
-
+/* ESTO SE PONE EN COMENTARIO PARA QUE CORRA EN EL FLUJO
 		
 	selenium.deleteAllVisibleCookies();
 	
@@ -34,14 +32,16 @@ public class Test_Address_Exist extends ClaireandbruceTestCase {
 	if (selenium.isElementPresent("xpath=//a[@id='overridelink']")){
 		selenium.click("//a[@id='overridelink']");
 	}
-
+*/
 	
 	if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
-		Claireandbruce.login(selenium, username, password);
+		
+		//Claireandbruce.login(selenium, username, password); // Se  utiliza para la prueba unitaria
+		Assert.fail("El usuario no esta autenticado");
 	}
 	
 	
-	Helper.log("Ambiente de prueba: "+selenium.getLocation());
+
 
 	//-----****** Verifíca que la pagina de Tu Compra esta desplegada de lo contrario la carga *****----\\
 	
