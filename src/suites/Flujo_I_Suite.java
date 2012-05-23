@@ -28,7 +28,7 @@ import claireandbruce.com.test.basicosFlujos.Test_Without_Purchase;
 	/// verifica el tipo de envio
 	Test_Address_Exist.class,
 	Test_Without_Purchase.class,
-	Test_PayPal.class
+	Test_PayPal.class// termina
 	
 	
 })
