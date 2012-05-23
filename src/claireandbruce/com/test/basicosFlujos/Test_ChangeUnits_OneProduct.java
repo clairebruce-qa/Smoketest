@@ -11,7 +11,7 @@ public class Test_ChangeUnits_OneProduct extends ClaireandbruceTestCase{
 
 	@Test
 	public void changeUnits() throws Exception{
-		selenium.open("http://pre-cb.newshore.es/es_es/checkout/cart/");
+		selenium.open("");
 		selenium.waitForPageToLoad("10000");
 		
 		//Se declaran variables string para separar los caracteres que pertenecen al precio sin unidad de moneda

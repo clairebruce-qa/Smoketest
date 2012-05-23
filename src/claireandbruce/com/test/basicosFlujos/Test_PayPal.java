@@ -32,8 +32,8 @@ public class Test_PayPal extends ClaireandbruceTestCase {
 	
 		// ESTO SE PONE EN COMENTARIO PARA QUE CORRA EN EL FLUJO
 		
-		cbt55= new CBT55_Test_CorrectLogon_ValidUser_TuCuenta();
-		cbtPS= new Test_CorrectAddProduct_Cart_SimpleProduct();
+		//cbt55= new CBT55_Test_CorrectLogon_ValidUser_TuCuenta();
+		//cbtPS= new Test_CorrectAddProduct_Cart_SimpleProduct();
 		/*selenium.deleteAllVisibleCookies();
 		selenium.open("");
 		selenium.waitForPageToLoad("15000");
@@ -45,8 +45,8 @@ public class Test_PayPal extends ClaireandbruceTestCase {
 		*/
 		if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
 			
-			cbt55.CBT55();// Se comenta para la prueba de flujo 
-			cbtPS.CBT_SimpleProduct();//Carga un producto simple
+			//cbt55.CBT55();// Se comenta para la prueba de flujo 
+			//cbtPS.CBT_SimpleProduct();//Carga un producto simple
 			//Assert.fail("El usuario no esta autenticado");
 		}
 		
@@ -98,18 +98,18 @@ public class Test_PayPal extends ClaireandbruceTestCase {
 		}
 		selenium.click("xpath=.//*[@id='checkout-buttons-container']/button");
 		selenium.waitForPageToLoad("15000");
-		selenium.close();
+		
 		
 		cbt55.CBT55();// Se comenta para la prueba de flujo 
 		selenium.click("xpath=html/body/div/div[2]/div[1]/div/div/div[2]/div[2]/div[1]/a/div/div");
 		selenium.waitForPageToLoad("15000");
 		String check= selenium.getText("html/body/div[1]/div[2]/div[1]/div/div[2]/div[1]/div[2]/div/div[2]/div[1]");
-	//if(!(check).equals(selenium.isTextPresent(""))){
+		if(!(check).equals(selenium.isTextPresent(nombreProducto))){
 			
 			
 			
-		//	Assert.fail("El pedido no fue efectuado");
-		//}
+		Assert.fail("El pedido no fue efectuado");
+		}
 		
 		
 		/*
