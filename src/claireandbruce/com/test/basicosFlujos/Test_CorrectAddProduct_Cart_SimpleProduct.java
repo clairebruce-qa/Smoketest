@@ -69,11 +69,11 @@ public class Test_CorrectAddProduct_Cart_SimpleProduct extends ClaireandbruceTes
 					}
 					else{
 						selenium.click("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul["+filaArticulo+"]/li["+columnaArticulo+"]/div[3]/a");
-<<<<<<< HEAD
+
 					//	selenium.waitForPageToLoad("20000");
-=======
+
 						selenium.waitForPageToLoad("30000");
->>>>>>> remotes/origin/master
+
 					}
 				
 					//selenium.waitForPageToLoad("15000");
