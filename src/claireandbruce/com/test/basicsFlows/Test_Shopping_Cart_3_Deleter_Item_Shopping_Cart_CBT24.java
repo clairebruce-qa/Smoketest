@@ -21,7 +21,7 @@ import basics.ClaireandbruceTestCase;
  * el éxito de la prueba se evidenciara cuando se elimine un item
  * o todos los items del carrito de compras y  este vacio.	
  * 
- * @author NEWSHORE
+ * @author Yuliana Maria Saavedra
  *
  */
 public class Test_Shopping_Cart_3_Deleter_Item_Shopping_Cart_CBT24 extends ClaireandbruceTestCase {
