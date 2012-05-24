@@ -14,6 +14,8 @@ public class Flujo_I extends ClaireandbruceTestCase{
 
 	@Test
 	public void test_flujo1() throws Exception {
+		
+		
 		CBT55_Test_CorrectLogon_ValidUser_TuCuenta.CBT55(selenium);
 		
 		
