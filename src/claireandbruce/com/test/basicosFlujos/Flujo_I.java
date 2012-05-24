@@ -34,8 +34,11 @@ public class Flujo_I extends ClaireandbruceTestCase{
 		Test_ChangeUnits_OneProduct.changeUnits(selenium);
 
 		Test_TypeShipping.typeShipping(selenium);
+		
 		Test_Address_Exist.CBT_Address(selenium);
+		
 		Test_Without_Purchase.CBT_WPurchase(selenium);
+		
 		Test_PayPal.CBT_Paypal(selenium,nombreProducto);
 	}
 }

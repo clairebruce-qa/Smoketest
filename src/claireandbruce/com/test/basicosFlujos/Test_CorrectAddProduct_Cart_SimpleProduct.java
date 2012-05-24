@@ -12,7 +12,7 @@ import basics.ClaireandbruceTestCase;
 
 /**
  * Se automatiza el añadir un producto simple a la cesta.
- * @author NEWSHORE
+ * @author MARIA FERNANDA RODRIGUEZ
  *
  */
 public class Test_CorrectAddProduct_Cart_SimpleProduct extends ClaireandbruceTestCase {
