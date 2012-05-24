@@ -4,7 +4,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 import claireandbruce.com.test.account.*;
-import claireandbruce.com.test.basicosFlujos.CBT55_Test_CorrectLogon_ValidUser_TuCuenta;
+import claireandbruce.com.test.basicsFlows.CBT55_Test_CorrectLogon_ValidUser_TuCuenta;
 import claireandbruce.com.test.cartShopping.*;
 import claireandbruce.com.test.catalog.*;
 import claireandbruce.com.test.login.*;

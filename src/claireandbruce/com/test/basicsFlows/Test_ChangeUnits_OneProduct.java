@@ -1,4 +1,4 @@
-package claireandbruce.com.test.basicosFlujos;
+package claireandbruce.com.test.basicsFlows;
 
 import static org.junit.Assert.assertEquals;
 import java.text.DecimalFormat;

@@ -1,4 +1,4 @@
-package claireandbruce.com.test.basicosFlujos;
+package claireandbruce.com.test.basicsFlows;
 
 import org.junit.Test;
 
@@ -10,7 +10,7 @@ import basics.ClaireandbruceTestCase;
  * @author Yuliana Maria Saavedra
  *
  */
-public class Flujo_I extends ClaireandbruceTestCase{
+public class Test_Flujo_I extends ClaireandbruceTestCase{
 
 	@Test
 	public void test_flujo1() throws Exception {

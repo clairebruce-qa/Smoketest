@@ -1,4 +1,4 @@
-package claireandbruce.com.test.basicosFlujos;
+package claireandbruce.com.test.basicsFlows;
 
 import static org.junit.Assert.assertTrue;
 
@@ -24,7 +24,7 @@ import basics.ClaireandbruceTestCase;
  * @author NEWSHORE
  *
  */
-public class CBT24_Test_Shopping_Cart_3_Deleter_Item_Shopping_Cart extends ClaireandbruceTestCase {
+public class Test_Shopping_Cart_3_Deleter_Item_Shopping_Cart_CBT24 extends ClaireandbruceTestCase {
 	
 	public static void CBT24(Selenium selenium) throws Exception
 	{		
