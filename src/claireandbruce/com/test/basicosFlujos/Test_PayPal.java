@@ -85,7 +85,7 @@ public class Test_PayPal extends ClaireandbruceTestCase {
 		selenium.waitForPageToLoad("15000");
 		
 		
-		//cbt55.CBT55(selenium);// Se comenta para la prueba de flujo 
+		CBT55_Test_CorrectLogon_ValidUser_TuCuenta.CBT55(selenium);// Se comenta para la prueba de flujo 
 		selenium.click("xpath=html/body/div/div[2]/div[1]/div/div/div[2]/div[2]/div[1]/a/div/div");
 		selenium.waitForPageToLoad("15000");
 		String check= selenium.getText("html/body/div[1]/div[2]/div[1]/div/div[2]/div[1]/div[2]/div/div[2]/div[1]");
