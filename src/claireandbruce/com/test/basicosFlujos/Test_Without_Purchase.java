@@ -23,18 +23,18 @@ public class Test_Without_Purchase extends ClaireandbruceTestCase {
 	
 		// ESTO SE PONE EN COMENTARIO PARA QUE CORRA EN EL FLUJO
 		
-		selenium.deleteAllVisibleCookies();
-		selenium.open("");
-		selenium.waitForPageToLoad("15000");
+	//	selenium.deleteAllVisibleCookies();
+		//selenium.open("");
+		//selenium.waitForPageToLoad("15000");
 		
-		if (selenium.isElementPresent("xpath=//a[@id='overridelink']")){
-			selenium.click("//a[@id='overridelink']");
-		}	
+		//if (selenium.isElementPresent("xpath=//a[@id='overridelink']")){
+			//selenium.click("//a[@id='overridelink']");
+		//}	
 		
-		if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")){			
-			Claireandbruce.login(selenium, username, password); // Se comenta para la prueba de flujo 
+		//if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")){			
+			//Claireandbruce.login(selenium, username, password); // Se comenta para la prueba de flujo 
 			//Assert.fail("El usuario no esta autenticado");
-		}
+		//}
 				
 
 		//-----****** Verifíca que la pagina de Tu Compra esta desplegada de lo contrario la carga *****----\\
@@ -52,6 +52,8 @@ public class Test_Without_Purchase extends ClaireandbruceTestCase {
 				
 		if(!("off").equals(selenium.getValue("id=showFakeBilling"))) {
 			Assert.fail("Error:  Se esta solicitando la factura");
-		}		
+		}
+		
+		
 	}
 }

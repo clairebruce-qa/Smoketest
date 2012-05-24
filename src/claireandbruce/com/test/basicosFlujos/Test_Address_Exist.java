@@ -28,18 +28,18 @@ public class Test_Address_Exist extends ClaireandbruceTestCase {
 		
 	selenium.deleteAllVisibleCookies();
 	
-	selenium.open("");
-
+	
 	selenium.waitForPageToLoad("15000");
 	if (selenium.isElementPresent("xpath=//a[@id='overridelink']")){
 		selenium.click("//a[@id='overridelink']");
 	}
 */
 	
-	if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")){		
-		//Claireandbruce.login(selenium, username, password); // Se  utiliza para la prueba unitaria
-		Assert.fail("El usuario no esta autenticado");
-	}
+		//selenium.open(ClaireandbruceUrl);
+
+		//if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
+			//CBT55_Test_CorrectLogon_ValidUser_TuCuenta.CBT55(selenium);// Se comenta para la prueba de flujo			
+	//	}	
 	
 	//-----****** Verifíca que la pagina de Tu Compra esta desplegada de lo contrario la carga *****----\\
 	
@@ -47,7 +47,7 @@ public class Test_Address_Exist extends ClaireandbruceTestCase {
 	{
 		selenium.click("//a[contains(text(),'Compra ahora')]");
 		
-		selenium.waitForPageToLoad("15000");
+		selenium.waitForPageToLoad("20000");
 		selenium.click("xpath=html/body/div/div[3]/div[1]/div/div[6]/ul[1]/li[1]/button");
 		selenium.waitForPageToLoad("15000");		
 	}

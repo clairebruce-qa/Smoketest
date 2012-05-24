@@ -16,10 +16,10 @@ import basics.ClaireandbruceTestCase;
  */
 public class Test_CorrectAddProduct_Cart_SimpleProduct extends ClaireandbruceTestCase {
 
-	public static void CBT_SimpleProduct(Selenium selenium) {
+	public static String CBT_SimpleProduct(Selenium selenium) {
 		
 		//Para efecto de la prueba
-		selenium.open("http://pre-cb.newshore.es");
+		selenium.open(ClaireandbruceUrl);
 		selenium.waitForPageToLoad("30000");
 		
 		//Se selecciona una categoría entre Bolsos y Accesorios (Categorías que poseen productos simples)
@@ -57,7 +57,7 @@ public class Test_CorrectAddProduct_Cart_SimpleProduct extends ClaireandbruceTes
 					}
 					else{
 						selenium.click("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul["+filaArticulo+"]/li["+columnaArticulo+"]/div[3]/a");
-						selenium.waitForPageToLoad("15000");
+						selenium.waitForPageToLoad("30000");
 					}
 				
 					//selenium.waitForPageToLoad("15000");
@@ -73,5 +73,6 @@ public class Test_CorrectAddProduct_Cart_SimpleProduct extends ClaireandbruceTes
 			selenium.click("xpath=//div[7]/div/button");
 			Helper.log(nombreProducto);
 		} 
+		return nombreProducto;
 	}	
 }
