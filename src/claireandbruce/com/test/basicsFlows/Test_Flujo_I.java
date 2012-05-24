@@ -1,4 +1,4 @@
-package claireandbruce.com.test.basicosFlujos;
+package claireandbruce.com.test.basicsFlows;
 
 import org.junit.Test;
 
@@ -10,10 +10,12 @@ import basics.ClaireandbruceTestCase;
  * @author Yuliana Maria Saavedra
  *
  */
-public class Flujo_I extends ClaireandbruceTestCase{
+public class Test_Flujo_I extends ClaireandbruceTestCase{
 
 	@Test
 	public void test_flujo1() throws Exception {
+		
+		
 		CBT55_Test_CorrectLogon_ValidUser_TuCuenta.CBT55(selenium);
 		
 		
@@ -35,7 +37,9 @@ public class Flujo_I extends ClaireandbruceTestCase{
 		Test_TypeShipping.typeShipping(selenium);
 		
 		Test_Address_Exist.CBT_Address(selenium);
+		
 		Test_Without_Purchase.CBT_WPurchase(selenium);
+		
 		Test_PayPal.CBT_Paypal(selenium,nombreProducto);
 	}
 }

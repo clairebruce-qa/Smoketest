@@ -1,4 +1,4 @@
-package claireandbruce.com.test.basicosFlujos;
+package claireandbruce.com.test.basicsFlows;
 
 import junit.framework.Assert;
 import lib.Claireandbruce;

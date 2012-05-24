@@ -3,8 +3,8 @@ package claireandbruce.com.test.flujo1;
 import org.junit.Test;
 
 import basics.ClaireandbruceTestCase;
-import claireandbruce.com.test.basicosFlujos.CBT55_Test_CorrectLogon_ValidUser_TuCuenta;
-import claireandbruce.com.test.basicosFlujos.Test_CorrectAddProduct_Cart_SimpleProduct;
+import claireandbruce.com.test.basicsFlows.CBT55_Test_CorrectLogon_ValidUser_TuCuenta;
+import claireandbruce.com.test.basicsFlows.Test_CorrectAddProduct_Cart_SimpleProduct;
 
 public class SmokeTest_Flujo1_LoginAccount_WithoutPurchase_WithAddress extends ClaireandbruceTestCase {
 

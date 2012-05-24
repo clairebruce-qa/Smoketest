@@ -1,4 +1,4 @@
-package claireandbruce.com.test.basicosFlujos;
+package claireandbruce.com.test.basicsFlows;
 
 import junit.framework.Assert;
 import lib.Claireandbruce;
@@ -17,6 +17,7 @@ import basics.ClaireandbruceTestCase;
  * 
  * 
  * @author YULIANA MARÍA SAAVEDRA RUSSÍ
+ * 
  *
  */
 public class Test_PayPal extends ClaireandbruceTestCase {
@@ -29,22 +30,7 @@ public class Test_PayPal extends ClaireandbruceTestCase {
 	
 	public static void CBT_Paypal(Selenium selenium, String nombreProducto) throws Exception{
 	
-		// ESTO SE PONE EN COMENTARIO PARA QUE CORRA EN EL FLUJO
-		
-		//cbt55= new CBT55_Test_CorrectLogon_ValidUser_TuCuenta();
-		//cbtPS= new Test_CorrectAddProduct_Cart_SimpleProduct();
-		//selenium.deleteAllVisibleCookies();
-		//selenium.open(ClaireandbruceUrl);
-		//selenium.waitForPageToLoad("15000");
-		
-		/*if (selenium.isElementPresent("xpath=//a[@id='overridelink']")){
-			selenium.click("//a[@id='overridelink']");
-		}
 	
-		*/
-		//if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
-		//	CBT55_Test_CorrectLogon_ValidUser_TuCuenta.CBT55(selenium);// Se comenta para la prueba de flujo			
-		//}	
 
 		//-----****** Verifíca que la pagina de Tu Compra esta desplegada de lo contrario la carga *****----\\
 		
