@@ -27,9 +27,9 @@ public class CBT55_Test_CorrectLogon_ValidUser_TuCuenta extends ClaireandbruceTe
 		// Elimina las cookies
 		selenium.deleteAllVisibleCookies();
 		
-		selenium.open("http://pre-cb.newshore.es");
+		selenium.open(ClaireandbruceUrl);
 
-		selenium.waitForPageToLoad("15000");
+		selenium.waitForPageToLoad("30000");
 		if (selenium.isElementPresent("xpath=//a[@id='overridelink']")){
 			selenium.click("//a[@id='overridelink']");
 		}
