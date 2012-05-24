@@ -34,7 +34,6 @@ public class Test_Flujo_I extends ClaireandbruceTestCase{
 		
 		//Se cambia los productos. 
 		Test_ChangeUnits_OneProduct.changeUnits(selenium);
-
 		Test_TypeShipping.typeShipping(selenium);
 		
 		Test_Address_Exist.CBT_Address(selenium);

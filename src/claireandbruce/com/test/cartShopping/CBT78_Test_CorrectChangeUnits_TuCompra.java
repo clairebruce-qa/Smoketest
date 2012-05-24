@@ -8,7 +8,7 @@ import lib.Helper;
 
 import org.junit.Test;
 
-import claireandbruce.com.test.basicosFlujos.Test_CorrectAddProduct_Cart_SimpleProduct;
+//import claireandbruce.com.test.basicosFlujos.Test_CorrectAddProduct_Cart_SimpleProduct;
 
 import com.thoughtworks.selenium.Selenium;
 import basics.ClaireandbruceTestCase;
@@ -17,7 +17,7 @@ public class CBT78_Test_CorrectChangeUnits_TuCompra extends ClaireandbruceTestCa
 		
 	public static void CBT78(Selenium selenium) throws Exception{
 		
-		Test_CorrectAddProduct_Cart_SimpleProduct.CBT_SimpleProduct(selenium);
+	//	Test_CorrectAddProduct_Cart_SimpleProduct.CBT_SimpleProduct(selenium);
 		selenium.open("http://pre-cb.newshore.es/es_es/checkout/cart/");
 		selenium.waitForPageToLoad("10000");
 		//Posición del campo cantidad a modificar.
