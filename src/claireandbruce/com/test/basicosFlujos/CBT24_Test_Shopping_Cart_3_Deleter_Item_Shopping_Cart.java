@@ -23,19 +23,12 @@ import basics.ClaireandbruceTestCase;
  */
 public class CBT24_Test_Shopping_Cart_3_Deleter_Item_Shopping_Cart extends ClaireandbruceTestCase {
 	
-	
-
-	@Test
 	public void CBT24() throws Exception
-	{
-		
-		
+	{		
 		//----------***** SE DESPLIEGA LA VENTANA *****---------------------\\
-		
-		
+				
 		// SE PONE EN COMENTARIO CUANDO SE CORRA EN EL FLUJO, SE ACTIVA CUANDO SE CORRE UNITARIO
-		
-		
+				
 		/*selenium.open("");
 		if (selenium.isElementPresent("xpath=//a[@id='overridelink']")){
 		selenium.click("//a[@id='overridelink']");
@@ -45,30 +38,19 @@ public class CBT24_Test_Shopping_Cart_3_Deleter_Item_Shopping_Cart extends Clair
 		//------------Se verifica que el carrito de compras contenga productos-------
 		
 		selenium.click("id=cartHeader");
-
 	
-		if(selenium.isElementPresent("class=btn-remove")){
-			
+		if(selenium.isElementPresent("class=btn-remove")){			
 			selenium.click("class=btn-remove");
 			
 			// El sistema confirma que se eliminará el producto
 			assertTrue(selenium.getConfirmation().matches("¿Está seguro de que desea eliminar este artículo de la cesta de la compra[\\s\\S]$"));
-			selenium.waitForPageToLoad("10000");
-			
-			
-		}
-		else
-		{
+			selenium.waitForPageToLoad("10000");			
+		} else {
 			Assert.fail("Error: no hay productos en el carrito de compras");
-			selenium.waitForPageToLoad("10000");
-				
-		}
-		
+			selenium.waitForPageToLoad("10000");				
+		}		
 		
 		// Se termina la ejecución y se cierra el selenium
-		
-	
-
 	}
 	
 	//   SE PONE EN COMENTARIO PARA CORRER EN EL FLUJO
@@ -76,10 +58,5 @@ public class CBT24_Test_Shopping_Cart_3_Deleter_Item_Shopping_Cart extends Clair
 	@After
 	public void afterTest(){
 		selenium.stop();
-	}*/
-	
-		
-	
-	
-	
+	}*/	
 }
