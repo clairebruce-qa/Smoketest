@@ -105,7 +105,7 @@ public class Test_PayPal extends ClaireandbruceTestCase {
 		}
 		
 		
-<<<<<<< HEAD
+
 		/*		
 		selenium.click("xpath=.//*[@id='main']/div/p[2]/strong/a");
 		selenium.click("xpath=.//*[@id='loadLogin']");
@@ -118,8 +118,6 @@ public class Test_PayPal extends ClaireandbruceTestCase {
 			Assert.fail("Error:  NO AUTENTICO EL USUARIO DE PAYPAL");
 		}
 		*/		
-=======
-		
->>>>>>> remotes/origin/master
+
 	}
 }
