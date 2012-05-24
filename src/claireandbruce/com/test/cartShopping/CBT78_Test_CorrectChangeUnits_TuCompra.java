@@ -1,23 +1,12 @@
 package claireandbruce.com.test.cartShopping;
 
-import static org.junit.Assert.assertEquals;
-
 import java.text.DecimalFormat;
-
-import junit.framework.Assert;
-
-import lib.Claireandbruce;
-import lib.Helper;
-
-import org.junit.Test;
-
+import com.thoughtworks.selenium.Selenium;
 import basics.ClaireandbruceTestCase;
 
 public class CBT78_Test_CorrectChangeUnits_TuCompra extends ClaireandbruceTestCase {
 		
-	
-	@Test
-	public void CBT78() throws Exception{
+	public void CBT78(Selenium selenium) throws Exception{
 		
 		selenium.open("http://pre-cb.newshore.es/es_es/checkout/cart/");
 		selenium.waitForPageToLoad("10000");

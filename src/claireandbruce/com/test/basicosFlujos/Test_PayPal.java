@@ -32,22 +32,18 @@ public class Test_PayPal extends ClaireandbruceTestCase {
 		
 		//cbt55= new CBT55_Test_CorrectLogon_ValidUser_TuCuenta();
 		//cbtPS= new Test_CorrectAddProduct_Cart_SimpleProduct();
-		/*selenium.deleteAllVisibleCookies();
-		selenium.open("");
+		selenium.deleteAllVisibleCookies();
+		selenium.open("http://pre-cb.newshore.es");
 		selenium.waitForPageToLoad("15000");
 		
-		if (selenium.isElementPresent("xpath=//a[@id='overridelink']")){
+		/*if (selenium.isElementPresent("xpath=//a[@id='overridelink']")){
 			selenium.click("//a[@id='overridelink']");
 		}
 	
 		*/
 		if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
-			
-			//cbt55.CBT55();// Se comenta para la prueba de flujo 
-			//cbtPS.CBT_SimpleProduct();//Carga un producto simple
-			//Assert.fail("El usuario no esta autenticado");
+			CBT55_Test_CorrectLogon_ValidUser_TuCuenta.CBT55(selenium);// Se comenta para la prueba de flujo			
 		}	
-
 
 		//-----****** Verifíca que la pagina de Tu Compra esta desplegada de lo contrario la carga *****----\\
 		
@@ -61,16 +57,7 @@ public class Test_PayPal extends ClaireandbruceTestCase {
 		}		
 		
 		//------*****  Verifica que el pedido será sin factura *****-------\\
-		
-		
-		if(!("Compra ahora").equals(selenium.getTitle()))
-		{
-			selenium.click("xpath=.//*[@id='quick-access']/div[1]/div/a");
-			
-			selenium.waitForPageToLoad("15000");
-			selenium.click("xpath=html/body/div/div[3]/div[1]/div/div[6]/ul[1]/li[1]/button");
-			selenium.waitForPageToLoad("15000");			
-		}
+				
 		if(("off").equals(selenium.getValue("xpath=.//*[@id='p_method_paypal_standard']")))	{
 			selenium.click("xpath=.//*[@id='p_method_paypal_standard']");			
 		} else {
@@ -83,9 +70,7 @@ public class Test_PayPal extends ClaireandbruceTestCase {
 		}
 		selenium.click("xpath=.//*[@id='checkout-buttons-container']/button");
 		selenium.waitForPageToLoad("15000");
-		
-		
-		CBT55_Test_CorrectLogon_ValidUser_TuCuenta.CBT55(selenium);// Se comenta para la prueba de flujo 
+				
 		selenium.click("xpath=html/body/div/div[2]/div[1]/div/div/div[2]/div[2]/div[1]/a/div/div");
 		selenium.waitForPageToLoad("15000");
 		String check= selenium.getText("html/body/div[1]/div[2]/div[1]/div/div[2]/div[1]/div[2]/div/div[2]/div[1]");

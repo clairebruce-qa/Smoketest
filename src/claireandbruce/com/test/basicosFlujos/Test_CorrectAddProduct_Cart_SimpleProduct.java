@@ -33,7 +33,7 @@ public class Test_CorrectAddProduct_Cart_SimpleProduct extends ClaireandbruceTes
 			
 			if(selenium.isElementPresent("xpath=//ul[@id='nav']/li["+categoria+"]/h2/a/span/cufon/canvas")){
 
-				selenium.click("xpath=//ul[@id='nav']/li["+categoria+"]/h2/a/span/cufon/canvas");
+				selenium.click("//ul[@id='nav']/li["+categoria+"]/h2/a/span/cufon/canvas");
 				
 				//selenium.waitForPageToLoad("10000");
 				
@@ -57,6 +57,7 @@ public class Test_CorrectAddProduct_Cart_SimpleProduct extends ClaireandbruceTes
 					}
 					else{
 						selenium.click("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul["+filaArticulo+"]/li["+columnaArticulo+"]/div[3]/a");
+						selenium.waitForPageToLoad("15000");
 					}
 				
 					//selenium.waitForPageToLoad("15000");

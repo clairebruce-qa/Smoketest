@@ -15,8 +15,8 @@ public class Flujo_I extends ClaireandbruceTestCase{
 	public void test_flujo1() throws Exception {
 		CBT55_Test_CorrectLogon_ValidUser_TuCuenta.CBT55(selenium);
 		//Se añade un producto para realizar para eliminarlo posteriormente 
-		Test_CorrectAddProduct_Cart_SimpleProduct.CBT_SimpleProduct(selenium);
-		CBT24_Test_Shopping_Cart_3_Deleter_Item_Shopping_Cart.CBT24(selenium);
+		//Test_CorrectAddProduct_Cart_SimpleProduct.CBT_SimpleProduct(selenium);
+		//CBT24_Test_Shopping_Cart_3_Deleter_Item_Shopping_Cart.CBT24(selenium);
 		//Se añade un producto para realizar cambio de unidades
 		Test_CorrectAddProduct_Cart_SimpleProduct.CBT_SimpleProduct(selenium);
 		Test_ChangeUnits_OneProduct.changeUnits(selenium);

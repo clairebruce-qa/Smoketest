@@ -19,30 +19,9 @@ public class Test_ChangeUnits_OneProduct extends ClaireandbruceTestCase{
 
 	public static void changeUnits(Selenium selenium) throws Exception{
 		
-		
-		//cbt55= new CBT55_Test_CorrectLogon_ValidUser_TuCuenta();
-		//selenium.open("");
-		
-		//selenium.waitForPageToLoad("10000");
-		
-		
-		//if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
-			
-			
-			//cbt55 .CBT55();// Se comenta para la prueba de flujo 
-			//cbtPS.CBT_SimpleProduct();//Carga un producto simple
-			//Assert.fail("El usuario no esta autenticado");
-		//}
+		selenium.open("http://pre-cb.newshore.es/es_es/checkout/cart/");
+		selenium.waitForPageToLoad("15000");
 
-		if(!("Compra ahora").equals(selenium.getTitle()))
-		{
-			selenium.click("xpath=.//*[@id='quick-access']/div[1]/div/a");
-			
-			selenium.waitForPageToLoad("15000");
-			selenium.click("xpath=html/body/div/div[3]/div[1]/div/div[6]/ul[1]/li[1]/button");
-			selenium.waitForPageToLoad("20000");			
-		}
-		
 		//Se declaran variables string para separar los caracteres que pertenecen al precio sin unidad de moneda
 		String precio, precioTotal;
 		if(selenium.isElementPresent("//table[@id='shopping-cart-table']/tbody/tr[2]/td[2]/input")){
