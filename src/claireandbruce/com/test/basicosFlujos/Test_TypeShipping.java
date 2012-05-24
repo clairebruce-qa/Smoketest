@@ -16,7 +16,7 @@ import basics.ClaireandbruceTestCase;
  *   forum/#!forum/selenium-users for error details from the log window.  The error message is: Acceso denegado."
  * Pero en una segunda ejecución no presenta dicho inconveniente.
  * @author NEWSHORE
- *
+ * Especificacion en el test case C&BT-112:Test_TypeShipping 
  */
 public class Test_TypeShipping extends ClaireandbruceTestCase {
 

@@ -7,6 +7,11 @@ import lib.Helper;
 import org.junit.Test;
 import basics.ClaireandbruceTestCase;
 
+/**
+ * Especificación de la prueba en el TestCase  C&BT-110:Test_ChangeUnits_OneProduct
+ * @author NEWSHORE
+ *
+ */
 public class Test_ChangeUnits_OneProduct extends ClaireandbruceTestCase{
 
 	private CBT55_Test_CorrectLogon_ValidUser_TuCuenta cbt55;
