@@ -22,7 +22,7 @@ import basics.ClaireandbruceTestCase;
 public class Test_PayPal extends ClaireandbruceTestCase {
 
 	/**
-	 * 
+	 *  
 	 * @param nombreProducto
 	 * @throws Exception
 	 */
@@ -87,15 +87,15 @@ public class Test_PayPal extends ClaireandbruceTestCase {
 		//Se verifica si el pedido esta ingresado en el historial
 	
 		
-		selenium.open(ClaireandbruceUrl);
+		selenium.open(ClaireandbruceUrl+"/es_es/customer/account/");
 		selenium.waitForPageToLoad("30000");
 		if(selenium.isElementPresent("xpath=html/body/div/div[2]/div[1]/div/div/div[2]/div[2]/div[1]/a/div/div"))
-		{	
+		{	//Botón "VER DETALLE PEDIDO"
 			selenium.click("xpath=html/body/div/div[2]/div[1]/div/div/div[2]/div[2]/div[1]/a/div/div");
 			selenium.waitForPageToLoad("15000");
-			String check= selenium.getText("html/body/div[1]/div[2]/div[1]/div/div[2]/div[1]/div[2]/div/div[2]/div[1]");
-		
-			if(!(check).equals(selenium.isTextPresent(nombreProducto))){			
+			//Se obtiene el total del pedido
+			String check= selenium.getText("html/body/div/div[2]/div[1]/div/div[2]/div[2]/div[2]/table/tbody/tr[3]/td[2]/span");
+			if(!(check).equals(totalParaPayPal)){			
 				Assert.fail("El pedido no fue efectuado");
 			}
 		}

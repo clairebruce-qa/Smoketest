@@ -12,6 +12,9 @@ import lib.ElementNotFoundException;
 import lib.Helper;
 import lib.Claireandbruce;
 
+import claireandbruce.com.test.basicosFlujos.Test_ChangeUnits_OneProduct;
+import claireandbruce.com.test.basicosFlujos.Test_CorrectAddProduct_Cart_SimpleProduct;
+import claireandbruce.com.test.basicosFlujos.Test_TypeShipping;
 import claireandbruce.com.test.cartShopping.CBT78_Test_CorrectChangeUnits_TuCompra;
 import claireandbruce.com.test.cartShopping.CBT79_Test_CorrectAddProduct_Cart_LogonUser;
 
@@ -28,6 +31,7 @@ public class Pruebas extends ClaireandbruceTestCase {
 		
 	@Test
 	public void test_FooterMiddleNavigation_Tendencias() throws Exception{
-		CBT78_Test_CorrectChangeUnits_TuCompra.CBT78(selenium);
+		Test_CorrectAddProduct_Cart_SimpleProduct.CBT_SimpleProduct(selenium);
+		Test_TypeShipping.typeShipping(selenium);
 	}
 }

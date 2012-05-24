@@ -27,6 +27,7 @@ public class ClaireandbruceTestCase{
 	//static String  ClaireandbruceUrl	=	"http://int2-cb.newshore.es/";
 	//static String  ClaireandbruceUrl	=	"http://www.claireandbruce.com/";
 	public static String nombreProducto= System.getProperty("nombreProducto","");
+	public static String totalParaPayPal = System.getProperty("totalParaPayPal","");
 	
 	
 	/*	Selenium RC settings
