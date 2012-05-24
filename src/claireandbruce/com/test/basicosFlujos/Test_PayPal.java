@@ -5,6 +5,8 @@ import lib.Claireandbruce;
 
 import org.junit.Test;
 
+import com.thoughtworks.selenium.Selenium;
+
 import basics.ClaireandbruceTestCase;
 
 
@@ -18,17 +20,13 @@ import basics.ClaireandbruceTestCase;
  */
 public class Test_PayPal extends ClaireandbruceTestCase {
 
-	///prueba
-	private CBT55_Test_CorrectLogon_ValidUser_TuCuenta cbt55;
-	private Test_CorrectAddProduct_Cart_SimpleProduct cbtPS;
 	/**
 	 * 
 	 * @param nombreProducto
 	 * @throws Exception
 	 */
 	
-	@Test
-	public void CBT_Paypal() throws Exception{
+	public static void CBT_Paypal(Selenium selenium) throws Exception{
 	
 		// ESTO SE PONE EN COMENTARIO PARA QUE CORRA EN EL FLUJO
 		
@@ -48,9 +46,7 @@ public class Test_PayPal extends ClaireandbruceTestCase {
 			//cbt55.CBT55();// Se comenta para la prueba de flujo 
 			//cbtPS.CBT_SimpleProduct();//Carga un producto simple
 			//Assert.fail("El usuario no esta autenticado");
-		}
-		
-		
+		}	
 
 
 		//-----****** Verifíca que la pagina de Tu Compra esta desplegada de lo contrario la carga *****----\\
@@ -61,10 +57,8 @@ public class Test_PayPal extends ClaireandbruceTestCase {
 			
 			selenium.waitForPageToLoad("15000");
 			selenium.click("xpath=html/body/div/div[3]/div[1]/div/div[6]/ul[1]/li[1]/button");
-			selenium.waitForPageToLoad("20000");
-			
-		}
-		
+			selenium.waitForPageToLoad("20000");			
+		}		
 		
 		//------*****  Verifica que el pedido será sin factura *****-------\\
 		
@@ -75,40 +69,29 @@ public class Test_PayPal extends ClaireandbruceTestCase {
 			
 			selenium.waitForPageToLoad("15000");
 			selenium.click("xpath=html/body/div/div[3]/div[1]/div/div[6]/ul[1]/li[1]/button");
-			selenium.waitForPageToLoad("15000");
-			
+			selenium.waitForPageToLoad("15000");			
 		}
-		if(("off").equals(selenium.getValue("xpath=.//*[@id='p_method_paypal_standard']")))
-		{
-			selenium.click("xpath=.//*[@id='p_method_paypal_standard']");
-			
-		}
-		else
-		{
+		if(("off").equals(selenium.getValue("xpath=.//*[@id='p_method_paypal_standard']")))	{
+			selenium.click("xpath=.//*[@id='p_method_paypal_standard']");			
+		} else {
 			Assert.fail("Error:  No seleccionó el método de pago PAYPAL");
 		}
-		if(("off").equals(selenium.getValue("id=agreement-1")))
-		{
-			selenium.click("id=agreement-1");
-						
-		}
-		else
-		{
+		if(("off").equals(selenium.getValue("id=agreement-1"))) {
+			selenium.click("id=agreement-1");						
+		} else {
 			Assert.fail("Error:  Se deben aceptar los términos y condiciones y las políticas de privacidad");
 		}
 		selenium.click("xpath=.//*[@id='checkout-buttons-container']/button");
 		selenium.waitForPageToLoad("15000");
 		
 		
-		cbt55.CBT55();// Se comenta para la prueba de flujo 
+		//cbt55.CBT55(selenium);// Se comenta para la prueba de flujo 
 		selenium.click("xpath=html/body/div/div[2]/div[1]/div/div/div[2]/div[2]/div[1]/a/div/div");
 		selenium.waitForPageToLoad("15000");
 		String check= selenium.getText("html/body/div[1]/div[2]/div[1]/div/div[2]/div[1]/div[2]/div/div[2]/div[1]");
-		if(!(check).equals(selenium.isTextPresent(nombreProducto))){
-			
-			
-			
-		Assert.fail("El pedido no fue efectuado");
+		
+		if(!(check).equals(selenium.isTextPresent(nombreProducto))){			
+			Assert.fail("El pedido no fue efectuado");
 		}
 		
 		

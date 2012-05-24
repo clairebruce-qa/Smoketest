@@ -4,6 +4,9 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.After;
 import org.junit.Test;
+
+import com.thoughtworks.selenium.Selenium;
+
 import junit.framework.Assert;
 import lib.*;
 import basics.ClaireandbruceTestCase;
@@ -18,8 +21,7 @@ import basics.ClaireandbruceTestCase;
  */
 public class CBT55_Test_CorrectLogon_ValidUser_TuCuenta extends ClaireandbruceTestCase {
 
-	@Test
-	public void CBT55() throws Exception {
+	public static void CBT55(Selenium selenium) throws Exception {
 		String mensaje = null;
 		
 		// Elimina las cookies
@@ -48,12 +50,10 @@ public class CBT55_Test_CorrectLogon_ValidUser_TuCuenta extends ClaireandbruceTe
 			Helper.log("Open Homepage");
 			
 			//Si no esta presente el formulario para ingresar los datos de usuario
-			if(!selenium.isElementPresent("xpath=.//*[@id='login-form']/div")) {
-					
+			if(!selenium.isElementPresent("xpath=.//*[@id='login-form']/div")) {			
 				
 				selenium.click("//a[contains(text(), 'Tu cuenta')]");
-				selenium.waitForPageToLoad("30000");
-			
+				selenium.waitForPageToLoad("30000");			
 			}
 			
 			//Formulario para autenticar usuario
@@ -62,8 +62,7 @@ public class CBT55_Test_CorrectLogon_ValidUser_TuCuenta extends ClaireandbruceTe
 			selenium.click("//button[contains(@id,'send2')]");	
 			selenium.waitForPageToLoad("35000");
 			
-			if (!selenium.isElementPresent( "class=validation-advice")){
-		
+			if (!selenium.isElementPresent( "class=validation-advice")){		
 				if (selenium.isTextPresent("Salir")){
 					message = "loginOk";
 				}else if (selenium.isElementPresent("//div[@id='error-message-login']")){

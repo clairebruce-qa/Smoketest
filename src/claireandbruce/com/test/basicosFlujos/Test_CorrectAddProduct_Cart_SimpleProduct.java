@@ -5,6 +5,8 @@ import lib.Helper;
 
 import org.junit.Test;
 
+import com.thoughtworks.selenium.Selenium;
+
 import basics.ClaireandbruceTestCase;
 
 /**
@@ -14,12 +16,10 @@ import basics.ClaireandbruceTestCase;
  */
 public class Test_CorrectAddProduct_Cart_SimpleProduct extends ClaireandbruceTestCase {
 
-	
-	@Test
-	public void CBT_SimpleProduct() {
+	public static void CBT_SimpleProduct(Selenium selenium) {
 		
 		//Para efecto de la prueba
-		selenium.open("");
+		selenium.open("http://pre-cb.newshore.es");
 		selenium.waitForPageToLoad("30000");
 		
 		//Se selecciona una categoría entre Bolsos y Accesorios (Categorías que poseen productos simples)
@@ -31,9 +31,10 @@ public class Test_CorrectAddProduct_Cart_SimpleProduct extends ClaireandbruceTes
 			int categoria = (int) (Math.random()*(4-3+1))+3;
 			Helper.log("Categoría "+categoria);
 			
-			if(selenium.isElementPresent("xpath=.//*[@id='nav']/li["+categoria+"]/h2/a/span/cufon/canvas")){
+			if(selenium.isElementPresent("xpath=//ul[@id='nav']/li["+categoria+"]/h2/a/span/cufon/canvas")){
 
-				selenium.click("xpath=.//*[@id='nav']/li["+categoria+"]/h2/a/span/cufon/canvas");
+				selenium.click("xpath=//ul[@id='nav']/li["+categoria+"]/h2/a/span/cufon/canvas");
+				
 				//selenium.waitForPageToLoad("10000");
 				
 				//Selecciona una subcategoría

@@ -5,6 +5,9 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.After;
 import org.junit.Test;
+
+import com.thoughtworks.selenium.Selenium;
+
 import junit.framework.Assert;
 import basics.ClaireandbruceTestCase;
 /**
@@ -23,7 +26,7 @@ import basics.ClaireandbruceTestCase;
  */
 public class CBT24_Test_Shopping_Cart_3_Deleter_Item_Shopping_Cart extends ClaireandbruceTestCase {
 	
-	public void CBT24() throws Exception
+	public static void CBT24(Selenium selenium) throws Exception
 	{		
 		//----------***** SE DESPLIEGA LA VENTANA *****---------------------\\
 				

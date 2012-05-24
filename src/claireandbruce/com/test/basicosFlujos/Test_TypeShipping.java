@@ -5,6 +5,9 @@ import java.text.DecimalFormat;
 import junit.framework.Assert;
 import lib.Helper;
 import org.junit.Test;
+
+import com.thoughtworks.selenium.Selenium;
+
 import basics.ClaireandbruceTestCase;
 
 /**
@@ -20,8 +23,7 @@ import basics.ClaireandbruceTestCase;
  */
 public class Test_TypeShipping extends ClaireandbruceTestCase {
 
-	@Test
-	public void typeShipping(){
+	public static void typeShipping(Selenium selenium){
 		
 		//Para efectos de la prueba unitaria
 		selenium.open("http://pre-cb.newshore.es/es_es/checkout/cart/");

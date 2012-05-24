@@ -5,6 +5,9 @@ import java.text.DecimalFormat;
 import junit.framework.Assert;
 import lib.Helper;
 import org.junit.Test;
+
+import com.thoughtworks.selenium.Selenium;
+
 import basics.ClaireandbruceTestCase;
 
 /**
@@ -14,10 +17,7 @@ import basics.ClaireandbruceTestCase;
  */
 public class Test_ChangeUnits_OneProduct extends ClaireandbruceTestCase{
 
-	private CBT55_Test_CorrectLogon_ValidUser_TuCuenta cbt55;
-
-	@Test
-	public void changeUnits() throws Exception{
+	public static void changeUnits(Selenium selenium) throws Exception{
 		
 		
 		//cbt55= new CBT55_Test_CorrectLogon_ValidUser_TuCuenta();
@@ -40,8 +40,7 @@ public class Test_ChangeUnits_OneProduct extends ClaireandbruceTestCase{
 			
 			selenium.waitForPageToLoad("15000");
 			selenium.click("xpath=html/body/div/div[3]/div[1]/div/div[6]/ul[1]/li[1]/button");
-			selenium.waitForPageToLoad("20000");
-			
+			selenium.waitForPageToLoad("20000");			
 		}
 		
 		//Se declaran variables string para separar los caracteres que pertenecen al precio sin unidad de moneda
