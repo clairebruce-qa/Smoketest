@@ -80,20 +80,17 @@ public class Test_PayPal extends ClaireandbruceTestCase {
 		}
 		
 		
-		/*
-		
+		/*		
 		selenium.click("xpath=.//*[@id='main']/div/p[2]/strong/a");
 		selenium.click("xpath=.//*[@id='loadLogin']");
 		selenium.type("xpath=.//*[@id='login_email']", "qualit_1337780842_per@privalia.com");
 		selenium.type("xpath=.//*[@id='login_password']", "337780714");
-		selenium.click("xpath=.//*[@id='nav-menu']/form/ul[1]/li/ul/li[6]/input");
-	
+		selenium.click("xpath=.//*[@id='nav-menu']/form/ul[1]/li/ul/li[6]/input");	
 	
 		if(selenium.isTextPresent("The email address or password you have entered does not match our records. Please try again."))
 		{
 			Assert.fail("Error:  NO AUTENTICO EL USUARIO DE PAYPAL");
 		}
-		*/
-		
+		*/		
 	}
 }

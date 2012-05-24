@@ -27,7 +27,7 @@ public class Test_TypeShipping extends ClaireandbruceTestCase {
 		
 		//Para efectos de la prueba unitaria
 		selenium.open("http://pre-cb.newshore.es/es_es/checkout/cart/");
-		selenium.waitForPageToLoad("15000");
+		selenium.waitForPageToLoad("20000");
 		//Test_CorrectAddProduct_Cart_SimpleProduct test = new Test_CorrectAddProduct_Cart_SimpleProduct();
 		
 		//Se verifica que el carrito no este vacío
@@ -85,6 +85,7 @@ public class Test_TypeShipping extends ClaireandbruceTestCase {
 				Helper.log("TIPO DE ENVÍO EXPRESS");
 				//Clic en tipo de envío Express
 				selenium.click("xpath=.//*[@id='s_method_tablerate_bestway']");
+				
 				//Se obtiene el valor de este tipo de envío
 				auxString = selenium.getText("//dd[2]/ul/li/div/div/span");				
 				//Se eliminan comas presentes, cambian por puntos para realizar los cálculos necesarios del valor de envío express
@@ -140,10 +141,8 @@ public class Test_TypeShipping extends ClaireandbruceTestCase {
 				Helper.log("KO. TOTAL: "+auxString+" TOTAL ESPERADO: "+precioTotalCalculado);
 				Helper.log("KO. VALOR PEDIDO "+subtotal+" + GASTOS DE ENVÍO "+valorEnvio+" = VALOR PEDIDO CON GASTOS DE ENVÍO "+precioTotalCalculado);
 				Assert.fail("TOTAL NO PRESENTE");
-			}
-			
-		} else {
-			
+			}			
+		} else {			
 			Assert.fail("CARRITO DE COMPRAS VACÍO");
 		}
 	}

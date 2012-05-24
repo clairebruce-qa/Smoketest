@@ -35,7 +35,7 @@ public class Test_CorrectAddProduct_Cart_SimpleProduct extends ClaireandbruceTes
 
 				selenium.click("//ul[@id='nav']/li["+categoria+"]/h2/a/span/cufon/canvas");
 				
-				//selenium.waitForPageToLoad("10000");
+				selenium.waitForPageToLoad("10000");
 				
 				//Selecciona una subcategoría
 				int subcategoria =  (int)(Math.random()*(7))+1; 
@@ -57,7 +57,7 @@ public class Test_CorrectAddProduct_Cart_SimpleProduct extends ClaireandbruceTes
 					}
 					else{
 						selenium.click("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul["+filaArticulo+"]/li["+columnaArticulo+"]/div[3]/a");
-						selenium.waitForPageToLoad("15000");
+					//	selenium.waitForPageToLoad("20000");
 					}
 				
 					//selenium.waitForPageToLoad("15000");
