@@ -1,0 +1,103 @@
+package claireandbruce.com.test.basicsFlows;
+
+import static org.junit.Assert.assertTrue;
+import lib.Helper;
+import com.thoughtworks.selenium.Selenium;
+import basics.ClaireandbruceTestCase;
+
+/**
+ * Se automatiza el añadir un producto simple a la cesta.
+ * @author MARIA FERNANDA RODRIGUEZ
+ *
+ */
+public class Test_CorrectAddProduct_Cart_ConfigurableProduct extends ClaireandbruceTestCase {
+
+	public static String CBT_ConfigurableProduct(Selenium selenium) throws Exception {
+		
+		int categoria = (int) (Math.random()*(4-1+1))+1;
+		//Para efecto de la prueba
+		selenium.open(ClaireandbruceUrl);
+		selenium.waitForPageToLoad("30000");
+		
+		//Se verifica que el carrito este vacio 
+		while(!selenium.isTextPresent("0 artículos 0 €")){
+			
+			//Remover  todos los artículos mientras el carrito no este vacío
+			selenium.click("id=cartHeader");
+			selenium.click("class=btn-remove");
+			assertTrue(selenium.getConfirmation().matches("¿Está seguro de que desea eliminar este artículo de la cesta de la compra[\\s\\S]$"));
+			selenium.waitForPageToLoad("10000");
+		}
+		
+		
+		//Se selecciona una categoría entre Bolsos, Zapatos y Accesorios (Categorías que poseen productos configurables )
+		
+		
+		//Haga mientras encuentre el menú de selección de talla (producto configurable)
+		do {
+
+			
+			Helper.log("Categoría "+categoria);
+			
+			if(selenium.isElementPresent("xpath=//ul[@id='nav']/li["+categoria+"]/h2/a/span/cufon/canvas")){
+
+				selenium.click("//ul[@id='nav']/li["+categoria+"]/h2/a/span/cufon/canvas");
+				
+				selenium.waitForPageToLoad("30000");
+				
+				//Selecciona una subcategoría
+				int subcategoria =  (int)(Math.random()*(7))+1; 
+				Helper.log("Categoría actual: "+selenium.getTitle());
+				Helper.log("Subcategoria "+subcategoria);
+				if(selenium.isElementPresent("xpath=html/body/div/div[3]/div[2]/div[2]/div[1]/a["+subcategoria+"]/div/div")){
+										
+					selenium.click("xpath=html/body/div/div[3]/div[2]/div[2]/div[1]/a["+subcategoria+"]/div/div");
+					selenium.waitForPageToLoad("30000");					
+						
+					//Se selecciona uno de los artículos de ésta subcategoría
+					int columnaArticulo = (int)(Math.random()*(3))+1;
+					int filaArticulo = (int)(Math.random()*(2))+1;
+					Helper.log("Subcategoría actual: "+selenium.getTitle());
+					Helper.log("Producto: "+columnaArticulo+" en la fila: "+filaArticulo);
+					nombreProducto = selenium.getText("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul["+filaArticulo+"]/li["+columnaArticulo+"]/div[3]/a");
+					if(!selenium.isElementPresent("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul["+filaArticulo+"]/li["+columnaArticulo+"]/div[3]/a")){
+						Helper.log("no se encontro el nombre del producto");
+					}
+					else{
+						selenium.click("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul["+filaArticulo+"]/li["+columnaArticulo+"]/div[3]/a");
+
+					//	selenium.waitForPageToLoad("20000");
+
+						selenium.waitForPageToLoad("40000");
+
+					}
+				
+					//selenium.waitForPageToLoad("15000");
+					Helper.log("Producto actual: "+selenium.getTitle());						
+				}
+				
+			} 
+		} while(!selenium.isElementPresent("class=selreplace_select") || !selenium.isElementPresent("xpath=//div[10]/div/button") );
+		
+		if(selenium.isElementPresent("class=selreplace_select"))
+		{
+			//Click sobre combo seleccionar una talla
+			selenium.click("//div[contains(@class, 'selreplace_selectinner')]");
+				
+			int i =(int)(Math.random()*(4-2))+2;
+				
+			if(selenium.isElementPresent("xpath=/html/body/div/div[3]/div/div/form/div[3]/div[3]/div/div[9]/div[4]/div/div/div["+i+"]"))
+			{//Se selecciona la primera talla encontrada del producto y se verifica que se seleccionó correctamente		
+				Helper.clickAndVerify(selenium, "xpath=/html/body/div/div[3]/div/div/form/div[3]/div[3]/div/div[9]/div[4]/div/div/div["+i+"]",selenium.getText("xpath=/html/body/div/div[3]/div/div/form/div[3]/div[3]/div/div[9]/div[4]/div/div/div["+i+"]") , "//div[contains(@class, 'selreplace_selectinner')]");}
+			else{
+					Helper.clickAndVerify(selenium, "class=selreplace_option",selenium.getText("//div[contains(@class, 'selreplace_option')]") , "xpath=.//*[@id='product_addtocart_form']/div[3]/div[3]/div/div[9]/div[3]/div/div[1]");
+				}
+				
+			//Clic en botón "AÑADIR A LA CESTA"
+
+			selenium.click("xpath=//div[10]/div/button");
+			Helper.log(nombreProducto);
+		} 
+		return nombreProducto;
+	}	
+}
