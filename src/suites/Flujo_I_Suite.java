@@ -7,11 +7,11 @@ import claireandbruce.com.test.basicsFlows.CBT55_Test_CorrectLogon_ValidUser_TuC
 import claireandbruce.com.test.basicsFlows.Test_Address_Exist;
 import claireandbruce.com.test.basicsFlows.Test_ChangeUnits_OneProduct;
 import claireandbruce.com.test.basicsFlows.Test_CorrectAddProduct_Cart_SimpleProduct;
-import claireandbruce.com.test.basicsFlows.Test_Flujo_I;
 
 import claireandbruce.com.test.basicsFlows.Test_PayPal;
 import claireandbruce.com.test.basicsFlows.Test_TypeShipping;
 import claireandbruce.com.test.basicsFlows.Test_Without_Purchase;
+import claireandbruce.com.test.flows.Test_Flujo_I;
 
 /**
  * Flujo I login +  producto simple + con direccion + sin factura+ Pagado con Paypal

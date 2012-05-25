@@ -10,9 +10,7 @@ import lib.Helper;
 import basics.ClaireandbruceTestCase;
 
 /** 
- * Esta clase verifica que exista al menos una dirección guardada por defecto 
- * 
- * 
+ * Esta clase verifica que exista al menos una dirección guardada por defecto  
  * @author Yuliana María Saavedra Russí
  * 
  * */
@@ -34,22 +32,18 @@ public class Test_Address_Exist extends ClaireandbruceTestCase {
 		selenium.click("//a[@id='overridelink']");
 	}
 */
-	
-		//selenium.open(ClaireandbruceUrl);
-
-		//if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
-			//CBT55_Test_CorrectLogon_ValidUser_TuCuenta.CBT55(selenium);// Se comenta para la prueba de flujo			
-	//	}	
-	
 	//-----****** Verifíca que la pagina de Tu Compra esta desplegada de lo contrario la carga *****----\\
 	
-	if(!("Compra ahora").equals(selenium.getTitle()))
-	{
-		selenium.click("//a[contains(text(),'Compra ahora')]");
-		
+	if(!("Compra ahora").equals(selenium.getTitle())) {		
+		if(selenium.isElementPresent("xpath=//ol[@id='mini-cart']/li/div/button")){
+			selenium.click("xpath=//ol[@id='mini-cart']/li/div/button");
+			selenium.waitForPageToLoad("30000");
+		} else {
+			selenium.click("xpath=//div/div/div/a");
+			selenium.waitForPageToLoad("30000");
+		}
+		selenium.click("xpath=(//button[@type='button'])[3]");
 		selenium.waitForPageToLoad("20000");
-		selenium.click("xpath=html/body/div/div[3]/div[1]/div/div[6]/ul[1]/li[1]/button");
-		selenium.waitForPageToLoad("15000");		
 	}
 		
 	//------***** Verifica que exista al menos una dirección ****------\\

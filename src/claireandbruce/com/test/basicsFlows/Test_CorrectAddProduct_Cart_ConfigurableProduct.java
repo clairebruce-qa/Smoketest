@@ -1,13 +1,8 @@
 package claireandbruce.com.test.basicsFlows;
 
 import static org.junit.Assert.assertTrue;
-import junit.framework.Assert;
 import lib.Helper;
-
-import org.junit.Test;
-
 import com.thoughtworks.selenium.Selenium;
-
 import basics.ClaireandbruceTestCase;
 
 /**
@@ -15,10 +10,11 @@ import basics.ClaireandbruceTestCase;
  * @author MARIA FERNANDA RODRIGUEZ
  *
  */
-public class Test_CorrectAddProduct_Cart_SimpleProduct extends ClaireandbruceTestCase {
+public class Test_CorrectAddProduct_Cart_ConfigurableProduct extends ClaireandbruceTestCase {
 
-	public static String CBT_SimpleProduct(Selenium selenium) {
+	public static String CBT_ConfigurableProduct(Selenium selenium) throws Exception {
 		
+		int categoria = (int) (Math.random()*(4-1+1))+1;
 		//Para efecto de la prueba
 		selenium.open(ClaireandbruceUrl);
 		selenium.waitForPageToLoad("30000");
@@ -34,24 +30,20 @@ public class Test_CorrectAddProduct_Cart_SimpleProduct extends ClaireandbruceTes
 		}
 		
 		
-		//Se selecciona una categoría entre Bolsos y Accesorios (Categorías que poseen productos simples)
+		//Se selecciona una categoría entre Bolsos, Zapatos y Accesorios (Categorías que poseen productos configurables )
 		
 		
 		//Haga mientras encuentre el menú de selección de talla (producto configurable)
 		do {
 
-			int categoria = (int) (Math.random()*(4-3+1))+3;
+			
 			Helper.log("Categoría "+categoria);
 			
 			if(selenium.isElementPresent("xpath=//ul[@id='nav']/li["+categoria+"]/h2/a/span/cufon/canvas")){
 
 				selenium.click("//ul[@id='nav']/li["+categoria+"]/h2/a/span/cufon/canvas");
 				
-<<<<<<< HEAD
-				selenium.waitForPageToLoad("15000");
-=======
 				selenium.waitForPageToLoad("30000");
->>>>>>> remotes/origin/master
 				
 				//Selecciona una subcategoría
 				int subcategoria =  (int)(Math.random()*(7))+1; 
@@ -76,11 +68,7 @@ public class Test_CorrectAddProduct_Cart_SimpleProduct extends ClaireandbruceTes
 
 					//	selenium.waitForPageToLoad("20000");
 
-<<<<<<< HEAD
-						selenium.waitForPageToLoad("50000");
-=======
-						selenium.waitForPageToLoad("38000");
->>>>>>> remotes/origin/master
+						selenium.waitForPageToLoad("40000");
 
 					}
 				
@@ -89,12 +77,25 @@ public class Test_CorrectAddProduct_Cart_SimpleProduct extends ClaireandbruceTes
 				}
 				
 			} 
-		} while(selenium.isElementPresent("class=selreplace_select") || !selenium.isElementPresent("xpath=//div[7]/div/button") );
+		} while(!selenium.isElementPresent("class=selreplace_select") || !selenium.isElementPresent("xpath=//div[10]/div/button") );
 		
-		if(!selenium.isElementPresent("class=selreplace_select")){
+		if(selenium.isElementPresent("class=selreplace_select"))
+		{
+			//Click sobre combo seleccionar una talla
+			selenium.click("//div[contains(@class, 'selreplace_selectinner')]");
+				
+			int i =(int)(Math.random()*(4-2))+2;
+				
+			if(selenium.isElementPresent("xpath=/html/body/div/div[3]/div/div/form/div[3]/div[3]/div/div[9]/div[4]/div/div/div["+i+"]"))
+			{//Se selecciona la primera talla encontrada del producto y se verifica que se seleccionó correctamente		
+				Helper.clickAndVerify(selenium, "xpath=/html/body/div/div[3]/div/div/form/div[3]/div[3]/div/div[9]/div[4]/div/div/div["+i+"]",selenium.getText("xpath=/html/body/div/div[3]/div/div/form/div[3]/div[3]/div/div[9]/div[4]/div/div/div["+i+"]") , "//div[contains(@class, 'selreplace_selectinner')]");}
+			else{
+					Helper.clickAndVerify(selenium, "class=selreplace_option",selenium.getText("//div[contains(@class, 'selreplace_option')]") , "xpath=.//*[@id='product_addtocart_form']/div[3]/div[3]/div/div[9]/div[3]/div/div[1]");
+				}
+				
 			//Clic en botón "AÑADIR A LA CESTA"
 
-			selenium.click("xpath=//div[7]/div/button");
+			selenium.click("xpath=//div[10]/div/button");
 			Helper.log(nombreProducto);
 		} 
 		return nombreProducto;

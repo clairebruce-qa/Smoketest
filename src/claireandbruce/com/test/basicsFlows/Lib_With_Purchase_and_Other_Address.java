@@ -10,8 +10,15 @@ public class Lib_With_Purchase_and_Other_Address extends ClaireandbruceTestCase 
 	public static void with_Purchase_and_Other_Address (Selenium selenium){
 		
 		//Para efectos de prueba unitaria
-		selenium.open(ClaireandbruceUrl+"/es_es/aitcheckout/checkout/index/");
-		selenium.waitForPageToLoad("15000");
+		/*if(!("Compra ahora").equals(selenium.getTitle())) {		
+			if(selenium.isElementPresent("xpath=//ol[@id='mini-cart']/li/div/button")){
+				selenium.click("xpath=//ol[@id='mini-cart']/li/div/button");
+				selenium.waitForPageToLoad("20000");
+			} else {
+				selenium.click("xpath=//div/div/div/a");
+				selenium.waitForPageToLoad("20000");
+			}
+		}*/
 		//Se verifica que se encuentre seleccionado "Necesito una factura" 
 		if(selenium.getValue("id=showFakeBilling").equals("off")){
 			selenium.click("id=showFakeBilling");

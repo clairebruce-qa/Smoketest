@@ -1,4 +1,4 @@
-package claireandbruce.com.test.flujo1;
+package claireandbruce.com.test.cartShopping;
 
 import static org.junit.Assert.assertTrue;
 
