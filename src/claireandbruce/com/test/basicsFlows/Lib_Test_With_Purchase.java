@@ -5,7 +5,11 @@ import com.thoughtworks.selenium.Selenium;
 import basics.ClaireandbruceTestCase;
 
 
-
+/**
+ * 
+ * @author NEWSHORE
+ *
+ */
 
 
 public class Lib_Test_With_Purchase  extends ClaireandbruceTestCase{
