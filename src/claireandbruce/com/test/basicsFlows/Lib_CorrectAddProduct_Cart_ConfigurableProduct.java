@@ -10,7 +10,7 @@ import basics.ClaireandbruceTestCase;
  * @author MARIA FERNANDA RODRIGUEZ
  *
  */
-public class Test_CorrectAddProduct_Cart_ConfigurableProduct extends ClaireandbruceTestCase {
+public class Lib_CorrectAddProduct_Cart_ConfigurableProduct extends ClaireandbruceTestCase {
 
 	public static String CBT_ConfigurableProduct(Selenium selenium) throws Exception {
 		
@@ -34,9 +34,7 @@ public class Test_CorrectAddProduct_Cart_ConfigurableProduct extends Claireandbr
 		
 		
 		//Haga mientras encuentre el menú de selección de talla (producto configurable)
-		do {
-
-			
+		do {			
 			Helper.log("Categoría "+categoria);
 			
 			if(selenium.isElementPresent("xpath=//ul[@id='nav']/li["+categoria+"]/h2/a/span/cufon/canvas")){
@@ -66,16 +64,12 @@ public class Test_CorrectAddProduct_Cart_ConfigurableProduct extends Claireandbr
 					else{
 						selenium.click("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul["+filaArticulo+"]/li["+columnaArticulo+"]/div[3]/a");
 
-					//	selenium.waitForPageToLoad("20000");
-
 						selenium.waitForPageToLoad("40000");
-
 					}
 				
 					//selenium.waitForPageToLoad("15000");
 					Helper.log("Producto actual: "+selenium.getTitle());						
-				}
-				
+				}				
 			} 
 		} while(!selenium.isElementPresent("class=selreplace_select") || !selenium.isElementPresent("xpath=//div[10]/div/button") );
 		
@@ -97,6 +91,15 @@ public class Test_CorrectAddProduct_Cart_ConfigurableProduct extends Claireandbr
 
 			selenium.click("xpath=//div[10]/div/button");
 			Helper.log(nombreProducto);
+			String texto ="";
+			//Se comprueba con el precio del producto que este ha sido agregado
+			if(selenium.isElementPresent("class=special-price")) {
+				texto = selenium.getText("class=special-price");
+			} else {
+				texto = selenium.getText("class=price");
+			}
+			
+			Helper.clickAndVerify(selenium, "id=cartHeader", texto, "class=price");
 		} 
 		return nombreProducto;
 	}	

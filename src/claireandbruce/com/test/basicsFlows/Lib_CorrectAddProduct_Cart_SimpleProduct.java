@@ -15,9 +15,9 @@ import basics.ClaireandbruceTestCase;
  * @author MARIA FERNANDA RODRIGUEZ
  *
  */
-public class Test_CorrectAddProduct_Cart_SimpleProduct extends ClaireandbruceTestCase {
+public class Lib_CorrectAddProduct_Cart_SimpleProduct extends ClaireandbruceTestCase {
 
-	public static String CBT_SimpleProduct(Selenium selenium) {
+	public static String CBT_SimpleProduct(Selenium selenium) throws Exception {
 		
 		//Para efecto de la prueba
 		selenium.open(ClaireandbruceUrl);
@@ -31,12 +31,9 @@ public class Test_CorrectAddProduct_Cart_SimpleProduct extends ClaireandbruceTes
 			selenium.click("class=btn-remove");
 			assertTrue(selenium.getConfirmation().matches("¿Está seguro de que desea eliminar este artículo de la cesta de la compra[\\s\\S]$"));
 			selenium.waitForPageToLoad("10000");
-		}
+		}		
 		
-		
-		//Se selecciona una categoría entre Bolsos y Accesorios (Categorías que poseen productos simples)
-		
-		
+		//Se selecciona una categoría entre Bolsos y Accesorios (Categorías que poseen productos simples)		
 		//Haga mientras encuentre el menú de selección de talla (producto configurable)
 		do {
 
@@ -45,13 +42,10 @@ public class Test_CorrectAddProduct_Cart_SimpleProduct extends ClaireandbruceTes
 			
 			if(selenium.isElementPresent("xpath=//ul[@id='nav']/li["+categoria+"]/h2/a/span/cufon/canvas")){
 
-				selenium.click("//ul[@id='nav']/li["+categoria+"]/h2/a/span/cufon/canvas");
-				
-<<<<<<< HEAD
-				selenium.waitForPageToLoad("15000");
-=======
+				selenium.click("//ul[@id='nav']/li["+categoria+"]/h2/a/span/cufon/canvas");				
+
 				selenium.waitForPageToLoad("30000");
->>>>>>> remotes/origin/master
+
 				
 				//Selecciona una subcategoría
 				int subcategoria =  (int)(Math.random()*(7))+1; 
@@ -74,20 +68,10 @@ public class Test_CorrectAddProduct_Cart_SimpleProduct extends ClaireandbruceTes
 					else{
 						selenium.click("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul["+filaArticulo+"]/li["+columnaArticulo+"]/div[3]/a");
 
-					//	selenium.waitForPageToLoad("20000");
-
-<<<<<<< HEAD
 						selenium.waitForPageToLoad("50000");
-=======
-						selenium.waitForPageToLoad("38000");
->>>>>>> remotes/origin/master
-
 					}
-				
-					//selenium.waitForPageToLoad("15000");
 					Helper.log("Producto actual: "+selenium.getTitle());						
-				}
-				
+				}				
 			} 
 		} while(selenium.isElementPresent("class=selreplace_select") || !selenium.isElementPresent("xpath=//div[7]/div/button") );
 		
@@ -96,6 +80,15 @@ public class Test_CorrectAddProduct_Cart_SimpleProduct extends ClaireandbruceTes
 
 			selenium.click("xpath=//div[7]/div/button");
 			Helper.log(nombreProducto);
+			String texto ="";
+			//Se comprueba con el precio del producto que este ha sido agregado
+			if(selenium.isElementPresent("class=special-price")) {
+				texto = selenium.getText("class=special-price");
+			} else {
+				texto = selenium.getText("class=price");
+			}
+			
+			Helper.clickAndVerify(selenium, "id=cartHeader", texto, "class=price");
 		} 
 		return nombreProducto;
 	}	

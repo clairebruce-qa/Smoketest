@@ -17,7 +17,7 @@ import basics.ClaireandbruceTestCase;
  * @author YULIANA MARÍA SAAVEDRA RUSSÍ
  *
  */
-public class Test_Without_Purchase extends ClaireandbruceTestCase {
+public class Lib_Without_Purchase extends ClaireandbruceTestCase {
 	
 	public static void CBT_WPurchase(Selenium selenium) throws Exception{
 	

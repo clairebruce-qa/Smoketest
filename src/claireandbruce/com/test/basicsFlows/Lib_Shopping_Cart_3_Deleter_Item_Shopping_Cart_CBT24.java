@@ -24,7 +24,7 @@ import basics.ClaireandbruceTestCase;
  * @author Yuliana Maria Saavedra Russi
  *
  */
-public class Test_Shopping_Cart_3_Deleter_Item_Shopping_Cart_CBT24 extends ClaireandbruceTestCase {
+public class Lib_Shopping_Cart_3_Deleter_Item_Shopping_Cart_CBT24 extends ClaireandbruceTestCase {
 	
 	public static void CBT24(Selenium selenium) throws Exception
 	{		

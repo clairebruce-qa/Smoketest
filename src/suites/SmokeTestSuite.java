@@ -4,7 +4,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 import claireandbruce.com.test.account.*;
-import claireandbruce.com.test.basicsFlows.CBT55_Test_CorrectLogon_ValidUser_TuCuenta;
+import claireandbruce.com.test.basicsFlows.Lib_CorrectLogon_ValidUser_Accout;
 import claireandbruce.com.test.cartShopping.*;
 import claireandbruce.com.test.catalog.*;
 import claireandbruce.com.test.login.*;
@@ -38,7 +38,7 @@ import claireandbruce.com.test.register.*;
 	CBT42_Test_Home_Page_Navegability_7_Navigability_Menu_Languaje.class,
 	CBT48_Test_Shoppin_Cart_11_User_Login_Purchase_with_Invoice_whit_other_Address_Empty_Fields.class,
 	CBT49_Test_IncidentsPurchaseorders_1_ViewOrderhistory.class,
-	CBT55_Test_CorrectLogon_ValidUser_TuCuenta.class,
+	Lib_CorrectLogon_ValidUser_Accout.class,
 	CBT71_Test_CorrectLogon_ValidUser_Checkout.class,
 	CBT76_Test_CorrectAddProduct_Cart_NoLoginUser.class,
 	CBT78_Test_CorrectChangeUnits_TuCompra.class,

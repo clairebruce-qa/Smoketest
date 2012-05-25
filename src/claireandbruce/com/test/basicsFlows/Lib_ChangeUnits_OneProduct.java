@@ -15,7 +15,7 @@ import basics.ClaireandbruceTestCase;
  * @author NEWSHORE
  *
  */
-public class Test_ChangeUnits_OneProduct extends ClaireandbruceTestCase{
+public class Lib_ChangeUnits_OneProduct extends ClaireandbruceTestCase{
 
 	public static void changeUnits(Selenium selenium) throws Exception{
 		

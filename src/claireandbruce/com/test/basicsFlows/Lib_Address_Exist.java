@@ -14,7 +14,7 @@ import basics.ClaireandbruceTestCase;
  * @author Yuliana María Saavedra Russí
  * 
  * */
-public class Test_Address_Exist extends ClaireandbruceTestCase {
+public class Lib_Address_Exist extends ClaireandbruceTestCase {
 	
 	/**
 	 * 

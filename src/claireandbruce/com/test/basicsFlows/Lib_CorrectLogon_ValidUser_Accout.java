@@ -19,7 +19,7 @@ import basics.ClaireandbruceTestCase;
  * @author MARIA FERNANDA RODRIGUEZ VARGAS
  *
  */
-public class CBT55_Test_CorrectLogon_ValidUser_TuCuenta extends ClaireandbruceTestCase {
+public class Lib_CorrectLogon_ValidUser_Accout extends ClaireandbruceTestCase {
 
 	public static void CBT55(Selenium selenium) throws Exception {
 		String mensaje = null;

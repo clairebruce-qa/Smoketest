@@ -21,7 +21,7 @@ import basics.ClaireandbruceTestCase;
  * @author NEWSHORE
  * Especificacion en el test case C&BT-112:Test_TypeShipping 
  */
-public class Test_TypeShipping extends ClaireandbruceTestCase {
+public class Lib_TypeShipping extends ClaireandbruceTestCase {
 
 	public static void typeShipping(Selenium selenium){
 		
