@@ -1,4 +1,4 @@
-package claireandbruce.com.test.flujo1;
+package claireandbruce.com.test.flows;
 
 import org.junit.Test;
 
