@@ -60,7 +60,7 @@ public class CBT55_Test_CorrectLogon_ValidUser_TuCuenta extends ClaireandbruceTe
 			selenium.type("xpath=.//*[@id='email']", username);
 			selenium.type("xpath=.//*[@id='pass']", password);		
 			selenium.click("//button[contains(@id,'send2')]");	
-			selenium.waitForPageToLoad("35000");
+			selenium.waitForPageToLoad("38000");
 			
 			if (!selenium.isElementPresent( "class=validation-advice")){		
 				if (selenium.isTextPresent("Salir")){
