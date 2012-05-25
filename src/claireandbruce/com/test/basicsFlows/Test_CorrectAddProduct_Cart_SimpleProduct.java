@@ -47,7 +47,7 @@ public class Test_CorrectAddProduct_Cart_SimpleProduct extends ClaireandbruceTes
 
 				selenium.click("//ul[@id='nav']/li["+categoria+"]/h2/a/span/cufon/canvas");
 				
-				selenium.waitForPageToLoad("10000");
+				selenium.waitForPageToLoad("30000");
 				
 				//Selecciona una subcategoría
 				int subcategoria =  (int)(Math.random()*(7))+1; 
