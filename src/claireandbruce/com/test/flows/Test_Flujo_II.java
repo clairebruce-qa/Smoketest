@@ -40,25 +40,25 @@ public class Test_Flujo_II extends ClaireandbruceTestCase {
 		Test_CorrectAddProduct_Cart_SimpleProduct.CBT_SimpleProduct(selenium);
 		
 		// Se Elimina el producto
-		//Test_Shopping_Cart_3_Deleter_Item_Shopping_Cart_CBT24.CBT24(selenium);
+		Test_Shopping_Cart_3_Deleter_Item_Shopping_Cart_CBT24.CBT24(selenium);
 		
 		//Se añade un producto nuevamente
-		//String nombreProducto= Test_CorrectAddProduct_Cart_SimpleProduct.CBT_SimpleProduct(selenium);
+		String nombreProducto= Test_CorrectAddProduct_Cart_SimpleProduct.CBT_SimpleProduct(selenium);
 		
 		//Se añade un producto para realizar cambio de unidades
-		//Test_ChangeUnits_OneProduct.changeUnits(selenium);
+		Test_ChangeUnits_OneProduct.changeUnits(selenium);
 		
 		//Se selecciona el tipo de envío
-		//Test_TypeShipping.typeShipping(selenium);
+		Test_TypeShipping.typeShipping(selenium);
 		
 		// Se verifica si existe una dirección por defecto y si esta seleccionada
-		//Test_Address_Exist.CBT_Address(selenium);
+		Test_Address_Exist.CBT_Address(selenium);
 		
 		// Se verifica que el envío se hara sin factura
 		Lib_Test_With_Purchase.shippingWithPurchase(selenium);
 		
 		// Se efectua el pago con Paypal
-		//Test_PayPal.CBT_Paypal(selenium,nombreProducto);
+		Test_PayPal.CBT_Paypal(selenium,nombreProducto);
 	
 		
 	}
