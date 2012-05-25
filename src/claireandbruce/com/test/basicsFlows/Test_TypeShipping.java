@@ -57,15 +57,14 @@ public class Test_TypeShipping extends ClaireandbruceTestCase {
 			String str_valorEnvio ="";
 			
 			double total=0.00;
-			
 			//Envío 1= Standard - Envío 2= Express
 			if(tipoEnvio==1){
 				Helper.log("TIPO DE ENVÍO STANDARD");
-				selenium.click("xpath=.//*[@id='s_method_flatrate_flatrate']");
-				selenium.waitForPageToLoad("30000");
+				//selenium.click("xpath=.//*[@id='s_method_flatrate_flatrate']");
+				//selenium.waitForPageToLoad("10000");
 				//Clic sobre tipo de envío Standard
-				selenium.click("xpath=.//*[@id='s_method_flatrate_flatrate']");
-				selenium.waitForPageToLoad("10000");
+				//selenium.click("xpath=.//*[@id='s_method_flatrate_flatrate']");
+				//selenium.waitForPageToLoad("10000");
 				
 				//Obtener valor de envío Standard
 				auxString = selenium.getText("css=div.value-method-checkout.float-right > span.price");

@@ -80,7 +80,7 @@ public class Test_PayPal extends ClaireandbruceTestCase {
 			selenium.click("xpath=html/body/div/div[2]/div[1]/div/div/div[2]/div[2]/div[1]/a/div/div");
 			selenium.waitForPageToLoad("15000");
 			//Se obtiene el total del pedido
-			String check= selenium.getText("html/body/div/div[2]/div[1]/div/div[2]/div[2]/div[2]/table/tbody/tr[3]/td[2]/span");
+			String check= selenium.getText("xpath=html/body/div/div[2]/div[1]/div/div[2]/div[2]/div[2]/table/tbody/tr[3]/td[2]/span");
 			if(!(check).equals(totalParaPayPal)){			
 				Assert.fail("El pedido no fue efectuado");
 			}

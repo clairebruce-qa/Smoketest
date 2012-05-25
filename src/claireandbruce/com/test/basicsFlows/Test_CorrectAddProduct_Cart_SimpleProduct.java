@@ -72,7 +72,7 @@ public class Test_CorrectAddProduct_Cart_SimpleProduct extends ClaireandbruceTes
 
 					//	selenium.waitForPageToLoad("20000");
 
-						selenium.waitForPageToLoad("40000");
+						selenium.waitForPageToLoad("45000");
 
 					}
 				
