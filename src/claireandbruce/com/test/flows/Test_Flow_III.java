@@ -7,6 +7,7 @@ import org.junit.Test;
 import claireandbruce.com.test.basicsFlows.Lib_Address_Exist;
 import claireandbruce.com.test.basicsFlows.Lib_ChangeUnits_OneProduct;
 import claireandbruce.com.test.basicsFlows.Lib_CorrectAddProduct_Cart_SimpleProduct;
+import claireandbruce.com.test.basicsFlows.Lib_CorrectLogon_Checkout;
 import claireandbruce.com.test.basicsFlows.Lib_CorrectLogon_ValidUser_Accout;
 import claireandbruce.com.test.basicsFlows.Lib_Pay_Checking;
 import claireandbruce.com.test.basicsFlows.Lib_Shopping_Cart_3_Deleter_Item_Shopping_Cart_CBT24;
