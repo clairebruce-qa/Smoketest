@@ -54,7 +54,7 @@ import claireandbruce.com.test.register.*;
 	CBT96_Test_FooterMiddleNavigation_Tendencias.class,
 	CBT97_Test_SendMessage_FormularioContacto_TuCuenta.class,
 	CBT99_Test_Ayuda_FAQs_TuCuenta.class,
-	CBT100_Test_HeaderHomePageNavigation_Tendencias.class,
+	Test_HeaderHomePageNavigation_Tendencias.class,
 
 	//----------------->CASOS QUE CORREN<----------------\\
 	/*CBT3_Test_User_Register_2_User_Registration_Empty_Field.class,

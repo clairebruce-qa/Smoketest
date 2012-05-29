@@ -11,7 +11,7 @@ public class Lib_CorrectLogon_Checkout extends ClaireandbruceTestCase {
 	public static void login_Checkout(Selenium selenium){
 		
 		Helper.log("\nLOGIN POR CHECKOUT");
-		
+				
 		//Alerta sobre "La cantidad solicitada no esta disponible en inventario"
 		if(selenium.isAlertPresent()){
 			selenium.getAlert();
