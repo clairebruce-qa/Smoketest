@@ -45,12 +45,12 @@ public class Test_PayPal extends ClaireandbruceTestCase {
 		
 		
 		if(("off").equals(selenium.getValue("name=shipping_address_id"))){	
-			Test_Address_Exist.CBT_Address(selenium);
+			Lib_Address_Exist.CBT_Address(selenium);
 			//Test_Without_Purchase.CBT_WPurchase(selenium);
 		}
 		
 		if(("on").equals(selenium.getValue("id=showFakeBilling"))){	
-			Test_Address_Exist.CBT_Address(selenium);
+			Lib_Address_Exist.CBT_Address(selenium);
 			
 		}
 		//------*****  Verifica que el pedido es pagado con Paypal *****-------\\
