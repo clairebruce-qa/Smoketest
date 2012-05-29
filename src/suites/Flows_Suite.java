@@ -40,7 +40,7 @@ import claireandbruce.com.test.flows.Test_Flow_IV;
 	
 })
 
-public class Flujo_I_Suite {
+public class Flows_Suite {
 	
 
 
