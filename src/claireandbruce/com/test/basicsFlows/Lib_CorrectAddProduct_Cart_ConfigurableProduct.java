@@ -32,12 +32,14 @@ public class Lib_CorrectAddProduct_Cart_ConfigurableProduct extends Claireandbru
 		
 		//Se selecciona una categoría entre Bolsos, Zapatos y Accesorios (Categorías que poseen productos configurables )
 		
-		
+		int contador = 1;
 		//Haga mientras encuentre el menú de selección de talla (producto configurable)
 		do {			
 			Helper.log("Categoría "+categoria);
 			categoria = (int) (Math.random()*(4-1+1))+1;
-			
+			if(contador == 4) {
+				categoria = 1;
+			}
 			if(selenium.isElementPresent("xpath=//ul[@id='nav']/li["+categoria+"]/h2/a/span/cufon/canvas")){
 
 				selenium.click("//ul[@id='nav']/li["+categoria+"]/h2/a/span/cufon/canvas");
@@ -64,12 +66,13 @@ public class Lib_CorrectAddProduct_Cart_ConfigurableProduct extends Claireandbru
 					else{
 						nombreProducto = selenium.getText("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul["+filaArticulo+"]/li["+columnaArticulo+"]/div[3]/a");
 						selenium.click("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul["+filaArticulo+"]/li["+columnaArticulo+"]/div[3]/a");
-						selenium.waitForPageToLoad("55000");
+						selenium.waitForPageToLoad("60000");
 					}
 				
 					Helper.log("Producto actual: "+selenium.getTitle());						
 				}				
-			} 
+			}
+			contador++;
 		} while(!selenium.isElementPresent("xpath=//div[9]/div[3]/div/div") && !selenium.isElementPresent("xpath=//div[10]/div/button") );
 		
 		if(selenium.isElementPresent("class=selreplace_select"))

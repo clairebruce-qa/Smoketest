@@ -5,6 +5,8 @@ import lib.Helper;
 
 import org.junit.Test;
 
+import com.thoughtworks.selenium.Selenium;
+
 import basics.ClaireandbruceTestCase;
 
 /* Automatización creada el 18/04/2012
@@ -18,11 +20,18 @@ import basics.ClaireandbruceTestCase;
  */
 public class CBT100_Test_HeaderHomePageNavigation_Tendencias extends ClaireandbruceTestCase {
 		
-	@Test
-	public void CBT100() throws Exception{
+	
+	public static void CBT100(Selenium selenium) throws Exception{
+		
+		//Para efectos de pruebas unitarias
 		selenium.open("");
 		selenium.waitForPageToLoad("15000");
-		Helper.log("AMBIENTE DE PRUEBA: "+selenium.getLocation()+"\n");
+		
+		Helper.log("\nNAVEGACIÓN POR TENDENCIAS EN HEADER");
+		//Se carga la home
+		selenium.click("xpath=html/body/div/div[1]/div[1]/div[2]/div/div[1]/div[1]/h1/a/img");
+		selenium.waitForPageToLoad("15000");
+		
 		if(selenium.isTextPresent("Salir")){
 			Claireandbruce.logout(selenium);
 		}
