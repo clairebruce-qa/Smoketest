@@ -33,7 +33,7 @@ public class Test_Flow_IV  extends ClaireandbruceTestCase{
 	 * @throws Exception
 	 */
 	@Test
-	public void test_flow4() throws Exception
+	public void test_flujo4() throws Exception
 	{
 		if(selenium.isElementPresent("link=Salir")){
 			Claireandbruce.logout(selenium);
