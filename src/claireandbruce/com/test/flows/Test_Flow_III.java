@@ -1,10 +1,13 @@
 package claireandbruce.com.test.flows;
 
+import lib.Claireandbruce;
+
 import org.junit.Test;
 
 import claireandbruce.com.test.basicsFlows.Lib_Address_Exist;
 import claireandbruce.com.test.basicsFlows.Lib_ChangeUnits_OneProduct;
 import claireandbruce.com.test.basicsFlows.Lib_CorrectAddProduct_Cart_SimpleProduct;
+import claireandbruce.com.test.basicsFlows.Lib_CorrectLogon_Checkout;
 import claireandbruce.com.test.basicsFlows.Lib_CorrectLogon_ValidUser_Accout;
 import claireandbruce.com.test.basicsFlows.Lib_Pay_Checking;
 import claireandbruce.com.test.basicsFlows.Lib_Shopping_Cart_3_Deleter_Item_Shopping_Cart_CBT24;
@@ -30,24 +33,27 @@ public class Test_Flow_III extends ClaireandbruceTestCase{
 	@Test
 	public void test_flow3() throws Exception{		
 				
+		if(selenium.isElementPresent("link=Salir")){
+			Claireandbruce.logout(selenium);
+		}
+		
 		//Se agrega un producto simple
 		Lib_CorrectAddProduct_Cart_SimpleProduct.CBT_SimpleProduct(selenium);
 		
 		//Se elimina el producto 
-		Lib_Shopping_Cart_3_Deleter_Item_Shopping_Cart_CBT24.CBT24(selenium);
+		//Lib_Shopping_Cart_3_Deleter_Item_Shopping_Cart_CBT24.CBT24(selenium);
 		
 		//Se agrega un producto simple 
-		Lib_CorrectAddProduct_Cart_SimpleProduct.CBT_SimpleProduct(selenium);
+		//Lib_CorrectAddProduct_Cart_SimpleProduct.CBT_SimpleProduct(selenium);
 		
 		//Se cambian las unidades del producto
 		Lib_ChangeUnits_OneProduct.changeUnits(selenium);
 		
-		//Login por checkout
-		
-		
-		
 		//Se selecciona aleatoriamente el tipo de envío
 		Lib_TypeShipping.typeShipping(selenium);
+		
+		//Login por checkout
+		Lib_CorrectLogon_Checkout.login_Checkout(selenium);		
 		
 		//Se selecciona la dirección de envío
 		Lib_Address_Exist.CBT_Address(selenium);

@@ -36,6 +36,7 @@ public class Lib_CorrectAddProduct_Cart_ConfigurableProduct extends Claireandbru
 		//Haga mientras encuentre el menú de selección de talla (producto configurable)
 		do {			
 			Helper.log("Categoría "+categoria);
+			categoria = (int) (Math.random()*(4-1+1))+1;
 			
 			if(selenium.isElementPresent("xpath=//ul[@id='nav']/li["+categoria+"]/h2/a/span/cufon/canvas")){
 
@@ -57,34 +58,41 @@ public class Lib_CorrectAddProduct_Cart_ConfigurableProduct extends Claireandbru
 					int filaArticulo = (int)(Math.random()*(2))+1;
 					Helper.log("Subcategoría actual: "+selenium.getTitle());
 					Helper.log("Producto: "+columnaArticulo+" en la fila: "+filaArticulo);
-					nombreProducto = selenium.getText("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul["+filaArticulo+"]/li["+columnaArticulo+"]/div[3]/a");
 					if(!selenium.isElementPresent("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul["+filaArticulo+"]/li["+columnaArticulo+"]/div[3]/a")){
 						Helper.log("no se encontro el nombre del producto");
 					}
 					else{
+						nombreProducto = selenium.getText("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul["+filaArticulo+"]/li["+columnaArticulo+"]/div[3]/a");
 						selenium.click("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul["+filaArticulo+"]/li["+columnaArticulo+"]/div[3]/a");
-
-						selenium.waitForPageToLoad("40000");
+						selenium.waitForPageToLoad("55000");
 					}
 				
-					//selenium.waitForPageToLoad("15000");
 					Helper.log("Producto actual: "+selenium.getTitle());						
 				}				
 			} 
-		} while(!selenium.isElementPresent("class=selreplace_select") || !selenium.isElementPresent("xpath=//div[10]/div/button") );
+		} while(!selenium.isElementPresent("xpath=//div[9]/div[3]/div/div") && !selenium.isElementPresent("xpath=//div[10]/div/button") );
 		
 		if(selenium.isElementPresent("class=selreplace_select"))
 		{
 			//Click sobre combo seleccionar una talla
-			selenium.click("//div[contains(@class, 'selreplace_selectinner')]");
+			selenium.click("xpath=//div[9]/div[3]/div/div");
 				
-			int i =(int)(Math.random()*(4-2))+2;
-				
-			if(selenium.isElementPresent("xpath=/html/body/div/div[3]/div/div/form/div[3]/div[3]/div/div[9]/div[4]/div/div/div["+i+"]"))
-			{//Se selecciona la primera talla encontrada del producto y se verifica que se seleccionó correctamente		
-				Helper.clickAndVerify(selenium, "xpath=/html/body/div/div[3]/div/div/form/div[3]/div[3]/div/div[9]/div[4]/div/div/div["+i+"]",selenium.getText("xpath=/html/body/div/div[3]/div/div/form/div[3]/div[3]/div/div[9]/div[4]/div/div/div["+i+"]") , "//div[contains(@class, 'selreplace_selectinner')]");}
-			else{
-					Helper.clickAndVerify(selenium, "class=selreplace_option",selenium.getText("//div[contains(@class, 'selreplace_option')]") , "xpath=.//*[@id='product_addtocart_form']/div[3]/div[3]/div/div[9]/div[3]/div/div[1]");
+			int i =(int)(Math.random()*(5-2+1))+2;
+			int cont=1;	
+			while(!selenium.isElementPresent("xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[9]/div[4]/div/div/div["+i+"]")) {
+				i =(int)(Math.random()*(5-2+1))+2;
+				cont++;
+				if(cont==4){
+					i=2;
+					break;
+				}
+				Helper.log("talla "+i);
+			}
+			if(selenium.isElementPresent("xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[9]/div[4]/div/div/div["+i+"]"))
+			{//Se selecciona una de las tallas disponibles del producto y se verifica que se seleccionó correctamente		
+				Helper.clickAndVerify(selenium, "xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[9]/div[4]/div/div/div["+i+"]",selenium.getText("xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[9]/div[4]/div/div/div["+i+"]") , "xpath=//div[9]/div[3]/div/div");}
+			else{									   
+					Helper.clickAndVerify(selenium, "xpath=//div[9]/div[3]/div/div",selenium.getText("xpath=//div[9]/div[3]/div/div") , "xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[9]/div[3]/div/div");
 				}
 				
 			//Clic en botón "AÑADIR A LA CESTA"

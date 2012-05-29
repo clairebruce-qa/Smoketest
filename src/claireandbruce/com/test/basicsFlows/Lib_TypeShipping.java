@@ -28,10 +28,12 @@ public class Lib_TypeShipping extends ClaireandbruceTestCase {
 		if(selenium.isAlertPresent()){
 			selenium.getAlert();
 		}
-		//Para efectos de la prueba unitaria
-		selenium.open("http://pre-cb.newshore.es/es_es/checkout/cart/");
-		selenium.waitForPageToLoad("20000");
-		//Test_CorrectAddProduct_Cart_SimpleProduct test = new Test_CorrectAddProduct_Cart_SimpleProduct();
+		
+		String titulo = selenium.getTitle();
+		if(!titulo.equals("Cesta de la Compra")) {
+			selenium.click("xpath=.//*[@id='quick-access']/div[1]/div/a");
+			selenium.waitForPageToLoad("15000");
+		}		
 		
 		//Se verifica que el carrito no este vacío
 		if(!selenium.isTextPresent("El carrito de compras está vacío")){

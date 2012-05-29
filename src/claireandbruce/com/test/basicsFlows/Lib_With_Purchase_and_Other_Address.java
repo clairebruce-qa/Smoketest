@@ -41,8 +41,9 @@ public class Lib_With_Purchase_and_Other_Address extends ClaireandbruceTestCase 
 			Helper.log("EL CAMPO APELLIDOS NO SE ENCUENTRA DILIGENCIADO CON LA INFORMACIÓN DEL USUARIO");
 			selenium.type("id=billing:firstname","QA");
 		}
-		//Se ingresan los datos (Dirección1. Población, Código Postal, Telefono)
-		selenium.type("id=billing:street1", "AV 5 34 6");
+		int i = (int)Math.random()*20;
+		//Se ingresan los datos (Dirección1. Población, Código Postal, Teléfono)
+		selenium.type("id=billing:street1", "AV "+i+" 34 6");
 		selenium.type("id=billing:city", "Barcelona");
 		selenium.click("xpath=//li[5]/div[2]/div/div[2]/div/div/div[23]");
 		selenium.type("id=billing:postcode", "50080");

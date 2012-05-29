@@ -1,7 +1,10 @@
 package claireandbruce.com.test.flows;
 
+import lib.Claireandbruce;
+
 import org.junit.Test;
 
+import claireandbruce.com.test.basicsFlows.Lib_CorrectLogon_Checkout;
 import claireandbruce.com.test.basicsFlows.Lib_CorrectLogon_ValidUser_Accout;
 import claireandbruce.com.test.basicsFlows.Lib_Address_Exist;
 import claireandbruce.com.test.basicsFlows.Lib_ChangeUnits_OneProduct;
@@ -32,6 +35,10 @@ public class Test_Flujo_IV  extends ClaireandbruceTestCase{
 	@Test
 	public void test_flujo4() throws Exception
 	{
+		if(selenium.isElementPresent("link=Salir")){
+			Claireandbruce.logout(selenium);
+		}
+		
 		//Se añade un producto para realizar para eliminarlo posteriormente 
 		Lib_CorrectAddProduct_Cart_ConfigurableProduct.CBT_ConfigurableProduct(selenium);
 		
@@ -46,6 +53,9 @@ public class Test_Flujo_IV  extends ClaireandbruceTestCase{
 		
 		//Se selecciona el tipo de envío
 		Lib_TypeShipping.typeShipping(selenium);
+		
+		//Se realiza login por checkout
+		Lib_CorrectLogon_Checkout.login_Checkout(selenium);
 		
 		// Se verifica si existe una dirección por defecto y si esta seleccionada
 		Lib_Address_Exist.CBT_Address(selenium);

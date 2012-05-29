@@ -13,12 +13,17 @@ public class Lib_Pay_Checking extends ClaireandbruceTestCase {
 		Helper.log("\nPAGO CON CHEQUE");
 		if(selenium.getTitle().equals("Compra ahora")){
 			//Se selecciona método de pago: Cheque
-			selenium.click("id=p_method_checkmo");
+			selenium.click("xpath=.//*[@id='p_method_checkmo']");
 			//Se aceptan términos y condiciones
 			selenium.click("id=agreement-1");
 			//Se presiona el botón PAGAR
-			selenium.click("xpath=//form/div/button");
-			selenium.waitForPageToLoad("30000");
+			if(selenium.isElementPresent("xpath=//div[@id='checkout-buttons-container']/button")){
+				Helper.log("se encuentra el boton pagar");				
+			} else {
+				Helper.log("no se encuentra el boton pagar");
+			}
+			selenium.click("xpath=//div[@id='checkout-buttons-container']/button");
+			selenium.waitForPageToLoad("50000");
 			assertEquals(selenium.getText("xpath=//p"),"Recibirás un e-mail con tu confirmación de compra a:");
 			Helper.log("PEDIDO REALIZADO!!");				
 		} else {
