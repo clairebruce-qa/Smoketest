@@ -16,7 +16,7 @@ import basics.ClaireandbruceTestCase;
  * @author María Fernanda Rodríguez Vargas
  *
  */
-public class CBT13_Test_User_Addres_1_Add_Shipping_Address_User_with_Valid_Fields extends ClaireandbruceTestCase {
+public class Test_User_Addres_1_Add_Shipping_Address_User_with_Valid_Fields extends ClaireandbruceTestCase {
 		
 	@Test
 	public void CBT13() throws Exception{
@@ -25,7 +25,9 @@ public class CBT13_Test_User_Addres_1_Add_Shipping_Address_User_with_Valid_Field
 		int i =(int)(Math.random()*100);
 		//El usuario no debe tener su sesión iniciada
 		if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
+			
 			Claireandbruce.login(selenium, username, password);
+		
 		}
 		
 		
@@ -33,12 +35,14 @@ public class CBT13_Test_User_Addres_1_Add_Shipping_Address_User_with_Valid_Field
 		//Ingresar a traves del botón 'TUS DIRECCIONES' Área privada'
 		if(selenium.isElementPresent("xpath=html/body/div/div[2]/div[1]/div/div/div[2]/a[2]/div/div/p")){
 			selenium.click("xpath=html/body/div/div[2]/div[1]/div/div/div[2]/a[2]/div/div/p");
+			
 		} else {//Ingresar a través del link 'Modificar o añadir dirección'
 			//selenium.click("xpath=html/body/div/div[2]/div[2]/div[1]/div[2]/ul/div[3]/li/a/span");
 		}
 		
 		selenium.waitForPageToLoad("60000");
-		
+		if(selenium.isElementPresent("xpath=.//*[@id='spanNewAddress']"))
+		{
 		selenium.click("xpath=.//*[@id='spanNewAddress']");
 		
 		selenium.type("xpath=.//*[@id='firstname']","Sandra Milena"); //Nombre
@@ -56,15 +60,17 @@ public class CBT13_Test_User_Addres_1_Add_Shipping_Address_User_with_Valid_Field
 		selenium.click("xpath=.//*[@id='form-validate-']/div[2]/button[2]"); //Click en botón Guardar
 		selenium.waitForPageToLoad("30000");
 		
-		if(!selenium.isTextPresent("Se guardó la dirección.")){
-			Assert.fail("The address was not added");
-			
-			
-		} else {
-			Helper.log("Address was added Ok");
-			
+			if(!selenium.isTextPresent("Se guardó la dirección."))
+			{
+				Assert.fail("The address was not added");
+			} else {
+				Helper.log("Address was added Ok");
+			}
 		}
-		
+		else
+		{
+			Assert.fail("Element not found");
+		}
 	
 		if(selenium.isElementPresent("xpath=//div[3]/div/div[5]/span")){
 		

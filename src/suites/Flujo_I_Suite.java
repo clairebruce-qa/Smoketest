@@ -12,6 +12,9 @@ import claireandbruce.com.test.basicsFlows.Lib_PayPal;
 import claireandbruce.com.test.basicsFlows.Lib_TypeShipping;
 import claireandbruce.com.test.basicsFlows.Lib_Without_Purchase;
 import claireandbruce.com.test.flows.Test_Flow_I;
+import claireandbruce.com.test.flows.Test_Flow_II;
+import claireandbruce.com.test.flows.Test_Flow_III;
+import claireandbruce.com.test.flows.Test_Flujo_IV;
 
 /**
  * Flujo I login +  producto simple + con direccion + sin factura+ Pagado con Paypal
@@ -26,7 +29,13 @@ import claireandbruce.com.test.flows.Test_Flow_I;
 	
 	
 	
-	Test_Flow_I.class
+	Test_Flow_I.class,
+	
+	Test_Flow_II.class,
+	
+	Test_Flow_III.class,
+	
+	Test_Flow_IV.class
 	
 	
 })

@@ -28,7 +28,7 @@ import claireandbruce.com.test.register.*;
 	//---------->CASOS A ENTREGAR<----------\\
 	
 	CBT2_Test_User_Register_1_User_registration_valid_field.class,
-	CBT13_Test_User_Addres_1_Add_Shipping_Address_User_with_Valid_Fields.class,
+	Test_User_Addres_1_Add_Shipping_Address_User_with_Valid_Fields.class,
 	CBT22_Test_Shopping_Cart_1_Add_Other_Item_Shopping_Cart.class,
 	CBT30_Test_Magazin_Home_Page_1_Navegability_Magazin_User_No_Login.class,
 	CBT31_Test_Home_Page_Navigability_1_Navigability_for_Look_Not_Login.class,

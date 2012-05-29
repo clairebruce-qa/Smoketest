@@ -33,7 +33,7 @@ public class CBT82_Test_EditionAddress_CancelButton_TuCuenta extends Claireandbr
 		selenium.waitForPageToLoad("15000");
 		
 		if(selenium.isTextPresent("No tienes ninguna dirección de envío por defecto en tu libreta de direcciones.")){
-			CBT13_Test_User_Addres_1_Add_Shipping_Address_User_with_Valid_Fields tb = new CBT13_Test_User_Addres_1_Add_Shipping_Address_User_with_Valid_Fields();
+			Test_User_Addres_1_Add_Shipping_Address_User_with_Valid_Fields tb = new Test_User_Addres_1_Add_Shipping_Address_User_with_Valid_Fields();
 			tb.CBT13();
 			Helper.log("Address was added");
 		}
