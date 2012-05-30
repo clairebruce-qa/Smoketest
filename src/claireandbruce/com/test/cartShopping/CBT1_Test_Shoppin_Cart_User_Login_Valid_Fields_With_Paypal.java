@@ -12,7 +12,7 @@ import basics.ClaireandbruceTestCase;
 
 public class CBT1_Test_Shoppin_Cart_User_Login_Valid_Fields_With_Paypal extends ClaireandbruceTestCase{
 	
-	private CBT76_Test_CorrectAddProduct_Cart_NoLoginUser cbt76;
+	private Test_CorrectAddProduct_Cart_NoLoginUser cbt76;
 
 	@Test
 	public void CBT1() throws Exception{
@@ -26,7 +26,7 @@ public class CBT1_Test_Shoppin_Cart_User_Login_Valid_Fields_With_Paypal extends 
 	
 	String message=null;	
 	// Se instancia el caso numero CBT76 para agregar productos al carrito de compras
-	cbt76 = new CBT76_Test_CorrectAddProduct_Cart_NoLoginUser();
+	cbt76 = new Test_CorrectAddProduct_Cart_NoLoginUser();
 	
 	selenium.click("//*[@id='quick-access']/div[1]/div");
 	
