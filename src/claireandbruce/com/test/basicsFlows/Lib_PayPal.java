@@ -1,10 +1,12 @@
 package claireandbruce.com.test.basicsFlows;
 
+import static org.junit.Assert.assertEquals;
 import junit.framework.Assert;
 import lib.Claireandbruce;
 import lib.Helper;
 
 import org.junit.Test;
+import org.junit.internal.runners.statements.Fail;
 
 import com.thoughtworks.selenium.Selenium;
 
@@ -31,6 +33,16 @@ public class Lib_PayPal extends ClaireandbruceTestCase {
 	public static void CBT_Paypal(Selenium selenium, String nombreProducto) throws Exception{
 	
 	
+		
+		
+
+		/*
+		if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
+			
+			Claireandbruce.login(selenium, username, password);
+		
+		}
+		*/
 
 		//-----****** Verifíca que la pagina de Tu Compra esta desplegada de lo contrario la carga *****----\\
 		
@@ -67,43 +79,48 @@ public class Lib_PayPal extends ClaireandbruceTestCase {
 			Assert.fail("Error:  Se deben aceptar los términos y condiciones y las políticas de privacidad");
 		}
 		selenium.click("xpath=.//*[@id='checkout-buttons-container']/button");
-		selenium.waitForPageToLoad("15000");
+		selenium.waitForPageToLoad("60000");
 		
-	
-		//Se verifica si el pedido esta ingresado en el historial
-	
+		//----**** Se confirma el pago en Paypal ----****\\
 		
-		selenium.open(ClaireandbruceUrl+"/es_es/customer/account/");
-		selenium.waitForPageToLoad("30000");
-		if(selenium.isElementPresent("xpath=html/body/div/div[2]/div[1]/div/div/div[2]/div[2]/div[1]/a/div/div"))
-		{	//Botón "VER DETALLE PEDIDO"
-			selenium.click("xpath=html/body/div/div[2]/div[1]/div/div/div[2]/div[2]/div[1]/a/div/div");
-			selenium.waitForPageToLoad("15000");
-			//Se obtiene el total del pedido
-			String check= selenium.getText("xpath=html/body/div/div[2]/div[1]/div/div[2]/div[2]/div[2]/table/tbody/tr[3]/td[2]/span");
-			if(!(check).equals(totalParaPayPal)){			
-				Assert.fail("El pedido no fue efectuado");
-			}
-		}
-		else
-			{
-			Assert.fail("El pedido no fue efectuado");
+		//selenium.waitForPageToLoad("30000");
+		
+		
+		
+		//----**** Se autentica el usuario en Paypal ****----\\
+		
+		if(!selenium.isElementPresent("xpath=.//*[@id='loadLogin']"))
+		{
+			Assert.fail(selenium.getLocation());
 		}
 		
-		
-
-		/*		
-		selenium.click("xpath=.//*[@id='main']/div/p[2]/strong/a");
 		selenium.click("xpath=.//*[@id='loadLogin']");
+		selenium.waitForPageToLoad("30000");
+		
 		selenium.type("xpath=.//*[@id='login_email']", "qualit_1337780842_per@privalia.com");
 		selenium.type("xpath=.//*[@id='login_password']", "337780714");
-		selenium.click("xpath=.//*[@id='nav-menu']/form/ul[1]/li/ul/li[6]/input");	
-	
-		if(selenium.isTextPresent("The email address or password you have entered does not match our records. Please try again."))
+		
+		selenium.click("id=submitLogin");
+		selenium.waitForPageToLoad("30000");
+		// Se confirma el pago en Paypal \\
+		selenium.click("id=continue");
+		
+		selenium.waitForPageToLoad("30000");
+		selenium.click("xpath=.//*[@id='doneInfo']/ul/li[1]/a");
+		
+		selenium.waitForPageToLoad("30000");
+		
+		// Selenium Redireccion a la página de ClaireandBruce y confirma que el pedido se ha enviado  \\
+		
+		assertEquals(selenium.getText("xpath=//p"),"Recibirás un e-mail con tu confirmación de compra a:");
+		Helper.log("PEDIDO REALIZADO!!");		
+		if(!selenium.isElementPresent("//span[2]")||!selenium.isElementPresent("css=span.button"))
 		{
-			Assert.fail("Error:  NO AUTENTICO EL USUARIO DE PAYPAL");
+			Assert.fail("Error no se encontro el pedido");
 		}
-		*/		
+		
+	
+	
 
 	}
 }

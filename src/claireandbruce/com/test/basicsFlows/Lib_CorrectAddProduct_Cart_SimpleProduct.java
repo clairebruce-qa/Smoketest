@@ -20,8 +20,8 @@ public class Lib_CorrectAddProduct_Cart_SimpleProduct extends ClaireandbruceTest
 	public static String CBT_SimpleProduct(Selenium selenium) throws Exception {
 		
 		//Para efecto de la prueba
-		selenium.open(ClaireandbruceUrl);
-		selenium.waitForPageToLoad("30000");
+		//selenium.open(ClaireandbruceUrl);
+		//selenium.waitForPageToLoad("30000");
 		
 		//Se verifica que el carrito este vacio 
 		while(!selenium.isTextPresent("0 artículos 0 €")){
@@ -68,7 +68,7 @@ public class Lib_CorrectAddProduct_Cart_SimpleProduct extends ClaireandbruceTest
 					else{
 						selenium.click("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul["+filaArticulo+"]/li["+columnaArticulo+"]/div[3]/a");
 
-						selenium.waitForPageToLoad("50000");
+						selenium.waitForPageToLoad("60000");
 					}
 					Helper.log("Producto actual: "+selenium.getTitle());						
 				}				

@@ -55,16 +55,23 @@ public class CBT30_Test_Magazin_Home_Page_1_Navegability_Magazin_User_No_Login e
 		
 		//verifica sin se agregan los productos correctamente al carrito de compras
 		
-		int j=2;
-		for(int i=2;i<5;i++ )
+		int i =(int)(Math.random()*(4-1+1)+1);
+		
+		selenium.click("xpath=//div[@id='carousel-subhome']/div[2]");
+		
+		if(!selenium.isElementPresent("xpath=//map["+i+"]/area["+i+"]")){
+			Helper.log("No se encuentra el link de detalle del producto");
+		}
+		/*while(selenium.isElementPresent("xpath=.//*[@id='magazine-carousel-content']/p/map["+i+"]/area["+i+"]"))
 		{
-			selenium.click("xpath=//div[@id='carousel-subhome']/div[2]");
-			if(!selenium.isElementPresent("xpath=//map[3]/area[3]")){
-				Helper.log("No se encuentra el link de detalle del producto");
-			}
-			selenium.click("xpath=//map["+i+"]/area["+i+"]");
-			Helper.waitForElement(selenium, "xpath=html/body/div/div[2]/div/div/div/div[1]/p/map["+i+"]/div/div/div[2]/div[2]/div[2]", "No se encuentra el elemento");
-			String check=selenium.getText("xpath=html/body/div/div[2]/div/div/div/div[1]/p/map["+i+"]/div/div/div[2]/div[2]/div[2]");
+			
+			
+		
+			//selenium.click("xpath=//map["+i+"]/area["+i+"]");
+			
+			Helper.waitForElement(selenium, "xpath=.//*[@id='magazine-carousel-content']/p/map["+i+"]/area["+i+"]", "No se encuentra el elemento");
+			
+			/*String check=selenium.getText("xpath=html/body/div/div[2]/div/div/div/div[1]/p/map["+i+"]/div/div/div[2]/div[2]/div[2]");
 			System.out.println(check);
 			if(selenium.isElementPresent("//div[contains(@class, 'selreplace_selectinner')]")){
 				//Click sobre combo seleccionar una talla
@@ -104,7 +111,7 @@ public class CBT30_Test_Magazin_Home_Page_1_Navegability_Magazin_User_No_Login e
 			
 			
 		}
-		
+		}*/
 		
 	}
 }

@@ -29,6 +29,7 @@ public class Lib_TypeShipping extends ClaireandbruceTestCase {
 			selenium.getAlert();
 		}
 		
+		
 		String titulo = selenium.getTitle();
 		if(!titulo.equals("Cesta de la Compra")) {
 			selenium.click("xpath=.//*[@id='quick-access']/div[1]/div/a");
