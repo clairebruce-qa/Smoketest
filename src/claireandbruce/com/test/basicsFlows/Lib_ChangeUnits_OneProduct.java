@@ -19,8 +19,16 @@ public class Lib_ChangeUnits_OneProduct extends ClaireandbruceTestCase{
 
 	public static void changeUnits(Selenium selenium) throws Exception{
 		
-		selenium.open("http://pre-cb.newshore.es/es_es/checkout/cart/");
-		selenium.waitForPageToLoad("15000");
+		if(!selenium.getTitle().equals("Cesta de la Compra")){
+			if(selenium.isElementPresent("link=Compra ahora")){
+				selenium.click("link=Compra ahora");
+				selenium.waitForPageToLoad("15000");
+			} else {
+				selenium.click("id=cartHeader");
+				selenium.click("xpath=//ol[@id='mini-cart']/li/div/button");
+				selenium.waitForPageToLoad("15000");			
+			}			
+		}		
 
 		//Se declaran variables string para separar los caracteres que pertenecen al precio sin unidad de moneda
 		String precio, precioTotal;

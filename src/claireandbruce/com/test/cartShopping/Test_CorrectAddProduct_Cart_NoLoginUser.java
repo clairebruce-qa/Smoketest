@@ -1,39 +1,60 @@
-package claireandbruce.com.test.basicsFlows;
+package claireandbruce.com.test.cartShopping;
+
 
 import static org.junit.Assert.assertTrue;
+import lib.Claireandbruce;
 import lib.Helper;
-import com.thoughtworks.selenium.Selenium;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import sun.invoke.util.VerifyType;
+
 import basics.ClaireandbruceTestCase;
 
-/**
- * Se automatiza el añadir un producto simple a la cesta.
- * @author MARIA FERNANDA RODRIGUEZ
- *
- */
-public class Lib_CorrectAddProduct_Cart_ConfigurableProduct extends ClaireandbruceTestCase {
 
-	public static String CBT_ConfigurableProduct(Selenium selenium) throws Exception {
+/*
+ *  Este Caso de Prueba verificará el correcto funcionamiento del proceso encargado 
+ *  de añadir un producto  a la cesta. El éxito del proceso se evaluará al permitir 
+ *  observar el producto en la cesta al hacer clic en el link de artículos  ubicado 
+ *  en el header.
+ *  
+ *  
+ * */
+
+public class Test_CorrectAddProduct_Cart_NoLoginUser extends ClaireandbruceTestCase {
+
+	@Test
+	public void CBT76() throws Exception{
 		
-		int categoria = (int) (Math.random()*(4-1+1))+1;
-		//Para efecto de la prueba
-		selenium.open(ClaireandbruceUrl);
-		selenium.waitForPageToLoad("30000");
+		selenium.open("");
+		if (selenium.isElementPresent("xpath=//a[@id='overridelink']")){
+			selenium.click("//a[@id='overridelink']");
+		}
+
+		//El usuario no debe tener su sesión iniciada
+		if(selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
+			Claireandbruce.logout(selenium);
+		}		
 		
-		//Se verifica que el carrito este vacio 
+		//Se verifica que se encuentre vacío el carrito de compras.
 		while(!selenium.isTextPresent("0 artículos 0 €")){
-			
-			//Remover  todos los artículos mientras el carrito no este vacío
+			//Remover artículos mientras el carrito no este vacío
 			selenium.click("id=cartHeader");
 			selenium.click("class=btn-remove");
 			assertTrue(selenium.getConfirmation().matches("¿Está seguro de que desea eliminar este artículo de la cesta de la compra[\\s\\S]$"));
 			selenium.waitForPageToLoad("10000");
 		}
 		
+		boolean repetirCiclo = false;
 		
 		//Se selecciona una categoría entre Bolsos, Zapatos y Accesorios (Categorías que poseen productos configurables )
-		
+			
 		int contador = 1;
-		//Haga mientras encuentre el menú de selección de talla (producto configurable)
+		int categoria= 1;
+		//Haga mientras NO encuentre el botón AÑADIR A LA CESTA
+		
 		do {			
 			Helper.log("Categoría "+categoria);
 			categoria = (int) (Math.random()*(4-1+1))+1;
@@ -41,9 +62,8 @@ public class Lib_CorrectAddProduct_Cart_ConfigurableProduct extends Claireandbru
 				categoria = 1;
 			}
 			if(selenium.isElementPresent("xpath=//ul[@id='nav']/li["+categoria+"]/h2/a/span/cufon/canvas")){
-
 				selenium.click("//ul[@id='nav']/li["+categoria+"]/h2/a/span/cufon/canvas");
-				
+			
 				selenium.waitForPageToLoad("30000");
 				
 				//Selecciona una subcategoría
@@ -73,10 +93,10 @@ public class Lib_CorrectAddProduct_Cart_ConfigurableProduct extends Claireandbru
 				}				
 			}
 			contador++;
-		} while(!selenium.isElementPresent("xpath=//div[10]/div/button") );
+		} while(!selenium.isElementPresent("xpath=//div[10]/div/button") && !selenium.isElementPresent("xpath=//button") );
 		
-		if(selenium.isElementPresent("class=selreplace_select"))
-		{
+		//Si se encuentra este botón se encuentra visualizado un producto configurable.
+		if(selenium.isElementPresent("xpath=//div[10]/div/button"))	{
 			//Click sobre combo seleccionar una talla
 			selenium.click("xpath=//div[9]/div[3]/div/div");
 				
@@ -95,9 +115,9 @@ public class Lib_CorrectAddProduct_Cart_ConfigurableProduct extends Claireandbru
 			{//Se selecciona una de las tallas disponibles del producto y se verifica que se seleccionó correctamente		
 				Helper.clickAndVerify(selenium, "xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[9]/div[4]/div/div/div["+i+"]",selenium.getText("xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[9]/div[4]/div/div/div["+i+"]") , "xpath=//div[9]/div[3]/div/div");}
 			else{									   
-					Helper.clickAndVerify(selenium, "xpath=//div[9]/div[3]/div/div",selenium.getText("xpath=//div[9]/div[3]/div/div") , "xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[9]/div[3]/div/div");
-				}
-				
+				Helper.clickAndVerify(selenium, "xpath=//div[9]/div[3]/div/div",selenium.getText("xpath=//div[9]/div[3]/div/div") , "xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[9]/div[3]/div/div");
+			}
+			
 			//Clic en botón "AÑADIR A LA CESTA"
 
 			selenium.click("xpath=//div[10]/div/button");
@@ -111,7 +131,23 @@ public class Lib_CorrectAddProduct_Cart_ConfigurableProduct extends Claireandbru
 			}
 			
 			Helper.clickAndVerify(selenium, "id=cartHeader", texto, "xpath=//p[2]/span");
-		} 
-		return nombreProducto;
+		} else {
+			//Se encuentra actualmente en un producto simple
+			//Clic en botón "AÑADIR A LA CESTA"
+
+			selenium.click("xpath=//button");
+			Helper.log(nombreProducto);
+			String texto ="";
+			//Se comprueba con el precio del producto que este ha sido agregado
+			if(selenium.isElementPresent("class=special-price")) {
+				texto = selenium.getText("class=special-price");
+			} else {
+				texto = selenium.getText("class=price");
+			}
+			
+			Helper.clickAndVerify(selenium, "id=cartHeader", texto, "xpath=//p[2]/span");
+		}
+			
+			
 	}	
 }

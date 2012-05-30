@@ -9,7 +9,7 @@ import org.junit.Test;
 import basics.ClaireandbruceTestCase;
 
 
-public class CBT39_Test_Home_Page_Navigability_6_Test_NavigationByCategoryHeader_Mark extends ClaireandbruceTestCase{
+public class Test_Home_Page_Navigability_6_Test_NavigationByCategoryHeader_Mark extends ClaireandbruceTestCase{
 	@Test
 	public void CBT39() throws Exception{
 		selenium.open("");

@@ -17,13 +17,13 @@ public class CBT22_Test_Shopping_Cart_1_Add_Other_Item_Shopping_Cart extends Cla
 	
 
 	
-	private CBT76_Test_CorrectAddProduct_Cart_NoLoginUser cb76;
+	private Test_CorrectAddProduct_Cart_NoLoginUser cb76;
 
 	@Test
 	public void CBT22() throws Exception{
 	
 		
-		cb76= new CBT76_Test_CorrectAddProduct_Cart_NoLoginUser();
+		cb76= new Test_CorrectAddProduct_Cart_NoLoginUser();
 		//Previo ingreso a la pagina c+b
 		  if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
 			  Claireandbruce.login(selenium, username, password);

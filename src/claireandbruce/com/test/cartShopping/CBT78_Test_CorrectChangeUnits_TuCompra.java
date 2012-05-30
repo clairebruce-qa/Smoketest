@@ -10,16 +10,31 @@ import org.junit.Test;
 
 //import claireandbruce.com.test.basicosFlujos.Test_CorrectAddProduct_Cart_SimpleProduct;
 
+import claireandbruce.com.test.basicsFlows.Lib_CorrectAddProduct_Cart_ConfigurableProduct;
+import claireandbruce.com.test.basicsFlows.Lib_CorrectLogon_ValidUser_Accout;
+
 import com.thoughtworks.selenium.Selenium;
 import basics.ClaireandbruceTestCase;
 
 public class CBT78_Test_CorrectChangeUnits_TuCompra extends ClaireandbruceTestCase {
 		
-	public static void CBT78(Selenium selenium) throws Exception{
+	@Test
+	public void CBT78() throws Exception{
 		
-	//	Test_CorrectAddProduct_Cart_SimpleProduct.CBT_SimpleProduct(selenium);
-		selenium.open("http://pre-cb.newshore.es/es_es/checkout/cart/");
-		selenium.waitForPageToLoad("10000");
+		Lib_CorrectLogon_ValidUser_Accout.CBT55(selenium);
+		Lib_CorrectAddProduct_Cart_ConfigurableProduct.CBT_ConfigurableProduct(selenium);
+		
+		if(!selenium.getTitle().equals("Cesta de la Compra")){
+			if(selenium.isElementPresent("link=Compra ahora")){
+				selenium.click("link=Compra ahora");
+				selenium.waitForPageToLoad("15000");
+			} else {
+				selenium.click("id=cartHeader");
+				selenium.click("xpath=//ol[@id='mini-cart']/li/div/button");
+				selenium.waitForPageToLoad("15000");			
+			}			
+		}	
+		
 		//Posición del campo cantidad a modificar.
 		int fila=2;	
 		int filaPrecio=4;
@@ -76,7 +91,7 @@ public class CBT78_Test_CorrectChangeUnits_TuCompra extends ClaireandbruceTestCa
 					
 					index=0;
 					auxString="";
-					while(index<precioTotalEsperado.length()-2) {
+					while(index<precioTotalEsperado.length()) {
 						if(precioTotalEsperado.charAt(index)!=','){
 							auxString+=precioTotalEsperado.charAt(index);
 						} else {
