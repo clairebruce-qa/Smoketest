@@ -19,13 +19,11 @@ public class CBT39_Test_Home_Page_Navigability_6_Test_NavigationByCategoryHeader
 			Claireandbruce.logout(selenium);
 		}
 		
-		//EL link Marcas en pre no se encuentra en la misma ubicacion, y en su interior no se encuentra
-		//al momento de la automatizacion contenido en la pagina
 		//Click en el link MARCAS 
 		//if(selenium.isElementPresent("xpath=.//*[@id='nav']/li[5]/a/span/cufon/canvas")){
-			if(selenium.isElementPresent("//a[contains(text(),'Marcas')]")){
-			selenium.click("//a[contains(text(),'Marcas')]");
-			selenium.waitForPageToLoad("25000");
+			if(selenium.isElementPresent("xpath=.//*[@id='nav']/li[5]/h2/a/span/cufon/canvas")){
+			selenium.click("xpath=.//*[@id='nav']/li[5]/h2/a/span/cufon/canvas");
+			selenium.waitForPageToLoad("30000");
 			int cont=1; //Se tomaran como maximo de 4 marcas mostradas en el carrusel
 			//Se da click en el link hasta que vuelva a estar visible la primera imagen de marca presente (French Connection)
 			while(cont<=5){
@@ -37,21 +35,14 @@ public class CBT39_Test_Home_Page_Navigability_6_Test_NavigationByCategoryHeader
 				//Click en Descubrir la coleccion
 				//Helper.log("Checking link 'Descubrir la coleccion' of "+selenium.getText("xpath=.//*[@id='carousel']/ul/li["+cont+"]/div/p[1]"));
 				String checkColeccion= selenium.getText("xpath=.//*[@id='carousel']/ul/li["+cont+"]/div/p[1]");
-				if(selenium.isTextPresent(checkColeccion))
-				{	
+				if(selenium.isTextPresent(checkColeccion)) {	
 					selenium.click("//a[contains(text(),'Marcas')]");
-					selenium.waitForPageToLoad("20000");
-					
-				}
-				else
-				{
-					
+					selenium.waitForPageToLoad("20000");					
+				} else {					
 					//Volver a Marcas
 					//Helper.log("Link "+texto+" no found");
 					selenium.click("//a[contains(text(),'Marcas')]");
-					selenium.waitForPageToLoad("20000");
-					
-					
+					selenium.waitForPageToLoad("20000");					
 				}
 				selenium.click("xpath=.//*[@id='carousel']/ul/li["+cont+"]/div/p[3]/a");
 				
@@ -77,7 +68,6 @@ public class CBT39_Test_Home_Page_Navigability_6_Test_NavigationByCategoryHeader
 			while(columna<=4){
 				//Se recorren las listas .//*[@id='listBrands']/div[1]/ul[2]/li[1]
 				while(selenium.isElementPresent("xpath=.//*[@id='listBrands']/div["+columna+"]/ul["+lista+"]/li[1]")){
-					//Helper.log("Checking list "+selenium.getText("xpath=.//*[@id='listBrands']/div["+columna+"]/ul["+lista+"]/li[1]"));
 					//Se recorren los literales
 					while(selenium.isElementPresent("xpath=.//*[@id='listBrands']/div["+columna+"]/ul["+lista+"]/li["+literal+"]/a") ||
 							selenium.isElementPresent("xpath=.//*[@id='listBrands']/div["+columna+"]/ul["+lista+"]/li["+literal+"]")){
@@ -88,30 +78,21 @@ public class CBT39_Test_Home_Page_Navigability_6_Test_NavigationByCategoryHeader
 							//Si el enlace se encuentra ingresar en el
 							selenium.click("xpath=.//*[@id='listBrands']/div["+columna+"]/ul["+lista+"]/li["+literal+"]/a");
 							
-							
-							selenium.waitForPageToLoad("20000");
-							if(selenium.isTextPresent(texto))
-							{	
+							selenium.waitForPageToLoad("25000");
+							if(selenium.getTitle().equals(texto.toUpperCase())) {
+								Helper.log("Link "+texto+" is active");
 								selenium.click("//a[contains(text(),'Marcas')]");
-								selenium.waitForPageToLoad("20000");
-								
-							}
-							else
-							{
-								
+								selenium.waitForPageToLoad("20000");								
+							} else {								
 								//Volver a Marcas
 								//Helper.log("Link "+texto+" no found");
 								selenium.click("//a[contains(text(),'Marcas')]");
-								selenium.waitForPageToLoad("20000");
-								
-								
-							}
-							
+								selenium.waitForPageToLoad("20000");							
+							}							
 							
 						}else if(selenium.isElementPresent("xpath=.//*[@id='listBrands']/div["+columna+"]/ul["+lista+"]/li["+literal+"]")){
 							String texto = selenium.getText("xpath=.//*[@id='listBrands']/div["+columna+"]/ul["+lista+"]/li["+literal+"]");
-							Helper.log("Link "+texto+" is not active");
-							
+							Helper.log("Link "+texto+" is not active");							
 						}						
 						literal++;
 					}

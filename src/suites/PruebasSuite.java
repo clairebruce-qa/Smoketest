@@ -12,7 +12,7 @@ import claireandbruce.com.test.account.CBT12_Test_User_Modify_5_User_Modify_Fiel
 import claireandbruce.com.test.basicsFlows.Lib_CorrectLogon_ValidUser_Accout;
 import claireandbruce.com.test.basicsFlows.Lib_CorrectAddProduct_Cart_SimpleProduct;
 import claireandbruce.com.test.cartShopping.*;
-import claireandbruce.com.test.navigationWeb.CBT31_Test_Home_Page_Navigability_1_Navigability_for_Look_Not_Login;
+import claireandbruce.com.test.navigationWeb.Test_Home_Page_Navigability_1_Navigability_for_Look_Not_Login;
 
 /**
  * 
