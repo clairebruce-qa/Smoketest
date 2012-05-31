@@ -47,7 +47,7 @@ import claireandbruce.com.test.register.*;
 	CBT86_Test_MenCatalog_NoUserLogin.class,
 	CBT90_Test_NavigationByCategoryHeader.class,
 	CBT91_Test_FooterMiddleNavigation_AtencionAlCliente.class,
-	CBT92_Test_NavigationTopQuestions.class,
+	Test_NavigationTopQuestions.class,
 	CBT93_Test_FooterTopNavigation.class,
 	CBT94_Test_FooterMiddleNavigation_Mujer.class,
 	CBT95_Test_FooterMiddleNavigation_Marcas.class,

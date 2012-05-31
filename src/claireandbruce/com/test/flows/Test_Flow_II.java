@@ -3,6 +3,7 @@ package claireandbruce.com.test.flows;
 import org.junit.Test;
 
 import claireandbruce.com.test.basicsFlows.Lib_CorrectLogon_ValidUser_Accout;
+import claireandbruce.com.test.basicsFlows.Lib_Pay_Credit_Card;
 import claireandbruce.com.test.basicsFlows.Lib_With_Purchase;
 import claireandbruce.com.test.basicsFlows.Lib_Address_Exist;
 import claireandbruce.com.test.basicsFlows.Lib_ChangeUnits_OneProduct;
@@ -38,10 +39,10 @@ public class Test_Flow_II extends ClaireandbruceTestCase {
 		Lib_CorrectAddProduct_Cart_SimpleProduct.CBT_SimpleProduct(selenium);
 		
 		// Se Elimina el producto
-		Lib_Shopping_Cart_3_Deleter_Item_Shopping_Cart_CBT24.CBT24(selenium);
+		//Lib_Shopping_Cart_3_Deleter_Item_Shopping_Cart_CBT24.CBT24(selenium);
 		
 		//Se añade un producto nuevamente
-		String nombreProducto= Lib_CorrectAddProduct_Cart_SimpleProduct.CBT_SimpleProduct(selenium);
+		//String nombreProducto= Lib_CorrectAddProduct_Cart_SimpleProduct.CBT_SimpleProduct(selenium);
 		
 		//Se añade un producto para realizar cambio de unidades
 		Lib_ChangeUnits_OneProduct.changeUnits(selenium);
@@ -55,7 +56,7 @@ public class Test_Flow_II extends ClaireandbruceTestCase {
 		// Se verifica que el envío se hara sin factura
 		Lib_With_Purchase.shippingWithPurchase(selenium);
 		
-		// Se efectua el pago con Paypal
-		Lib_PayPal.CBT_Paypal(selenium,nombreProducto);		
+		// Se efectua el pago con Tarjeta de Crédito
+		Lib_Pay_Credit_Card.credit_Card(selenium);
 	}
 }

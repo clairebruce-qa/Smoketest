@@ -35,7 +35,7 @@ public class Lib_ChangeUnits_OneProduct extends ClaireandbruceTestCase{
 		if(selenium.isElementPresent("//table[@id='shopping-cart-table']/tbody/tr[2]/td[2]/input")){
 			//Se obtiene cantidad inicial para modificarla anexando una unidad mas
 			int cantidad=Integer.parseInt(selenium.getValue("//table[@id='shopping-cart-table']/tbody/tr[2]/td[2]/input"));	
-			cantidad=cantidad+20;
+			cantidad=cantidad+1;
 			
 			selenium.type("//table[@id='shopping-cart-table']/tbody/tr[2]/td[2]/input[2]", ""+cantidad);
 			

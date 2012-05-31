@@ -29,7 +29,7 @@ public class Lib_CorrectLogon_ValidUser_Accout extends ClaireandbruceTestCase {
 		
 		selenium.open(ClaireandbruceUrl);
 
-		selenium.waitForPageToLoad("30000");
+		selenium.waitForPageToLoad("50000");
 		if (selenium.isElementPresent("xpath=//a[@id='overridelink']")){
 			selenium.click("//a[@id='overridelink']");
 		}

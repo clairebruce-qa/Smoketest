@@ -6,15 +6,17 @@ import org.junit.Test;
 
 import basics.ClaireandbruceTestCase;
 
-public class CBT92_Test_NavigationTopQuestions extends ClaireandbruceTestCase {
+public class Test_NavigationTopQuestions extends ClaireandbruceTestCase {
 		
 	@Test
 	public void CBT92() throws Exception{
 		selenium.open("");
 		selenium.waitForPageToLoad("15000");
 		
-		if(selenium.isElementPresent("xpath=html/body/div/div[4]/div/div[2]/div[1]/a/cufon/canvas")){
-			selenium.click("xpath=html/body/div/div[4]/div/div[2]/div[1]/a/cufon/canvas");
+		//Ingreso a la página 'help' por medio de alguna de las opciones de la home
+		//Opciones: Link Ayuda [Footer], link DE COMPRAS [Footer], link ESPERANDO [Footer], link EN CASA [Footer], link MI CUENTA [Footer]
+		if(selenium.isElementPresent("xpath=html/body/div/div[4]/div/div[2]/div[4]/a/cufon/canvas")){
+			selenium.click("xpath=html/body/div/div[4]/div/div[2]/div[4]/a/cufon/canvas");
 			Helper.log("Entry is through the link 'AYUDA' in Footer-Top");
 		} else if(selenium.isElementPresent("link=De compras")){
 			selenium.click("link=De compras");

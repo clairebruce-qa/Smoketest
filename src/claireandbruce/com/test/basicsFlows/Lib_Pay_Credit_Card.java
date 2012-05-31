@@ -1,6 +1,9 @@
 package claireandbruce.com.test.basicsFlows;
 
 import static org.junit.Assert.assertEquals;
+
+import org.junit.Assert;
+
 import lib.Helper;
 import basics.ClaireandbruceTestCase;
 
@@ -30,13 +33,23 @@ public class Lib_Pay_Credit_Card extends ClaireandbruceTestCase{
 			selenium.click("id=agreement-1");
 			//Se presiona el botón PAGAR
 			selenium.click("xpath=//div[@id='checkout-buttons-container']/button");
-			selenium.waitForPageToLoad("50000");
-			assertEquals(selenium.getText("xpath=//p"),"Recibirás un e-mail con tu confirmación de compra a:");
-			Helper.log("PEDIDO REALIZADO!!");				
+			
+			if(selenium.isAlertPresent()){
+				selenium.getAlert();
+				Assert.fail("Datos de tarjeta de crédito no válidos");
+			} else {
+				selenium.waitForPageToLoad("15000");
+				//SI EL TITULO DE LA PAGINA ES COMPRAR AHORA FALLAR
+		    }			
+			
+			if(selenium.getText("xpath=//p").equals("Recibirás un e-mail con tu confirmación de compra a:")){
+				Helper.log("PEDIDO REALIZADO!!");
+			} else {
+				Helper.log("PEDIDO NO REALIZADO!!");
+			}
+							
 		} else {
 			Helper.log("No se encuentra actualmente en la interfaz 'Compra ahora'");
 		}
-	}
-	
-	
+	}	
 }
