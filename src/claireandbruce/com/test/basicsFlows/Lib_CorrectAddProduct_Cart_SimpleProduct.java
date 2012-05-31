@@ -77,10 +77,10 @@ public class Lib_CorrectAddProduct_Cart_SimpleProduct extends ClaireandbruceTest
 			if(selenium.isElementPresent("class=special-price")) {
 				texto = selenium.getText("class=special-price");
 			} else {
-				texto = selenium.getText("xpath=//p[2]/span");
+				texto = selenium.getText("class=price");
 			}
 			
-			Helper.clickAndVerify(selenium, "id=cartHeader", texto, "class=price");
+			Helper.clickAndVerify(selenium, "id=cartHeader", texto, "xpath=//p[2]/span");
 		} 
 		return nombreProducto;
 	}	
