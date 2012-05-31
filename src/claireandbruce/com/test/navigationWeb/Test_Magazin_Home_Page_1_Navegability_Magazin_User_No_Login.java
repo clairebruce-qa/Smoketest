@@ -82,6 +82,7 @@ public class Test_Magazin_Home_Page_1_Navegability_Magazin_User_No_Login extends
 			
 			int contador = 1;
 			int categoria= 1;
+			
 			//Haga mientras NO encuentre el botón AÑADIR A LA CESTA
 			
 		

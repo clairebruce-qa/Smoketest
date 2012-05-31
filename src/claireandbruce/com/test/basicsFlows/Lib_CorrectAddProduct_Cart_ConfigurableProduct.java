@@ -100,7 +100,7 @@ public class Lib_CorrectAddProduct_Cart_ConfigurableProduct extends Claireandbru
 				texto = selenium.getText("class=price");
 			}
 			
-			Helper.clickAndVerify(selenium, "id=cartHeader", texto, "xpath=//p[2]/span");
+			Helper.clickAndVerify(selenium, "id=cartHeader", texto, "class=price");
 		} 
 		return nombreProducto;
 	}	

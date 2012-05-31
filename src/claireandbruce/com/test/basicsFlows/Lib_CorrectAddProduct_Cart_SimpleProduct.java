@@ -1,10 +1,10 @@
 package claireandbruce.com.test.basicsFlows;
 
-import static org.junit.Assert.assertTrue;
-import junit.framework.Assert;
+
+
 import lib.Helper;
 
-import org.junit.Test;
+
 
 import com.thoughtworks.selenium.Selenium;
 
@@ -77,7 +77,7 @@ public class Lib_CorrectAddProduct_Cart_SimpleProduct extends ClaireandbruceTest
 			if(selenium.isElementPresent("class=special-price")) {
 				texto = selenium.getText("class=special-price");
 			} else {
-				texto = selenium.getText("class=price");
+				texto = selenium.getText("xpath=//p[2]/span");
 			}
 			
 			Helper.clickAndVerify(selenium, "id=cartHeader", texto, "class=price");
