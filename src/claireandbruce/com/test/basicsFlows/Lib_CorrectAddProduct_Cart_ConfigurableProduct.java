@@ -89,7 +89,6 @@ public class Lib_CorrectAddProduct_Cart_ConfigurableProduct extends Claireandbru
 			}
 			
 			//Clic en botón "AÑADIR A LA CESTA"
-
 			selenium.click("xpath=//div[9]/div/button");
 			Helper.log(nombreProducto);
 			String texto ="";
