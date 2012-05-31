@@ -11,6 +11,7 @@ import org.junit.Test;
 //import claireandbruce.com.test.basicosFlujos.Test_CorrectAddProduct_Cart_SimpleProduct;
 
 import claireandbruce.com.test.basicsFlows.Lib_CorrectAddProduct_Cart_ConfigurableProduct;
+import claireandbruce.com.test.basicsFlows.Lib_CorrectAddProduct_Cart_SimpleProduct;
 import claireandbruce.com.test.basicsFlows.Lib_CorrectLogon_ValidUser_Accout;
 
 import com.thoughtworks.selenium.Selenium;
@@ -22,7 +23,8 @@ public class CBT78_Test_CorrectChangeUnits_TuCompra extends ClaireandbruceTestCa
 	public void CBT78() throws Exception{
 		
 		Lib_CorrectLogon_ValidUser_Accout.CBT55(selenium);
-		Lib_CorrectAddProduct_Cart_ConfigurableProduct.CBT_ConfigurableProduct(selenium);
+		//Lib_CorrectAddProduct_Cart_ConfigurableProduct.CBT_ConfigurableProduct(selenium);
+		Lib_CorrectAddProduct_Cart_SimpleProduct.CBT_SimpleProduct(selenium);
 		
 		if(!selenium.getTitle().equals("Cesta de la Compra")){
 			if(selenium.isElementPresent("link=Compra ahora")){

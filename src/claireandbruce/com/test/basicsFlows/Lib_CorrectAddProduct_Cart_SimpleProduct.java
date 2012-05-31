@@ -65,21 +65,20 @@ public class Lib_CorrectAddProduct_Cart_SimpleProduct extends ClaireandbruceTest
 					Helper.log("Producto actual: "+selenium.getTitle());						
 				}				
 			} 
-		} while(selenium.isElementPresent("class=selreplace_select") || !selenium.isElementPresent("xpath=//div[7]/div/button") );
+		} while(!selenium.isElementPresent("xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[7]/div/button") );
 		
 		if(!selenium.isElementPresent("class=selreplace_select")){
 			//Clic en botón "AÑADIR A LA CESTA"
-
-			selenium.click("xpath=//div[7]/div/button");
-			Helper.log(nombreProducto);
 			String texto ="";
-			//Se comprueba con el precio del producto que este ha sido agregado
 			if(selenium.isElementPresent("class=special-price")) {
 				texto = selenium.getText("class=special-price");
 			} else {
 				texto = selenium.getText("class=price");
 			}
+			selenium.click("xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[7]/div/button");
+			Helper.log(nombreProducto);
 			
+		
 			Helper.clickAndVerify(selenium, "id=cartHeader", texto, "xpath=//p[2]/span");
 		} 
 		return nombreProducto;

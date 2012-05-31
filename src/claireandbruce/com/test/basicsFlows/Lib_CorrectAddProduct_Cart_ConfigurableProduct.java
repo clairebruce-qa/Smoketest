@@ -89,7 +89,6 @@ public class Lib_CorrectAddProduct_Cart_ConfigurableProduct extends Claireandbru
 			}
 			
 			//Clic en botón "AÑADIR A LA CESTA"
-
 			selenium.click("xpath=//div[9]/div/button");
 			Helper.log(nombreProducto);
 			String texto ="";
@@ -100,7 +99,10 @@ public class Lib_CorrectAddProduct_Cart_ConfigurableProduct extends Claireandbru
 				texto = selenium.getText("class=price");
 			}
 			
-			Helper.clickAndVerify(selenium, "id=cartHeader", texto, "class=price");
+			//Clic en botón "AÑADIR A LA CESTA"
+			selenium.click("xpath=//div[9]/div/button");
+			
+			Helper.clickAndVerify(selenium, "id=cartHeader", texto, "xpath=//p[2]/span");
 		} 
 		return nombreProducto;
 	}	
