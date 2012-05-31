@@ -60,26 +60,34 @@ public class Lib_CorrectAddProduct_Cart_SimpleProduct extends ClaireandbruceTest
 					else{
 						selenium.click("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul["+filaArticulo+"]/li["+columnaArticulo+"]/div[3]/a");
 
-						selenium.waitForPageToLoad("60000");
+						selenium.waitForPageToLoad("65000");
 					}
 					Helper.log("Producto actual: "+selenium.getTitle());						
 				}				
 			} 
 		} while(!selenium.isElementPresent("xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[7]/div/button") );
 		
-		if(!selenium.isElementPresent("class=selreplace_select")){
-			//Clic en botón "AÑADIR A LA CESTA"
-			String texto ="";
-			if(selenium.isElementPresent("class=special-price")) {
-				texto = selenium.getText("class=special-price");
-			} else {
-				texto = selenium.getText("class=price");
-			}
-			selenium.click("xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[7]/div/button");
-			Helper.log(nombreProducto);
-			
+		/*String texto ="";
+		if(selenium.isElementPresent("class=special-price")) {
+			texto = selenium.getText("class=special-price");
+		} else {
+			texto = selenium.getText("class=price");
+		}
+		//Clic en botón "AÑADIR A LA CESTA"
+		selenium.click("xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[7]/div/button");
+		Helper.log(nombreProducto);
+		Helper.clickAndVerify(selenium, "id=cartHeader", texto, "xpath=//p[2]/span");
+		*/
 		
-			Helper.clickAndVerify(selenium, "id=cartHeader", texto, "xpath=//p[2]/span");
+		//Se comprueba con el producto ha sido agregado a través de su nombre
+		//Clic en botón "AÑADIR A LA CESTA"
+		selenium.click("xpath=//div[7]/div/button");
+		String id= "xpath=//a[contains(text(),'"+nombreProducto+"')]";
+		selenium.click("id=cartHeader");
+		if(selenium.isElementPresent(id)){
+			Helper.log("El producto ha sido añadido con éxito al carrito de compras");
+		} else {
+			Helper.log("El producto no ha sido añadido al carrito de compras "+id);
 		} 
 		return nombreProducto;
 	}	
