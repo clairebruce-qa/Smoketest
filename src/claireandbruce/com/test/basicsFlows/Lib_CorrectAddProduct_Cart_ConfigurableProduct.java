@@ -16,18 +16,10 @@ public class Lib_CorrectAddProduct_Cart_ConfigurableProduct extends Claireandbru
 		
 		int categoria = (int) (Math.random()*(4-1+1))+1;
 		//Para efecto de la prueba
-		selenium.open(ClaireandbruceUrl);
-		selenium.waitForPageToLoad("30000");
+		//selenium.open(ClaireandbruceUrl);
+		//selenium.waitForPageToLoad("30000");
 		
-		//Se verifica que el carrito este vacio 
-		while(!selenium.isTextPresent("0 artículos 0 €")){
-			
-			//Remover  todos los artículos mientras el carrito no este vacío
-			selenium.click("id=cartHeader");
-			selenium.click("class=btn-remove");
-			assertTrue(selenium.getConfirmation().matches("¿Está seguro de que desea eliminar este artículo de la cesta de la compra[\\s\\S]$"));
-			selenium.waitForPageToLoad("10000");
-		}
+		
 		
 		
 		//Se selecciona una categoría entre Bolsos, Zapatos y Accesorios (Categorías que poseen productos configurables )
