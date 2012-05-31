@@ -93,34 +93,33 @@ public class Test_CorrectAddProduct_Cart_NoLoginUser extends ClaireandbruceTestC
 				}				
 			}
 			contador++;
-		} while(!selenium.isElementPresent("xpath=//div[10]/div/button") && !selenium.isElementPresent("xpath=//button") );
+		} while(!selenium.isElementPresent("xpath=//div[9]/div/button") && !selenium.isElementPresent("xpath=//button") );
 		
 		//Si se encuentra este botón se encuentra visualizado un producto configurable.
-		if(selenium.isElementPresent("xpath=//div[10]/div/button"))	{
+		if(selenium.isElementPresent("xpath=//div[9]/div/button"))	{
 			//Click sobre combo seleccionar una talla
-			selenium.click("xpath=//div[9]/div[3]/div/div");
+			selenium.click("xpath=//div[8]/div[3]/div/div");
 				
 			int i =(int)(Math.random()*(5-2+1))+2;
 			int cont=1;	
-			while(!selenium.isElementPresent("xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[9]/div[4]/div/div/div["+i+"]")) {
+			while(!selenium.isElementPresent("xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[8]/div[4]/div/div/div["+i+"]")) {
 				i =(int)(Math.random()*(5-2+1))+2;
 				cont++;
 				if(cont==4){
 					i=2;
 					break;
 				}
-				Helper.log("talla "+i);
 			}
-			if(selenium.isElementPresent("xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[9]/div[4]/div/div/div["+i+"]"))
+			if(selenium.isElementPresent("xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[8]/div[4]/div/div/div["+i+"]"))
 			{//Se selecciona una de las tallas disponibles del producto y se verifica que se seleccionó correctamente		
-				Helper.clickAndVerify(selenium, "xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[9]/div[4]/div/div/div["+i+"]",selenium.getText("xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[9]/div[4]/div/div/div["+i+"]") , "xpath=//div[9]/div[3]/div/div");}
+				Helper.clickAndVerify(selenium, "xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[8]/div[4]/div/div/div["+i+"]",selenium.getText("xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[8]/div[4]/div/div/div["+i+"]") , "xpath=//div[8]/div[3]/div/div");}
 			else{									   
-				Helper.clickAndVerify(selenium, "xpath=//div[9]/div[3]/div/div",selenium.getText("xpath=//div[9]/div[3]/div/div") , "xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[9]/div[3]/div/div");
+				Helper.clickAndVerify(selenium, "xpath=//div[8]/div[3]/div/div",selenium.getText("xpath=//div[8]/div[3]/div/div") , "xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[8]/div[3]/div/div");
 			}
 			
 			//Clic en botón "AÑADIR A LA CESTA"
 
-			selenium.click("xpath=//div[10]/div/button");
+			selenium.click("xpath=//div[9]/div/button");
 			Helper.log(nombreProducto);
 			String texto ="";
 			//Se comprueba con el precio del producto que este ha sido agregado
