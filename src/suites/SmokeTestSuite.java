@@ -36,7 +36,7 @@ import claireandbruce.com.test.register.*;
 	Test_Home_Page_Navigability_6_Test_NavigationByCategoryHeader_Mark.class,
 	CBT42_Test_Home_Page_Navegability_7_Navigability_Menu_Languaje.class,
 	CBT48_Test_Shoppin_Cart_11_User_Login_Purchase_with_Invoice_whit_other_Address_Empty_Fields.class,
-	CBT49_Test_IncidentsPurchaseorders_1_ViewOrderhistory.class,
+	Test_IncidentsPurchaseorders_1_ViewOrderhistory.class,
 	Lib_CorrectLogon_ValidUser_Accout.class,
 	CBT71_Test_CorrectLogon_ValidUser_Checkout.class,
 	Test_CorrectAddProduct_Cart_NoLoginUser.class,
