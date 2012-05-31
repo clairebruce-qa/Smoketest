@@ -17,7 +17,7 @@ import claireandbruce.com.test.basicsFlows.Lib_CorrectLogon_ValidUser_Accout;
 import com.thoughtworks.selenium.Selenium;
 import basics.ClaireandbruceTestCase;
 
-public class CBT78_Test_CorrectChangeUnits_TuCompra extends ClaireandbruceTestCase {
+public class Test_CorrectChangeUnits_TuCompra extends ClaireandbruceTestCase {
 		
 	@Test
 	public void CBT78() throws Exception{
@@ -25,6 +25,7 @@ public class CBT78_Test_CorrectChangeUnits_TuCompra extends ClaireandbruceTestCa
 		selenium.waitForPageToLoad("20000");
 		//Lib_CorrectLogon_ValidUser_Accout.CBT55(selenium);
 		Lib_CorrectAddProduct_Cart_ConfigurableProduct.CBT_ConfigurableProduct(selenium);
+		Lib_CorrectAddProduct_Cart_SimpleProduct.CBT_SimpleProduct(selenium);
 		Lib_CorrectAddProduct_Cart_SimpleProduct.CBT_SimpleProduct(selenium);
 		
 		if(!selenium.getTitle().equals("Cesta de la Compra")){
@@ -54,6 +55,7 @@ public class CBT78_Test_CorrectChangeUnits_TuCompra extends ClaireandbruceTestCa
 					cantidad = cantidad +1;
 					selenium.type("xpath=//td[2]/input[2]", ""+cantidad);
 					
+					cantidadNueva = Integer.parseInt(selenium.getValue("xpath=//td[2]/input[2]"));
 					if(selenium.isAlertPresent()){
 						Helper.log("UNIDADES NO DISPONIBLES EN INVENTARIO\nSE VISUALIZA MENSAJE DE ALERTA!");
 					} else {
@@ -85,7 +87,7 @@ public class CBT78_Test_CorrectChangeUnits_TuCompra extends ClaireandbruceTestCa
 						String str_precioFinal = auxString;
 										
 						//Se multiplica la cantidad por el precio unitario para obtener el precio esperado.
-						precioFinalEsperado = cantidad*precioUnitario;
+						precioFinalEsperado = cantidadNueva*precioUnitario;
 		
 						//Se transforma a formato de dos decimales
 						//Se transforma a formato de dos decimales
@@ -105,6 +107,7 @@ public class CBT78_Test_CorrectChangeUnits_TuCompra extends ClaireandbruceTestCa
 						}
 						precioTotalEsperado = auxString;
 						Helper.log("precio esperado "+precioTotalEsperado);
+						Helper.log("precio final "+str_precioFinal);
 						cantidadNueva = Integer.parseInt(selenium.getValue("xpath=//td[2]/input[2]"));
 						assertEquals(str_precioFinal, precioTotalEsperado);
 						Helper.log("CantidadNueva= "+cantidadNueva+" PrecioUnitario= "+precioUnitario+" precioTotal= "+str_precioFinal+" assertEquals "+precioTotalEsperado);						
@@ -116,7 +119,9 @@ public class CBT78_Test_CorrectChangeUnits_TuCompra extends ClaireandbruceTestCa
 				cantidad = Integer.parseInt(selenium.getValue("xpath=//tr["+fila+"]/td[2]/input[2]"));
 				cantidad = cantidad +1;
 				selenium.type("xpath=//tr["+fila+"]/td[2]/input[2]", ""+cantidad);
-					
+				
+				cantidadNueva = Integer.parseInt(selenium.getValue("xpath=//tr["+fila+"]/td[2]/input[2]"));
+				
 				if(selenium.isAlertPresent()){
 					Helper.log("UNIDADES NO DISPONIBLES EN INVENTARIO\nSE VISUALIZA MENSAJE DE ALERTA!");
 				} else {
@@ -148,7 +153,7 @@ public class CBT78_Test_CorrectChangeUnits_TuCompra extends ClaireandbruceTestCa
 					String str_precioFinal = auxString;
 									
 					//Se multiplica la cantidad por el precio unitario para obtener el precio esperado.
-					precioFinalEsperado = cantidad*precioUnitario;
+					precioFinalEsperado = cantidadNueva*precioUnitario;
 					//Se transforma a formato de dos decimales
 					DecimalFormat myFormatter = new DecimalFormat("0.00");
 					String precioTotalEsperado = myFormatter.format(precioFinalEsperado);

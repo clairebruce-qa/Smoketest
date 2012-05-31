@@ -36,7 +36,7 @@ import claireandbruce.com.test.navigationWeb.Test_Home_Page_Navigability_1_Navig
 	
 	//CBT55_Test_CorrectLogon_ValidUser_TuCuenta.class,
 	Lib_CorrectAddProduct_Cart_SimpleProduct.class,
-	CBT78_Test_CorrectChangeUnits_TuCompra.class
+	Test_CorrectChangeUnits_TuCompra.class
 	
 	
 })

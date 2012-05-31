@@ -33,6 +33,7 @@ public class Test_Flow_III extends ClaireandbruceTestCase{
 	@Test
 	public void test_flow3() throws Exception{		
 				
+		selenium.open("");
 		if(selenium.isElementPresent("link=Salir")){
 			Claireandbruce.logout(selenium);
 		}

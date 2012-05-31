@@ -40,7 +40,7 @@ import claireandbruce.com.test.register.*;
 	Lib_CorrectLogon_ValidUser_Accout.class,
 	CBT71_Test_CorrectLogon_ValidUser_Checkout.class,
 	Test_CorrectAddProduct_Cart_NoLoginUser.class,
-	CBT78_Test_CorrectChangeUnits_TuCompra.class,
+	Test_CorrectChangeUnits_TuCompra.class,
 	CBT82_Test_EditionAddress_CancelButton_TuCuenta.class,
 	CBT83_Test_ForgottenPassword_ValidUser_TuCuenta.class,
 	CBT86_Test_MenCatalog_NoUserLogin.class,
