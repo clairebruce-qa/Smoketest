@@ -14,12 +14,8 @@ import basics.ClaireandbruceTestCase;
  * Seleccón aleatoria de un tipo de envío del pedido entre 
  * Envío Standard(1) y Envío Express(2)
  * 
- * En ocasiones presenta inconvenientes al no encontrar el elemento mostrando el mensaje:
- * " ERROR: Command execution failure. Please search the user group at https://groups.google.com/
- *   forum/#!forum/selenium-users for error details from the log window.  The error message is: Acceso denegado."
- * Pero en una segunda ejecución no presenta dicho inconveniente.
- * @author NEWSHORE
- * Especificacion en el test case C&BT-112:Test_TypeShipping 
+ * 
+ * Especificación en el test case C&BT-112:Test_TypeShipping 
  */
 public class Lib_TypeShipping extends ClaireandbruceTestCase {
 

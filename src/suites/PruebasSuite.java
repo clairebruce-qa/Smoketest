@@ -5,7 +5,7 @@ import org.junit.runners.Suite;
 
 import testcases.Pruebas;
 
-import claireandbruce.com.test.account.CBT9_Test_User_Modify_2_User_Modify_Data_Empty_Field;
+import claireandbruce.com.test.account.Test_User_Modify_2_User_Modify_Data_Empty_Field;
 import claireandbruce.com.test.account.CBT10_Test_User_Modify_3_User_Modify_Data_Invalid_Name_Field;
 import claireandbruce.com.test.account.CBT11_Test_User_Modify_4_User_Modify_Data_Field_EMail_Invalid;
 import claireandbruce.com.test.account.CBT12_Test_User_Modify_5_User_Modify_Field_Date_Born_Invalid;

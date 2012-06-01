@@ -20,10 +20,6 @@ public class Test_IncidentsPurchaseorders_1_ViewOrderhistory extends Claireandbr
 	
 		selenium.open(ClaireandbruceUrl);
 
-		
-		
-		
-		
 		//El usuario no debe tener su sesión iniciada
 		if(!selenium.isElementPresent("xpath=//a[contains(text(), 'Salir')]")){
 			
@@ -31,18 +27,10 @@ public class Test_IncidentsPurchaseorders_1_ViewOrderhistory extends Claireandbr
 			
 		}
 		Helper.log(selenium.getLocation());
-		if(!selenium.isElementPresent("xpath=//a[contains(text(), 'Mi cuenta')]")){
-			
+		if(!selenium.isElementPresent("xpath=//a[contains(text(), 'Mi cuenta')]")){			
 			selenium.click("css=a.header-user-logged");
-			selenium.waitForPageToLoad("30000");
-			
+			selenium.waitForPageToLoad("30000");			
 		}
-		
-		
-		
-		
-		
-		
 			
 		selenium.click("//a[contains(text(),'Mi cuenta')]");
 			

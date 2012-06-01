@@ -2,11 +2,14 @@ package claireandbruce.com.test.account;
 
 
 import static org.junit.Assert.*;
+import junit.framework.AssertionFailedError;
 import lib.Claireandbruce;
 import lib.Helper;
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import claireandbruce.com.test.basicsFlows.Lib_CorrectLogon_ValidUser_Accout;
 
 
 import basics.AfterFailure;
@@ -19,14 +22,16 @@ import basics.ClaireandbruceTestCase;
  * @author María Fernanda Rodríguez Vargas
  *
  */
-public class CBT97_Test_SendMessage_FormularioContacto_TuCuenta extends ClaireandbruceTestCase {
+public class Test_SendMessage_FormularioContacto_TuCuenta extends ClaireandbruceTestCase {
 	
 	@Test
 	public void CBT97() throws Exception{
 		
-		Claireandbruce.login(selenium, username, password);
+		Helper.log("\n*** CASO DE PRUEBA *** CBT97. ENVÍO DE FORMULARIO DE CONTACTO");
 		
-		//Se obtienen los datos basicos del usuario para comparar en [Contactenos]
+		Lib_CorrectLogon_ValidUser_Accout.CBT55(selenium);
+		
+		//Se obtienen los datos básicos del usuario para comparar en [Contactenos]
 		selenium.click("xpath=html/body/div/div[2]/div[1]/div/div/div[2]/a[1]/div/div/p");
 		selenium.waitForPageToLoad("50000");
 		String nombre = selenium.getValue("xpath=.//*[@id='firstname']");
@@ -39,34 +44,20 @@ public class CBT97_Test_SendMessage_FormularioContacto_TuCuenta extends Clairean
 		assertTrue(selenium.getValue("xpath=.//*[@id='lastname']").equals(apellidos));
 		assertTrue(selenium.getValue("xpath=.//*[@id='email']").equals(username));
 		
-		//Seleccion de un tipo de consulta
+		//Selección de un tipo de consulta
 		selenium.click("xpath=.//*[@id='reason-0']/div/div[1]/div/div[1]");
 		selenium.click("xpath=.//*[@id='reason-0']/div/div[2]/div/div/div["+((int)(Math.random()*(3))+2)+"]");
 		
-		//Seleccion de un motivo de consulta
+		//Selección de un motivo de consulta
 		selenium.click("xpath=.//*[@id='reason-1']/div/div[1]/div/div[1]");
 		selenium.click("xpath=.//*[@id='reason-1']/div/div[2]/div/div/div["+((int)(Math.random()*(5))+2)+"]");
 		
 		selenium.type("xpath=.//*[@id='comment']", "Mensaje prueba QA");
 		//Click en boton enviar
 		selenium.click("xpath=.//*[@id='contactForm']/div[2]/button");
-		selenium.waitForPageToLoad("30000");
-		if((selenium.getTitle().startsWith("help")))
-		{
-			
-			selenium.click("//a[contains(text(), 'Tu cuenta')]");
-			
-			if(!selenium.isTextPresent("Su solicitud ha sido enviada y le responderemos con la mayor brevedad posible.Gracias por contactar con nosotros")){
-				Assert.fail(" Error " + selenium.getLocation());
-			}
-		}
-		else
-		{
-			Assert.fail(" Error: Page no found : " + selenium.getLocation());
-			
-		}
 		
-		
+		//assertTrue(selenium.getConfirmation().matches("Aunque esta página está cifrada, la información que ha introducido va a enviarse por una conexión sin cifrar, y podría ser leída fácilmente por terceras personas.\n¿Está seguro de que desea enviar esta información[\\s\\S]$"));
+		selenium.waitForPageToLoad("10000");
+		assertTrue(selenium.isTextPresent("Su solicitud ha sido enviada y le responderemos con la mayor brevedad posible.Gracias por contactar con nosotros"));	
 	}
-
 }

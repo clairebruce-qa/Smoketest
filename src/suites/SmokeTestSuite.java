@@ -50,8 +50,8 @@ import claireandbruce.com.test.register.*;
 	CBT93_Test_FooterTopNavigation.class,
 	CBT94_Test_FooterMiddleNavigation_Mujer.class,
 	Test_FooterMiddleNavigation_Marcas.class,
-	CBT96_Test_FooterMiddleNavigation_Tendencias.class,
-	CBT97_Test_SendMessage_FormularioContacto_TuCuenta.class,
+	Test_FooterMiddleNavigation_Tendencias.class,
+	Test_SendMessage_FormularioContacto_TuCuenta.class,
 	CBT99_Test_Ayuda_FAQs_TuCuenta.class,
 	Test_HeaderHomePageNavigation_Tendencias.class,
 

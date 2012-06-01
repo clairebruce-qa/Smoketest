@@ -117,14 +117,15 @@ public class Test_CorrectChangeUnits_TuCompra extends ClaireandbruceTestCase {
 			} else {
 				
 				cantidad = Integer.parseInt(selenium.getValue("xpath=//tr["+fila+"]/td[2]/input[2]"));
-				cantidad = cantidad +1;
+				cantidad = cantidad +20;
 				selenium.type("xpath=//tr["+fila+"]/td[2]/input[2]", ""+cantidad);
 				
-				cantidadNueva = Integer.parseInt(selenium.getValue("xpath=//tr["+fila+"]/td[2]/input[2]"));
-				
 				if(selenium.isAlertPresent()){
+					selenium.getAlert();
 					Helper.log("UNIDADES NO DISPONIBLES EN INVENTARIO\nSE VISUALIZA MENSAJE DE ALERTA!");
 				} else {
+					cantidadNueva = Integer.parseInt(selenium.getValue("xpath=//tr["+fila+"]/td[2]/input[2]"));
+				
 					precio = selenium.getText("xpath=//tr["+filaPrecio+"]/td[4]/span/span");
 					precioTotal = selenium.getText("xpath=//tr["+filaPrecio+"]/td[5]/span/span");
 					
@@ -170,7 +171,7 @@ public class Test_CorrectChangeUnits_TuCompra extends ClaireandbruceTestCase {
 						index++;					
 					}
 					precioTotalEsperado = auxString;
-					cantidadNueva = Integer.parseInt(selenium.getValue("xpath=//td[2]/input[2]"));
+					cantidadNueva = Integer.parseInt(selenium.getValue("xpath=//tr["+fila+"]/td[2]/input[2]"));
 					assertEquals(str_precioFinal, precioTotalEsperado);
 					Helper.log("CantidadNueva= "+cantidadNueva+" PrecioUnitario= "+precioUnitario+" precioTotal= "+str_precioFinal+" assertEquals "+precioTotalEsperado);	
 				
