@@ -39,11 +39,15 @@ public class ClaireandbruceTestCase{
 
 	//static String seleniumBrowser = System.getProperty("my.browser","*googlechrome");
 	static String seleniumBrowser = System.getProperty("my.browser","*chrome");
-
+<<<<<<< HEAD
+	
 	
 	
 //	public static String seleniumBrowser = System.getProperty("my.browser","*iexplore");
+=======
 	//public static String seleniumBrowser = System.getProperty("my.browser","*iexplore");
+>>>>>>> remotes/origin/master
+
 	public static DefaultSelenium selenium = new DefaultSelenium(seleniumUrl, 4444, seleniumBrowser,ClaireandbruceUrl );
 	
 	@BeforeClass
