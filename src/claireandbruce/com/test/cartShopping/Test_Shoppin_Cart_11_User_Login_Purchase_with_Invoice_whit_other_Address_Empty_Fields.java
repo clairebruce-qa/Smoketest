@@ -11,7 +11,7 @@ import claireandbruce.com.test.basicsFlows.Lib_CorrectLogon_ValidUser_Accout;
 
 import basics.ClaireandbruceTestCase;
 /**
- * 
+ * CBT48
  * @author Yuliana María Saavedra
  *
  */

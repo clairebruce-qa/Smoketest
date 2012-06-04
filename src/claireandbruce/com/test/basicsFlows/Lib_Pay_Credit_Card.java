@@ -21,14 +21,17 @@ public class Lib_Pay_Credit_Card extends ClaireandbruceTestCase{
 			selenium.click("xpath=//ul[@id='payment_form_sermepa']/li/div/div/div/div[2]");
 			selenium.click("xpath=//div[@value='VI']");
 			//Se ingresan datos de la tarjeta de crédito
-			selenium.type("xpath=//input[@id='sermepa_cc_number']", "4548812049400004");
-			//Se selecciona mes y año de vigencia
+			selenium.type("id=cc_number_part1","4548");
+			selenium.type("id=cc_number_part2","8120");
+			selenium.type("id=cc_number_part3","4940");
+			selenium.type("id=cc_number_part4","0004");
+			//Se selecciona mes y año de vigencia   
 			selenium.click("xpath=//li[3]/div/div/div/div/div");
-			selenium.click("xpath=//div[@value='1']");
+			selenium.click("xpath=//div[@value='12']");
 			selenium.click("xpath=//li[3]/div/div[2]/div/div/div[2]");
-			selenium.click("xpath=//div[@value='2013']");
+			selenium.click("xpath=//div[@value='2012']");
 			//Se ingresa código de seguridad
-			selenium.type("xpath=//li[@id='sermepa_cc_type_cvv_div']/div/div/input","555");
+			selenium.type("xpath=//li[@id='sermepa_cc_type_cvv_div']/div/div/input","123");
 			//Se aceptan términos y condiciones
 			selenium.click("id=agreement-1");
 			//Se presiona el botón PAGAR

@@ -8,6 +8,11 @@ import org.junit.Test;
 
 import basics.ClaireandbruceTestCase;
 
+/**
+ * CBT39
+ * @author NEWSHORE
+ *
+ */
 
 public class Test_Home_Page_Navigability_6_Test_NavigationByCategoryHeader_Mark extends ClaireandbruceTestCase{
 	@Test

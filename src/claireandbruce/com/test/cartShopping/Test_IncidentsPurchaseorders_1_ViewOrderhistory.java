@@ -9,13 +9,18 @@ import claireandbruce.com.test.basicsFlows.Lib_CorrectLogon_ValidUser_Accout;
 
 import basics.ClaireandbruceTestCase;
 
+/**
+ * CBT49
+ * @author NEWSHORE
+ *
+ */
 public class Test_IncidentsPurchaseorders_1_ViewOrderhistory extends ClaireandbruceTestCase{
 
 	
 	private String message;
 
 	@Test
-	public void TestHistorialPedidosAbiertoUserLogin() throws Exception{
+	public void CBT49() throws Exception{
 		message="";
 	
 		selenium.open(ClaireandbruceUrl);

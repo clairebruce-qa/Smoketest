@@ -12,7 +12,7 @@ import basics.ClaireandbruceTestCase;
 
 /**
  * Se automatiza el añadir un producto simple a la cesta.
- * @author MARIA FERNANDA RODRIGUEZ
+ * @author NEWSHORE
  *
  */
 public class Lib_CorrectAddProduct_Cart_SimpleProduct extends ClaireandbruceTestCase {
@@ -22,7 +22,7 @@ public class Lib_CorrectAddProduct_Cart_SimpleProduct extends ClaireandbruceTest
 		//Para efecto de la prueba
 		//selenium.open(ClaireandbruceUrl);
 		//selenium.waitForPageToLoad("30000");
-		
+		Helper.log("\n*** Añadir un producto simple al carrito de compras ***");
 		
 		
 		//Se selecciona una categoría entre Bolsos y Accesorios (Categorías que poseen productos simples)		
