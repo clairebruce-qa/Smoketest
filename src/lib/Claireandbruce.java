@@ -85,7 +85,7 @@ public class Claireandbruce {
 	public static void logout(Selenium selenium) throws Exception {
 
 		Helper.waitForElement(selenium, "xpath=//a[contains(@href, '/customer/account/logout/')]", "Log-out link not found in the page");
-		selenium.click("xpath=//a[contains(@href, 'link=Salir')]");
+		selenium.click("//a[contains(text(), 'Salir')]");
 		selenium.waitForPageToLoad("30000");
 		if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")) {
 			Helper.log("Logout done!");

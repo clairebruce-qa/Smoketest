@@ -9,12 +9,13 @@ import org.junit.Test;
 
 import claireandbruce.com.test.basicsFlows.Lib_CorrectAddProduct_Cart_ConfigurableProduct;
 import claireandbruce.com.test.basicsFlows.Lib_CorrectAddProduct_Cart_SimpleProduct;
+import claireandbruce.com.test.basicsFlows.Lib_CorrectLogon_ValidUser_Accout;
 
 
 import basics.ClaireandbruceTestCase;
 
 
-public class CBT22_Test_Shopping_Cart_1_Add_Other_Item_Shopping_Cart extends ClaireandbruceTestCase{
+public class Test_Shopping_Cart_1_Add_Other_Item_Shopping_Cart extends ClaireandbruceTestCase{
 	
 
 	
@@ -29,10 +30,18 @@ public class CBT22_Test_Shopping_Cart_1_Add_Other_Item_Shopping_Cart extends Cla
 		selenium.open(ClaireandbruceUrl);
 		selenium.waitForPageToLoad("30000");
 		
-		
+		if(!selenium.isElementPresent("xpath=//a[contains(text(), 'Salir')]")){
+			
+			Lib_CorrectLogon_ValidUser_Accout.CBT55(selenium);
+			
+		}
 			 
 			Lib_CorrectAddProduct_Cart_SimpleProduct.CBT_SimpleProduct(selenium);
-			Lib_CorrectAddProduct_Cart_ConfigurableProduct.CBT_ConfigurableProduct(selenium);
+			//Lib_CorrectAddProduct_Cart_ConfigurableProduct.CBT_ConfigurableProduct(selenium);
+			
+			
+		
+			
 		
 	
 	

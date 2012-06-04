@@ -26,34 +26,39 @@ import claireandbruce.com.test.register.*;
 	//se declaran las clases que contienen cada una un testcase
 	
 	//---------->CASOS A ENTREGAR<----------\\
-	
-	CBT2_Test_User_Register_1_User_registration_valid_field.class,
-	Test_User_Addres_1_Add_Shipping_Address_User_with_Valid_Fields.class,
-	CBT22_Test_Shopping_Cart_1_Add_Other_Item_Shopping_Cart.class,
+	TestIncorrectLogonInvalidPasswordSpaceCheckout.class,//1
+	TestIncorrectLogonNovalidPasswordCheckout.class,//2
+	TestIncorrectLogonInvalidUserFormatCheckout.class,//3
+	TestUserRegister1UserRegistrationValidField.class,//CBT2
+	Test_User_Addres_1_Add_Shipping_Address_User_with_Valid_Fields.class,//5
+	Test_Shopping_Cart_1_Add_Other_Item_Shopping_Cart.class,//6
 	Test_Home_Page_Navigability_1_Navigability_for_Look_Not_Login.class,
 	CBT33_Test_Home_Page_Navigability_3_Purchase_to_Complete_look_Not_Login_No_valid_Field.class,
 	CBT34_Test_Home_Page_Navigability_4_Purchase_to_look_piece_by_piece_User_Not_Login_No_Valid_Fields.class,
 	Test_Home_Page_Navigability_6_Test_NavigationByCategoryHeader_Mark.class,
 	CBT42_Test_Home_Page_Navegability_7_Navigability_Menu_Languaje.class,
-	CBT48_Test_Shoppin_Cart_11_User_Login_Purchase_with_Invoice_whit_other_Address_Empty_Fields.class,
+	Test_Shoppin_Cart_11_User_Login_Purchase_with_Invoice_whit_other_Address_Empty_Fields.class,
 	Test_IncidentsPurchaseorders_1_ViewOrderhistory.class,
-	Lib_CorrectLogon_ValidUser_Accout.class,
-	CBT71_Test_CorrectLogon_ValidUser_Checkout.class,
 	Test_CorrectAddProduct_Cart_NoLoginUser.class,
 	Test_CorrectChangeUnits_TuCompra.class,
 	CBT82_Test_EditionAddress_CancelButton_TuCuenta.class,
-	CBT83_Test_ForgottenPassword_ValidUser_TuCuenta.class,
+	Test_ForgottenPassword_ValidUser_TuCuenta.class,
 	CBT86_Test_MenCatalog_NoUserLogin.class,
 	CBT90_Test_NavigationByCategoryHeader.class,
-	CBT91_Test_FooterMiddleNavigation_AtencionAlCliente.class,
+	Test_FooterMiddleNavigation_AtencionAlCliente.class,
 	Test_NavigationTopQuestions.class,
-	CBT93_Test_FooterTopNavigation.class,
+	Test_FooterTopNavigation.class,
 	CBT94_Test_FooterMiddleNavigation_Mujer.class,
 	Test_FooterMiddleNavigation_Marcas.class,
 	Test_FooterMiddleNavigation_Tendencias.class,
 	Test_SendMessage_FormularioContacto_TuCuenta.class,
 	CBT99_Test_Ayuda_FAQs_TuCuenta.class,
-	Test_HeaderHomePageNavigation_Tendencias.class,
+	Test_HeaderHomePageNavigation_Tendencias.class,//CBT100
+	TestUserRegister7UserRegistrationvalidfieldwithEMailRegister.class,
+	TestUserRegister6UserRegistrationFieldPasswordValid.class,
+
+	
+
 
 	//----------------->CASOS QUE CORREN<----------------\\
 	/*CBT3_Test_User_Register_2_User_Registration_Empty_Field.class,
@@ -70,7 +75,7 @@ import claireandbruce.com.test.register.*;
 	CBT98_Test_SendMessage_FormularioContacto_InvalidData_TuCuenta.class*/
 	
 	//----------------->ESTOS NO APLICAN <-------------------------
-	
+	//CBT71_Test_CorrectLogon_ValidUser_Checkout.class,
 	//CBT38_Test_Home_Page_Navigability_5_Navigability_Video_CB_NetWorks.class,
 	//CBT43_Test_Home_Page_Navegability_8_Navigability_Field_Search.class,
 	//CBT50_Test_Home_Page_Navigability_9_Test_NavigationByCategoryOutStanding_Mark.class,

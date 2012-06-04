@@ -78,7 +78,7 @@ public class Test_Home_Page_Navigability_6_Test_NavigationByCategoryHeader_Mark 
 							//Si el enlace se encuentra ingresar en el
 							selenium.click("xpath=.//*[@id='listBrands']/div["+columna+"]/ul["+lista+"]/li["+literal+"]/a");
 							
-							selenium.waitForPageToLoad("25000");
+							selenium.waitForPageToLoad("30000");
 							if(selenium.getTitle().equals(texto.toUpperCase())) {
 								Helper.log("Link "+texto+" is active");
 								selenium.click("//a[contains(text(),'Marcas')]");

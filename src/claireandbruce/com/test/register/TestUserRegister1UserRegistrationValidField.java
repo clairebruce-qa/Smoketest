@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import basics.ClaireandbruceTestCase;
 
-public class CBT2_Test_User_Register_1_User_registration_valid_field extends ClaireandbruceTestCase {
+public class TestUserRegister1UserRegistrationValidField extends ClaireandbruceTestCase {
 	
 	/*@After 
 	public void verify() throws Exception{
