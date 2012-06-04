@@ -17,6 +17,7 @@ public class Test_FooterMiddleNavigation_Tendencias extends ClaireandbruceTestCa
 		if(selenium.isTextPresent("Salir")){
 			Claireandbruce.logout(selenium);
 		}
+	
 		
 		if(!selenium.isElementPresent("xpath=//div[6]/div/a")){
 			selenium.click("xpath=//img");
