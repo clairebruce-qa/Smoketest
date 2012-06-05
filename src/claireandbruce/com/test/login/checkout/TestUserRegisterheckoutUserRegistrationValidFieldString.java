@@ -11,16 +11,14 @@ import claireandbruce.com.test.basicsFlows.Lib_CorrectAddProduct_Cart_SimpleProd
 import basics.ClaireandbruceTestCase;
 
 /**
-<<<<<<< HEAD
+
  * Este caso de prueba verificara la correcta validacion del sistema para los campos de nombre y apellido
  * con valores diferentes a los correctos, el  exito del  caso  de prueba se vera reflejado en los avisos 
  * mostrados por el sistema para rechazar el registro.
-=======
- * Este Caso de  Prueba  verificará el  correcto funcionamiento del proceso  de  login de un usuario 
- * durante el  checkout,  al validar la  información ingresada por el usuario al momento de realizar
+ * Este Caso de  Prueba  verificará el  correcto funcionamiento del proceso  de  login de un usuario durante
+ * el  checkout,  al validar la  información ingresada por el usuario al momento de realizar
  * esta acción. El éxito del caso de prueba será la validación del campo contraseña ingresado y por consecuencia 
  * la posterior muestra del mensaje de advertencia sobre formato de contraseña no válido.
->>>>>>> parent of 7a14d68... Revert "Actualiza codigo casos nuevos"
  * 
  * 
  * @author 	Yuliana María Saavedra Russí
@@ -83,8 +81,7 @@ public class TestUserRegisterheckoutUserRegistrationValidFieldString extends Cla
 				selenium.type("xpath=.//*[@id='emailreg']", "claireandbruce"+i+"@gmail.com");
 				selenium.click("xpath=.//*[@id='send3']");
 				selenium.waitForPageToLoad("30000");
-				
-<<<<<<< HEAD
+			
 				selenium.type("id=shipping:firstname", "");
 				selenium.type("id=shipping:lastname", "");
 				selenium.click("id=shipping:street1");
@@ -136,46 +133,100 @@ public class TestUserRegisterheckoutUserRegistrationValidFieldString extends Cla
 				if(!selenium.isElementPresent("id=advice-required-entry-confirmation")){
 					Assert.fail("Se deben aceptar los terminos y condiciones del servicio");
 				}
+
+				// Validación del formulario para datos no validos
 				
-=======
-				selenium.type("id=shipping:firstname", "Sandra Milena");
-				selenium.type("id=shipping:lastname", "Torres Valencia");
-				selenium.click("id=shipping:street1");
-				selenium.type("id=shipping:street1", "Avenida Coruña 20 -"+i);
-				selenium.type("id=shipping:city","Barcelona");
-				selenium.click("css=div.selreplace_selectinner");
-				selenium.click("//div[@value='139']");
-				selenium.type("id=shipping:postcode", "80808"+i);
-				selenium.type("id=shipping:telephone", "85827414"+i);
-				selenium.type("id=firstname", "Claireandbruce");
-				selenium.type("id=lastname", "qa");
-				selenium.click("css=span.dob-day > div.selreplace_select > div > div.selreplace_selectbutton");
-				selenium.click("//div[@value='3']");
-				selenium.click("css=span.dob-month > div.selreplace_select > div > div.selreplace_selectbutton");
-				selenium.click("xpath=//span/div[2]/div/div/div[24]");
-				selenium.click("css=span.dob-year > div.selreplace_select > div > div.selreplace_selectbutton");
-				selenium.click("xpath=//div[@value='1989']");
-				selenium.type("id=email_address", "claireandbruceqa"+i+"@gmail.com");
-				selenium.type("id=password", "123456");
-				selenium.click("id=p_method_checkmo");
-				selenium.click("id=agreement-1");
-				selenium.click("xpath=(//button[@type='button'])[2]");
-				selenium.waitForPageToLoad("30000");
-				if(!("claireandbruceqa"+i+"@gmail.com").equals(selenium.getText("xpath=html/body/div[2]/div[2]/div[1]/div/div[2]/div[1]/div"))){
-					Assert.fail("Error: No registro el usuario");
+				selenium.type("id=shipping:firstname", "1234"); //Nombre de envío
+				
+				selenium.type("id=shipping:lastname", "1234");// Apellido de envío
+		
+				//selenium.type("id=shipping:city", "1235415"); // Campo población
+				//selenium.type("id=shipping:postcode", "YEDGY");//Campo código postal
+				selenium.type("id=shipping:telephone", "Yrdytrdf"); // Campo teléfono
+				
+				selenium.type("id=firstname", "12551");// Nombre de Registro de Usuario
+				
+				selenium.type("id=lastname", "1554142"); // Apellido de Registro de Usuario
+				
+				selenium.type("id=password", "32323");// Campo Contraseña
+				
+				if(!selenium.isElementPresent("id=advice-validate-name-shipping:firstname")){
+					Assert.fail("formato no valido para el campo");
 				}
->>>>>>> parent of 7a14d68... Revert "Actualiza codigo casos nuevos"
+				if(!selenium.isElementPresent("id=advice-validate-name-shipping:lastname")){
+					Assert.fail("formato no valido para el campo");
+				}
+				/*if(!selenium.isElementPresent("id=advice-validate-shipping:city")){
+					Assert.fail("formato no valido para el campo");
+				}
+				/*if(!selenium.isElementPresent("id=advice-validate-select-shipping:region_id"))
+				{
+					Assert.fail("formato no valido para el campo");
+				}
+				if(!selenium.isElementPresent("id=advice-required-entry-shipping:postcode"))
+				{
+					Assert.fail("formato no valido para el campo");
+				}*/
+				if(!selenium.isElementPresent("id=advice-validate-phone-shipping:telephone"))
+				{
+					Assert.fail("formato no valido para el campo");;
+				}
+				if(!selenium.isElementPresent("id=advice-validate-name-firstname")){
+					Assert.fail("El campo nombre de registro usuario es obligatorio");
+				}
+				if(!selenium.isElementPresent("id=advice-validate-name-lastname")){
+					Assert.fail("El campo apellido de registro usuario es obligatorio");
+				}
+				
+				selenium.type("id=shipping:firstname", "%$·$·"); //Nombre de envío
+				
+				selenium.type("id=shipping:lastname", "·$$&%$$");// Apellido de envío
+		
+				//selenium.type("id=shipping:city", "1235415"); // Campo población
+				//selenium.type("id=shipping:postcode", "YEDGY");//Campo código postal
+				selenium.type("id=shipping:telephone", "$%&#@"); // Campo teléfono
+				
+				selenium.type("id=firstname", "$%&#@");// Nombre de Registro de Usuario
+				
+				selenium.type("id=lastname", "$%&#@"); // Apellido de Registro de Usuario
+				
+				
+				if(!selenium.isElementPresent("id=advice-validate-name-shipping:firstname")){
+					Assert.fail("formato no valido para el campo");
+				}
+				if(!selenium.isElementPresent("id=advice-validate-name-shipping:lastname")){
+					Assert.fail("formato no valido para el campo");
+				}
+				/*if(!selenium.isElementPresent("id=advice-validate-shipping:city")){
+					Assert.fail("formato no valido para el campo");
+				}
+				/*if(!selenium.isElementPresent("id=advice-validate-select-shipping:region_id"))
+				{
+					Assert.fail("formato no valido para el campo");
+				}
+				if(!selenium.isElementPresent("id=advice-required-entry-shipping:postcode"))
+				{
+					Assert.fail("formato no valido para el campo");
+				}*/
+				if(!selenium.isElementPresent("id=advice-validate-phone-shipping:telephone"))
+				{
+					Assert.fail("formato no valido para el campo");;
+				}
+				if(!selenium.isElementPresent("id=advice-validate-name-firstname")){
+					Assert.fail("El campo nombre de registro usuario es obligatorio");
+				}
+				if(!selenium.isElementPresent("id=advice-validate-name-lastname")){
+					Assert.fail("El campo apellido de registro usuario es obligatorio");
+				}
+				
 			}else
 			{
 				Assert.fail("Error: No carga el formulario de registro");
 			}
 			
+
 			
-<<<<<<< HEAD
-			// Validación del formulario para datos númericos en campos nombre de envío, apellido de envío, 
-			
-=======
->>>>>>> parent of 7a14d68... Revert "Actualiza codigo casos nuevos"
+
 			
 	
 
