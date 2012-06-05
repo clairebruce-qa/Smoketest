@@ -11,9 +11,17 @@ import claireandbruce.com.test.basicsFlows.Lib_CorrectAddProduct_Cart_SimpleProd
 import basics.ClaireandbruceTestCase;
 
 /**
+<<<<<<< HEAD
  * El informe de prueba permitira validar los campos de registro de usuario cuando desea efectuar una compra 
  * y no se presenta como usuario registrado.El exito de la prueba sera el correcto  registro del usuario en 
  * el sistema, los valores de los campos seran validos 
+=======
+ * Este Caso de  Prueba  verificará el  correcto funcionamiento del proceso  de  login de un usuario 
+ * durante el  checkout,  al validar la  información ingresada por el usuario al momento de realizar
+ * esta acción. El éxito del caso de prueba será la validación del campo contraseña ingresado y por consecuencia 
+ * la posterior muestra del mensaje de advertencia sobre formato de contraseña no válido.
+ * 
+>>>>>>> parent of 7a14d68... Revert "Actualiza codigo casos nuevos"
  * 
  * @author 	Yuliana María Saavedra Russí
  *  		NEWSHORE 
