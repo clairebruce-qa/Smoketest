@@ -13,6 +13,7 @@ import basics.ClaireandbruceTestCase;
  * @author NEWSHORE
  *
  */
+
 public class Test_Address_Exist extends ClaireandbruceTestCase{
 	
 	@Test
