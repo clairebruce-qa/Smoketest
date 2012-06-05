@@ -9,7 +9,6 @@ import org.junit.Test;
 import com.thoughtworks.selenium.Selenium;
 
 import junit.framework.Assert;
-import lib.Helper;
 import basics.ClaireandbruceTestCase;
 /**
  * 
@@ -22,7 +21,7 @@ import basics.ClaireandbruceTestCase;
  * el éxito de la prueba se evidenciara cuando se elimine un item
  * o todos los items del carrito de compras y  este vacio.	
  * 
- * @author NEWSHORE
+ * @author Yuliana Maria Saavedra Russi
  *
  */
 public class Lib_Shopping_Cart_3_Deleter_Item_Shopping_Cart_CBT24 extends ClaireandbruceTestCase {
@@ -40,18 +39,17 @@ public class Lib_Shopping_Cart_3_Deleter_Item_Shopping_Cart_CBT24 extends Claire
 		*/
 		
 		//------------Se verifica que el carrito de compras contenga productos-------
-		Helper.log("\n*CBT24* Eliminar un producto del carrito de compras");
+		
 		selenium.click("id=cartHeader");
 	
 		if(selenium.isElementPresent("class=btn-remove")){			
 			selenium.click("class=btn-remove");
-			Helper.log("Eliminar producto");
+			
 			// El sistema confirma que se eliminará el producto
 			assertTrue(selenium.getConfirmation().matches("¿Está seguro de que desea eliminar este artículo de la cesta de la compra[\\s\\S]$"));
-			selenium.waitForPageToLoad("10000");
-			Helper.log("Confirmación para eliminar el artículo");
+			selenium.waitForPageToLoad("10000");			
 		} else {
-			Assert.fail("Error: No hay productos en el carrito de compras");
+			Assert.fail("Error: no hay productos en el carrito de compras");
 			selenium.waitForPageToLoad("10000");				
 		}		
 		

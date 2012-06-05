@@ -7,11 +7,6 @@ import org.junit.Test;
 
 import basics.ClaireandbruceTestCase;
 
-/**
- * CBT31
- * @author NEWSHORE
- *
- */
 public class Test_Home_Page_Navigability_1_Navigability_for_Look_Not_Login extends ClaireandbruceTestCase {
 
 	@Test

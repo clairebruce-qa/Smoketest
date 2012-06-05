@@ -14,13 +14,36 @@ import basics.ClaireandbruceTestCase;
 
 
 /**
- * TestCase que verifíca que el pago será efectuado por Paypal. 
- * @author NEWSHORE
+ * TestCase que verifíca que el pago será efectuado por Paypal.
+ * 
+ * 
+ * 
+ * @author YULIANA MARÍA SAAVEDRA RUSSÍ
+ * 
+ *
  */
 public class Lib_PayPal extends ClaireandbruceTestCase {
+
+	/**
+	 *  
+	 * @param nombreProducto
+	 * @throws Exception
+	 */
 	
 	public static void CBT_Paypal(Selenium selenium, String nombreProducto) throws Exception{
 	
+	
+		
+		
+
+		/*
+		if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
+			
+			Claireandbruce.login(selenium, username, password);
+		
+		}
+		*/
+
 		//-----****** Verifíca que la pagina de Tu Compra esta desplegada de lo contrario la carga *****----\\
 		
 		if(!("Compra ahora").equals(selenium.getTitle()))
@@ -34,12 +57,12 @@ public class Lib_PayPal extends ClaireandbruceTestCase {
 		
 		
 		if(("off").equals(selenium.getValue("name=shipping_address_id"))){	
-			Lib_Address_Exist.Address_Exist(selenium);
+			Lib_Address_Exist.CBT_Address(selenium);
 			//Test_Without_Purchase.CBT_WPurchase(selenium);
 		}
 		
 		if(("on").equals(selenium.getValue("id=showFakeBilling"))){	
-			Lib_Address_Exist.Address_Exist(selenium);
+			Lib_Address_Exist.CBT_Address(selenium);
 			
 		}
 		//------*****  Verifica que el pedido es pagado con Paypal *****-------\\
@@ -60,7 +83,9 @@ public class Lib_PayPal extends ClaireandbruceTestCase {
 		
 		//----**** Se confirma el pago en Paypal ----****\\
 		
-		//selenium.waitForPageToLoad("30000");		
+		//selenium.waitForPageToLoad("30000");
+		
+		
 		
 		//----**** Se autentica el usuario en Paypal ****----\\
 		
@@ -93,5 +118,8 @@ public class Lib_PayPal extends ClaireandbruceTestCase {
 		{
 			Assert.fail("Error no se encontro el pedido");
 		}
+	
+	
+
 	}
 }

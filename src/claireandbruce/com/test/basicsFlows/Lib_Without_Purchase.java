@@ -53,5 +53,7 @@ public class Lib_Without_Purchase extends ClaireandbruceTestCase {
 		if(!("off").equals(selenium.getValue("id=showFakeBilling"))) {
 			Assert.fail("Error:  Se esta solicitando la factura");
 		}
+		
+		
 	}
 }

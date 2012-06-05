@@ -13,8 +13,7 @@ import basics.ClaireandbruceTestCase;
  * Especificación de prueba para la verificación  y validación de una dirección de envío 
  * de pedido para ser añadida a las direcciones con datos validos.
  * El éxito de la prueba será el ingreso al sistema de la nueva dirección 
- * @author NEWSHORE
- * CBT13
+ * @author María Fernanda Rodríguez Vargas
  *
  */
 public class Test_User_Addres_1_Add_Shipping_Address_User_with_Valid_Fields extends ClaireandbruceTestCase {
