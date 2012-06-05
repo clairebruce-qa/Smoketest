@@ -4,6 +4,8 @@ import static org.junit.Assert.assertEquals;
 
 import java.text.DecimalFormat;
 
+import junit.framework.Assert;
+
 import lib.Helper;
 
 import org.junit.Test;
@@ -117,12 +119,13 @@ public class Test_CorrectChangeUnits_TuCompra extends ClaireandbruceTestCase {
 			} else {
 				
 				cantidad = Integer.parseInt(selenium.getValue("xpath=//tr["+fila+"]/td[2]/input[2]"));
-				cantidad = cantidad +20;
+				cantidad = cantidad +1;
 				selenium.type("xpath=//tr["+fila+"]/td[2]/input[2]", ""+cantidad);
 				
 				if(selenium.isAlertPresent()){
 					selenium.getAlert();
 					Helper.log("UNIDADES NO DISPONIBLES EN INVENTARIO\nSE VISUALIZA MENSAJE DE ALERTA!");
+					Assert.fail("UNIDADES NO DISPONIBLES EN INVENTARIO\nSE VISUALIZA MENSAJE DE ALERTA!");
 				} else {
 					cantidadNueva = Integer.parseInt(selenium.getValue("xpath=//tr["+fila+"]/td[2]/input[2]"));
 				

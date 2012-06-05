@@ -10,7 +10,7 @@ import claireandbruce.com.test.basicsFlows.Lib_CorrectLogon_ValidUser_Accout;
 public class Test_CorrectPasswordChange_SpacesNewPass_Account extends ClaireandbruceTestCase {
 
 	@Test
-	public void CBT62() throws Exception{
+	public void CBT60() throws Exception{
 		
 		Helper.log("\n*** CASO DE PRUEBA *** CBT62. CAMBIO CORRECTO DE CONTRASEÑA - NUEVA CONTRASEÑA CON ESPACIOS EN ELLA");
 		

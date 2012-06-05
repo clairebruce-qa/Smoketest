@@ -57,7 +57,7 @@ public class Test_Flow_III extends ClaireandbruceTestCase{
 		Lib_CorrectLogon_Checkout.login_Checkout(selenium);		
 		
 		//Se selecciona la dirección de envío
-		Lib_Address_Exist.Address_Exist(selenium);
+		Lib_Address_Exist.CBT_Address(selenium);
 		
 		//Se solicita factura
 		Lib_With_Purchase.shippingWithPurchase(selenium);

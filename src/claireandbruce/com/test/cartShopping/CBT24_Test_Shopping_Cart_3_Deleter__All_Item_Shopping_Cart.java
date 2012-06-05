@@ -31,11 +31,11 @@ public class CBT24_Test_Shopping_Cart_3_Deleter__All_Item_Shopping_Cart extends 
 		// SE PONE EN COMENTARIO CUANDO SE CORRA EN EL FLUJO, SE ACTIVA CUANDO SE CORRE UNITARIO
 		
 		
-		/*selenium.open("");
+		selenium.open("");
 		if (selenium.isElementPresent("xpath=//a[@id='overridelink']")){
 		selenium.click("//a[@id='overridelink']");
 		}
-		*/
+		
 		
 		//------------Se verifica que el carrito de compras contenga productos-------
 		

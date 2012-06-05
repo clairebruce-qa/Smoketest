@@ -15,8 +15,12 @@ import basics.ClaireandbruceTestCase;
  * 
  * */
 public class Lib_Address_Exist extends ClaireandbruceTestCase {
-		
-	public static void Address_Exist(Selenium selenium) throws Exception{
+	
+	/**
+	 * 
+	 */
+	
+	public static void CBT_Address(Selenium selenium) throws Exception{
 		
 /* ESTO SE PONE EN COMENTARIO PARA QUE CORRA EN EL FLUJO
 		

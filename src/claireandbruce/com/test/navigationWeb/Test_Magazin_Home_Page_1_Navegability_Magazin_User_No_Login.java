@@ -17,7 +17,7 @@ import basics.ClaireandbruceTestCase;
  * a traves del magazin, asi como la correcta adicion al carrito de compras 
  * de los productos seleccionados por el cliente.
  * 
- *  CBT30
+ * 
  * 
  * */
 public class Test_Magazin_Home_Page_1_Navegability_Magazin_User_No_Login extends ClaireandbruceTestCase{
