@@ -51,7 +51,7 @@ public class Test_Flow_II extends ClaireandbruceTestCase {
 		Lib_TypeShipping.typeShipping(selenium);
 		
 		// Se verifica si existe una dirección por defecto y si esta seleccionada
-		Lib_Address_Exist.CBT_Address(selenium);
+		Lib_Address_Exist.Address_Exist(selenium);
 		
 		// Se verifica que el envío se hara sin factura
 		Lib_With_Purchase.shippingWithPurchase(selenium);
