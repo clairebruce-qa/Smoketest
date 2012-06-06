@@ -81,12 +81,12 @@ public class TestUserRegisterheckoutUserRegistrationValidFieldString extends Cla
 				selenium.type("xpath=.//*[@id='emailreg']", "claireandbruce"+i+"@gmail.com");
 				selenium.click("xpath=.//*[@id='send3']");
 				selenium.waitForPageToLoad("30000");
-<<<<<<< HEAD
+
 				
 
-=======
+
 			
->>>>>>> remotes/origin/master
+
 				selenium.type("id=shipping:firstname", "");
 				selenium.type("id=shipping:lastname", "");
 				selenium.click("id=shipping:street1");
@@ -140,7 +140,7 @@ public class TestUserRegisterheckoutUserRegistrationValidFieldString extends Cla
 
 				// Validación del formulario para datos no validos
 				
-<<<<<<< HEAD
+
 
 				selenium.type("id=shipping:firstname", "Sandra Milena");
 				selenium.type("id=shipping:lastname", "Torres Valencia");
@@ -168,7 +168,7 @@ public class TestUserRegisterheckoutUserRegistrationValidFieldString extends Cla
 				if(!("claireandbruceqa"+i+"@gmail.com").equals(selenium.getText("xpath=html/body/div[2]/div[2]/div[1]/div/div[2]/div[1]/div"))){
 					Assert.fail("Error: No registro el usuario");
 				}
-=======
+
 				selenium.type("id=shipping:firstname", "1234"); //Nombre de envío
 				
 				selenium.type("id=shipping:lastname", "1234");// Apellido de envío
@@ -252,7 +252,7 @@ public class TestUserRegisterheckoutUserRegistrationValidFieldString extends Cla
 					Assert.fail("El campo apellido de registro usuario es obligatorio");
 				}
 				
->>>>>>> remotes/origin/master
+
 			}else
 			{
 				Assert.fail("Error: No carga el formulario de registro");
@@ -261,11 +261,10 @@ public class TestUserRegisterheckoutUserRegistrationValidFieldString extends Cla
 
 			
 
-<<<<<<< HEAD
+
 			// Validación del formulario para datos númericos en campos nombre de envío, apellido de envío, 
 			
-=======
->>>>>>> remotes/origin/master
+
 			
 	
 

@@ -13,7 +13,7 @@ import basics.ClaireandbruceTestCase;
  * Verificar la correcta validación del sistema para 
  * el filtro de marcas en el catalogo de mujer.
  * @author NEWSHORE
- *
+ * CBT40
  */
 
 public class TestCatalogWomenFilter extends ClaireandbruceTestCase {

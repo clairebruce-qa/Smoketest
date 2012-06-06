@@ -13,7 +13,7 @@ import basics.ClaireandbruceTestCase;
  *Verificar  la validacion del filtro de precio en el catalogo de mujer, en orden ascendente, descente
  *Verificar el correcto despliegue de las vistas de los articulos en el catalogo de mujer (look, producto)
  * @author NEWSHORE
- *
+ * CBT41
  */
 
 public class TestCatalogWomen2TestCatalogWomenFilterPriceViewsProductLook extends ClaireandbruceTestCase {

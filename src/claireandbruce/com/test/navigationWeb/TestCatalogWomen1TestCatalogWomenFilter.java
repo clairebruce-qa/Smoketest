@@ -14,7 +14,7 @@ import basics.ClaireandbruceTestCase;
  * Verificar la correcta validación del sistema para 
  * el filtro de marcas en el catalogo de mujer.
  * @author NEWSHORE
- *
+ * CBT40
  */
 
 public class TestCatalogWomen1TestCatalogWomenFilter extends ClaireandbruceTestCase {
@@ -91,7 +91,7 @@ public class TestCatalogWomen1TestCatalogWomenFilter extends ClaireandbruceTestC
 		int n = (int) (Math.random()*(4-1+1))+1; // Selecciona las categorias de Ropa, Bolsos, Zapatos.
 		selenium.click("xpath=.//*[@id='dt-filter-5']");
 		if(selenium.isElementPresent("//div["+n+"]/a/div[2]/div")){
-			int precio =0;
+			double precio =0;
 			
 			String check= selenium.getText("//div["+n+"]/a/div[2]/div");
 			selenium.click("//div["+n+"]/a/div[2]/div");
@@ -111,7 +111,7 @@ public class TestCatalogWomen1TestCatalogWomenFilter extends ClaireandbruceTestC
 				cant++;
 				
 			}
-			precio=Integer.parseInt(nuevoP);
+			precio=Double.parseDouble(nuevoP);
 			
 			// Se especifica que filtro fue seleccionado
 			if((check).equals("Entre 0 y 100 €")){
