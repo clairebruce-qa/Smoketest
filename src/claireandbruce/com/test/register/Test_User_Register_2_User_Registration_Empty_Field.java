@@ -7,8 +7,12 @@ import org.junit.Before;
 import org.junit.Test;
 
 import basics.ClaireandbruceTestCase;
-
-public class CBT3_Test_User_Register_2_User_Registration_Empty_Field extends ClaireandbruceTestCase{
+/**
+ * CBT3
+ * @author NEWSHORE
+ *
+ */
+public class Test_User_Register_2_User_Registration_Empty_Field extends ClaireandbruceTestCase{
 
 	@Before
 	public void setUp() throws Exception {

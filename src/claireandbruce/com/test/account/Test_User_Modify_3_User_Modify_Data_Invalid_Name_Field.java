@@ -8,16 +8,18 @@ import org.junit.Test;
 
 import basics.ClaireandbruceTestCase;
 
-/* Se verificará la respuesta del sistema para  la validación de  campos
+/** Se verificará la respuesta del sistema para  la validación de  campos
  * en el formulario de modificación de los datos  del usuario registrado
  * cuando se le dan valores con  formatos no validos en campo   nombre y 
  * apellido, el exito del caso de prueba sera la notificación al usuario
- * acerca de los formatos validos para los datos en los campos*/
+ * acerca de los formatos validos para los datos en los campos
+ * 
+ * CBT10
+ * @author NEWSHORE
+ * */
 
 
-public class CBT10_Test_User_Modify_3_User_Modify_Data_Invalid_Name_Field extends ClaireandbruceTestCase {
-
-	
+public class Test_User_Modify_3_User_Modify_Data_Invalid_Name_Field extends ClaireandbruceTestCase {
 		
 	
 	@Test
@@ -26,11 +28,8 @@ public class CBT10_Test_User_Modify_3_User_Modify_Data_Invalid_Name_Field extend
 		
 		//El usuario no debe tener su sesión iniciada
 		if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
-			Claireandbruce.login(selenium, username,password);
-			
+			Claireandbruce.login(selenium, username,password);			
 		}
-		
-		
 		
 		//Click en el link "Tu cuenta" Pagina Tu cuenta
 		Helper.clickAndVerify(selenium, "class=item account-configuration", "", "//form[@id='form-validate']/div/div/div/cufon[3]/canvas");

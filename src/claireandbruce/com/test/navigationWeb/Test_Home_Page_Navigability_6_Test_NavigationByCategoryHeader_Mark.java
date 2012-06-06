@@ -19,7 +19,7 @@ public class Test_Home_Page_Navigability_6_Test_NavigationByCategoryHeader_Mark 
 			Claireandbruce.logout(selenium);
 		}
 		
-		//Click en el link MARCAS 
+		//Clic en el link MARCAS 
 		//if(selenium.isElementPresent("xpath=.//*[@id='nav']/li[5]/a/span/cufon/canvas")){
 			if(selenium.isElementPresent("xpath=.//*[@id='nav']/li[5]/h2/a/span/cufon/canvas")){
 			selenium.click("xpath=.//*[@id='nav']/li[5]/h2/a/span/cufon/canvas");

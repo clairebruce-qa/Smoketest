@@ -12,7 +12,6 @@ import basics.ClaireandbruceTestCase;
  * en la lista de añadidos al carrito de compras
  * @author NEWSHORE
  *
- *
  */
 public class Test_ChangeUnits_OneProduct extends ClaireandbruceTestCase {
 	

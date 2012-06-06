@@ -10,7 +10,12 @@ import org.junit.Test;
 
 import basics.ClaireandbruceTestCase;
 
-public class CBT4_Test_User_Register_3_UserRegistration_Field_EMail_Invalid extends ClaireandbruceTestCase{
+/**
+ * CBT4
+ * @author NEWSHORE
+ *
+ */
+public class Test_User_Register_3_UserRegistration_Field_EMail_Invalid extends ClaireandbruceTestCase{
 
 	@Before
 	public void setUp() throws Exception {

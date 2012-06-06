@@ -21,6 +21,6 @@ public class Test_Address_Exist extends ClaireandbruceTestCase{
 		Helper.log(" *** CBL1 *** Test * Verificar la existencia de una dirección por defecto ***");
 		Lib_CorrectLogon_ValidUser_Accout.CBT55(selenium);
 		Lib_CorrectAddProduct_Cart_SimpleProduct.CBT_SimpleProduct(selenium);
-		Lib_Address_Exist.Address_Exist(selenium);
+		Lib_Address_Exist.CBT_Address(selenium);
 	}
 }

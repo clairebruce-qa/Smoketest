@@ -7,8 +7,12 @@ import lib.Helper;
 import org.junit.Test;
 
 import basics.ClaireandbruceTestCase;
-
-public class CBT11_Test_User_Modify_4_User_Modify_Data_Field_EMail_Invalid extends ClaireandbruceTestCase {
+/**
+ * CBT11
+ * @author NEWSHORE
+ *
+ */
+public class Test_User_Modify_4_User_Modify_Data_Field_EMail_Invalid extends ClaireandbruceTestCase {
 
 	@Test
 	public void CBT11 () throws Exception{

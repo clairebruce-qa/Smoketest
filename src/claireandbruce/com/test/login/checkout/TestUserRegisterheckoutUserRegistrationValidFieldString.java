@@ -84,7 +84,7 @@ public class TestUserRegisterheckoutUserRegistrationValidFieldString extends Cla
 				selenium.click("xpath=.//*[@id='send3']");
 				selenium.waitForPageToLoad("30000");
 				
-<<<<<<< HEAD
+
 				selenium.type("id=shipping:firstname", "");
 				selenium.type("id=shipping:lastname", "");
 				selenium.click("id=shipping:street1");
@@ -137,7 +137,7 @@ public class TestUserRegisterheckoutUserRegistrationValidFieldString extends Cla
 					Assert.fail("Se deben aceptar los terminos y condiciones del servicio");
 				}
 				
-=======
+
 				selenium.type("id=shipping:firstname", "Sandra Milena");
 				selenium.type("id=shipping:lastname", "Torres Valencia");
 				selenium.click("id=shipping:street1");
@@ -164,18 +164,15 @@ public class TestUserRegisterheckoutUserRegistrationValidFieldString extends Cla
 				if(!("claireandbruceqa"+i+"@gmail.com").equals(selenium.getText("xpath=html/body/div[2]/div[2]/div[1]/div/div[2]/div[1]/div"))){
 					Assert.fail("Error: No registro el usuario");
 				}
->>>>>>> parent of 7a14d68... Revert "Actualiza codigo casos nuevos"
 			}else
 			{
 				Assert.fail("Error: No carga el formulario de registro");
 			}
 			
 			
-<<<<<<< HEAD
+
 			// Validación del formulario para datos númericos en campos nombre de envío, apellido de envío, 
 			
-=======
->>>>>>> parent of 7a14d68... Revert "Actualiza codigo casos nuevos"
 			
 	
 
