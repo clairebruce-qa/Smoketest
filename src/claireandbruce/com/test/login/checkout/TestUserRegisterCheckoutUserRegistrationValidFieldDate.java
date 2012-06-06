@@ -11,25 +11,20 @@ import claireandbruce.com.test.basicsFlows.Lib_CorrectAddProduct_Cart_SimpleProd
 import basics.ClaireandbruceTestCase;
 
 /**
-
- * Este caso de prueba verificara la correcta validacion del sistema para los  campos de  nombre y  apellido
- * con valores diferentes a los correctos, el  exito del  caso  de prueba se  vera reflejado en los   avisos 
- * mostrados por el sistema para rechazar el registro.
- * Este Caso de  Prueba  verificará el  correcto funcionamiento del proceso  de  login de un usuario durante
- * el  checkout,  al validar la  información ingresada por el usuario al momento de realizar   esta  acción. 
- * El éxito del  caso  de prueba  será la validación   del  campo  contraseña  ingresado y  por consecuencia 
- * la posterior muestra del mensaje de advertencia sobre formato de contraseña no válido.
- * 
+ *Se comprobara la correcta validacion de la fecha de nacimiento por parte del sistema, 
+ *el éxito del caso de prueba se vera evidenciado en las notificaciones o avisos que el 
+ *sistema despliegue al usuario para el correcto ingreso de la fecha de nacimiento.
+ *
  * 
  * @author 	Yuliana María Saavedra Russí
  *  		NEWSHORE 
  *
  */
 
-public class TestUserRegisterheckoutUserRegistrationValidFieldString extends ClaireandbruceTestCase{
+public class TestUserRegisterCheckoutUserRegistrationValidFieldDate extends ClaireandbruceTestCase{
 
 	@Test
-	public void CBT20() throws Exception{
+	public void CBT21() throws Exception{
 
 	
 		// Elimina las cookies
@@ -82,22 +77,37 @@ public class TestUserRegisterheckoutUserRegistrationValidFieldString extends Cla
 				selenium.click("xpath=.//*[@id='send3']");
 				selenium.waitForPageToLoad("30000");
 			
-				selenium.type("id=shipping:firstname", "");
-				selenium.type("id=shipping:lastname", "");
-				selenium.click("id=shipping:street1");
-				selenium.type("id=shipping:street1", "");
-				selenium.type("id=shipping:city","");
-				selenium.click("css=div.selreplace_selectinner");
-				selenium.type("id=shipping:postcode", "");
-				selenium.type("id=shipping:telephone", "");
-				selenium.type("id=firstname", "");
-				selenium.type("id=lastname", "");
-				selenium.type("id=email_address", "");
-				selenium.type("id=password", "");
-				selenium.click("xpath=(//button[@type='button'])[2]");
 				
-				// Se validan los campos para valores vacíos
-				if(!selenium.isElementPresent("id=advice-required-entry-shipping:firstname")){
+				//selenium.click("xpath=(//button[@type='button'])[2]");
+				//selenium.waitForPageToLoad("30000");
+				// Se validan la fecha, si no existe una selección para valores vacíos
+				
+				
+				/*if(("02".equals(selenium.getText("css=span.dob-day > div.selreplace_select > div > div.selreplace_selectinner")))// Combo de selección de fecha de nacimiento
+						&& ("01".equals(selenium.getText("css=span.dob-month > div.selreplace_select > div > div.selreplace_selectinner")))
+						&& ("2012".equals(selenium.getText("css=span.dob-year > div.selreplace_select > div > div.selreplace_selectinner")))){
+					
+					Assert.fail("El usuario debe seleccionar una fecha de nacimiento válida");
+							
+							
+				}*/
+				selenium.click("css=span.dob-day > div.selreplace_select > div > div.selreplace_selectbutton");
+				selenium.click("//div[@value='31']");
+				selenium.click("css=span.dob-month > div.selreplace_select > div > div.selreplace_selectbutton");
+				selenium.click("xpath=(//div[@value='12'])[2]");
+				selenium.click("css=span.dob-year > div.selreplace_select > div > div.selreplace_selectinner");
+				selenium.click("//div[@value='2012']");
+				
+				selenium.click("xpath=(//button[@type='button'])[2]");
+				if(("31".equals(selenium.getText("css=span.dob-day > div.selreplace_select > div > div.selreplace_selectinner")))// Combo de selección de fecha de nacimiento
+						&& ("12".equals(selenium.getText("css=span.dob-month > div.selreplace_select > div > div.selreplace_selectinner")))
+						&& ("2012".equals(selenium.getText("css=span.dob-year > div.selreplace_select > div > div.selreplace_selectinner")))){
+					
+					Assert.fail("El usuario debe seleccionar una fecha de nacimiento válida");
+							
+							
+				}
+				/*if(!selenium.isElementPresent("id=advice-required-entry-shipping:firstname")){
 					Assert.fail("El campo nombre  de envío es obligatorio");
 				}
 				if(!selenium.isElementPresent("id=advice-required-entry-shipping:lastname")){
@@ -165,7 +175,7 @@ public class TestUserRegisterheckoutUserRegistrationValidFieldString extends Cla
 				if(!selenium.isElementPresent("id=advice-required-entry-shipping:postcode"))
 				{
 					Assert.fail("formato no valido para el campo");
-				}*/
+				}
 				if(!selenium.isElementPresent("id=advice-validate-phone-shipping:telephone"))
 				{
 					Assert.fail("formato no valido para el campo");;
@@ -196,17 +206,17 @@ public class TestUserRegisterheckoutUserRegistrationValidFieldString extends Cla
 				if(!selenium.isElementPresent("id=advice-validate-name-shipping:lastname")){
 					Assert.fail("formato no valido para el campo");
 				}
-				/*if(!selenium.isElementPresent("id=advice-validate-shipping:city")){
+				if(!selenium.isElementPresent("id=advice-validate-shipping:city")){
 					Assert.fail("formato no valido para el campo");
 				}
-				/*if(!selenium.isElementPresent("id=advice-validate-select-shipping:region_id"))
+				if(!selenium.isElementPresent("id=advice-validate-select-shipping:region_id"))
 				{
 					Assert.fail("formato no valido para el campo");
 				}
 				if(!selenium.isElementPresent("id=advice-required-entry-shipping:postcode"))
 				{
 					Assert.fail("formato no valido para el campo");
-				}*/
+				}
 				if(!selenium.isElementPresent("id=advice-validate-phone-shipping:telephone"))
 				{
 					Assert.fail("formato no valido para el campo");;
@@ -216,7 +226,7 @@ public class TestUserRegisterheckoutUserRegistrationValidFieldString extends Cla
 				}
 				if(!selenium.isElementPresent("id=advice-validate-name-lastname")){
 					Assert.fail("El campo apellido de registro usuario es obligatorio");
-				}
+				}*/
 				
 			}else
 			{
