@@ -6,7 +6,7 @@ import lib.Helper;
 
 import org.junit.Test;
 
-import claireandbruce.com.test.basicsFlows.Lib_CorrectAddProduct_Cart_SimpleProduct;
+import claireandbruce.com.test.basicsFlows.LibCorrectAddProductCartSimpleProduct;
 
 import basics.ClaireandbruceTestCase;
 
@@ -16,8 +16,7 @@ import basics.ClaireandbruceTestCase;
  * esta acción. El éxito del caso de prueba será la validación del campo contraseña ingresado y por consecuencia 
  * la posterior muestra del mensaje de advertencia sobre formato de contraseña no válido.
  * 
- * @author 	Yuliana María Saavedra Russí
- *  		NEWSHORE 
+ * @author 	NEWSHORE 
  *
  */
 
@@ -50,7 +49,7 @@ public class TestIncorrectLogonInvalidPasswordSpaceCheckout extends Claireandbru
 		  
 		 
 		 // Se agrega el producto al carrito de compras 
-		 Lib_CorrectAddProduct_Cart_SimpleProduct.CBT_SimpleProduct(selenium);
+		 LibCorrectAddProductCartSimpleProduct.CBT_SimpleProduct(selenium);
 			//R2
 		 if(!("Compra ahora").equals(selenium.getTitle()))
 			{

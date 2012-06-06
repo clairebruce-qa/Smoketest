@@ -6,7 +6,7 @@ import lib.Helper;
 
 import org.junit.Test;
 
-import claireandbruce.com.test.basicsFlows.Lib_CorrectAddProduct_Cart_SimpleProduct;
+import claireandbruce.com.test.basicsFlows.LibCorrectAddProductCartSimpleProduct;
 
 import basics.ClaireandbruceTestCase;
 
@@ -16,8 +16,7 @@ import basics.ClaireandbruceTestCase;
  *sistema despliegue al usuario para el correcto ingreso de la fecha de nacimiento.
  *
  * 
- * @author 	Yuliana María Saavedra Russí
- *  		NEWSHORE 
+ * @author 	NEWSHORE 
  *
  */
 
@@ -50,7 +49,7 @@ public class TestUserRegisterCheckoutUserRegistrationValidFieldDate extends Clai
 		  
 		 
 		 // Se agrega el producto al carrito de compras 
-		 Lib_CorrectAddProduct_Cart_SimpleProduct.CBT_SimpleProduct(selenium);
+		 LibCorrectAddProductCartSimpleProduct.CBT_SimpleProduct(selenium);
 			//R2
 		 if(!("Compra ahora").equals(selenium.getTitle()))
 			{

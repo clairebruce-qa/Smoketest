@@ -13,15 +13,12 @@ import basics.ClaireandbruceTestCase;
  * página de Tu Cuenta de ClaireandBruce, el ingreso para el registro sera mediante el 
  * enlace de tu cuenta.
  * 
- * 
+ * CBT29
  * @author NEWSHORE
  *
  */
 
-
 public class TestUserRegisterAccount1UserRegistrationValidFieldForAccount extends ClaireandbruceTestCase {
-	
-
 	
 	public static String username2;
 

@@ -1,32 +1,14 @@
 package claireandbruce.com.test.register;
 
 import static org.junit.Assert.assertTrue;
-import lib.Helper;
-
-import org.junit.After;
 import org.junit.Test;
-
 import basics.ClaireandbruceTestCase;
-
+/**
+ * CBT2
+ * @author NEWSHORE
+ *
+ */
 public class TestUserRegister1UserRegistrationValidField extends ClaireandbruceTestCase {
-	
-	/*@After 
-	public void verify() throws Exception{
-		//Para Abrir otra ventana
-		selenium.deleteAllVisibleCookies();  
-		  selenium.open("");
-
-		  if (selenium.isElementPresent("xpath=//a[@id='overridelink']")){
-		   selenium.click("//a[@id='overridelink']");
-		   System.out.print("Si entra");
-		  }	
-		  
-		  selenium.waitForPageToLoad("40000");
-			
-		  Helper.waitForElement(selenium, "//a[contains(text(),'Regístrate')]", "Log-out link not found in the page");
-	
-		 
-	}*/
 	
 	public static String username2;
 

@@ -14,7 +14,7 @@ import basics.ClaireandbruceTestCase;
  * electrónico  pertenece a un usuario no  registrado  en   el 
  * sistema.
  * 
- * 
+ * CBT84
  * @author NEWSHORE
  *
  */
