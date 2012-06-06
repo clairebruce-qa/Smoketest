@@ -60,7 +60,7 @@ public class Lib_CorrectAddProduct_Cart_SimpleProduct extends ClaireandbruceTest
 					else{
 						selenium.click("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul["+filaArticulo+"]/li["+columnaArticulo+"]/div[3]/a");
 
-						selenium.waitForPageToLoad("50000");
+						selenium.waitForPageToLoad("60000");
 					}
 					Helper.log("Producto actual: "+selenium.getTitle());						
 				}				

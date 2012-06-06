@@ -11,17 +11,18 @@ import basics.ClaireandbruceTestCase;
  * Caso de prueba diseñado para verificar la correcto despliegue y funcionamiento de la 
  * interfaz del formulario de contacto "Contáctenos". Cuando las listas de despliegue no 
  * son seleccionadas o los datos ingresados no son datos válidos, antes de enviar el mensaje.
- * @author María Fernanda Rodríguez Vargas
+ * CBT98
+ * @author NEWSHORE
  *
  */
-public class CBT98_Test_SendMessage_FormularioContacto_InvalidData_TuCuenta  extends ClaireandbruceTestCase {
+public class Test_SendMessage_FormularioContacto_InvalidData_TuCuenta  extends ClaireandbruceTestCase {
 
 	@Test
 	public void CBT98() throws Exception{
 		
 		Claireandbruce.login(selenium, username, password);
 		
-		//Se obtienen los datos basicos del usuario para comparar en [Contactenos]
+		//Se obtienen los datos básicos del usuario para comparar en [Contactenos]
 		selenium.click("xpath=html/body/div/div[2]/div[1]/div/div/div[2]/a[1]/div/div/p");
 		selenium.waitForPageToLoad("15000");
 		String nombre = selenium.getValue("xpath=.//*[@id='firstname']");
@@ -52,21 +53,21 @@ public class CBT98_Test_SendMessage_FormularioContacto_InvalidData_TuCuenta  ext
 
 		//Se comprueban mensajes de advertencia en la interfaz
 		assertTrue(selenium.getText("xpath=.//*[@id='advice-required-entry-name']").equals("Campo obligatorio.")); //Campo nombre
-		Helper.log("Warning Message 'Campo obligatorio.' OK");
+		Helper.log("Mensaje de advertencia 'Campo obligatorio.' OK");
 		assertTrue(selenium.getText("xpath=.//*[@id='advice-validate-email-email']").equals("Ingrese una dirección de correo electrónico válida. Por ejemplo: juanperez@dominio.com.")); //Campo correo electronico
-		Helper.log("Warning Message 'Ingrese una dirección de correo electrónico válida. Por ejemplo: juanperez@dominio.com.' OK");
+		Helper.log("Mensaje de advertencia 'Ingrese una dirección de correo electrónico válida. Por ejemplo: juanperez@dominio.com.' OK");
 		assertTrue(selenium.getText("xpath=.//*[@id='advice-validate-contacts-type']").equals("Seleccione una de las opciones.")); //Seleccion de tipo de consulta
-		Helper.log("Warning Message 'Seleccione una de las opciones.' OK");
+		Helper.log("Mensaje de advertencia 'Seleccione una de las opciones.' OK");
 		assertTrue(selenium.getText("xpath=.//*[@id='advice-validate-contacts-theme']").equals("Seleccione una de las opciones.")); //Seleccion de motivo de consulta
-		Helper.log("Warning Message 'Seleccione una de las opciones.' OK");
+		Helper.log("Mensaje de advertencia 'Seleccione una de las opciones.' OK");
 		assertTrue(selenium.getText("xpath=.//*[@id='advice-required-entry-comment']").equals("Campo obligatorio.")); //Mensaje vacío
-		Helper.log("Warning Message 'Campo obligatorio.' OK");
+		Helper.log("Mensaje de advertencia 'Campo obligatorio.' OK");
 		
 		selenium.type("xpath=.//*[@id='email']", "");
 		//Click en boton enviar
 		selenium.click("xpath=.//*[@id='contactForm']/div[2]/button");
 		assertTrue(selenium.getText("xpath=.//*[@id='advice-required-entry-email']").equals("Campo obligatorio.")); //Campo correo electronico
-		Helper.log("Warning Message 'Campo obligatorio.' OK");
+		Helper.log("Mensaje de advertencia 'Campo obligatorio.' OK");
 		
 		
 		

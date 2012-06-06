@@ -54,7 +54,6 @@ public class Claireandbruce {
 		selenium.type("xpath=.//*[@id='email']", username);
 		selenium.type("xpath=.//*[@id='pass']", password);		
 		selenium.click("//button[contains(@id,'send2')]");		
-		
 		if (!selenium.isElementPresent( "class=validation-advice")){
 		
 			

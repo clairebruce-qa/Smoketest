@@ -12,10 +12,10 @@ import basics.ClaireandbruceTestCase;
  * acción y/o al presionar el botón “ENTRAR”. El éxito del caso de prueba será la validación del 
  * email ingresado y por consecuencia la posterior muestra del mensaje de advertencia sobre formato 
  * de email no válido
- * @author MARIA FERNANDA RODRIGUEZ VARGAS
+ * @author NEWSHORE
  *
  */
-public class CBT56_Test_IncorrectLogon_InvalidUserFormat_TuCuenta extends ClaireandbruceTestCase{
+public class Test_IncorrectLogon_InvalidUserFormat_TuCuenta extends ClaireandbruceTestCase{
 	
 	@Test
 	public void CBT56() throws Exception {

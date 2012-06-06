@@ -10,35 +10,34 @@ import org.junit.Test;
 
 import basics.ClaireandbruceTestCase;
 
-public class CBT81_Test_Subscriptions_YesNo_TuCuenta extends ClaireandbruceTestCase{
-	
-	/*
-	 *Este Caso de Prueba  verificará el  correcto
-	 *funcionamiento   del proceso   encargado  de 
-	 *modificar  las  suscripciones  que posee  el 
-	 *usuario a través  de su cuenta en el portal. 
-	 *El éxito del proceso  se evaluará al mostrar 
-	 *el mensaje "La suscripción ha sido guardada".  
-	 * 
-	 * */
+/**
+ * Este Caso de Prueba  verificará el  correcto funcionamiento   del proceso   encargado  de 
+ * modificar  las  suscripciones  que posee  el usuario a través  de su cuenta en el portal. 
+ * El éxito del proceso  se evaluará al mostrar el mensaje "La suscripción ha sido guardada".  
+ * 
+ * CBT81
+ * @author NEWSHORE
+ * */
 
+public class Test_Subscriptions_YesNo_TuCuenta extends ClaireandbruceTestCase{
+	
 	@Test
 	public void CBT81() throws Exception {
 		
-		//Despliega la pagina de Claireandbruce
-		selenium.open("");
-		
-		
-		
 		//-----------------------------------Autentica el Usuario----------------------------------
 		if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
-			  Claireandbruce.login(selenium, username, password);
-			  
-		  }
+			  Claireandbruce.login(selenium, username, password);				  
+		}
 	
+		if(!selenium.getTitle().equals("Mi cuenta")){
+			selenium.waitForPageToLoad("5000");
+			selenium.click("link=Mi cuenta");
+			selenium.waitForPageToLoad("15000");
+		}
+		
 		//--------verifica que el link de TUS SUSCRIPCIONES ESTE HABILITADO------------
-		assertTrue(selenium.isElementPresent("//div[2]/li[2]/a/span"));
-		selenium.click("//div[2]/li[2]/a/span");
+		//assertTrue(selenium.isElementPresent("//div[2]/li[2]/a/span"));
+		selenium.click("xpath=//div[2]/li[2]/a/span");
 		selenium.waitForPageToLoad("30000");
 		
 		
@@ -78,51 +77,8 @@ public class CBT81_Test_Subscriptions_YesNo_TuCuenta extends ClaireandbruceTestC
 			selenium.waitForPageToLoad("30000");
 			assertTrue(selenium.isTextPresent("La suscripción ha sido eliminada."));
 		}
-		
-		
-		
 	
 		Claireandbruce.logout(selenium);
-		selenium.stop();
-		
-		//-----------------------------------------------------------PARA ABRIR EL E-MAIL------------------------------------------------------------------------
-		
-		//selenium.type("xpath=(//input[@id='email'])[2]", "gmail.com");
-/*
-		
-		String  GmailUrl	=	"http://www.gmail.com";
-		String seleniumUrl =	"localhost";
-		String seleniumBrowser = System.getProperty("my.browser","*chrome");
-		selenium = new DefaultSelenium(seleniumUrl, 4444, seleniumBrowser,GmailUrl );
-
-		
-		
-		
-		selenium.start();
-		selenium.windowMaximize();
-		selenium.windowFocus();
-		selenium.setSpeed("500");
-		selenium.setTimeout("100000");
-		
-		selenium.deleteAllVisibleCookies();
-		
-		selenium.open("");
-		
-		
-		//--------------***** AUTENTICACION EN EL EMAIL  ****--------------
-		selenium.type("xpath=.//*[@id='Email']", "ClaireandBruceQA");
-		selenium.type("xpath=.//*[@id='Passwd']", "privaliaqa");
-			
-		Helper.clickAndVerify(selenium, "xpath=.//input[@id='signIn']", "CLAIRE+BRUCE", "xpath=.//*[@id=':mj']/span");
-		selenium.waitForPageToLoad("30000");
-		selenium.click("//a[contains(text(),'Cerrar sesión')]");
-		selenium.waitForPageToLoad("30000");
-		
-		//assertTrue(selenium.isTextPresent("CLAIRE+BRUCE"));
-		
-		selenium.stop();*/
-		
-		
+		selenium.stop();		
 	}
-
 }

@@ -13,16 +13,16 @@ import basics.ClaireandbruceTestCase;
  * acción y/o al presionar el botón “ENTRAR”. El éxito del caso de prueba será la validación del 
  * email ingresado y por consecuencia la posterior muestra del mensaje de advertencia sobre formato 
  * de email no válido
- * @author MARIA FERNANDA RODRIGUEZ VARGAS
+ * @author NEWSHORE
  *
  */
 
-public class CBT57_Test_IncorrectLogon_InvalidPassword_TuCuenta extends ClaireandbruceTestCase{
+public class Test_IncorrectLogon_InvalidPassword_TuCuenta extends ClaireandbruceTestCase{
 	
 	@Test
 	public void CBT57() throws Exception {
 			
-		Claireandbruce.login(selenium, "claireandbruceqa@gmail.com", "zxcvbn");
+		Claireandbruce.login(selenium, username, "zxcvbn");
 			
 		if(selenium.isTextPresent("Usuario o contraseña inválidos.")){
 			Helper.log("Test-IncorrectLogon-InvalidPassword Complete");

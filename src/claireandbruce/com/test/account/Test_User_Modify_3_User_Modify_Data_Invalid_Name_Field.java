@@ -44,7 +44,7 @@ public class Test_User_Modify_3_User_Modify_Data_Invalid_Name_Field extends Clai
 		
 		//PASO 3. Testlink
 		//Se ingresa un dato valido en el campo nombre para verificar la validez solo el campo apellido
-		selenium.type("xpath=.//*[@id='firstname']", "x");
+		selenium.type("xpath=.//*[@id='firstname']", "Claire");
 		//Se ingresa campo apellidos {1237}
 		selenium.type("xpath=.//*[@id='lastname']", "1237");
 		//Se da click en el boton GUARDA TUS DATOS
@@ -54,7 +54,7 @@ public class Test_User_Modify_3_User_Modify_Data_Invalid_Name_Field extends Clai
 		
 		//PASO 4. Testlink
 		//Se ingresa un dato valido en el campo Apellidos para verificar la validez solo el campo nombre
-		selenium.type("xpath=.//*[@id='lastname']", "x");
+		selenium.type("xpath=.//*[@id='lastname']", "Bruce");
 		//Se ingresa campo nombre {%&$>}
 		selenium.type("xpath=.//*[@id='firstname']", "%&$>");
 		//Se da click en el boton GUARDA TUS DATOS
@@ -64,7 +64,7 @@ public class Test_User_Modify_3_User_Modify_Data_Invalid_Name_Field extends Clai
 		
 		//PASO 5. Testlink
 		//Se ingresa un dato valido en el campo nombre para verificar la validez solo el campo apellido
-		selenium.type("xpath=.//*[@id='firstname']", "x");
+		selenium.type("xpath=.//*[@id='firstname']", "Claire");
 		//Se ingresa campo apellidos {%&$>}
 		selenium.type("xpath=.//*[@id='lastname']", "%&$>");
 		//Se da click en el boton GUARDA TUS DATOS
@@ -74,7 +74,7 @@ public class Test_User_Modify_3_User_Modify_Data_Invalid_Name_Field extends Clai
 		
 		//PASO 6. Testlink
 		//Se ingresa un dato valido en el campo Apellidos para verificar la validez solo el campo nombre
-		selenium.type("xpath=.//*[@id='lastname']", "x");
+		selenium.type("xpath=.//*[@id='lastname']", "Bruce");
 		//Se ingresa campo nombre {.}
 		selenium.type("xpath=.//*[@id='firstname']", ".");
 		//Se da click en el boton GUARDA TUS DATOS
@@ -89,7 +89,7 @@ public class Test_User_Modify_3_User_Modify_Data_Invalid_Name_Field extends Clai
 		
 		//PASO 7. Testlink
 		//Se ingresa un dato valido en el campo nombre para verificar la validez solo el campo apellido
-		selenium.type("xpath=.//*[@id='firstname']", "x");
+		selenium.type("xpath=.//*[@id='firstname']", "Claire");
 		//Se ingresa campo apellidos {.}
 		selenium.type("xpath=.//*[@id='lastname']", ".");
 		//Se da click en el boton GUARDA TUS DATOS
@@ -103,8 +103,8 @@ public class Test_User_Modify_3_User_Modify_Data_Invalid_Name_Field extends Clai
 		}
 		selenium.waitForPageToLoad("30000");
 		//PASO 8. Testlink
-		//Se ingresa campo nombre {Mafe.}
-		selenium.type("xpath=.//*[@id='firstname']", "Mafe.");
+		//Se ingresa campo nombre {Claire.}
+		selenium.type("xpath=.//*[@id='firstname']", "Claire.");
 		//Se ingresa un dato valido en el campo Apellidos para verificar la validez solo el campo nombre
 		selenium.type("xpath=.//*[@id='lastname']", "x");
 		//Se da click en el boton GUARDA TUS DATOS
@@ -112,24 +112,24 @@ public class Test_User_Modify_3_User_Modify_Data_Invalid_Name_Field extends Clai
 		selenium.click("id=email");
 		
 		if(!selenium.isTextPresent("Utilice sólo letras (a-z o A-Z) en este campo.")){
-			Helper.log(" SE ESTA PERMITIENDO EL INGRESO DE UN NOMBRE CONTENIENDO EL CARACTER PUNTO {.} EN EL. Ejemplo: Mafe.");
+			Helper.log(" SE ESTA PERMITIENDO EL INGRESO DE UN NOMBRE CONTENIENDO EL CARACTER PUNTO {.} EN EL. Ejemplo: Claire.");
 		} else {
-			Helper.log(" NO SE PERMITE EL INGRESO DE UN NOMBRE CONTENIENDO EL CARACTER PUNTO {.} EN EL. Ejemplo: Mafe.");
+			Helper.log(" NO SE PERMITE EL INGRESO DE UN NOMBRE CONTENIENDO EL CARACTER PUNTO {.} EN EL. Ejemplo: Claire.");
 		}
 		
 		//PASO 9. Testlink
-		//Se ingresa campo apellidos {Rodriguez.v}
-		selenium.type("xpath=.//*[@id='lastname']", "Rodriguez.v");
+		//Se ingresa campo apellidos {Bruce.}
+		selenium.type("xpath=.//*[@id='lastname']", "Bruce.");
 		//Se ingresa un dato valido en el campo nombre para verificar la validez solo el campo apellido
-		selenium.type("id=firstname", "x");		
+		selenium.type("id=firstname", "Claire");		
 		//Se da click en el boton GUARDA TUS DATOS
 		selenium.click("css=button.button");
 		selenium.click("id=email");
 		
 		if(!selenium.isTextPresent("Utilice sólo letras (a-z o A-Z) en este campo.")){
-			Helper.log(" SE ESTA PERMITIENDO EL INGRESO DE APELLIDOS CONTENIENDO EL CARACTER PUNTO {.} EN EL. Ejemplo: Rodriguez.v");
+			Helper.log(" SE ESTA PERMITIENDO EL INGRESO DE APELLIDOS CONTENIENDO EL CARACTER PUNTO {.} EN EL. Ejemplo: Bruce.");
 		} else {
-			Helper.log(" NO SE PERMITE EL INGRESO DE UN APELLIDOS CONTENIENDO EL CARACTER PUNTO {.} EN EL Ejemplo: Rodriguez.v");
+			Helper.log(" NO SE PERMITE EL INGRESO DE UN APELLIDOS CONTENIENDO EL CARACTER PUNTO {.} EN EL Ejemplo: Bruce.");
 		}
 		
 	}
