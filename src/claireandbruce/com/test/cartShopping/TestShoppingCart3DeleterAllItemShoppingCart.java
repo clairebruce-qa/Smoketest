@@ -5,6 +5,8 @@ import static org.junit.Assert.assertTrue;
 
 
 import org.junit.Test;
+
+import claireandbruce.com.test.basicsFlows.LibCorrectAddProductCartSimpleProduct;
 import junit.framework.Assert;
 import basics.ClaireandbruceTestCase;
 /**	Se validara la funcionalidad del carrito de compras cuando se 
@@ -42,7 +44,7 @@ public class TestShoppingCart3DeleterAllItemShoppingCart extends ClaireandbruceT
 		
 		
 		//------------Se verifica que el carrito de compras contenga productos-------
-		
+		LibCorrectAddProductCartSimpleProduct.CBT_SimpleProduct(selenium);
 		selenium.click("id=cartHeader");
 
 	

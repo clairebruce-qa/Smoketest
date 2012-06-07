@@ -21,30 +21,21 @@ public class TestUserAddress1AddShippingAddressUserWithValidFields extends Clair
 		
 	@Test
 	public void CBT13() throws Exception{
-		selenium.open("");
-		selenium.waitForPageToLoad("15000");
 		int i =(int)(Math.random()*100);
 		//El usuario no debe tener su sesión iniciada
-		if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
-			
-			Claireandbruce.login(selenium, username, password);
-		
+		if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")){			
+			Claireandbruce.login(selenium, username, password);		
 		}
 		
-		
+		selenium.waitForPageToLoad("15000");
 		Helper.log("Ambiente de prueba: "+selenium.getLocation());
 		//Ingresar a traves del botón 'TUS DIRECCIONES' Área privada'
-		if(selenium.isElementPresent("xpath=html/body/div/div[2]/div[1]/div/div/div[2]/a[2]/div/div/p")){
-			selenium.click("xpath=html/body/div/div[2]/div[1]/div/div/div[2]/a[2]/div/div/p");
-			
-		} else {//Ingresar a través del link 'Modificar o añadir dirección'
-			//selenium.click("xpath=html/body/div/div[2]/div[2]/div[1]/div[2]/ul/div[3]/li/a/span");
-		}
-		
+		selenium.click("xpath=//div[3]/li/a/span");
 		selenium.waitForPageToLoad("60000");
-		if(selenium.isElementPresent("xpath=.//*[@id='spanNewAddress']"))
+		
+		if(selenium.isElementPresent("id=spanNewAddress"))
 		{
-		selenium.click("xpath=.//*[@id='spanNewAddress']");
+		selenium.click("id=spanNewAddress");
 		
 		selenium.type("xpath=.//*[@id='firstname']","Sandra Milena"); //Nombre
 		selenium.type("xpath=.//*[@id='lastname']","Torres Valencia"); //Apellidos

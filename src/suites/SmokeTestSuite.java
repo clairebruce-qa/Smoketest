@@ -50,7 +50,7 @@ import claireandbruce.com.test.register.*;
 	//se declaran las clases que contienen cada una un testcase
 
 	//TestUserRegister1UserRegistrationValidField.class, 							//CBT2   - CBT31
-	//TestUserRegister6UserRegistrationFieldPasswordValid.class, 					//CBT7   - CBT24
+	TestUserRegister6UserRegistrationFieldPasswordValid.class, 					//CBT7   - CBT24
 	TestUserAddress1AddShippingAddressUserWithValidFields.class, 				//CBT13  - CBT6
 	TestUserRegisterCheckout1UserRegistrationValidField.class, 					//CBT18  - CBT35
 	TestUserRegisterCheckoutUserRegistrationValidFieldString.class, 			//CBT20  - CBT44
