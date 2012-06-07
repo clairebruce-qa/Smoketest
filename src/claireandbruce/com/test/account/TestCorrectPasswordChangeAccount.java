@@ -10,7 +10,7 @@ import basics.ClaireandbruceTestCase;
  * @author NEWSHORE
  *
  */
-public class TestCorrectPasswordChangeTuCuenta extends ClaireandbruceTestCase {
+public class TestCorrectPasswordChangeAccount extends ClaireandbruceTestCase {
 
 	@Test
 	public void CBT60() throws Exception{

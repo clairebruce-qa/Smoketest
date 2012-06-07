@@ -18,10 +18,10 @@ import basics.ClaireandbruceTestCase;
  * 
  * 
  * @author 	NEWSHORE 
- *
+ * CBT73
  */
 
-public class TestIncorrectLogonNovalidPasswordCheckout extends ClaireandbruceTestCase{
+public class TestIncorrectLogonNoValidPasswordCheckout extends ClaireandbruceTestCase{
 
 	@Test
 	public void CBT73() throws Exception{

@@ -11,7 +11,7 @@ import basics.ClaireandbruceTestCase;
 /**
  * 
  * @author NEWSHORE
- *
+ * CBT39
  */
 public class TestHomePageNavigability6TestNavigationByCategoryHeaderMark extends ClaireandbruceTestCase{
 	@Test

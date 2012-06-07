@@ -21,10 +21,10 @@ import basics.ClaireandbruceTestCase;
  * 
  * 
  * @author 	NEWSHORE 
- *
+ * CBT20
  */
 
-public class TestUserRegisterheckoutUserRegistrationValidFieldString extends ClaireandbruceTestCase{
+public class TestUserRegisterCheckoutUserRegistrationValidFieldString extends ClaireandbruceTestCase{
 
 	@Test
 	public void CBT20() throws Exception{

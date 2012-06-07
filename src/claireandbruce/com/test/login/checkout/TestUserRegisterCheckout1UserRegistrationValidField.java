@@ -13,7 +13,7 @@ import basics.ClaireandbruceTestCase;
 /**
  * 
  * @author 	NEWSHORE 
- *
+ * CBT18
  */
 
 public class TestUserRegisterCheckout1UserRegistrationValidField extends ClaireandbruceTestCase{

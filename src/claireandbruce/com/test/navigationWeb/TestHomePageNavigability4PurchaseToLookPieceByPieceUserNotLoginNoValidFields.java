@@ -10,7 +10,7 @@ import basics.ClaireandbruceTestCase;
 /**
  * 
  * @author NEWSHORE
- *
+ * CBT34
  */
 public class TestHomePageNavigability4PurchaseToLookPieceByPieceUserNotLoginNoValidFields extends ClaireandbruceTestCase{
 	

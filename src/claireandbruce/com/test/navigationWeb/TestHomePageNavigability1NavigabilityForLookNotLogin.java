@@ -7,7 +7,7 @@ import basics.ClaireandbruceTestCase;
 /**
  * 
  * @author NEWSHORE
- *
+ * CBT31
  */
 public class TestHomePageNavigability1NavigabilityForLookNotLogin extends ClaireandbruceTestCase {
 

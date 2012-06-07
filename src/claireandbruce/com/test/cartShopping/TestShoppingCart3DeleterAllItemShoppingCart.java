@@ -7,17 +7,21 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 import junit.framework.Assert;
 import basics.ClaireandbruceTestCase;
-
-public class TestShoppingCart3DeleterAllItemShoppingCart extends ClaireandbruceTestCase {
-	
-	
 /**	Se validara la funcionalidad del carrito de compras cuando se 
  * 	elimine un producto del carrito de compras, ademas 	la prueba 
  * 	aplicara cuando se eliminen el total de productos del carrito 
  * 	de compras pues se 	verificara la existencia de 	articulos 
  * 	en el carrito de compra.
 	el éxito de la prueba se evidenciara cuando se elimine un item
-	o todos los items del carrito de compras y  este vacio*/
+	o todos los items del carrito de compras y  este vacio
+	
+	@author NEWSHORE
+	CBT24
+	*/
+public class TestShoppingCart3DeleterAllItemShoppingCart extends ClaireandbruceTestCase {
+	
+	
+
 
 	
 	@Test

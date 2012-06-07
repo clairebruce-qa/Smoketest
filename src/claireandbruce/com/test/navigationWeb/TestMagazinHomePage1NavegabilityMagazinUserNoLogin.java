@@ -18,7 +18,7 @@ import basics.ClaireandbruceTestCase;
  * de los productos seleccionados por el cliente.
  * 
  * @author NEWSHORE
- * 
+ * CBT30
  * */
 public class TestMagazinHomePage1NavegabilityMagazinUserNoLogin extends ClaireandbruceTestCase{
 

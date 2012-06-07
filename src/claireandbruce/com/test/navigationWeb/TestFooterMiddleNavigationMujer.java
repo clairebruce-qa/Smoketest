@@ -9,7 +9,7 @@ import basics.ClaireandbruceTestCase;
 /**
  * 
  * @author NEWSHORE
- *
+ * CBT94
  */
 public class TestFooterMiddleNavigationMujer extends ClaireandbruceTestCase{
 	

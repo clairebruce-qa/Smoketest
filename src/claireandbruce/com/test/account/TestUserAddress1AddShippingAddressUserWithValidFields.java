@@ -17,7 +17,7 @@ import basics.ClaireandbruceTestCase;
  * @author NEWSHORE
  *
  */
-public class TestUserAddres1AddShippingAddressUserWithValidFields extends ClaireandbruceTestCase {
+public class TestUserAddress1AddShippingAddressUserWithValidFields extends ClaireandbruceTestCase {
 		
 	@Test
 	public void CBT13() throws Exception{

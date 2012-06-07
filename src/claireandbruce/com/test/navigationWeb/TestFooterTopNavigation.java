@@ -13,7 +13,7 @@ import basics.ClaireandbruceTestCase;
  * (AYUDA, CONDICIONES DE USO, POLÍTICAS DE PRIVACIDAD, QUIÉNES SOMOS) encontrados en el Footer.
  * 
  * @author NEWSHORE
- *
+ * CBT93
  */
 
 

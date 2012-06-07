@@ -9,7 +9,7 @@ import basics.ClaireandbruceTestCase;
 /**
  * 
  * @author NEWSHORE
- *
+ * CBT90
  */
 public class TestNavigationByCategoryHeader extends ClaireandbruceTestCase {
 		

@@ -34,7 +34,7 @@ public class TestEditionAddressCancelButtonAccount extends ClaireandbruceTestCas
 		selenium.waitForPageToLoad("15000");
 		
 		if(selenium.isTextPresent("No tienes ninguna dirección de envío por defecto en tu libreta de direcciones.")){
-			TestUserAddres1AddShippingAddressUserWithValidFields tb = new TestUserAddres1AddShippingAddressUserWithValidFields();
+			TestUserAddress1AddShippingAddressUserWithValidFields tb = new TestUserAddress1AddShippingAddressUserWithValidFields();
 			tb.CBT13();
 			Helper.log("Address was added");
 		}

@@ -18,7 +18,7 @@ import basics.ClaireandbruceTestCase;
  * @author NEWSHORE
  *
  */
-public class TestForgottenPasswordInvalidUserTuCuenta extends ClaireandbruceTestCase{
+public class TestForgottenPasswordInvalidUserAccount extends ClaireandbruceTestCase{
 	
 
 	@Test

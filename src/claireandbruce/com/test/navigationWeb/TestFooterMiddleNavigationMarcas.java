@@ -10,7 +10,7 @@ import basics.ClaireandbruceTestCase;
 /**
  * 
  * @author NEWSHORE
- *
+ * CBT95
  */
 public class TestFooterMiddleNavigationMarcas extends ClaireandbruceTestCase {
 	

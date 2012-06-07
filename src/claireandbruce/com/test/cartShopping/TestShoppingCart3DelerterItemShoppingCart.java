@@ -12,7 +12,7 @@ import basics.ClaireandbruceTestCase;
 /**
  * @Test correspondiente a la Librería que verifica la existencia dirección por defecto
  * @author NEWSHORE
- *
+ * CBL7 - CBT118
  */
 public class TestShoppingCart3DelerterItemShoppingCart extends ClaireandbruceTestCase{
 	

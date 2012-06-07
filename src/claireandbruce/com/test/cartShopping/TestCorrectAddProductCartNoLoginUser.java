@@ -20,7 +20,7 @@ import basics.ClaireandbruceTestCase;
  *  observar el producto en la cesta al hacer clic en el link de artículos  ubicado 
  *  en el header.
  *  @author NEWSHORE
- *  
+ *  CBT76
  * */
 
 

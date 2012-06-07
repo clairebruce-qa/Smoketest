@@ -17,7 +17,7 @@ import basics.ClaireandbruceTestCase;
  *
  * 
  * @author 	NEWSHORE 
- *
+ * CBT21
  */
 
 public class TestUserRegisterCheckoutUserRegistrationValidFieldDate extends ClaireandbruceTestCase{

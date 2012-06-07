@@ -8,6 +8,7 @@ import basics.ClaireandbruceTestCase;
 
 /**Este caso de prueba valida la funcionalidad del sistema frente al cambio de idioma
  * @author NEWSHORE
+ * CBT42
  * */
 
 public class TestHomePageNavegability7NavigabilityMenuLanguage extends ClaireandbruceTestCase {

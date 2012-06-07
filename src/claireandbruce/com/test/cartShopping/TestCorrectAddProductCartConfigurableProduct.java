@@ -10,7 +10,7 @@ import claireandbruce.com.test.basicsFlows.LibCorrectAddProductCartConfigurableP
 /**
  * @Test correspondiente a la Librería que añade un producto configurable al carrito de compras
  * @author NEWSHORE
- *
+ * CBL3 - CBT117
  */
 public class TestCorrectAddProductCartConfigurableProduct extends ClaireandbruceTestCase{
 	

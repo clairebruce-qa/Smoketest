@@ -16,7 +16,7 @@ import basics.ClaireandbruceTestCase;
 /**
  * 
  * @author NEWSHORE
- *
+ * CBT22
  */
 
 public class TestShoppingCart1AddOtherItemShoppingCart extends ClaireandbruceTestCase{
