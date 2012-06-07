@@ -37,8 +37,8 @@ import claireandbruce.com.test.login.checkout.TestCorrectLogonValidUserCheckout;
 	TestCorrectLogonValidUserAccount.class, 				//CBL6 - CBT55    - CBT41
 	TestShoppingCart3DelerterItemShoppingCart.class, 		//CBL7 - CBT118   - CBT42
 	TestTypeShipping.class, 								//CBL8 - CBT112   - CBT43
-	TestWindowPayPal.class, 								//CBL9 - CBT119   - CBT48
-	TestWithPurchaseAndOtherAddress.class, 					//CBL10 - CBT120  - CBT45
+	TestWindowPayPal.class, 								//CBL9 - CBT119   - CBT45
+	TestWithPurchaseAndOtherAddress.class, 					//CBL10 - CBT120  - CBT46
 	TestWithPurchase.class, 								//CBL11 - CBT11   - CBT48
 	TestWithoutPurchase.class, 								//CBL12 - CBT115  - CBT49
 	

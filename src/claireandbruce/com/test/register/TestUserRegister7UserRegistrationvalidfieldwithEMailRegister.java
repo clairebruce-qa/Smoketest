@@ -13,7 +13,7 @@ import basics.ClaireandbruceTestCase;
  * registrado, el exito del caso de prueba será un mensaje de  error 
  * del sistema con  la  confirmacion  de correo electronico de  otro 
  * usuario, solicitando nuevamente el ingreso del correo electrónico.
- * 
+ * CBT28
  * @author NEWSHORE
  *
  */
