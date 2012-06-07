@@ -9,6 +9,8 @@ import claireandbruce.com.test.basicsFlows.LibCorrectLogonValidUserAccout;
 
 import basics.ClaireandbruceTestCase;
 /**
+ * El usuario autenticado puede ver el historial de pedidos a través del menú
+ * de navegación derecho o a través de la pagina de bienvenida de account.
  * CBT49
  * @author NEWSHORE
  *

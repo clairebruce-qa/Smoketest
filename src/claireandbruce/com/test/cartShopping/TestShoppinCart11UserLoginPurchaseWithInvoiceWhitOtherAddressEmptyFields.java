@@ -11,6 +11,10 @@ import claireandbruce.com.test.basicsFlows.LibCorrectLogonValidUserAccout;
 
 import basics.ClaireandbruceTestCase;
 /**
+ * El usuario registrado (cliente) accede a el carrito de compras con productos unos productos 
+ * agregados y determina la forma de pago, la dirección de envío. este  caso  de prueba valida
+ * los campos cuando el usuario necesita  factura y la dirección  de envío  es  diferente a la
+ * dirección de la factura, los campos a ingresar están vacíos.
  * 
  * @author NEWSHORE
  *
