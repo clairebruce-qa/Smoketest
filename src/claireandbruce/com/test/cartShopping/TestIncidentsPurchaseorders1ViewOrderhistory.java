@@ -9,7 +9,7 @@ import claireandbruce.com.test.basicsFlows.LibCorrectLogonValidUserAccout;
 
 import basics.ClaireandbruceTestCase;
 /**
- * 
+ * CBT49
  * @author NEWSHORE
  *
  */
@@ -19,7 +19,7 @@ public class TestIncidentsPurchaseorders1ViewOrderhistory extends Claireandbruce
 	private String message;
 
 	@Test
-	public void TestHistorialPedidosAbiertoUserLogin() throws Exception{
+	public void CBT49() throws Exception{
 		message="";
 	
 		selenium.open(ClaireandbruceUrl);

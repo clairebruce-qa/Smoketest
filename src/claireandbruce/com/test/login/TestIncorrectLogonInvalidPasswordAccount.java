@@ -14,7 +14,7 @@ import basics.ClaireandbruceTestCase;
  * email ingresado y por consecuencia la posterior muestra del mensaje de advertencia sobre formato 
  * de email no válido
  * @author NEWSHORE
- *
+ * CBT57
  */
 
 public class TestIncorrectLogonInvalidPasswordAccount extends ClaireandbruceTestCase{

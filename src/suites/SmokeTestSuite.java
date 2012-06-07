@@ -28,6 +28,7 @@ import claireandbruce.com.test.register.*;
 	//---------->CASOS A ENTREGAR<----------\\
 	
 	TestUserRegisterAccount1UserRegistrationValidFieldForAccount.class,//CBT2
+	
 	TestUserAddres1AddShippingAddressUserWithValidFields.class,//CBT13
 	TestUserRegisterheckoutUserRegistrationValidFieldString.class,//CBT20
 	TestShoppingCart1AddOtherItemShoppingCart.class,//CBT22

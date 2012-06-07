@@ -25,17 +25,17 @@ import claireandbruce.com.test.register.TestUserRegister3UserRegistrationFieldEM
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
 	
-	TestUserRegister2UserRegistrationEmptyField.class,
-	TestUserRegister3UserRegistrationFieldEMailInvalid.class,
-	TestUserModify1UserModifyDataValidField.class,
-	TestUserModify2UserModifyDataEmptyField.class,
-	TestUserModify3UserModifyDataNoValidNameField.class,
-	TestUserModify4UserModifyDataFieldEMailNoValid.class,
-	TestUserAddresModify1EditShippingAddressUserwithEmptyFields.class,
-	TestIncorrectLogonInvalidUserFormatAccount.class,
-	TestIncorrectLogonInvalidPasswordAccount.class,
-	TestSubscriptionsYesNoAccount.class,
-	TestSendMessageFormularioContactoInvalidDataAccount.class
+	TestUserRegister2UserRegistrationEmptyField.class,    //CBT3
+	TestUserRegister3UserRegistrationFieldEMailInvalid.class, //CBT4
+	TestUserModify1UserModifyDataValidField.class,        //CBT8
+	TestUserModify2UserModifyDataEmptyField.class,        //CBT9
+	TestUserModify3UserModifyDataNoValidNameField.class,  //CBT10
+	TestUserModify4UserModifyDataFieldEMailNoValid.class, //CBT11
+	TestUserAddresModify1EditShippingAddressUserwithEmptyFields.class, //CBT16
+	TestIncorrectLogonInvalidUserFormatAccount.class, 	  //CBT56
+	TestIncorrectLogonInvalidPasswordAccount.class,		  //CBT57
+	TestSubscriptionsYesNoAccount.class,				  //CBT81
+	TestSendMessageFormularioContactoInvalidDataAccount.class //CBT98
 	
 	
 })
