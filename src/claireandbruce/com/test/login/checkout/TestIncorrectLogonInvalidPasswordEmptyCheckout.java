@@ -15,7 +15,7 @@ import basics.ClaireandbruceTestCase;
  * durante el  checkout,  al validar la  información ingresada por el usuario al momento de realizar
  * esta acción. El éxito del caso de prueba será la validación del campo contraseña =vacío  y por consecuencia 
  * la posterior muestra del mensaje de advertencia sobre formato de contraseña no válido.
- * 
+ * CBT75
  * @author 	NEWSHORE 
  *
  */
