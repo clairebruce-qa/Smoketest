@@ -40,6 +40,6 @@ import claireandbruce.com.test.register.TestUserRegister3UserRegistrationFieldEM
 	
 })
 
-public class PruebasSuite {
+public class ExtrasSuite {
 
 }
