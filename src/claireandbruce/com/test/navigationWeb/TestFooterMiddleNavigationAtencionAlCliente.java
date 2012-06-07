@@ -35,7 +35,7 @@ public class TestFooterMiddleNavigationAtencionAlCliente  extends Claireandbruce
 			Helper.waitForElement(selenium, "xpath=.//*[@id='question-category-block']/div["+i+"]/ul/li[2]/a", "Not present link page");
 			
 			//Se Retorna a la pagina Principal de Bienvenida
-			Helper.clickAndVerify(selenium, "xpath=html/body/div/div[2]/ul/li[1]/a", "Tu cuenta", "css=li..last > a.text-lucida-black");
+			Helper.clickAndVerify(selenium, "xpath=html/body/div/div[2]/ul/li[1]/a", "Tu cuenta", "link=Tu cuenta");
 		}
 		
 		while(selenium.isElementPresent("xpath=html/body/div/div[4]/div/div[3]/div[7]/div[2]/ul/li["+i+"]/a")){
@@ -51,7 +51,7 @@ public class TestFooterMiddleNavigationAtencionAlCliente  extends Claireandbruce
 				Helper.waitForElement(selenium, "xpath=.//*[@id='question-category-block']/div["+i+"]/ul/li[2]/a", "Not present link page");
 				
 				//Se Retorna a la pagina Principal de Bienvenida
-				Helper.clickAndVerify(selenium, "xpath=html/body/div/div[2]/ul/li[1]/a", "Tu cuenta", "css=li..last > a.text-lucida-black");
+				Helper.clickAndVerify(selenium, "xpath=html/body/div/div[2]/ul/li[1]/a", "Tu cuenta", "link=Tu cuenta");
 				i++;
 				
 			}
