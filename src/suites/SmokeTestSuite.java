@@ -4,25 +4,13 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 import claireandbruce.com.test.account.*;
-import claireandbruce.com.test.cartShopping.TestAddressExist;
-import claireandbruce.com.test.cartShopping.TestChangeUnitsOneProduct;
-import claireandbruce.com.test.cartShopping.TestCorrectAddProductCartConfigurableProduct;
 import claireandbruce.com.test.cartShopping.TestCorrectAddProductCartNoLoginUser;
-import claireandbruce.com.test.cartShopping.TestCorrectAddProductCartSimpleProduct;
 import claireandbruce.com.test.cartShopping.TestCorrectChangeUnitsAccount;
 import claireandbruce.com.test.cartShopping.TestIncidentsPurchaseorders1ViewOrderhistory;
 import claireandbruce.com.test.cartShopping.TestShoppinCart11UserLoginPurchaseWithInvoiceWhitOtherAddressEmptyFields;
 import claireandbruce.com.test.cartShopping.TestShoppingCart1AddOtherItemShoppingCart;
-import claireandbruce.com.test.cartShopping.TestShoppingCart3DelerterItemShoppingCart;
 import claireandbruce.com.test.cartShopping.TestShoppingCart3DeleterAllItemShoppingCart;
-import claireandbruce.com.test.cartShopping.TestTypeShipping;
-import claireandbruce.com.test.cartShopping.TestWindowPayPal;
-import claireandbruce.com.test.cartShopping.TestWithPurchase;
-import claireandbruce.com.test.cartShopping.TestWithPurchaseAndOtherAddress;
-import claireandbruce.com.test.cartShopping.TestWithoutPurchase;
 import claireandbruce.com.test.catalog.TestMenCatalogNoUserLogin;
-import claireandbruce.com.test.login.TestCorrectLogonValidUserAccount;
-import claireandbruce.com.test.login.checkout.TestCorrectLogonValidUserCheckout;
 import claireandbruce.com.test.login.checkout.TestIncorrectLogonInvalidPasswordEmptyCheckout;
 import claireandbruce.com.test.login.checkout.TestIncorrectLogonInvalidPasswordSpaceCheckout;
 import claireandbruce.com.test.login.checkout.TestIncorrectLogonInvalidUserFormatCheckout;
@@ -60,70 +48,51 @@ import claireandbruce.com.test.register.*;
 @Suite.SuiteClasses({
 	
 	//se declaran las clases que contienen cada una un testcase
-	
-	//---------->CASOS A ENTREGAR<----------\\
 
-	TestUserRegister1UserRegistrationValidField.class, //CBT2
-	TestUserRegister6UserRegistrationFieldPasswordValid.class, //CBT7
-	TestUserAddress1AddShippingAddressUserWithValidFields.class, //CBT13
-	TestUserRegisterCheckout1UserRegistrationValidField.class, //CBT18
-	TestUserRegisterCheckoutUserRegistrationValidFieldString.class, //CBT20
-	TestUserRegisterCheckoutUserRegistrationValidFieldDate.class, //CBT21
-	TestShoppingCart1AddOtherItemShoppingCart.class, //CBT22
-	TestShoppingCart3DeleterAllItemShoppingCart.class, //CBT24
-	TestUserRegister7UserRegistrationvalidfieldwithEMailRegister.class, //CBT28
-	TestUserRegisterAccount1UserRegistrationValidFieldForAccount.class, //CBT29
-	TestMagazinHomePage1NavegabilityMagazinUserNoLogin.class, //CBT30
-	TestHomePageNavigability1NavigabilityForLookNotLogin.class, //CBT31
-	TestHomePageNavigability3PurchaseToCompleteLookNotLoginNoValidField.class, //CBT33
-	TestHomePageNavigability4PurchaseToLookPieceByPieceUserNotLoginNoValidFields.class, //CBT34
-	TestHomePageNavigability6TestNavigationByCategoryHeaderMark.class, //CBT39
-	TestCatalogWomen1TestCatalogWomenFilter.class, //CBT40
-	TestCatalogWomen2TestCatalogWomenFilterPriceViewsProductLook.class, //CBT41
-	TestHomePageNavegability7NavigabilityMenuLanguage.class, //CBT42
-	TestShoppinCart11UserLoginPurchaseWithInvoiceWhitOtherAddressEmptyFields.class, //CBT48
-	TestIncidentsPurchaseorders1ViewOrderhistory.class, //CBT49
-	TestCorrectPasswordChangeAccount.class, //CBT60
-	TestIncorrectPasswordChangeInvalidOldPassAccount.class, //CBT61
-	TestCorrectPasswordChangeSpacesNewPassAccount.class, //CBT62
-	TestIncorrectEditionAddressSpecialCharactersAccount.class, //CBT70
-	TestIncorrectLogonInvalidUserFormatCheckout.class, //CBT72
-	TestIncorrectLogonNoValidPasswordCheckout.class, //CBT73
-	TestIncorrectLogonInvalidPasswordSpaceCheckout.class, //CBT74
-	TestIncorrectLogonInvalidPasswordEmptyCheckout.class, //CBT75
-	TestCorrectAddProductCartNoLoginUser.class, //CBT76
-	TestCorrectChangeUnitsAccount.class, //CBT78
-	TestEditionAddressCancelButtonAccount.class,    //CBT82
-	TestForgottenPasswordValidUserAccount.class,   //CBT83
-	TestForgottenPasswordInvalidUserAccount.class,  //CBT84
-	TestMenCatalogNoUserLogin.class, //CBT86
-	TestNavigationByCategoryHeader.class, //CBT90
-	TestFooterMiddleNavigationAtencionAlCliente.class, //CBT91
-	TestNavigationTopQuestions.class, //CBT92
-	TestFooterTopNavigation.class, //CBT93
-	TestFooterMiddleNavigationMujer.class, //CBT94
-	TestFooterMiddleNavigationMarcas.class, //CBT95
-	TestFooterMiddleNavigationTendencias.class, //CBT96
-	TestSendMessageFormularioContactoAccount.class, //CBT97
-	TestAyudaFAQsAccount.class, //CBT99
-	TestHeaderHomePageNavigationTendencias.class, //CBT100
-	
-	// @Test correspondientes a algunas librerías de los Flujos	
-	TestAddressExist.class, //CBL1 - CBT113
-	TestChangeUnitsOneProduct.class, //CBL2 - CBT110
-	TestCorrectAddProductCartConfigurableProduct.class, //CBL3 - CBT117
-	TestCorrectAddProductCartSimpleProduct.class, //CBL4 - CBT111
-	TestCorrectLogonValidUserCheckout.class, //CBL5 - CBT71
-	TestCorrectLogonValidUserAccount.class, //CBL6 - CBT55
-	TestShoppingCart3DelerterItemShoppingCart.class, //CBL7 - CBT118
-	TestTypeShipping.class, //CBL8 - CBT112
-	TestWindowPayPal.class, //CBL9 - CBT119
-	TestWithPurchaseAndOtherAddress.class, //CBL10 - CBT120
-	TestWithPurchase.class, //CBL11 - CBT
-	TestWithoutPurchase.class, //CBL12 - CBT115
-	
-	
-	
+	TestUserRegister1UserRegistrationValidField.class, 							//CBT2   - CBT31
+	TestUserRegister6UserRegistrationFieldPasswordValid.class, 					//CBT7   - CBT24
+	TestUserAddress1AddShippingAddressUserWithValidFields.class, 				//CBT13  - CBT6
+	TestUserRegisterCheckout1UserRegistrationValidField.class, 					//CBT18  - CBT35
+	TestUserRegisterCheckoutUserRegistrationValidFieldString.class, 			//CBT20  - CBT44
+	TestUserRegisterCheckoutUserRegistrationValidFieldDate.class, 				//CBT21  - CBT47
+	TestShoppingCart1AddOtherItemShoppingCart.class, 							//CBT22  - CBT14
+	TestShoppingCart3DeleterAllItemShoppingCart.class, 							//CBT24  - CBT64
+	TestUserRegister7UserRegistrationvalidfieldwithEMailRegister.class, 		//CBT28  - CBT30
+	TestUserRegisterAccount1UserRegistrationValidFieldForAccount.class, 		//CBT29  - CBT50
+	TestMagazinHomePage1NavegabilityMagazinUserNoLogin.class, 					//CBT30  - CBT10
+	TestHomePageNavigability1NavigabilityForLookNotLogin.class, 				//CBT31  - CBT7
+	TestHomePageNavigability3PurchaseToCompleteLookNotLoginNoValidField.class,  //CBT33  - CBT67
+	TestHomePageNavigability4PurchaseToLookPieceByPieceUserNotLoginNoValidFields.class, //CBT34 - CBT68
+	TestHomePageNavigability6TestNavigationByCategoryHeaderMark.class, 			//CBT39  - CBT8
+	TestCatalogWomen1TestCatalogWomenFilter.class, 								//CBT40  - CBT62
+	TestCatalogWomen2TestCatalogWomenFilterPriceViewsProductLook.class, 		//CBT41  - CBT51
+	TestHomePageNavegability7NavigabilityMenuLanguage.class, 					//CBT42  - CBT69
+	TestShoppinCart11UserLoginPurchaseWithInvoiceWhitOtherAddressEmptyFields.class, //CBT48 - CBT16
+	TestIncidentsPurchaseorders1ViewOrderhistory.class, 						//CBT49  - CBT13
+	TestCorrectPasswordChangeAccount.class, 									//CBT60  - CBT20
+	TestIncorrectPasswordChangeInvalidOldPassAccount.class, 					//CBT61  - CBT21
+	TestCorrectPasswordChangeSpacesNewPassAccount.class, 						//CBT62  - CBT23
+	TestIncorrectEditionAddressSpecialCharactersAccount.class, 					//CBT70  - CBT34
+	TestIncorrectLogonInvalidUserFormatCheckout.class, 							//CBT72  - CBT25
+	TestIncorrectLogonNoValidPasswordCheckout.class, 							//CBT73  - CBT26
+	TestIncorrectLogonInvalidPasswordSpaceCheckout.class, 						//CBT74  - CBT27
+	TestIncorrectLogonInvalidPasswordEmptyCheckout.class, 						//CBT75  - CBT28
+	TestCorrectAddProductCartNoLoginUser.class, 								//CBT76  - CBT9
+	TestCorrectChangeUnitsAccount.class, 										//CBT78  - CBT15
+	TestEditionAddressCancelButtonAccount.class,    							//CBT82  - CBT63
+	TestForgottenPasswordValidUserAccount.class,   								//CBT83  - CBT17
+	TestForgottenPasswordInvalidUserAccount.class,  							//CBT84  - CBT33
+	TestMenCatalogNoUserLogin.class, 											//CBT86  - CBT66
+	TestNavigationByCategoryHeader.class, 										//CBT90  - CBT70
+	TestFooterMiddleNavigationAtencionAlCliente.class, 							//CBT91  - CBT19
+	TestNavigationTopQuestions.class, 											//CBT92  - CBT11
+	TestFooterTopNavigation.class, 												//CBT93  - CBT22
+	TestFooterMiddleNavigationMujer.class, 										//CBT94  - CBT71
+	TestFooterMiddleNavigationMarcas.class, 									//CBT95  - CBT12
+	TestFooterMiddleNavigationTendencias.class, 								//CBT96  - CBT18
+	TestSendMessageFormularioContactoAccount.class, 							//CBT97  - CBT29
+	TestAyudaFAQsAccount.class, 												//CBT99  - CBT65
+	TestHeaderHomePageNavigationTendencias.class, 								//CBT100 - CBT5	
 	
 	
 })

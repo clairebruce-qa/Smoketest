@@ -10,7 +10,7 @@ import basics.ClaireandbruceTestCase;
 /**
  * 
  * @author NEWSHORE
- *
+ * CBT99
  */
 public class TestAyudaFAQsAccount extends ClaireandbruceTestCase{
 	
