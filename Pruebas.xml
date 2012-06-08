@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="1" hostname="QA1-NEWSHORE-PC" name="FlowsSuite" tests="4" time="563.106" timestamp="2012-06-08T11:21:47">
+  <properties>
+    <property name="java.vendor" value="Oracle Corporation" />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="eclipse.pdebuild.templates" value="/C:/eclipse_qa/plugins/org.eclipse.pde.build_3.6.2.R36x_20110203/templates/" />
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+    <property name="lib" value="C:\Users\NEWSHORE\workspace\Smoketest\lib" />
+    <property name="os.name" value="Windows 7" />
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.7.0_03\jre\lib\resources.jar;C:\Program Files\Java\jdk1.7.0_03\jre\lib\rt.jar;C:\Program Files\Java\jdk1.7.0_03\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.7.0_03\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.7.0_03\jre\lib\jce.jar;C:\Program Files\Java\jdk1.7.0_03\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.7.0_03\jre\classes" />
+    <property name="ant.file.tbtesting" value="C:\Users\NEWSHORE\workspace\Smoketest\build_flows.xml" />
+    <property name="sun.desktop" value="windows" />
+    <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+    <property name="ant.home" value="C:\eclipse_qa\plugins\org.apache.ant_1.8.2.v20120109-1030" />
+    <property name="java.runtime.version" value="1.7.0_03-b05" />
+    <property name="user.name" value="NEWSHORE" />
+    <property name="reports" value="C:\Users\NEWSHORE\workspace\Smoketest\reports" />
+    <property name="user.language" value="es" />
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_03\jre\bin" />
+    <property name="ant.project.default-target" value="run_tests" />
+    <property name="ant.project.name" value="tbtesting" />
+    <property name="ant.file.type.tbtesting" value="file" />
+    <property name="java.version" value="1.7.0_03" />
+    <property name="user.timezone" value="" />
+    <property name="sun.arch.data.model" value="64" />
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.7.0_03\jre\lib\endorsed" />
+    <property name="sun.cpu.isalist" value="amd64" />
+    <property name="sun.jnu.encoding" value="Cp1252" />
+    <property name="file.encoding.pkg" value="sun.io" />
+    <property name="file.separator" value="\" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="selenium.tests.build" value="C:\Users\NEWSHORE\workspace\Smoketest\build" />
+    <property name="java.class.version" value="51.0" />
+    <property name="user.country" value="ES" />
+    <property name="java.home" value="C:\Program Files\Java\jdk1.7.0_03\jre" />
+    <property name="java.vm.info" value="mixed mode" />
+    <property name="ant.file" value="C:\Users\NEWSHORE\workspace\Smoketest\build_flows.xml" />
+    <property name="os.version" value="6.1" />
+    <property name="path.separator" value=";" />
+    <property name="java.vm.version" value="22.1-b02" />
+    <property name="user.variant" value="" />
+    <property name="ant.library.dir" value="C:\eclipse_qa\plugins\org.apache.ant_1.8.2.v20120109-1030\lib" />
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob" />
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
+    <property name="user.script" value="" />
+    <property name="eclipse.pdebuild.scripts" value="/C:/eclipse_qa/plugins/org.eclipse.pde.build_3.6.2.R36x_20110203/scripts/" />
+    <property name="user.home" value="C:\Users\NEWSHORE" />
+    <property name="java.specification.vendor" value="Oracle Corporation" />
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.7.0_03\jre\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files (x86)/Java/bin/client;C:/Program Files (x86)/Java/bin;C:/Program Files (x86)/Java/lib/i386;C:\oraclexe\app\oracle\product\10.2.0\server\bin;D:\app\NEWSHORE\product\11.2.0\dbhome_1\bin;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files\Trend Micro\AMSP;C:\Program Files (x86)\Common Files\HP\Digital Imaging\bin;C:\Program Files (x86)\HP\Digital Imaging\bin\;C:\Program Files (x86)\HP\Digital Imaging\bin\Qt\Qt 4.3.3;C:\Program Files\TortoiseSVN\bin;C:\Program Files\TortoiseGit\bin;C:\apache-maven-3.0.4\bin;C:\apache-maven-3.0.4\;C:\Program Files\Java\jdk1.6.0_31\bin;C:\Program Files (x86)\WinAnt\bin;C:\eclipse_qa;;." />
+    <property name="java.vendor.url" value="http://java.oracle.com/" />
+    <property name="java.vm.vendor" value="Oracle Corporation" />
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner FlowsSuite filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.PlainJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\NEWSHORE\workspace\Smoketest\Pruebas.xml crashfile=C:\Users\NEWSHORE\workspace\Smoketest\junitvmwatcher7549949898516479534.properties propsfile=C:\Users\NEWSHORE\workspace\Smoketest\junit5949584472694965237.properties" />
+    <property name="java.class.path" value="C:\Users\NEWSHORE\workspace\Smoketest\build;C:\Users\NEWSHORE\workspace\Smoketest\lib\junit-4.8.1.jar;C:\Users\NEWSHORE\workspace\Smoketest\lib\logging-selenium-1.2.jar;C:\Users\NEWSHORE\workspace\Smoketest\lib\selenium-java-client-driver.jar;C:\Users\NEWSHORE\workspace\Smoketest\lib\selenium-server-standalone-2.5.0.jar;C:\Users\NEWSHORE\workspace\Smoketest\lib\testlink-api-client-2.0.jar;C:\Users\NEWSHORE\workspace\Smoketest\lib\ws-commons-util-1.0.2.jar;C:\Users\NEWSHORE\workspace\Smoketest\lib\xmlrpc-client-3.1-sources.jar;C:\Users\NEWSHORE\workspace\Smoketest\lib\xmlrpc-client-3.1.jar;C:\Users\NEWSHORE\workspace\Smoketest\lib\xmlrpc-common-3.1-sources.jar;C:\Users\NEWSHORE\workspace\Smoketest\lib\xmlrpc-common-3.1.jar;C:\eclipse_qa\plugins\org.apache.ant_1.8.2.v20120109-1030\lib\ant-launcher.jar;C:\eclipse_qa\plugins\org.apache.ant_1.8.2.v20120109-1030\lib\ant.jar;C:\eclipse_qa\plugins\org.apache.ant_1.8.2.v20120109-1030\lib\ant-junit.jar;C:\eclipse_qa\plugins\org.apache.ant_1.8.2.v20120109-1030\lib\ant-junit4.jar" />
+    <property name="ant.version" value="Apache Ant(TM) version 1.8.2 compiled on December 20 2010" />
+    <property name="selenium.tests.src" value="C:\Users\NEWSHORE\workspace\Smoketest\src" />
+    <property name="reportdir" value="C:\Users\NEWSHORE\workspace\Smoketest" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="my.browser" value="*chrome" />
+    <property name="java.vm.specification.version" value="1.7" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="sun.os.patch.level" value="Service Pack 1" />
+    <property name="eclipse.pdebuild.home" value="/C:/eclipse_qa/plugins/org.eclipse.pde.build_3.6.2.R36x_20110203/./" />
+    <property name="java.io.tmpdir" value="C:\Users\NEWSHORE\AppData\Local\Temp\" />
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/" />
+    <property name="os.arch" value="amd64" />
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.7.0_03\jre\lib\ext;C:\Windows\Sun\Java\lib\ext" />
+    <property name="user.dir" value="C:\Users\NEWSHORE\workspace\Smoketest" />
+    <property name="browser" value="*chrome" />
+    <property name="line.separator" value="&#xd;&#xa;" />
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+    <property name="basedir" value="C:\Users\NEWSHORE\workspace\Smoketest" />
+    <property name="ant.java.version" value="1.7" />
+    <property name="ant.core.lib" value="C:\eclipse_qa\plugins\org.apache.ant_1.8.2.v20120109-1030\lib\ant.jar" />
+    <property name="file.encoding" value="Cp1252" />
+    <property name="java.specification.version" value="1.7" />
+    <property name="ant.project.invoked-targets" value="run_tests" />
+  </properties>
+  <testcase classname="claireandbruce.com.test.flows.TestFlowI" name="test_flow1" time="147.653" />
+  <testcase classname="claireandbruce.com.test.flows.TestFlowII" name="test_flow2" time="148.617">
+    <failure message="Datos de tarjeta de crédito no válidos" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Datos de tarjeta de crédito no válidos
+	at claireandbruce.com.test.basicsFlows.LibPayCreditCard.credit_Card(Unknown Source)
+	at claireandbruce.com.test.flows.TestFlowII.test_flow2(Unknown Source)
+	at basics.RunAfterFailures.evaluate(Unknown Source)
+	at basics.RCRunner.run(Unknown Source)
+</failure>
+  </testcase>
+  <testcase classname="claireandbruce.com.test.flows.TestFlowIII" name="test_flow3" time="97.431" />
+  <testcase classname="claireandbruce.com.test.flows.TestFlowIV" name="test_flujo4" time="108.547" />
+  <system-out><![CDATA[**** Start test **** test_flow1 ****
+
+Logout done!
+Open Homepage
+Login the user stress_test_qa@claireandbruce.com with password 123456
+Login message is loginOk
+Categoría 3
+Categoría actual: Bolsos - Mujer
+Subcategoria 1
+Subcategoría actual: Nuevo - Bolsos - Mujer
+Producto: 2 en la fila: 2
+Producto actual: Clutch de piel beige
+El producto ha sido añadido con éxito al carrito de compras
+existe una dirección por defecto seleccionada
+PEDIDO REALIZADO!!
+**** Test done ****test_flow1 ****
+
+no failures tc:null
+**** Start test **** test_flow2 ****
+
+Logout done!
+Open Homepage
+Login the user stress_test_qa@claireandbruce.com with password 123456
+Login message is loginOk
+Categoría 4
+Categoría actual: Accesorios - Mujer
+Subcategoria 5
+Subcategoría actual: Fulares & Pañuelos - Accesorios - Mujer
+Producto: 2 en la fila: 1
+Producto actual: 404 Not Found 1
+Categoría 3
+Categoría actual: Bolsos - Mujer
+Subcategoria 7
+Categoría 3
+Categoría actual: Bolsos - Mujer
+Subcategoria 7
+Categoría 3
+Categoría actual: Bolsos - Mujer
+Subcategoria 1
+Subcategoría actual: Nuevo - Bolsos - Mujer
+Producto: 2 en la fila: 1
+Producto actual: Bolso con detalle lentejuelas
+El producto no ha sido añadido al carrito de compras xpath=//a[contains(text(),'Bolso con detalle lentejuelas')]
+aux 
+aux 5
+aux 55
+aux 55.
+aux 55.0
+aux 
+aux 5
+aux 55
+aux 55.
+aux 55.0
+CantidadNueva= 1 PrecioUnitario= 55.0 precioTotal= 55.00 assertEquals 55.00
+TIPO DE ENVÍO EXPRESS
+Precio total Calculado 122.00
+valor mostrado 122.00
+VALOR PEDIDO 110.0 + GASTOS DE ENVÍO 12.0 = VALOR PEDIDO CON GASTOS DE ENVÍO 122.00
+OK
+existe una dirección por defecto seleccionada
+
+PAGO CON TARJETA DE CRÉDITO
+**** Test done ****test_flow2 ****
+
+failures tc: null java.lang.AssertionError: Datos de tarjeta de crédito no válidos
+**** Start test **** test_flow3 ****
+
+Waiting for element xpath=//a[contains(@href, '/customer/account/logout/')] in http://pre-cb.newshore.es/es_es/
+Logout done!
+Categoría 4
+Categoría actual: Accesorios - Mujer
+Subcategoria 7
+Subcategoría actual: Otros accesorios - Accesorios - Mujer
+Producto: 3 en la fila: 2
+Producto actual: Clip para el pelo - Otros accesorios - Accesorios - Mujer
+El producto ha sido añadido con éxito al carrito de compras
+aux 
+aux 1
+aux 19
+aux 19.
+aux 19.9
+aux 
+aux 1
+aux 19
+aux 19.
+aux 19.9
+CantidadNueva= 2 PrecioUnitario= 9.95 precioTotal= 19.90 assertEquals 19.90
+TIPO DE ENVÍO STANDARD
+Precio total Calculado 19.90
+valor mostrado 19.90
+VALOR PEDIDO 19.9 + GASTOS DE ENVÍO 0.0 = VALOR PEDIDO CON GASTOS DE ENVÍO 19.90
+OK
+
+LOGIN POR CHECKOUT
+SE DIRECCIONÓ AL CHECKOUT
+existe una dirección por defecto seleccionada
+EL CAMPO APELLIDOS NO SE ENCUENTRA DILIGENCIADO CON LA INFORMACIÓN DEL USUARIO
+
+PAGO CON CHEQUE
+se encuentra el boton pagar
+PEDIDO REALIZADO!!
+**** Test done ****test_flow3 ****
+
+no failures tc:null
+**** Start test **** test_flujo4 ****
+
+Waiting for element xpath=//a[contains(@href, '/customer/account/logout/')] in http://pre-cb.newshore.es/es_es/
+Logout done!
+Categoría 3
+Categoría actual: Zapatos - Mujer
+Subcategoria 4
+Subcategoría actual: Sandalias planas - Zapatos - Mujer
+Producto: 1 en la fila: 1
+Producto actual: Sandalia plástico con lazo color coral - Sandalias planas - Zapatos - Mujer
+clickAndVerify for link: xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[8]/div[4]/div/div/div[2] string to assert: 36 - EU
+Waiting for element xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[8]/div[4]/div/div/div[2] in http://pre-cb.newshore.es/es_es/woman/shoes/flat-sandal/sandalia-plastico-con-lazo-color-coral-6.html
+xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[8]/div[4]/div/div/div[2] path xpath=//div[8]/div[3]/div/div
+Sandalia plástico con lazo color coral
+El producto ha sido añadido con éxito al carrito de compras
+aux 
+aux 5
+aux 55
+aux 55.
+aux 55.0
+aux 
+aux 5
+aux 55
+aux 55.
+aux 55.0
+CantidadNueva= 1 PrecioUnitario= 55.0 precioTotal= 55.00 assertEquals 55.00
+TIPO DE ENVÍO EXPRESS
+Precio total Calculado 67.00
+valor mostrado 67.00
+VALOR PEDIDO 55.0 + GASTOS DE ENVÍO 12.0 = VALOR PEDIDO CON GASTOS DE ENVÍO 67.00
+OK
+
+LOGIN POR CHECKOUT
+SE DIRECCIONÓ AL CHECKOUT
+existe una dirección por defecto seleccionada
+
+PAGO CON CHEQUE
+se encuentra el boton pagar
+PEDIDO REALIZADO!!
+**** Test done ****test_flujo4 ****
+
+no failures tc:null
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

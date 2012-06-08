@@ -6,6 +6,8 @@ import lib.Helper;
 
 import org.junit.Test;
 
+import claireandbruce.com.test.basicsFlows.LibCorrectLogonValidUserAccout;
+
 import basics.ClaireandbruceTestCase;
 
 
@@ -19,6 +21,7 @@ import basics.ClaireandbruceTestCase;
  * 
  * @author NEWSHORE
  * CBT30
+ * 
  * */
 public class TestMagazinHomePage1NavegabilityMagazinUserNoLogin extends ClaireandbruceTestCase{
 
@@ -31,10 +34,15 @@ public class TestMagazinHomePage1NavegabilityMagazinUserNoLogin extends Clairean
 		
 		selenium.open("");
 		
-		 if(selenium.isTextPresent("Salir")){
-			  Claireandbruce.logout(selenium);
-			  
-		  }
+		if(selenium.isElementPresent("link=Salir")) {
+			selenium.click("link=Salir");
+			selenium.waitForPageToLoad("15000");
+			
+			if(selenium.isElementPresent("id=email")){
+				selenium.click("xpath=//img");
+				selenium.waitForPageToLoad("15000");
+			} 
+		}
 		 //Verifica que las imagenes si esten disponibles en el carrusel
 		if(!selenium.isElementPresent("xpath=.//*[@id='carousel-subhome']/ul/li[2]/div/img"))
 		{

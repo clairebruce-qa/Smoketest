@@ -9,7 +9,10 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import sun.invoke.util.VerifyType;
+<<<<<<< HEAD
+=======
+
+>>>>>>> remotes/origin/diego2
 
 import basics.ClaireandbruceTestCase;
 
@@ -48,7 +51,7 @@ public class TestCorrectAddProductCartNoLoginUser extends ClaireandbruceTestCase
 			selenium.waitForPageToLoad("10000");
 		}
 		
-		boolean repetirCiclo = false;
+		
 		
 		//Se selecciona una categoría entre Bolsos, Zapatos y Accesorios (Categorías que poseen productos configurables )
 			
@@ -121,7 +124,7 @@ public class TestCorrectAddProductCartNoLoginUser extends ClaireandbruceTestCase
 			//Clic en botón "AÑADIR A LA CESTA"
 			selenium.click("xpath=//div[9]/div/button");
 			Helper.log(nombreProducto);
-			String texto ="";
+			//String texto ="";
 			//Se comprueba con el producto ha sido agregado a través de su nombre
 			//Clic en botón "AÑADIR A LA CESTA"
 			selenium.click("xpath=//div[9]/div/button");
