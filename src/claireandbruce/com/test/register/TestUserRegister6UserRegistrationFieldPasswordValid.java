@@ -10,7 +10,6 @@ import basics.ClaireandbruceTestCase;
  * 	El éxito del caso de prueba se reflejara en el aviso de correcciones para el usuario de los datos ingresados.
  *  CBT7
  * @author NEWSHORE
- *
  */
 public class TestUserRegister6UserRegistrationFieldPasswordValid extends ClaireandbruceTestCase{
 	
