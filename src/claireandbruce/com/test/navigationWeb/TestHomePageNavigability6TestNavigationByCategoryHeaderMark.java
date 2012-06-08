@@ -1,11 +1,8 @@
 package claireandbruce.com.test.navigationWeb;
 
 import junit.framework.Assert;
-import lib.Claireandbruce;
 import lib.Helper;
-
 import org.junit.Test;
-
 import basics.ClaireandbruceTestCase;
 
 /**
@@ -22,6 +19,11 @@ public class TestHomePageNavigability6TestNavigationByCategoryHeaderMark extends
 		if(selenium.isElementPresent("link=Salir")) {
 			selenium.click("link=Salir");
 			selenium.waitForPageToLoad("15000");
+			
+			if(selenium.isElementPresent("id=email")){
+				selenium.click("xpath=//img");
+				selenium.waitForPageToLoad("15000");
+			} 
 		}
 		
 		
