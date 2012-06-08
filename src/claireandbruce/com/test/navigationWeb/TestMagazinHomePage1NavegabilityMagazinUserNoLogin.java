@@ -21,6 +21,7 @@ import basics.ClaireandbruceTestCase;
  * 
  * @author NEWSHORE
  * CBT30
+ * 
  * */
 public class TestMagazinHomePage1NavegabilityMagazinUserNoLogin extends ClaireandbruceTestCase{
 

@@ -20,7 +20,6 @@ import basics.ClaireandbruceTestCase;
  * El éxito del  caso  de prueba  será la validación   del  campo  contraseña  ingresado y  por consecuencia 
  * la posterior muestra del mensaje de advertencia sobre formato de contraseña no válido.
  * 
- * 
  * @author 	NEWSHORE 
  * CBT20
  */
