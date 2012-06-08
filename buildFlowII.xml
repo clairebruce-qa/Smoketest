@@ -4,7 +4,7 @@
 	<property name="reports" location="reports" />
 	<property name="selenium.tests.src" location="src" />
 	<property name="selenium.tests.build" location="build" />
-	<property name="browser" value="*chrome" />
+	<property name="browser" value="*iexplore" />
 	
 	<target name="compile">
 		<delete dir="${selenium.tests.build}" />
@@ -31,7 +31,7 @@
 				</fileset>
 			</classpath>
 
-			<test name="FlowIISuite" haltonfailure="no" outfile="resultST">
+			<test name="FlowIISuite" haltonfailure="no" outfile="resultCB2">
 			</test>
 
 
