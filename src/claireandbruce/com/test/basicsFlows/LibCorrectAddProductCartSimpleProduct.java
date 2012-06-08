@@ -24,7 +24,7 @@ public class LibCorrectAddProductCartSimpleProduct extends ClaireandbruceTestCas
 		//selenium.waitForPageToLoad("30000");
 		
 		
-		
+		int counterOut = 1;
 		//Se selecciona una categoría entre Bolsos y Accesorios (Categorías que poseen productos simples)		
 		//Haga mientras encuentre el menú de selección de talla (producto configurable)
 		do {
@@ -65,7 +65,8 @@ public class LibCorrectAddProductCartSimpleProduct extends ClaireandbruceTestCas
 					Helper.log("Producto actual: "+selenium.getTitle());						
 				}				
 			} 
-		} while(!selenium.isElementPresent("xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[7]/div/button") );
+			counterOut = counterOut + 1;
+		} while(!selenium.isElementPresent("xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[7]/div/button") || counterOut == 10);
 		
 		/*String texto ="";
 		if(selenium.isElementPresent("class=special-price")) {
