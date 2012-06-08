@@ -29,11 +29,12 @@ public class LibWindowPayPal extends ClaireandbruceTestCase {
 	
 		
 		selenium.open("https://developer.paypal.com");
-		selenium.type("id=login_email", "david.vinuales@privalia.com");
-		selenium.type("id=login_password", "testing1111");
-		selenium.click("name=submit");
-		selenium.waitForPageToLoad("30000");
-		
+		if(selenium.isElementPresent("//input[@id='login_email']")){
+ 			selenium.type("id=login_email", "david.vinuales@privalia.com");
+ 			selenium.type("id=login_password", "testing1111");
+ 			selenium.click("name=submit");
+ 			selenium.waitForPageToLoad("30000");
+ 		}
 		selenium.selectWindow("null");
 		
 		//selenium.waitForPopUp(ClaireandbruceUrl, "30000");
@@ -42,8 +43,7 @@ public class LibWindowPayPal extends ClaireandbruceTestCase {
 			LibCorrectLogonValidUserAccout.CBT55(selenium);
 		
 		}
-		
-
+	
 		
 	}
 }
