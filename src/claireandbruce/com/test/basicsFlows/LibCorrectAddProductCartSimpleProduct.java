@@ -66,7 +66,7 @@ public class LibCorrectAddProductCartSimpleProduct extends ClaireandbruceTestCas
 				}				
 			} 
 			counterOut = counterOut + 1;
-		} while(!selenium.isElementPresent("xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[7]/div/button") || counterOut == 10);
+		} while(!selenium.isElementPresent("xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[7]/div/button") && counterOut < 10);
 		
 		/*String texto ="";
 		if(selenium.isElementPresent("class=special-price")) {
