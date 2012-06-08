@@ -9,6 +9,10 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> remotes/origin/diego2
 
 import basics.ClaireandbruceTestCase;
 
