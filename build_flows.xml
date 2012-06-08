@@ -28,7 +28,7 @@
 					<include name="**/*.jar"/>
 				</fileset>
 			</classpath>
-			<test name="Pruebas" haltonfailure="no" outfile="Pruebas"/>
+			<test name="FlowsSuite" haltonfailure="no" outfile="Pruebas"/>
 		</junit>
 		<echo message="running JUnit Reports"/>
 		<junitreport todir="${reports}">

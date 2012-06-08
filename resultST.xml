@@ -1,0 +1,939 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="7" failures="12" hostname="QA1-NEWSHORE-PC" name="SmokeTestSuite" tests="43" time="4467.674" timestamp="2012-06-08T11:33:36">
+  <properties>
+    <property name="java.vendor" value="Oracle Corporation" />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="eclipse.pdebuild.templates" value="/C:/eclipse_qa/plugins/org.eclipse.pde.build_3.6.2.R36x_20110203/templates/" />
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+    <property name="lib" value="C:\Users\NEWSHORE\workspace\Smoketest\lib" />
+    <property name="os.name" value="Windows 7" />
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.7.0_03\jre\lib\resources.jar;C:\Program Files\Java\jdk1.7.0_03\jre\lib\rt.jar;C:\Program Files\Java\jdk1.7.0_03\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.7.0_03\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.7.0_03\jre\lib\jce.jar;C:\Program Files\Java\jdk1.7.0_03\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.7.0_03\jre\classes" />
+    <property name="ant.file.tbtesting" value="C:\Users\NEWSHORE\workspace\Smoketest\build.xml" />
+    <property name="sun.desktop" value="windows" />
+    <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+    <property name="ant.home" value="C:\eclipse_qa\plugins\org.apache.ant_1.8.2.v20120109-1030" />
+    <property name="java.runtime.version" value="1.7.0_03-b05" />
+    <property name="user.name" value="NEWSHORE" />
+    <property name="reports" value="C:\Users\NEWSHORE\workspace\Smoketest\reports" />
+    <property name="user.language" value="es" />
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_03\jre\bin" />
+    <property name="ant.project.default-target" value="run_sm_tests" />
+    <property name="ant.project.name" value="tbtesting" />
+    <property name="ant.file.type.tbtesting" value="file" />
+    <property name="java.version" value="1.7.0_03" />
+    <property name="user.timezone" value="" />
+    <property name="sun.arch.data.model" value="64" />
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.7.0_03\jre\lib\endorsed" />
+    <property name="sun.cpu.isalist" value="amd64" />
+    <property name="sun.jnu.encoding" value="Cp1252" />
+    <property name="file.encoding.pkg" value="sun.io" />
+    <property name="file.separator" value="\" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="selenium.tests.build" value="C:\Users\NEWSHORE\workspace\Smoketest\build" />
+    <property name="java.class.version" value="51.0" />
+    <property name="user.country" value="ES" />
+    <property name="java.home" value="C:\Program Files\Java\jdk1.7.0_03\jre" />
+    <property name="java.vm.info" value="mixed mode" />
+    <property name="ant.file" value="C:\Users\NEWSHORE\workspace\Smoketest\build.xml" />
+    <property name="os.version" value="6.1" />
+    <property name="path.separator" value=";" />
+    <property name="java.vm.version" value="22.1-b02" />
+    <property name="user.variant" value="" />
+    <property name="ant.library.dir" value="C:\eclipse_qa\plugins\org.apache.ant_1.8.2.v20120109-1030\lib" />
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob" />
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
+    <property name="user.script" value="" />
+    <property name="eclipse.pdebuild.scripts" value="/C:/eclipse_qa/plugins/org.eclipse.pde.build_3.6.2.R36x_20110203/scripts/" />
+    <property name="user.home" value="C:\Users\NEWSHORE" />
+    <property name="java.specification.vendor" value="Oracle Corporation" />
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.7.0_03\jre\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files (x86)/Java/bin/client;C:/Program Files (x86)/Java/bin;C:/Program Files (x86)/Java/lib/i386;C:\oraclexe\app\oracle\product\10.2.0\server\bin;D:\app\NEWSHORE\product\11.2.0\dbhome_1\bin;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files\Trend Micro\AMSP;C:\Program Files (x86)\Common Files\HP\Digital Imaging\bin;C:\Program Files (x86)\HP\Digital Imaging\bin\;C:\Program Files (x86)\HP\Digital Imaging\bin\Qt\Qt 4.3.3;C:\Program Files\TortoiseSVN\bin;C:\Program Files\TortoiseGit\bin;C:\apache-maven-3.0.4\bin;C:\apache-maven-3.0.4\;C:\Program Files\Java\jdk1.6.0_31\bin;C:\Program Files (x86)\WinAnt\bin;C:\eclipse_qa;;." />
+    <property name="java.vendor.url" value="http://java.oracle.com/" />
+    <property name="java.vm.vendor" value="Oracle Corporation" />
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner SmokeTestSuite filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.PlainJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\NEWSHORE\workspace\Smoketest\resultST.xml crashfile=C:\Users\NEWSHORE\workspace\Smoketest\junitvmwatcher5242915836180487755.properties propsfile=C:\Users\NEWSHORE\workspace\Smoketest\junit2399103602887826629.properties" />
+    <property name="java.class.path" value="C:\Users\NEWSHORE\workspace\Smoketest\build;C:\Users\NEWSHORE\workspace\Smoketest\lib\junit-4.8.1.jar;C:\Users\NEWSHORE\workspace\Smoketest\lib\logging-selenium-1.2.jar;C:\Users\NEWSHORE\workspace\Smoketest\lib\selenium-java-client-driver.jar;C:\Users\NEWSHORE\workspace\Smoketest\lib\selenium-server-standalone-2.5.0.jar;C:\Users\NEWSHORE\workspace\Smoketest\lib\testlink-api-client-2.0.jar;C:\Users\NEWSHORE\workspace\Smoketest\lib\ws-commons-util-1.0.2.jar;C:\Users\NEWSHORE\workspace\Smoketest\lib\xmlrpc-client-3.1-sources.jar;C:\Users\NEWSHORE\workspace\Smoketest\lib\xmlrpc-client-3.1.jar;C:\Users\NEWSHORE\workspace\Smoketest\lib\xmlrpc-common-3.1-sources.jar;C:\Users\NEWSHORE\workspace\Smoketest\lib\xmlrpc-common-3.1.jar;C:\eclipse_qa\plugins\org.apache.ant_1.8.2.v20120109-1030\lib\ant-launcher.jar;C:\eclipse_qa\plugins\org.apache.ant_1.8.2.v20120109-1030\lib\ant.jar;C:\eclipse_qa\plugins\org.apache.ant_1.8.2.v20120109-1030\lib\ant-junit.jar;C:\eclipse_qa\plugins\org.apache.ant_1.8.2.v20120109-1030\lib\ant-junit4.jar" />
+    <property name="ant.version" value="Apache Ant(TM) version 1.8.2 compiled on December 20 2010" />
+    <property name="selenium.tests.src" value="C:\Users\NEWSHORE\workspace\Smoketest\src" />
+    <property name="reportdir" value="C:\Users\NEWSHORE\workspace\Smoketest" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="my.browser" value="*chrome" />
+    <property name="java.vm.specification.version" value="1.7" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="sun.os.patch.level" value="Service Pack 1" />
+    <property name="eclipse.pdebuild.home" value="/C:/eclipse_qa/plugins/org.eclipse.pde.build_3.6.2.R36x_20110203/./" />
+    <property name="java.io.tmpdir" value="C:\Users\NEWSHORE\AppData\Local\Temp\" />
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/" />
+    <property name="os.arch" value="amd64" />
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.7.0_03\jre\lib\ext;C:\Windows\Sun\Java\lib\ext" />
+    <property name="user.dir" value="C:\Users\NEWSHORE\workspace\Smoketest" />
+    <property name="browser" value="*chrome" />
+    <property name="line.separator" value="&#xd;&#xa;" />
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+    <property name="basedir" value="C:\Users\NEWSHORE\workspace\Smoketest" />
+    <property name="ant.java.version" value="1.7" />
+    <property name="ant.core.lib" value="C:\eclipse_qa\plugins\org.apache.ant_1.8.2.v20120109-1030\lib\ant.jar" />
+    <property name="file.encoding" value="Cp1252" />
+    <property name="java.specification.version" value="1.7" />
+    <property name="ant.project.invoked-targets" value="run_sm_tests" />
+  </properties>
+  <testcase classname="claireandbruce.com.test.register.TestUserRegister6UserRegistrationFieldPasswordValid" name="CBT7" time="11.565">
+    <error message="ERROR: Element link=Regístrate not found" type="com.thoughtworks.selenium.SeleniumException">com.thoughtworks.selenium.SeleniumException: ERROR: Element link=Regístrate not found
+	at com.thoughtworks.selenium.HttpCommandProcessor.throwAssertionFailureExceptionOrError(HttpCommandProcessor.java:97)
+	at com.thoughtworks.selenium.HttpCommandProcessor.doCommand(HttpCommandProcessor.java:91)
+	at com.thoughtworks.selenium.DefaultSelenium.click(DefaultSelenium.java:167)
+	at claireandbruce.com.test.register.TestUserRegister6UserRegistrationFieldPasswordValid.CBT7(Unknown Source)
+	at basics.RunAfterFailures.evaluate(Unknown Source)
+	at basics.RCRunner.run(Unknown Source)
+</error>
+  </testcase>
+  <testcase classname="claireandbruce.com.test.account.TestUserAddress1AddShippingAddressUserWithValidFields" name="CBT13" time="42.874">
+    <failure message="Inicio de sesion  not found in http://pre-cb.newshore.es/es_es/" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Inicio de sesion  not found in http://pre-cb.newshore.es/es_es/
+	at lib.Helper.waitForElement(Unknown Source)
+	at lib.Claireandbruce.login(Unknown Source)
+	at claireandbruce.com.test.account.TestUserAddress1AddShippingAddressUserWithValidFields.CBT13(Unknown Source)
+	at basics.RunAfterFailures.evaluate(Unknown Source)
+	at basics.RCRunner.run(Unknown Source)
+</failure>
+  </testcase>
+  <testcase classname="claireandbruce.com.test.login.checkout.TestUserRegisterCheckout1UserRegistrationValidField" name="CBT18" time="94.265" />
+  <testcase classname="claireandbruce.com.test.login.checkout.TestUserRegisterCheckoutUserRegistrationValidFieldString" name="CBT20" time="110.631">
+    <error message="ERROR: Element xpath=html/body/div[2]/div[2]/div[1]/div/div[2]/div[1]/div not found" type="com.thoughtworks.selenium.SeleniumException">com.thoughtworks.selenium.SeleniumException: ERROR: Element xpath=html/body/div[2]/div[2]/div[1]/div/div[2]/div[1]/div not found
+	at com.thoughtworks.selenium.HttpCommandProcessor.throwAssertionFailureExceptionOrError(HttpCommandProcessor.java:97)
+	at com.thoughtworks.selenium.HttpCommandProcessor.doCommand(HttpCommandProcessor.java:91)
+	at com.thoughtworks.selenium.HttpCommandProcessor.getString(HttpCommandProcessor.java:262)
+	at com.thoughtworks.selenium.DefaultSelenium.getText(DefaultSelenium.java:435)
+	at claireandbruce.com.test.login.checkout.TestUserRegisterCheckoutUserRegistrationValidFieldString.CBT20(Unknown Source)
+	at basics.RunAfterFailures.evaluate(Unknown Source)
+	at basics.RCRunner.run(Unknown Source)
+</error>
+  </testcase>
+  <testcase classname="claireandbruce.com.test.login.checkout.TestUserRegisterCheckoutUserRegistrationValidFieldDate" name="CBT21" time="68.194">
+    <failure message="El usuario debe seleccionar una fecha de nacimiento válida" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: El usuario debe seleccionar una fecha de nacimiento válida
+	at claireandbruce.com.test.login.checkout.TestUserRegisterCheckoutUserRegistrationValidFieldDate.CBT21(Unknown Source)
+	at basics.RunAfterFailures.evaluate(Unknown Source)
+	at basics.RCRunner.run(Unknown Source)
+</failure>
+  </testcase>
+  <testcase classname="claireandbruce.com.test.cartShopping.TestShoppingCart1AddOtherItemShoppingCart" name="CBT22" time="30.169" />
+  <testcase classname="claireandbruce.com.test.cartShopping.TestShoppingCart3DeleterAllItemShoppingCart" name="CBT24" time="50.092" />
+  <testcase classname="claireandbruce.com.test.register.TestUserRegister7UserRegistrationvalidfieldwithEMailRegister" name="CBT28" time="14.08" />
+  <testcase classname="claireandbruce.com.test.account.TestUserRegisterAccount1UserRegistrationValidFieldForAccount" name="CBT29" time="14.955" />
+  <testcase classname="claireandbruce.com.test.navigationWeb.TestMagazinHomePage1NavegabilityMagazinUserNoLogin" name="CBT30" time="29.069">
+    <error message="ERROR: Element xpath=//div[2]/div/div/div/div/div/div[2] not found" type="com.thoughtworks.selenium.SeleniumException">com.thoughtworks.selenium.SeleniumException: ERROR: Element xpath=//div[2]/div/div/div/div/div/div[2] not found
+	at com.thoughtworks.selenium.HttpCommandProcessor.throwAssertionFailureExceptionOrError(HttpCommandProcessor.java:97)
+	at com.thoughtworks.selenium.HttpCommandProcessor.doCommand(HttpCommandProcessor.java:91)
+	at com.thoughtworks.selenium.DefaultSelenium.click(DefaultSelenium.java:167)
+	at claireandbruce.com.test.navigationWeb.TestMagazinHomePage1NavegabilityMagazinUserNoLogin.CBT30(Unknown Source)
+	at basics.RunAfterFailures.evaluate(Unknown Source)
+	at basics.RCRunner.run(Unknown Source)
+</error>
+  </testcase>
+  <testcase classname="claireandbruce.com.test.navigationWeb.TestHomePageNavigability1NavigabilityForLookNotLogin" name="CBT31" time="10.64" />
+  <testcase classname="claireandbruce.com.test.navigationWeb.TestHomePageNavigability3PurchaseToCompleteLookNotLoginNoValidField" name="CBT33" time="25.476" />
+  <testcase classname="claireandbruce.com.test.navigationWeb.TestHomePageNavigability4PurchaseToLookPieceByPieceUserNotLoginNoValidFields" name="CBT34" time="16.82" />
+  <testcase classname="claireandbruce.com.test.navigationWeb.TestHomePageNavigability6TestNavigationByCategoryHeaderMark" name="CBT39" time="1060.396" />
+  <testcase classname="claireandbruce.com.test.navigationWeb.TestCatalogWomen1TestCatalogWomenFilter" name="CBT40" time="43.063" />
+  <testcase classname="claireandbruce.com.test.navigationWeb.TestCatalogWomen2TestCatalogWomenFilterPriceViewsProductLook" name="CBT41" time="38.838">
+    <error message="ERROR: Element //ul[2]/li[2]/div[4]/div/p/span not found" type="com.thoughtworks.selenium.SeleniumException">com.thoughtworks.selenium.SeleniumException: ERROR: Element //ul[2]/li[2]/div[4]/div/p/span not found
+	at com.thoughtworks.selenium.HttpCommandProcessor.throwAssertionFailureExceptionOrError(HttpCommandProcessor.java:97)
+	at com.thoughtworks.selenium.HttpCommandProcessor.doCommand(HttpCommandProcessor.java:91)
+	at com.thoughtworks.selenium.HttpCommandProcessor.getString(HttpCommandProcessor.java:262)
+	at com.thoughtworks.selenium.DefaultSelenium.getText(DefaultSelenium.java:435)
+	at claireandbruce.com.test.navigationWeb.TestCatalogWomen2TestCatalogWomenFilterPriceViewsProductLook.CBT41(Unknown Source)
+	at basics.RunAfterFailures.evaluate(Unknown Source)
+	at basics.RCRunner.run(Unknown Source)
+</error>
+  </testcase>
+  <testcase classname="claireandbruce.com.test.navigationWeb.TestHomePageNavegability7NavigabilityMenuLanguage" name="CBT42" time="115.817">
+    <failure message="timeout" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: timeout
+	at claireandbruce.com.test.navigationWeb.TestHomePageNavegability7NavigabilityMenuLanguage.CBT42(Unknown Source)
+	at basics.RunAfterFailures.evaluate(Unknown Source)
+	at basics.RCRunner.run(Unknown Source)
+</failure>
+  </testcase>
+  <testcase classname="claireandbruce.com.test.cartShopping.TestShoppinCart11UserLoginPurchaseWithInvoiceWhitOtherAddressEmptyFields" name="CBT48" time="94.896">
+    <failure message="Campo Apellido acepta valores vacíos" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Campo Apellido acepta valores vacíos
+	at claireandbruce.com.test.cartShopping.TestShoppinCart11UserLoginPurchaseWithInvoiceWhitOtherAddressEmptyFields.CBT48(Unknown Source)
+	at basics.RunAfterFailures.evaluate(Unknown Source)
+	at basics.RCRunner.run(Unknown Source)
+</failure>
+  </testcase>
+  <testcase classname="claireandbruce.com.test.cartShopping.TestIncidentsPurchaseorders1ViewOrderhistory" name="CBT49" time="18.841">
+    <failure message="Link Historial de pedidos no se encuentra" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Link Historial de pedidos no se encuentra
+	at claireandbruce.com.test.cartShopping.TestIncidentsPurchaseorders1ViewOrderhistory.CBT49(Unknown Source)
+	at basics.RunAfterFailures.evaluate(Unknown Source)
+	at basics.RCRunner.run(Unknown Source)
+</failure>
+  </testcase>
+  <testcase classname="claireandbruce.com.test.account.TestCorrectPasswordChangeAccount" name="CBT60" time="38.244" />
+  <testcase classname="claireandbruce.com.test.account.TestIncorrectPasswordChangeInvalidOldPassAccount" name="CBT61" time="36.344" />
+  <testcase classname="claireandbruce.com.test.account.TestCorrectPasswordChangeSpacesNewPassAccount" name="CBT62" time="39.997" />
+  <testcase classname="claireandbruce.com.test.account.TestIncorrectEditionAddressSpecialCharactersAccount" name="CBT70" time="70.388">
+    <error message="Timed out after 60000ms" type="com.thoughtworks.selenium.SeleniumException">com.thoughtworks.selenium.SeleniumException: Timed out after 60000ms
+	at com.thoughtworks.selenium.HttpCommandProcessor.throwAssertionFailureExceptionOrError(HttpCommandProcessor.java:97)
+	at com.thoughtworks.selenium.HttpCommandProcessor.doCommand(HttpCommandProcessor.java:91)
+	at com.thoughtworks.selenium.DefaultSelenium.waitForPageToLoad(DefaultSelenium.java:635)
+	at claireandbruce.com.test.account.TestIncorrectEditionAddressSpecialCharactersAccount.CBT70(Unknown Source)
+	at basics.RunAfterFailures.evaluate(Unknown Source)
+	at basics.RCRunner.run(Unknown Source)
+</error>
+  </testcase>
+  <testcase classname="claireandbruce.com.test.login.checkout.TestIncorrectLogonInvalidUserFormatCheckout" name="CBT72" time="82.137" />
+  <testcase classname="claireandbruce.com.test.login.checkout.TestIncorrectLogonNoValidPasswordCheckout" name="CBT73" time="63.461" />
+  <testcase classname="claireandbruce.com.test.login.checkout.TestIncorrectLogonInvalidPasswordSpaceCheckout" name="CBT74" time="161.079" />
+  <testcase classname="claireandbruce.com.test.login.checkout.TestIncorrectLogonInvalidPasswordEmptyCheckout" name="CBT75" time="83.446" />
+  <testcase classname="claireandbruce.com.test.cartShopping.TestCorrectAddProductCartNoLoginUser" name="CBT76" time="63.761">
+    <error message="ERROR: Element xpath=//div[7]/div/button not found" type="com.thoughtworks.selenium.SeleniumException">com.thoughtworks.selenium.SeleniumException: ERROR: Element xpath=//div[7]/div/button not found
+	at com.thoughtworks.selenium.HttpCommandProcessor.throwAssertionFailureExceptionOrError(HttpCommandProcessor.java:97)
+	at com.thoughtworks.selenium.HttpCommandProcessor.doCommand(HttpCommandProcessor.java:91)
+	at com.thoughtworks.selenium.DefaultSelenium.click(DefaultSelenium.java:167)
+	at claireandbruce.com.test.cartShopping.TestCorrectAddProductCartNoLoginUser.CBT76(Unknown Source)
+	at basics.RunAfterFailures.evaluate(Unknown Source)
+	at basics.RCRunner.run(Unknown Source)
+</error>
+  </testcase>
+  <testcase classname="claireandbruce.com.test.cartShopping.TestCorrectChangeUnitsAccount" name="CBT78" time="162.383">
+    <error message="Timed out after 65000ms" type="com.thoughtworks.selenium.SeleniumException">com.thoughtworks.selenium.SeleniumException: Timed out after 65000ms
+	at com.thoughtworks.selenium.HttpCommandProcessor.throwAssertionFailureExceptionOrError(HttpCommandProcessor.java:97)
+	at com.thoughtworks.selenium.HttpCommandProcessor.doCommand(HttpCommandProcessor.java:91)
+	at com.thoughtworks.selenium.DefaultSelenium.waitForPageToLoad(DefaultSelenium.java:635)
+	at claireandbruce.com.test.basicsFlows.LibCorrectAddProductCartSimpleProduct.CBT_SimpleProduct(Unknown Source)
+	at claireandbruce.com.test.cartShopping.TestCorrectChangeUnitsAccount.CBT78(Unknown Source)
+	at basics.RunAfterFailures.evaluate(Unknown Source)
+	at basics.RCRunner.run(Unknown Source)
+</error>
+  </testcase>
+  <testcase classname="claireandbruce.com.test.account.TestEditionAddressCancelButtonAccount" name="CBT82" time="43.71">
+    <failure message="Inicio de sesion  not found in http://pre-cb.newshore.es/es_es/" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Inicio de sesion  not found in http://pre-cb.newshore.es/es_es/
+	at lib.Helper.waitForElement(Unknown Source)
+	at lib.Claireandbruce.login(Unknown Source)
+	at claireandbruce.com.test.account.TestEditionAddressCancelButtonAccount.CBT82(Unknown Source)
+	at basics.RunAfterFailures.evaluate(Unknown Source)
+	at basics.RCRunner.run(Unknown Source)
+</failure>
+  </testcase>
+  <testcase classname="claireandbruce.com.test.account.TestForgottenPasswordValidUserAccount" name="CBT83" time="14.947">
+    <failure message="Error elemento no encontrado" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Error elemento no encontrado
+	at claireandbruce.com.test.account.TestForgottenPasswordValidUserAccount.CBT83(Unknown Source)
+	at basics.RunAfterFailures.evaluate(Unknown Source)
+	at basics.RCRunner.run(Unknown Source)
+</failure>
+  </testcase>
+  <testcase classname="claireandbruce.com.test.account.TestForgottenPasswordInvalidUserAccount" name="CBT84" time="15.03">
+    <failure message="Error elemento no encontrado" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Error elemento no encontrado
+	at claireandbruce.com.test.account.TestForgottenPasswordInvalidUserAccount.CBT84(Unknown Source)
+	at basics.RunAfterFailures.evaluate(Unknown Source)
+	at basics.RCRunner.run(Unknown Source)
+</failure>
+  </testcase>
+  <testcase classname="claireandbruce.com.test.catalog.TestMenCatalogNoUserLogin" name="CBT86" time="51.937" />
+  <testcase classname="claireandbruce.com.test.navigationWeb.TestNavigationByCategoryHeader" name="CBT90" time="14.17" />
+  <testcase classname="claireandbruce.com.test.navigationWeb.TestFooterMiddleNavigationAtencionAlCliente" name="CBT91" time="122.539">
+    <failure message="The string Tu cuenta was not found in link=Tu cuenta" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The string Tu cuenta was not found in link=Tu cuenta
+	at lib.Helper.clickAndVerify(Unknown Source)
+	at claireandbruce.com.test.navigationWeb.TestFooterMiddleNavigationAtencionAlCliente.CBT91(Unknown Source)
+	at basics.RunAfterFailures.evaluate(Unknown Source)
+	at basics.RCRunner.run(Unknown Source)
+</failure>
+  </testcase>
+  <testcase classname="claireandbruce.com.test.navigationWeb.TestNavigationTopQuestions" name="CBT92" time="268.692" />
+  <testcase classname="claireandbruce.com.test.navigationWeb.TestFooterTopNavigation" name="CBT93" time="36.611" />
+  <testcase classname="claireandbruce.com.test.navigationWeb.TestFooterMiddleNavigationMujer" name="CBT94" time="9.597">
+    <failure type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: 
+	at claireandbruce.com.test.navigationWeb.TestFooterMiddleNavigationMujer.CBT94(Unknown Source)
+	at basics.RunAfterFailures.evaluate(Unknown Source)
+	at basics.RCRunner.run(Unknown Source)
+</failure>
+  </testcase>
+  <testcase classname="claireandbruce.com.test.navigationWeb.TestFooterMiddleNavigationMarcas" name="CBT95" time="167.71" />
+  <testcase classname="claireandbruce.com.test.navigationWeb.TestFooterMiddleNavigationTendencias" name="CBT96" time="111.51" />
+  <testcase classname="claireandbruce.com.test.account.TestSendMessageFormularioContactoAccount" name="CBT97" time="180.689">
+    <failure type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: 
+	at claireandbruce.com.test.account.TestSendMessageFormularioContactoAccount.CBT97(Unknown Source)
+	at basics.RunAfterFailures.evaluate(Unknown Source)
+	at basics.RCRunner.run(Unknown Source)
+</failure>
+  </testcase>
+  <testcase classname="claireandbruce.com.test.account.TestAyudaFAQsAccount" name="CBT99" time="20.229">
+    <failure type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: 
+	at claireandbruce.com.test.account.TestAyudaFAQsAccount.CBT99(Unknown Source)
+	at basics.RunAfterFailures.evaluate(Unknown Source)
+	at basics.RCRunner.run(Unknown Source)
+</failure>
+  </testcase>
+  <testcase classname="claireandbruce.com.test.navigationWeb.TestHeaderHomePageNavigationTendencias" name="CBT100" time="113.377" />
+  <system-out><![CDATA[**** Start test **** CBT7 ****
+
+**** Test done ****CBT7 ****
+
+failures tc: null com.thoughtworks.selenium.SeleniumException: ERROR: Element link=Regístrate not found
+**** Start test **** CBT13 ****
+
+Open Homepage
+Waiting for element //a[contains(text(), 'Tu cuenta')] in http://pre-cb.newshore.es/es_es/
+**** Test done ****CBT13 ****
+
+failures tc: null junit.framework.AssertionFailedError: Inicio de sesion  not found in http://pre-cb.newshore.es/es_es/
+**** Start test **** CBT18 ****
+
+Logout done!
+Categoría 4
+Categoría actual: Accesorios - Mujer
+Subcategoria 2
+Subcategoría actual: Relojes - Accesorios - Mujer
+Producto: 1 en la fila: 2
+Producto actual: Reloj cobre brillante - Relojes - Accesorios - Mujer
+El producto ha sido añadido con éxito al carrito de compras
+**** Test done ****CBT18 ****
+
+no failures tc:null
+**** Start test **** CBT20 ****
+
+Logout done!
+Categoría 4
+Categoría actual: Accesorios - Mujer
+Subcategoria 6
+Subcategoría actual: Cinturones - Accesorios - Mujer
+Producto: 3 en la fila: 2
+Producto actual: Cinturón en piel trenzada color mostaza - Cinturones - Accesorios - Mujer
+Categoría 4
+Categoría actual: Accesorios - Mujer
+Subcategoria 7
+Subcategoría actual: Otros accesorios - Accesorios - Mujer
+Producto: 2 en la fila: 1
+Producto actual: Sombrero fedora calado en paja - Otros accesorios - Accesorios - Mujer
+El producto ha sido añadido con éxito al carrito de compras
+**** Test done ****CBT20 ****
+
+failures tc: null com.thoughtworks.selenium.SeleniumException: ERROR: Element xpath=html/body/div[2]/div[2]/div[1]/div/div[2]/div[1]/div not found
+**** Start test **** CBT21 ****
+
+Logout done!
+Categoría 4
+Categoría actual: Accesorios - Mujer
+Subcategoria 6
+Subcategoría actual: Cinturones - Accesorios - Mujer
+Producto: 2 en la fila: 1
+Producto actual: Cinturón ancho a cintura color rojo - Cinturones - Accesorios - Mujer
+El producto ha sido añadido con éxito al carrito de compras
+**** Test done ****CBT21 ****
+
+failures tc: null junit.framework.AssertionFailedError: El usuario debe seleccionar una fecha de nacimiento válida
+**** Start test **** CBT22 ****
+
+Categoría 3
+Categoría actual: Bolsos - Mujer
+Subcategoria 4
+Subcategoría actual: Shoulder Bags - Bolsos - Mujer
+Producto: 3 en la fila: 1
+Producto actual: Bolso de mano doble con tira bandolera moca - Shoulder Bags - Bolsos - Mujer
+El producto ha sido añadido con éxito al carrito de compras
+**** Test done ****CBT22 ****
+
+no failures tc:null
+**** Start test **** CBT24 ****
+
+Categoría 3
+Categoría actual: Bolsos - Mujer
+Subcategoria 5
+Categoría 4
+Categoría actual: Accesorios - Mujer
+Subcategoria 6
+Subcategoría actual: Cinturones - Accesorios - Mujer
+Producto: 2 en la fila: 1
+Producto actual: Cinturón ancho a cintura color rojo - Cinturones - Accesorios - Mujer
+El producto ha sido añadido con éxito al carrito de compras
+**** Test done ****CBT24 ****
+
+no failures tc:null
+**** Start test **** CBT28 ****
+
+**** Test done ****CBT28 ****
+
+no failures tc:null
+**** Start test **** CBT29 ****
+
+**** Test done ****CBT29 ****
+
+no failures tc:null
+**** Start test **** CBT30 ****
+
+Waiting for element xpath=//a[contains(@href, '/customer/account/logout/')] in http://pre-cb.newshore.es/es_es/
+Logout done!
+ERROR: THIS ELEMENT NOT FOUND
+El boton de navegacion no se encuentra
+El boton de navegacion no se encuentra
+**** Test done ****CBT30 ****
+
+failures tc: null com.thoughtworks.selenium.SeleniumException: ERROR: Element xpath=//div[2]/div/div/div/div/div/div[2] not found
+**** Start test **** CBT31 ****
+
+**** Test done ****CBT31 ****
+
+no failures tc:null
+**** Start test **** CBT33 ****
+
+AMBIENTE DE PRUEBA: http://pre-cb.newshore.es/es_es/
+
+Element Tab 'COMPRA EL TOTAL LOOK' is not present
+Element Tab 'ENVIO Y DEVOLUCION' is not present
+Element Tab 'GUIA DE TALLAS' is not present
+Button 'COMPRAR EL TOTAL LOOK' is not present
+Button 'COMPRAR EL TOTAL LOOK' is not present
+Size unselected - Test OK
+**** Test done ****CBT33 ****
+
+no failures tc:null
+**** Start test **** CBT34 ****
+
+Waiting for element xpath=//a[contains(@href, '/customer/account/logout/')] in http://pre-cb.newshore.es/es_es/
+Logout done!
+ERROR: THIS ELEMENT NOT FOUND
+**** Test done ****CBT34 ****
+
+no failures tc:null
+**** Start test **** CBT39 ****
+
+Waiting for element xpath=//a[contains(@href, '/customer/account/logout/')] in http://pre-cb.newshore.es/es_es/
+Logout done!
+Checking link 'Ver las novedades' of French Connection
+Checking link 'Ver las novedades' of IKKS
+Checking link 'Ver las novedades' of Pepe Jeans London
+Checking link 'Ver las novedades' of Pretty Ballerinas
+Checking link 'Ver las novedades' of Ursula Mascaró
+Link ADIDAS ORIGINALS is active
+Link AMERICAN RETRO is active
+Link AMY GEE is active
+Link ANTIK BATIK is active
+Link ATHÉ VANESSA BRUNO is active
+Link BEATRIZ FUREST is active
+Link C-DOUX is active
+Link CALVIN KLEIN JEANS is active
+Link CASTAÑER is active
+Link CHEAP MONDAY is active
+Link CHINO & FRIENDS is active
+Link CONVERSE is active
+Link CUSTO ACCESSORIES is active
+Link CUSTO BARCELONA is active
+Link CUSTO LINE is active
+Link CYCLE is active
+Link DESIGUAL is active
+Link DIAB'LESS is active
+Link DIESEL is active
+Link DKNY is active
+Link DSL is not active
+Link EDC BY ESPRIT is active
+Link EMPORIO ARMANI is active
+Link ESPRIT is not active
+Link FONDOTINTA is active
+Link FORNARINA is active
+Link FOSSIL is active
+Link FRENCH CONNECTION is active
+Link G-STAR RAW is active
+Link G-STAR RAW FOOTWEAR is active
+Link GASPARD YURKIEVICH is active
+Link GOOD LOOK is active
+Link GUESS is not active
+Link HAKEI is active
+Link HILFIGER DENIM is active
+Link HOSS INTROPIA is active
+Link HOSS INTROPIA - MIGUEL PALACIO is active
+Link IKKS is active
+Link IKKS FINAL TOUCH is active
+Link JANET & JANET is active
+Link JANET & JANET SPORT is active
+Link KEDS is active
+Link KLING is active
+Link KOOKAÏ is active
+Link LUCIANO PADOVAN is active
+Link MAISON SCOTCH is active
+Link MALABABA is active
+Link MANAS FOSCATI is active
+Link MANGO is active
+Link MANGO TOUCH is active
+Link MELISSA is active
+Link MET is active
+Link MICHAEL KORS is active
+Link MORGAN DE TOI is active
+Link MTNG is active
+Link MUNICH is active
+Link NAF NAF is active
+Link ONLY is active
+Link PALOMA BARCELÓ is active
+Link PALOMITAS is active
+Link PAPIROGA is active
+Link PAUL & JOE SISTER is active
+Link PEDRO MIRALLES is active
+Link PEPE JEANS LONDON is active
+Link PIECES is active
+Link PRETTY BALLERINAS is active
+Link PURA LÓPEZ is active
+Link RÜTZOU is active
+Link SILVIAN HEACH is active
+Link SIXTYSEVEN is active
+Link STEFANEL is active
+Link STUART WEITZMAN is active
+Link SUPER is active
+Link TOMMY HILFIGER is active
+Link TOMMY HILFIGER DENIM is not active
+Link TOMMY HILFIGER WOMENSWEAR DIVISION is not active
+Link TOY G is active
+Link UNITED NUDE is active
+Link URBAKS is active
+Link URSULA MASCARÓ is active
+Link VERO MODA is active
+Link VIALIS is active
+Link VILA CLOTHES is active
+Link YERSE - ARIADNE ARTILES is active
+Link ZA-PATITOS is active
+**** Test done ****CBT39 ****
+
+no failures tc:null
+**** Start test **** CBT40 ****
+
+color Orange
+19,95 €
+Entre 0 y 100 €
+**** Test done ****CBT40 ****
+
+no failures tc:null
+**** Start test **** CBT41 ****
+
+455,00 €
+PRECIO MAYOR 4
+PRECIO MAYOR 45
+PRECIO MAYOR 455
+PRECIO MAYOR 455.
+PRECIO MAYOR 455.0
+PRECIO MAYOR 455.00
+360,00 €
+PRECIO MENOR 3
+PRECIO MENOR 36
+PRECIO MENOR 360
+PRECIO MENOR 360.
+PRECIO MENOR 360.0
+PRECIO MENOR 360.00
+// ---- **** ORDENAR DE MAYOR A MENOR **** ----\
+PRECIO MAYOR 455.00
+PRECIO MENOR 360.00
+16,95 €
+**** Test done ****CBT41 ****
+
+failures tc: null com.thoughtworks.selenium.SeleniumException: ERROR: Element //ul[2]/li[2]/div[4]/div/p/span not found
+**** Start test **** CBT42 ****
+
+**** Test done ****CBT42 ****
+
+failures tc: null java.lang.AssertionError: timeout
+**** Start test **** CBT48 ****
+
+Logout done!
+Open Homepage
+Login the user stress_test_qa@claireandbruce.com with password 123456
+Login message is loginOk
+Categoría 3
+Categoría actual: Bolsos - Mujer
+Subcategoria 2
+Subcategoría actual: Clutches - Bolsos - Mujer
+Producto: 3 en la fila: 1
+Producto actual: Bolso ante turquesa con tira bandolera - Clutches - Bolsos - Mujer
+El producto ha sido añadido con éxito al carrito de compras
+existe una dirección por defecto seleccionada
+**** Test done ****CBT48 ****
+
+failures tc: null junit.framework.AssertionFailedError: Campo Apellido acepta valores vacíos
+**** Start test **** CBT49 ****
+
+http://pre-cb.newshore.es/es_es/
+**** Test done ****CBT49 ****
+
+failures tc: null junit.framework.AssertionFailedError: Link Historial de pedidos no se encuentra
+**** Start test **** CBT60 ****
+
+
+*** CASO DE PRUEBA *** CBT60. CAMBIO CORRECTO DE CONTRASEÑA
+Logout done!
+Open Homepage
+Login the user stress_test_qa@claireandbruce.com with password 123456
+Login message is loginOk
+Se ha ingresado a la interfaz 'Contraseñas y Bajas
+La nueva contraseña ha sido cambiada con éxito
+La contraseña anterior ha sido recuperada con éxito
+**** Test done ****CBT60 ****
+
+no failures tc:null
+**** Start test **** CBT61 ****
+
+
+*** CASO DE PRUEBA *** CBT61. CAMBIO DE CONTRASEÑA CON CONTRASEÑA ACTUAL NO VÁLIDA
+Logout done!
+Open Homepage
+Login the user stress_test_qa@claireandbruce.com with password 123456
+Login message is loginOk
+Se ha ingresado a la interfaz 'Contraseñas y Bajas
+Caso de prueba éxitoso
+**** Test done ****CBT61 ****
+
+no failures tc:null
+**** Start test **** CBT62 ****
+
+
+*** CASO DE PRUEBA *** CBT62. CAMBIO CORRECTO DE CONTRASEÑA - NUEVA CONTRASEÑA CON ESPACIOS EN ELLA
+Logout done!
+Open Homepage
+Login the user stress_test_qa@claireandbruce.com with password 123456
+Login message is loginOk
+Se ha ingresado a la interfaz 'Contraseñas y Bajas
+La nueva contraseña ha sido cambiada con éxito
+La contraseña anterior ha sido recuperada con éxito
+**** Test done ****CBT62 ****
+
+no failures tc:null
+**** Start test **** CBT70 ****
+
+*** CBT70 *** 
+**** Test done ****CBT70 ****
+
+failures tc: null com.thoughtworks.selenium.SeleniumException: Timed out after 60000ms
+**** Start test **** CBT72 ****
+
+Logout done!
+Categoría 3
+Categoría actual: Bolsos - Mujer
+Subcategoria 5
+Categoría 3
+Categoría actual: Bolsos - Mujer
+Subcategoria 4
+Subcategoría actual: Shoulder Bags - Bolsos - Mujer
+Producto: 3 en la fila: 2
+Producto actual: Bolso bowling negro - Shoulder Bags - Bolsos - Mujer
+El producto ha sido añadido con éxito al carrito de compras
+**** Test done ****CBT72 ****
+
+no failures tc:null
+**** Start test **** CBT73 ****
+
+Logout done!
+Categoría 3
+Categoría actual: Bolsos - Mujer
+Subcategoria 2
+Subcategoría actual: Clutches - Bolsos - Mujer
+Producto: 3 en la fila: 2
+Producto actual: Bolso limón y negro tira bandolera - Clutches - Bolsos - Mujer
+El producto ha sido añadido con éxito al carrito de compras
+**** Test done ****CBT73 ****
+
+no failures tc:null
+**** Start test **** CBT74 ****
+
+Logout done!
+Categoría 4
+Categoría actual: Accesorios - Mujer
+Subcategoria 6
+Subcategoría actual: Cinturones - Accesorios - Mujer
+Producto: 2 en la fila: 2
+Producto actual: Cinturón en piel trenzada color frambuesa - Cinturones - Accesorios - Mujer
+Categoría 3
+Categoría actual: Bolsos - Mujer
+Subcategoria 5
+Categoría 4
+Categoría actual: Accesorios - Mujer
+Subcategoria 6
+Subcategoría actual: Cinturones - Accesorios - Mujer
+Producto: 3 en la fila: 2
+Producto actual: Cinturón en piel trenzada color mostaza - Cinturones - Accesorios - Mujer
+Categoría 4
+Categoría actual: Accesorios - Mujer
+Subcategoria 3
+Subcategoría actual: Bisuteria - Accesorios - Mujer
+Producto: 2 en la fila: 2
+Producto actual: Pendientes geométricos negro y oro - Bisuteria - Accesorios - Mujer
+El producto ha sido añadido con éxito al carrito de compras
+**** Test done ****CBT74 ****
+
+no failures tc:null
+**** Start test **** CBT75 ****
+
+Logout done!
+Categoría 4
+Categoría actual: Accesorios - Mujer
+Subcategoria 5
+Subcategoría actual: Fulares & Pañuelos - Accesorios - Mujer
+Producto: 3 en la fila: 1
+Producto actual: Cuello full print - Fulares & Pañuelos - Accesorios - Mujer
+El producto ha sido añadido con éxito al carrito de compras
+**** Test done ****CBT75 ****
+
+no failures tc:null
+**** Start test **** CBT76 ****
+
+Waiting for element xpath=//a[contains(@href, '/customer/account/logout/')] in http://pre-cb.newshore.es/es_es/
+Logout done!
+Categoría 1
+Categoría actual: Ropa - Mujer
+Subcategoria 5
+Subcategoría actual: Sudaderas - Ropa - Mujer
+Producto: 1 en la fila: 1
+Producto actual: Sudadera coral Hawai - Sudaderas - Ropa - Mujer
+**** Test done ****CBT76 ****
+
+failures tc: null com.thoughtworks.selenium.SeleniumException: ERROR: Element xpath=//div[7]/div/button not found
+**** Start test **** CBT78 ****
+
+Categoría 1
+Categoría actual: Ropa - Mujer
+Subcategoria 3
+Subcategoría actual: Blusas - Ropa - Mujer
+Producto: 2 en la fila: 2
+Producto actual: Blusa camisera estilo boyfriend
+clickAndVerify for link: xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[8]/div[4]/div/div/div[2] string to assert: S - EU
+Waiting for element xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[8]/div[4]/div/div/div[2] in http://pre-cb.newshore.es/es_es/blusa-camisera-estilo-boyfriend-3.html
+xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[8]/div[4]/div/div/div[2] path xpath=//div[8]/div[3]/div/div
+Blusa camisera estilo boyfriend
+El producto ha sido añadido con éxito al carrito de compras
+Categoría 4
+Categoría actual: Accesorios - Mujer
+Subcategoria 4
+Subcategoría actual: Gafas de sol - Accesorios - Mujer
+Producto: 1 en la fila: 1
+Producto actual: Gafas estilo retro con pantalla transparente - Gafas de sol - Accesorios - Mujer
+El producto no ha sido añadido al carrito de compras xpath=//a[contains(text(),'Gafas estilo retro con pantalla transparente')]
+Categoría 3
+Categoría actual: Bolsos - Mujer
+Subcategoria 7
+Categoría 3
+Categoría actual: Bolsos - Mujer
+Subcategoria 3
+Subcategoría actual: Totes - Bolsos - Mujer
+Producto: 3 en la fila: 2
+**** Test done ****CBT78 ****
+
+failures tc: null com.thoughtworks.selenium.SeleniumException: Timed out after 65000ms
+**** Start test **** CBT82 ****
+
+Open Homepage
+Waiting for element //a[contains(text(), 'Tu cuenta')] in http://pre-cb.newshore.es/es_es/
+**** Test done ****CBT82 ****
+
+failures tc: null junit.framework.AssertionFailedError: Inicio de sesion  not found in http://pre-cb.newshore.es/es_es/
+**** Start test **** CBT83 ****
+
+**** Test done ****CBT83 ****
+
+failures tc: null java.lang.AssertionError: Error elemento no encontrado
+**** Start test **** CBT84 ****
+
+**** Test done ****CBT84 ****
+
+failures tc: null java.lang.AssertionError: Error elemento no encontrado
+**** Start test **** CBT86 ****
+
+Waiting for element xpath=//a[contains(@href, '/customer/account/logout/')] in http://pre-cb.newshore.es/es_es/
+Logout done!
+OK. Is requested to accept terms
+Text 'Seleccionar un tipo de vestido' is present. Test OK
+Text 'Ingrese por lo menos una marca' is present. Test OK
+Text 'Seleccione por lo menos un estilo' is present. Test OK
+Text 'Campo obligatorio.' is present. Test OK
+**** Test done ****CBT86 ****
+
+no failures tc:null
+**** Start test **** CBT90 ****
+
+Ambiente de prueba: http://pre-cb.newshore.es/es_es/
+**** Test done ****CBT90 ****
+
+no failures tc:null
+**** Start test **** CBT91 ****
+
+Waiting for element xpath=.//*[@id='question-category-block']/div[2]/ul/li[2]/a in http://pre-cb.newshore.es/es_es/help_how_shopping#question-category-block
+clickAndVerify for link: xpath=html/body/div/div[2]/ul/li[1]/a string to assert: Tu cuenta
+Waiting for element xpath=html/body/div/div[2]/ul/li[1]/a in http://pre-cb.newshore.es/es_es/help_how_shopping#question-category-block
+xpath=html/body/div/div[2]/ul/li[1]/a path link=Tu cuenta
+**** Test done ****CBT91 ****
+
+failures tc: null junit.framework.AssertionFailedError: The string Tu cuenta was not found in link=Tu cuenta
+**** Start test **** CBT92 ****
+
+Entry is through the link 'AYUDA' in Footer-Top
+clickAndVerify for link: xpath=//div[2]/div/div/ul/li/a string to assert: ¿Tienes dudas sobre algún producto o marca?
+Waiting for element xpath=//div[2]/div/div/ul/li/a in http://pre-cb.newshore.es/es_es/help/
+xpath=//div[2]/div/div/ul/li/a path xpath=//div[3]/div/div/div/div[2]/div/div[2]/div
+clickAndVerify for link: xpath=//div[2]/div/div/ul/li[2]/a string to assert: ¿Quieres realizar modificaciones o cancelar tu pedido?
+Waiting for element xpath=//div[2]/div/div/ul/li[2]/a in http://pre-cb.newshore.es/es_es/help
+xpath=//div[2]/div/div/ul/li[2]/a path xpath=//div[3]/div/div/div/div[2]/div/div[2]/div
+clickAndVerify for link: xpath=//div[2]/div/div/ul/li[3]/a string to assert: ¿Imprevistos con la entrega?
+Waiting for element xpath=//div[2]/div/div/ul/li[3]/a in http://pre-cb.newshore.es/es_es/help
+xpath=//div[2]/div/div/ul/li[3]/a path xpath=//div[3]/div/div/div/div[2]/div/div[2]/div
+clickAndVerify for link: xpath=//div[2]/div/div/ul/li[4]/a string to assert: ¿Ha surgido algún imprevisto con tu devolución?
+Waiting for element xpath=//div[2]/div/div/ul/li[4]/a in http://pre-cb.newshore.es/es_es/help
+xpath=//div[2]/div/div/ul/li[4]/a path xpath=//div[3]/div/div/div/div[2]/div/div[2]/div
+clickAndVerify for link: xpath=//div[2]/div/div/ul/li[5]/a string to assert: ¿Cuándo recibirás tu reembolso?
+Waiting for element xpath=//div[2]/div/div/ul/li[5]/a in http://pre-cb.newshore.es/es_es/help
+xpath=//div[2]/div/div/ul/li[5]/a path xpath=//div[3]/div/div/div/div[2]/div/div[2]/div
+clickAndVerify for link: xpath=.//*[@id='question-category-block']/div[1]/ul/li[1]/a string to assert: ¿Cómo comprar?
+Waiting for element xpath=.//*[@id='question-category-block']/div[1]/ul/li[1]/a in http://pre-cb.newshore.es/es_es/help
+xpath=.//*[@id='question-category-block']/div[1]/ul/li[1]/a path xpath=.//*[@id='content-block']/div[1]/span[1]
+clickAndVerify for link: xpath=.//*[@id='question-category-block']/div[1]/ul/li[2]/a string to assert: Problemas técnicos
+Waiting for element xpath=.//*[@id='question-category-block']/div[1]/ul/li[2]/a in http://pre-cb.newshore.es/es_es/help
+xpath=.//*[@id='question-category-block']/div[1]/ul/li[2]/a path xpath=.//*[@id='content-block']/div[1]/span[1]
+clickAndVerify for link: xpath=.//*[@id='question-category-block']/div[1]/ul/li[3]/a string to assert: Envío
+Waiting for element xpath=.//*[@id='question-category-block']/div[1]/ul/li[3]/a in http://pre-cb.newshore.es/es_es/help
+xpath=.//*[@id='question-category-block']/div[1]/ul/li[3]/a path xpath=.//*[@id='content-block']/div[1]/span[1]
+clickAndVerify for link: xpath=.//*[@id='question-category-block']/div[1]/ul/li[4]/a string to assert: Pago
+Waiting for element xpath=.//*[@id='question-category-block']/div[1]/ul/li[4]/a in http://pre-cb.newshore.es/es_es/help
+xpath=.//*[@id='question-category-block']/div[1]/ul/li[4]/a path xpath=.//*[@id='content-block']/div[1]/span[1]
+clickAndVerify for link: xpath=.//*[@id='question-category-block']/div[1]/ul/li[5]/a string to assert: Productos y marcas
+Waiting for element xpath=.//*[@id='question-category-block']/div[1]/ul/li[5]/a in http://pre-cb.newshore.es/es_es/help
+xpath=.//*[@id='question-category-block']/div[1]/ul/li[5]/a path xpath=.//*[@id='content-block']/div[1]/span[1]
+clickAndVerify for link: xpath=.//*[@id='question-category-block']/div[2]/ul/li[1]/a string to assert: Modificaciones / cancelaciones
+Waiting for element xpath=.//*[@id='question-category-block']/div[2]/ul/li[1]/a in http://pre-cb.newshore.es/es_es/help
+xpath=.//*[@id='question-category-block']/div[2]/ul/li[1]/a path xpath=.//*[@id='content-block']/div[1]/span[1]
+clickAndVerify for link: xpath=.//*[@id='question-category-block']/div[2]/ul/li[2]/a string to assert: Mis pedidos
+Waiting for element xpath=.//*[@id='question-category-block']/div[2]/ul/li[2]/a in http://pre-cb.newshore.es/es_es/help
+xpath=.//*[@id='question-category-block']/div[2]/ul/li[2]/a path xpath=.//*[@id='content-block']/div[1]/span[1]
+clickAndVerify for link: xpath=.//*[@id='question-category-block']/div[2]/ul/li[3]/a string to assert: Entrega
+Waiting for element xpath=.//*[@id='question-category-block']/div[2]/ul/li[3]/a in http://pre-cb.newshore.es/es_es/help
+xpath=.//*[@id='question-category-block']/div[2]/ul/li[3]/a path xpath=.//*[@id='content-block']/div[1]/span[1]
+clickAndVerify for link: xpath=.//*[@id='question-category-block']/div[3]/ul/li[1]/a string to assert: Devoluciones
+Waiting for element xpath=.//*[@id='question-category-block']/div[3]/ul/li[1]/a in http://pre-cb.newshore.es/es_es/help
+xpath=.//*[@id='question-category-block']/div[3]/ul/li[1]/a path xpath=.//*[@id='content-block']/div[1]/span[1]
+clickAndVerify for link: xpath=.//*[@id='question-category-block']/div[3]/ul/li[2]/a string to assert: Recogida de producto
+Waiting for element xpath=.//*[@id='question-category-block']/div[3]/ul/li[2]/a in http://pre-cb.newshore.es/es_es/help
+xpath=.//*[@id='question-category-block']/div[3]/ul/li[2]/a path xpath=.//*[@id='content-block']/div[1]/span[1]
+clickAndVerify for link: xpath=.//*[@id='question-category-block']/div[3]/ul/li[3]/a string to assert: Reembolsos
+Waiting for element xpath=.//*[@id='question-category-block']/div[3]/ul/li[3]/a in http://pre-cb.newshore.es/es_es/help
+xpath=.//*[@id='question-category-block']/div[3]/ul/li[3]/a path xpath=.//*[@id='content-block']/div[1]/span[1]
+clickAndVerify for link: xpath=.//*[@id='question-category-block']/div[4]/ul/li[1]/a string to assert: Registro
+Waiting for element xpath=.//*[@id='question-category-block']/div[4]/ul/li[1]/a in http://pre-cb.newshore.es/es_es/help
+xpath=.//*[@id='question-category-block']/div[4]/ul/li[1]/a path xpath=.//*[@id='content-block']/div[1]/span[1]
+clickAndVerify for link: xpath=.//*[@id='question-category-block']/div[4]/ul/li[2]/a string to assert: Modificar datos
+Waiting for element xpath=.//*[@id='question-category-block']/div[4]/ul/li[2]/a in http://pre-cb.newshore.es/es_es/help
+xpath=.//*[@id='question-category-block']/div[4]/ul/li[2]/a path xpath=.//*[@id='content-block']/div[1]/span[1]
+clickAndVerify for link: xpath=.//*[@id='question-category-block']/div[4]/ul/li[3]/a string to assert: ¿Has olvidado tu contraseña?
+Waiting for element xpath=.//*[@id='question-category-block']/div[4]/ul/li[3]/a in http://pre-cb.newshore.es/es_es/help
+xpath=.//*[@id='question-category-block']/div[4]/ul/li[3]/a path xpath=.//*[@id='content-block']/div[1]/span[1]
+clickAndVerify for link: xpath=.//*[@id='question-category-block']/div[4]/ul/li[4]/a string to assert: Suscripciones
+Waiting for element xpath=.//*[@id='question-category-block']/div[4]/ul/li[4]/a in http://pre-cb.newshore.es/es_es/help
+xpath=.//*[@id='question-category-block']/div[4]/ul/li[4]/a path xpath=.//*[@id='content-block']/div[1]/span[1]
+clickAndVerify for link: xpath=.//*[@id='question-category-block']/div[4]/ul/li[5]/a string to assert: Desactivar cuenta
+Waiting for element xpath=.//*[@id='question-category-block']/div[4]/ul/li[5]/a in http://pre-cb.newshore.es/es_es/help
+xpath=.//*[@id='question-category-block']/div[4]/ul/li[5]/a path xpath=.//*[@id='content-block']/div[1]/span[1]
+**** Test done ****CBT92 ****
+
+no failures tc:null
+**** Start test **** CBT93 ****
+
+**** Test done ****CBT93 ****
+
+no failures tc:null
+**** Start test **** CBT94 ****
+
+**** Test done ****CBT94 ****
+
+failures tc: null java.lang.AssertionError: 
+**** Start test **** CBT95 ****
+
+Link Athé vanessa bruno present
+Link Athé vanessa bruno in Footer. OK
+Link Cheap Monday present
+Link Cheap Monday in Footer. OK
+Link French Connection present
+Link French Connection in Footer. OK
+Link Hoss Intropia present
+Link Hoss Intropia in Footer. OK
+Link Maison scotch present
+Link Maison scotch in Footer. OK
+Link Mango present
+Link Mango in Footer. OK
+Link Pretty Ballerinas present
+Link Pretty Ballerinas in Footer. OK
+Link Stefanel present
+Link Stefanel in Footer. OK
+Link Pepe Jeans London present
+Link Pepe Jeans London in Footer. OK
+Link IKKS present
+Link IKKS in Footer. OK
+**** Test done ****CBT95 ****
+
+no failures tc:null
+**** Start test **** CBT96 ****
+
+Waiting for element xpath=//a[contains(@href, '/customer/account/logout/')] in http://pre-cb.newshore.es/es_es/
+Logout done!
+Ingreso al link Tendencias
+Link Summer Festivals presente
+Se encuentra en la tendencia Summer Festivals
+Link Flowers presente
+Se encuentra en la tendencia Flowers
+Link After Work presente
+Se encuentra en la tendencia After Work
+Link Bohemian Chic presente
+Se encuentra en la tendencia Bohemian Chic
+Link Denim Overload presente
+Se encuentra en la tendencia Denim Overload
+Link Rocky Attitude presente
+Se encuentra en la tendencia Rocky Attitude
+Link Romantic Countryside presente
+Se encuentra en la tendencia Romantic Countryside
+Link Sailing In Saint Tropez presente
+Se encuentra en la tendencia Sailing In Saint Tropez
+Link Working Girl presente
+Se encuentra en la tendencia Working Girl
+**** Test done ****CBT96 ****
+
+no failures tc:null
+**** Start test **** CBT97 ****
+
+
+*** CASO DE PRUEBA *** CBT97. ENVÍO DE FORMULARIO DE CONTACTO
+Logout done!
+Open Homepage
+Login the user stress_test_qa@claireandbruce.com with password 123456
+Login message is loginOk
+**** Test done ****CBT97 ****
+
+failures tc: null java.lang.AssertionError: 
+**** Start test **** CBT99 ****
+
+**** Test done ****CBT99 ****
+
+failures tc: null java.lang.AssertionError: 
+**** Start test **** CBT100 ****
+
+
+NAVEGACIÓN POR TENDENCIAS EN HEADER
+Waiting for element xpath=//a[contains(@href, '/customer/account/logout/')] in http://pre-cb.newshore.es/es_es/
+Logout done!
+Checking link 'TENDENCIAS'
+The link 'TENDENCIAS' does not load a page with content of all tendencies. Or name of page doesn't starts with 'Tendencias'
+Link Flowers present
+Verification Link Flowers in Header. OK
+Link After Work present
+Verification Link After Work in Header. OK
+Link Bohemian Chic present
+Verification Link Bohemian Chic in Header. OK
+Link Denim Overload present
+Verification Link Denim Overload in Header. OK
+Link Rocky Attitude present
+Verification Link Rocky Attitude in Header. OK
+Link Romantic Countryside present
+Verification Link Romantic Countryside in Header. OK
+Link Sailing In Saint Tropez present
+Verification Link Sailing In Saint Tropez in Header. OK
+Link Working Girl present
+Verification Link Working Girl in Header. OK
+**** Test done ****CBT100 ****
+
+no failures tc:null
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
+=======
+>>>>>>> remotes/origin/master
+=======
+>>>>>>> remotes/origin/master
