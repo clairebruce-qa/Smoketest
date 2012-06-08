@@ -18,6 +18,14 @@ public class TestUserRegister6UserRegistrationFieldPasswordValid extends Clairea
 	public void CBT7(){
 		
 		selenium.open("");
+		selenium.waitForPageToLoad("15000");
+		
+		if(!selenium.isElementPresent("link=Regístrate")) {
+			if(selenium.isElementPresent("link=Salir")) {
+				selenium.click("link=Salir");
+				selenium.waitForPageToLoad("15000");
+			}
+		}
 		selenium.click("link=Regístrate");
 		selenium.waitForPageToLoad("30000");
 	

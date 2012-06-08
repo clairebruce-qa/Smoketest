@@ -7,6 +7,7 @@ import lib.Helper;
 import org.junit.Test;
 
 import claireandbruce.com.test.basicsFlows.LibCorrectAddProductCartSimpleProduct;
+import claireandbruce.com.test.basicsFlows.LibCorrectLogonValidUserAccout;
 
 import basics.ClaireandbruceTestCase;
 
@@ -40,16 +41,15 @@ public class TestUserRegisterCheckoutUserRegistrationValidFieldString extends Cl
 			selenium.click("//a[@id='overridelink']");
 		}
 		// Verifica que el usuario no este logueado
-		 if(selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
-			 
-				selenium.click("//a[contains(text(), 'Salir')]");
-				selenium.waitForPageToLoad("30000");
-				if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")) {
-					Helper.log("Logout done!");
-				} else {
-					Helper.log("NO Logout!");
-				}
-		  }
+		if(selenium.isElementPresent("link=Salir")) {
+			selenium.click("link=Salir");
+			selenium.waitForPageToLoad("15000");
+			
+			if(selenium.isElementPresent("id=email")){
+				selenium.click("xpath=//img");
+				selenium.waitForPageToLoad("15000");
+			}
+		}
 		  
 		 
 		 // Se agrega el producto al carrito de compras 
@@ -139,35 +139,7 @@ public class TestUserRegisterCheckoutUserRegistrationValidFieldString extends Cl
 				// Validación del formulario para datos no validos
 				
 
-
-				selenium.type("id=shipping:firstname", "Sandra Milena");
-				selenium.type("id=shipping:lastname", "Torres Valencia");
-				selenium.click("id=shipping:street1");
-				selenium.type("id=shipping:street1", "Avenida Coruña 20 -"+i);
-				selenium.type("id=shipping:city","Barcelona");
-				selenium.click("css=div.selreplace_selectinner");
-				selenium.click("//div[@value='139']");
-				selenium.type("id=shipping:postcode", "80808"+i);
-				selenium.type("id=shipping:telephone", "85827414"+i);
-				selenium.type("id=firstname", "Claireandbruce");
-				selenium.type("id=lastname", "qa");
-				selenium.click("css=span.dob-day > div.selreplace_select > div > div.selreplace_selectbutton");
-				selenium.click("//div[@value='3']");
-				selenium.click("css=span.dob-month > div.selreplace_select > div > div.selreplace_selectbutton");
-				selenium.click("xpath=//span/div[2]/div/div/div[24]");
-				selenium.click("css=span.dob-year > div.selreplace_select > div > div.selreplace_selectbutton");
-				selenium.click("xpath=//div[@value='1989']");
-				selenium.type("id=email_address", "claireandbruceqa"+i+"@gmail.com");
-				selenium.type("id=password", "123456");
-				selenium.click("id=p_method_checkmo");
-				selenium.click("id=agreement-1");
-				selenium.click("xpath=(//button[@type='button'])[2]");
-				selenium.waitForPageToLoad("30000");
-				if(!("claireandbruceqa"+i+"@gmail.com").equals(selenium.getText("xpath=html/body/div[2]/div[2]/div[1]/div/div[2]/div[1]/div"))){
-					Assert.fail("Error: No registro el usuario");
-				}
-
-				selenium.type("id=shipping:firstname", "1234"); //Nombre de envío
+selenium.type("id=shipping:firstname", "1234"); //Nombre de envío
 				
 				selenium.type("id=shipping:lastname", "1234");// Apellido de envío
 		
@@ -249,6 +221,35 @@ public class TestUserRegisterCheckoutUserRegistrationValidFieldString extends Cl
 				if(!selenium.isElementPresent("id=advice-validate-name-lastname")){
 					Assert.fail("El campo apellido de registro usuario es obligatorio");
 				}
+
+				selenium.type("id=shipping:firstname", "Sandra Milena");
+				selenium.type("id=shipping:lastname", "Torres Valencia");
+				selenium.click("id=shipping:street1");
+				selenium.type("id=shipping:street1", "Avenida Coruña 20 -"+i);
+				selenium.type("id=shipping:city","Barcelona");
+				selenium.click("css=div.selreplace_selectinner");
+				selenium.click("//div[@value='139']");
+				selenium.type("id=shipping:postcode", "80808"+i);
+				selenium.type("id=shipping:telephone", "85827414"+i);
+				selenium.type("id=firstname", "Claireandbruce");
+				selenium.type("id=lastname", "qa");
+				selenium.click("css=span.dob-day > div.selreplace_select > div > div.selreplace_selectbutton");
+				selenium.click("//div[@value='3']");
+				selenium.click("css=span.dob-month > div.selreplace_select > div > div.selreplace_selectbutton");
+				selenium.click("xpath=//span/div[2]/div/div/div[24]");
+				selenium.click("css=span.dob-year > div.selreplace_select > div > div.selreplace_selectbutton");
+				selenium.click("xpath=//div[@value='1989']");
+				selenium.type("id=email_address", "claireandbruceqa"+i+"@gmail.com");
+				selenium.type("id=password", "123456");
+				selenium.click("id=p_method_checkmo");
+				selenium.click("id=agreement-1");
+				selenium.click("xpath=(//button[@type='button'])[2]");
+				selenium.waitForPageToLoad("30000");
+				if(!("claireandbruceqa"+i+"@gmail.com").equals(selenium.getText("xpath=html/body/div[2]/div[2]/div[1]/div/div[2]/div[1]/div"))){
+					Assert.fail("Error: No registro el usuario");
+				}
+
+				
 				
 
 			}else

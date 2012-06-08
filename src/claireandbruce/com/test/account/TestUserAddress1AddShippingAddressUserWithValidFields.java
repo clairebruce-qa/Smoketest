@@ -3,9 +3,10 @@ package claireandbruce.com.test.account;
 import static org.junit.Assert.*;
 import lib.Claireandbruce;
 import lib.Helper;
-
 import org.junit.Test;
 import org.testng.Assert;
+
+import claireandbruce.com.test.basicsFlows.LibCorrectLogonValidUserAccout;
 
 import basics.ClaireandbruceTestCase;
 
@@ -21,13 +22,29 @@ public class TestUserAddress1AddShippingAddressUserWithValidFields extends Clair
 		
 	@Test
 	public void CBT13() throws Exception{
-		int i =(int)(Math.random()*100);
-		//El usuario no debe tener su sesión iniciada
-		if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")){			
-			Claireandbruce.login(selenium, username, password);		
-		}
 		
+		selenium.deleteAllVisibleCookies();
+		
+		selenium.open("");
 		selenium.waitForPageToLoad("15000");
+		
+		int i =(int)(Math.random()*100);
+		//El usuario debe tener su sesión iniciada
+		if(selenium.isElementPresent("link=Salir")) {
+			selenium.click("link=Salir");
+			selenium.waitForPageToLoad("15000");
+			
+			if(selenium.isElementPresent("id=email")){
+				selenium.type("id=email", username);
+				selenium.type("id=pass", password);
+				selenium.click("id=send2");
+				selenium.waitForPageToLoad("15000");
+			} else {
+				LibCorrectLogonValidUserAccout.CBT55(selenium);
+			}
+		}
+			
+	
 		Helper.log("Ambiente de prueba: "+selenium.getLocation());
 		//Ingresar a traves del botón 'TUS DIRECCIONES' Área privada'
 		selenium.click("xpath=//div[3]/li/a/span");
@@ -83,7 +100,7 @@ public class TestUserAddress1AddShippingAddressUserWithValidFields extends Clair
 				selenium.waitForPageToLoad("30000");
 				assertTrue(selenium.isTextPresent("Se eliminó la dirección"));
 				Helper.log("Se eliminó la dirección");
-		}
+			}
 		
 		}
 	
@@ -93,7 +110,8 @@ public class TestUserAddress1AddShippingAddressUserWithValidFields extends Clair
 			
 		}
 		
-		
+		Claireandbruce.logout(selenium);
+		selenium.stop();
 	}
 	}
 }

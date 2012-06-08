@@ -19,9 +19,11 @@ public class TestHomePageNavigability6TestNavigationByCategoryHeaderMark extends
 		selenium.open("");
 		selenium.waitForPageToLoad("15000");
 		
-		if(selenium.isTextPresent("Salir")){
-			Claireandbruce.logout(selenium);
+		if(selenium.isElementPresent("link=Salir")) {
+			selenium.click("link=Salir");
+			selenium.waitForPageToLoad("15000");
 		}
+		
 		
 		//Clic en el link MARCAS 
 		//if(selenium.isElementPresent("xpath=.//*[@id='nav']/li[5]/a/span/cufon/canvas")){

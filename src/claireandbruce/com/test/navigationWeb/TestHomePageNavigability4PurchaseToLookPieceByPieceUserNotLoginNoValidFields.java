@@ -1,6 +1,7 @@
 package claireandbruce.com.test.navigationWeb;
 
 import static org.junit.Assert.*;
+import junit.framework.AssertionFailedError;
 import lib.Claireandbruce;
 import lib.Helper;
 
@@ -22,13 +23,20 @@ public class TestHomePageNavigability4PurchaseToLookPieceByPieceUserNotLoginNoVa
 	{
 		selenium.open("");
 		
-		 if(selenium.isTextPresent("Salir")){
-			  Claireandbruce.logout(selenium);			  
-		  }
+		if(selenium.isElementPresent("link=Salir")) {
+			selenium.click("link=Salir");
+			selenium.waitForPageToLoad("15000");
+			
+			if(selenium.isElementPresent("id=email")){
+				selenium.click("xpath=//img");
+				selenium.waitForPageToLoad("15000");
+			}
+		}
+		
 
 		if(!selenium.isElementPresent("xpath=html/body/div/div[2]/div/div/div[1]/div[3]/div[1]/a/img"))
 		{
-			//captureScreenShotOnFailure(failure);AQUI QUIERO METER EL SCREEN
+			
 			message="ERROR: THIS ELEMENT NOT FOUND";
 			Helper.log(message);
 			
