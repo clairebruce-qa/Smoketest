@@ -1,0 +1,48 @@
+<project name="tbtesting" default="run_sm_tests">
+	<property name="lib" location="lib" />
+	<property name="reportdir" location="." />
+	<property name="reports" location="reports" />
+	<property name="selenium.tests.src" location="src" />
+	<property name="selenium.tests.build" location="build" />
+	<property name="browser" value="*chrome" />
+	
+	<target name="compile">
+		<delete dir="${selenium.tests.build}" />
+		<mkdir dir="${selenium.tests.build}" />
+		<javac srcdir="${selenium.tests.src}" destdir="${selenium.tests.build}">
+			<classpath>
+				<fileset dir="${lib}">
+					<include name="**/*.jar" />
+				</fileset>
+			</classpath>
+		</javac>
+	</target>
+	
+	<target name="run_sm_tests" depends="compile">
+		 <junit printsummary="yes" dir="." haltonfailure="no"  fork="on" maxmemory="512m" showoutput="true">
+			<sysproperty key="my.browser" value="${browser}"/>
+			<formatter type="plain" usefile="false" />
+			<formatter type="xml" usefile="true" />
+
+			<classpath>
+				<pathelement path="${selenium.tests.build}" />
+				<fileset dir="${lib}">
+					<include name="**/*.jar" />
+				</fileset>
+			</classpath>
+
+			<test name="FlowIVSuite" haltonfailure="no" outfile="resultST">
+			</test>
+
+
+		</junit>
+		<echo message="running JUnit Reports" />
+		<junitreport todir="${reports}">
+			<fileset dir="${reportdir}">
+				<include name="result*.xml" />
+			</fileset>
+			<report format="frames" todir="${reports}" />
+		</junitreport>
+		<echo message="To see your Junit results, please open ${reports}/index.html}" />
+	</target>
+</project>
