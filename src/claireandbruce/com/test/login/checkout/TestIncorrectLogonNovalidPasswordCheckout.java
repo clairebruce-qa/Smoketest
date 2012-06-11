@@ -25,6 +25,7 @@ public class TestIncorrectLogonNoValidPasswordCheckout extends ClaireandbruceTes
 
 	@Test
 	public void CBT73() throws Exception{
+		
 
 	
 		// Elimina las cookies
