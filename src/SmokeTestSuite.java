@@ -14,7 +14,6 @@ import claireandbruce.com.test.catalog.TestMenCatalogNoUserLogin;
 import claireandbruce.com.test.login.checkout.TestIncorrectLogonInvalidPasswordEmptyCheckout;
 import claireandbruce.com.test.login.checkout.TestIncorrectLogonInvalidPasswordSpaceCheckout;
 import claireandbruce.com.test.login.checkout.TestIncorrectLogonInvalidUserFormatCheckout;
-import claireandbruce.com.test.login.checkout.TestIncorrectLogonNoValidPasswordCheckout;
 import claireandbruce.com.test.login.checkout.TestUserRegisterCheckout1UserRegistrationValidField;
 import claireandbruce.com.test.login.checkout.TestUserRegisterCheckoutUserRegistrationValidFieldDate;
 import claireandbruce.com.test.login.checkout.TestUserRegisterCheckoutUserRegistrationValidFieldString;
@@ -74,7 +73,6 @@ import claireandbruce.com.test.register.*;
 	TestCorrectPasswordChangeSpacesNewPassAccount.class, 						//CBT62  - CBT23
 	TestIncorrectEditionAddressSpecialCharactersAccount.class, 					//CBT70  - CBT34
 	TestIncorrectLogonInvalidUserFormatCheckout.class, 							//CBT72  - CBT25
-	TestIncorrectLogonNoValidPasswordCheckout.class, 							//CBT73  - CBT26
 	TestIncorrectLogonInvalidPasswordSpaceCheckout.class, 						//CBT74  - CBT27
 	TestIncorrectLogonInvalidPasswordEmptyCheckout.class, 						//CBT75  - CBT28
 	TestCorrectAddProductCartNoLoginUser.class, 								//CBT76  - CBT9
