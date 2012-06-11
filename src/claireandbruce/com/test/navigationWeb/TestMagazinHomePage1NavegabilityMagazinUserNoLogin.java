@@ -136,17 +136,26 @@ public class TestMagazinHomePage1NavegabilityMagazinUserNoLogin extends Clairean
 				//Se encuentra actualmente en un producto simple
 				//Clic en botón "AÑADIR A LA CESTA"
 
-				selenium.click("xpath=//button");
-				Helper.log(nombreProducto);
-				String texto ="";
-				//Se comprueba con el precio del producto que este ha sido agregado
-				if(selenium.isElementPresent("class=special-price")) {
-					texto = selenium.getText("class=special-price");
+				if(selenium.isElementPresent("xpath=//button")){
+					selenium.click("xpath=//button");
+					Helper.log(nombreProducto);
+					String texto ="";
+					//Se comprueba con el precio del producto que este ha sido agregado
+					if(selenium.isElementPresent("class=special-price")) {
+						texto = selenium.getText("class=special-price");
+					} else {
+						texto = selenium.getText("class=price");
+					}
+					
+					Helper.clickAndVerify(selenium, "id=cartHeader", texto, "xpath=//p[2]/span");
 				} else {
-					texto = selenium.getText("class=price");
+					if(selenium.isElementPresent("xpath=//span/cufon[2]/canvas")) {
+						Helper.log("AVANCE DE TEMPORADA");
+					} else {
+						Helper.log("CATALOGO");
+					}
 				}
 				
-				Helper.clickAndVerify(selenium, "id=cartHeader", texto, "xpath=//p[2]/span");
 			}
 				
 		

@@ -93,6 +93,8 @@ public class TestShoppinCart11UserLoginPurchaseWithInvoiceWhitOtherAddressEmptyF
 		 if (!selenium.isElementPresent("id=advice-required-entry-billing:firstname")){
 			 Assert.fail("Campo nombre acepta valores vacíos");
 		 }
+		 
+		 selenium.type("id=billing:lastname", "");
 		selenium.click("id=billing:lastname");
 		if ( !selenium.isElementPresent("id=advice-required-entry-billing:lastname"))	{ 
 			Assert.fail("Campo Apellido acepta valores vacíos");
@@ -103,7 +105,7 @@ public class TestShoppinCart11UserLoginPurchaseWithInvoiceWhitOtherAddressEmptyF
 		
 		
 		
-	
+		
 		if ( !selenium.isElementPresent("id=advice-required-entry-billing:street1")) {
 			Assert.fail("Campo dirección acepta valores vacíos");
 			
@@ -119,7 +121,8 @@ public class TestShoppinCart11UserLoginPurchaseWithInvoiceWhitOtherAddressEmptyF
 				Assert.fail("Campo Provincia acepta valores vacíos");
 			}
 
-			if ("Campo obligatorio.".equals(selenium.getText("id=advice-required-entry-billing:postcode"))) {
+			Helper.log("CODIGO POSTAL "+selenium.getText("xpath=//div[@id='advice-required-entry-shipping:postcode']"));
+			if ("Campo obligatorio.".equals(selenium.getText("xpath=//div[@id='advice-required-entry-shipping:postcode']"))) {
 				Assert.fail("Campo código postal acepta valores vacíos");
 			}
 
