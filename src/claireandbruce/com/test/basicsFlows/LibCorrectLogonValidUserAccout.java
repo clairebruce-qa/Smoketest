@@ -53,9 +53,6 @@ public class LibCorrectLogonValidUserAccout extends ClaireandbruceTestCase {
 			if(!selenium.isElementPresent("xpath=.//*[@id='login-form']/div")) {			
 				
 				selenium.click("//a[contains(text(), 'Tu cuenta')]");
-				if (selenium.isElementPresent("xpath=//a[@id='overridelink']")){
-					selenium.click("//a[@id='overridelink']");
-				}
 				selenium.waitForPageToLoad("30000");			
 			}
 			

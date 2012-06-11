@@ -63,7 +63,7 @@ public class LibCorrectAddProductCartConfigurableProduct extends ClaireandbruceT
 				}				
 			}
 			contador++;
-		} while(!selenium.isElementPresent("xpath=//div[9]/div/button") && contador < 10);
+		} while(!selenium.isElementPresent("xpath=//div[9]/div/button") );
 		
 		//Si se encuentra este botón se encuentra visualizado un producto configurable.
 		if(selenium.isElementPresent("xpath=//div[9]/div/button"))	{
