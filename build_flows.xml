@@ -5,6 +5,7 @@
 	<property name="selenium.tests.src" location="src"/>
 	<property name="selenium.tests.build" location="build"/>
 	<property name="browser" value="*chrome"/>
+	<property name="suite" value="FlowsSuite"/>
 	<target name="compile">
 		<delete dir="${selenium.tests.build}" />
 		<mkdir dir="${selenium.tests.build}" />
@@ -28,7 +29,7 @@
 					<include name="**/*.jar"/>
 				</fileset>
 			</classpath>
-			<test name="FlowsSuite" haltonfailure="no" outfile="Pruebas"/>
+			<test name="${suite}" haltonfailure="no" outfile="Pruebas"/>
 		</junit>
 		<echo message="running JUnit Reports"/>
 		<junitreport todir="${reports}">
