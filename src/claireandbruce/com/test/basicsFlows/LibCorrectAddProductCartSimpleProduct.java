@@ -23,17 +23,19 @@ public class LibCorrectAddProductCartSimpleProduct extends ClaireandbruceTestCas
 		//selenium.open(ClaireandbruceUrl);
 		//selenium.waitForPageToLoad("30000");
 		
-		
-		
+		Helper.log(" ");
+		Helper.log("Se busca un producto simple para agregar al carrito de compras");
+		Helper.log("Si el producto encontrado es configurable se continuará con la búsqueda");
 		//Se selecciona una categoría entre Bolsos y Accesorios (Categorías que poseen productos simples)		
 		//Haga mientras encuentre el menú de selección de talla (producto configurable)
 		do {
 
 			int categoria = (int) (Math.random()*(4-3+1))+3;
-			Helper.log("Categoría "+categoria);
+			Helper.log("Buscando categoría en la posición "+categoria+" del menú superior");
 			
 			if(selenium.isElementPresent("xpath=//ul[@id='nav']/li["+categoria+"]/h2/a/span/cufon/canvas")){
 
+				Helper.log("Se ingresa a la categoría ubicada en la posición "+categoria+" del menú superior");
 				selenium.click("//ul[@id='nav']/li["+categoria+"]/h2/a/span/cufon/canvas");				
 
 				selenium.waitForPageToLoad("30000");
@@ -41,10 +43,10 @@ public class LibCorrectAddProductCartSimpleProduct extends ClaireandbruceTestCas
 				
 				//Selecciona una subcategoría
 				int subcategoria =  (int)(Math.random()*(7))+1; 
-				Helper.log("Categoría actual: "+selenium.getTitle());
-				Helper.log("Subcategoria "+subcategoria);
+				Helper.log("Buscando Subcategoría en la posición "+subcategoria+" del menú lateral izquierdo");
 				if(selenium.isElementPresent("xpath=html/body/div/div[3]/div[2]/div[2]/div[1]/a["+subcategoria+"]/div/div")){
-										
+					
+					Helper.log("Se ingresa a la subcategoría ubicada en la posición "+subcategoria+" del menú lateral izquierdo");
 					selenium.click("xpath=html/body/div/div[3]/div[2]/div[2]/div[1]/a["+subcategoria+"]/div/div");
 					selenium.waitForPageToLoad("30000");					
 						
@@ -52,15 +54,16 @@ public class LibCorrectAddProductCartSimpleProduct extends ClaireandbruceTestCas
 					int columnaArticulo = (int)(Math.random()*(3))+1;
 					int filaArticulo = (int)(Math.random()*(2))+1;
 					Helper.log("Subcategoría actual: "+selenium.getTitle());
-					Helper.log("Producto: "+columnaArticulo+" en la fila: "+filaArticulo);
-					nombreProducto = selenium.getText("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul["+filaArticulo+"]/li["+columnaArticulo+"]/div[3]/a");
+					Helper.log("Buscando Producto ubicado en la posición columna: "+columnaArticulo+" en la fila: "+filaArticulo);
 					if(!selenium.isElementPresent("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul["+filaArticulo+"]/li["+columnaArticulo+"]/div[3]/a")){
-						Helper.log("no se encontro el nombre del producto");
+						Helper.log("No se encontro el nombre del producto");
 					}
 					else{
+						nombreProducto = selenium.getText("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul["+filaArticulo+"]/li["+columnaArticulo+"]/div[3]/a");
+						
 						selenium.click("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul["+filaArticulo+"]/li["+columnaArticulo+"]/div[3]/a");
-
-						selenium.waitForPageToLoad("65000");
+						Helper.log("Ingresando al producto "+nombreProducto);
+						selenium.waitForPageToLoad("70000");
 					}
 					Helper.log("Producto actual: "+selenium.getTitle());						
 				}				
@@ -80,8 +83,10 @@ public class LibCorrectAddProductCartSimpleProduct extends ClaireandbruceTestCas
 		*/
 		
 		//Se comprueba con el producto ha sido agregado a través de su nombre
+		Helper.log("Se busca el botón 'AÑADIR A LA CESTA' para agregar el producto al carrito de compras");
 		//Clic en botón "AÑADIR A LA CESTA"
 		selenium.click("xpath=//div[7]/div/button");
+		Helper.log("Se ha presionado el botón 'AÑADIR A LA CESTA' se está esperando confirmación de que el producto ha sido añadido a la cesta");
 		String id= "xpath=//a[contains(text(),'"+nombreProducto+"')]";
 		selenium.click("id=cartHeader");
 		if(selenium.isElementPresent(id)){

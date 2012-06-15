@@ -24,15 +24,19 @@ public class TestCatalogWomen1TestCatalogWomenFilter extends ClaireandbruceTestC
 	@SuppressWarnings("unused")
 	@Test
 	public void CBT40() throws Exception{
+		Helper.log("Prueba de filtros del catalogo de mujer");
+		Helper.log("Se carga la página "+ClaireandbruceUrl);
 		selenium.open("");
 		selenium.waitForPageToLoad("15000");
 		
 		if(!selenium.isElementPresent("xpath=//div[5]/div/a")){
+			Helper.log("Se ingresa a homepage");
 			selenium.click("xpath=//img");
 			selenium.waitForPageToLoad("15000");
 		}
 		int j = (int) (Math.random()*(3-2+1))+2;
 		//Se verifica que el filtro de marcas existe
+		Helper.log("Se verifica que el filtro de marcas existe");
 		selenium.click("xpath=.//*[@id='nav']/li["+j+"]/h2/a/span/cufon/canvas");
 		selenium.waitForPageToLoad("30000");
 		
@@ -46,13 +50,13 @@ public class TestCatalogWomen1TestCatalogWomenFilter extends ClaireandbruceTestC
 		
 		// Selecciona una Marca aleatoria
 		if(selenium.isElementPresent("xpath=.//*[@id='filter-2']/ol[1]/li["+i+"]/a")){
-			
+			Helper.log("Se ingreas a una marca aleatoria del filtro");
 				
 				String check= selenium.getText("xpath=.//*[@id='filter-2']/ol[1]/li["+i+"]/a");
 								
-				Helper.log(check);
+				Helper.log("Marca seleccionada "+check);
 				// Se verifica que un producto efectivamente pertenece a esa Marca
-				
+				Helper.log("Se verifica que se encuentre un producto de dicha marca");
 				selenium.click("xpath=.//*[@id='filter-2']/ol[1]/li["+i+"]/a");
 				selenium.waitForPageToLoad("30000");
 				
@@ -68,12 +72,12 @@ public class TestCatalogWomen1TestCatalogWomenFilter extends ClaireandbruceTestC
 		// Selecciona una Color aleatoria
 		if(selenium.isElementPresent("//dd[2]/div/a["+i+"]/div")){
 			
-				
+				Helper.log("Se selecciona un color aleatorio para el filtro");
 				String check= "color "+selenium.getText("//dd[2]/div/a["+i+"]/div");
 								
-				Helper.log(check);
+				Helper.log("Color seleccionado "+check);
 				// Se verifica que un producto efectivamente pertenece a ese color
-				
+				Helper.log("Se verifica que un producto pertenezca a este color");
 				selenium.click("//dd[2]/div/a["+i+"]/div");
 				selenium.waitForPageToLoad("40000");
 				
@@ -92,8 +96,9 @@ public class TestCatalogWomen1TestCatalogWomenFilter extends ClaireandbruceTestC
 		selenium.click("xpath=.//*[@id='dt-filter-5']");
 		if(selenium.isElementPresent("//div["+n+"]/a/div[2]/div")){
 			double precio =0;
-			
+			Helper.log("Se selecciona un filtro por precio de forma aleatoria");
 			String check= selenium.getText("//div["+n+"]/a/div[2]/div");
+			Helper.log("Se selecciona el filtro "+check);
 			selenium.click("//div["+n+"]/a/div[2]/div");
 			selenium.waitForPageToLoad("30000");
 			String precioN=selenium.getText("//span/span");
@@ -148,7 +153,7 @@ public class TestCatalogWomen1TestCatalogWomenFilter extends ClaireandbruceTestC
 			}
 			Helper.log(check);
 			// Se verifica que un producto efectivamente pertenece a ese precio
-			
+			Helper.log("Se verifica que un producto posea este rango de precio");
 			selenium.click("//div["+n+"]/a/div[2]/div");
 			selenium.waitForPageToLoad("30000");
 		}

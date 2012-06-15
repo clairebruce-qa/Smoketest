@@ -1,11 +1,9 @@
 package claireandbruce.com.test.basicsFlows;
 
 import junit.framework.Assert;
-import org.junit.Test;
 
 import com.thoughtworks.selenium.Selenium;
 
-import lib.Claireandbruce;
 import lib.Helper;
 import basics.ClaireandbruceTestCase;
 
@@ -33,29 +31,39 @@ public class LibAddressExist extends ClaireandbruceTestCase {
 	}
 */
 	//-----****** Verifíca que la pagina de Tu Compra esta desplegada de lo contrario la carga *****----\\
-	
-	if(!("Compra ahora").equals(selenium.getTitle())) {		
+	Helper.log(" ");
+	Helper.log("Se verifica que se encuentre una dirección de envío por defecto señalada");
+	if(!("Compra ahora").equals(selenium.getTitle())) {	
+		Helper.log("Se busca método de ingreso a la interfaz 'Compra ahora'");
 		if(selenium.isElementPresent("xpath=//ol[@id='mini-cart']/li/div/button")){
+			Helper.log("Se busca ingresar a la interfaz 'Compra ahora' por el botón 'CÓMPRALO AHORA' del header");
 			selenium.click("xpath=//ol[@id='mini-cart']/li/div/button");
+			Helper.log("Se hace clic en el botón 'CÓMPRALO AHROA' del header");
 			selenium.waitForPageToLoad("30000");
 		} else {
+			Helper.log("Se busca ingresar a la interfaz 'Compra ahora' por el botón 'COMPRA AHORA' ubicado en la parte superior de la interfaz");
 			selenium.click("xpath=//div/div/div/a");
+			Helper.log("Se hace clic en el botón 'COMPRA AHORA' ubicado en la parte superior de la página");
 			selenium.waitForPageToLoad("30000");
 		}
+		Helper.log("Se presiona el botón 'CONTINUA' de la interfaz 'Shopping Cart'");
 		selenium.click("xpath=(//button[@type='button'])[3]");
 		selenium.waitForPageToLoad("20000");
 	}
 		
 	//------***** Verifica que exista al menos una dirección ****------\\
 	
+	Helper.log("Se busca si la dirección se encuentra seleccionada");
 		if(selenium.isElementPresent("name=shipping_address_id")){	
+			Helper.log("Se ha encontrado una dirección creada, se selecciona ésta");
 			selenium.click("name=shipping_address_id"); // Si encuentra la dirección la selecciona
-			Helper.log("existe una dirección por defecto seleccionada");
+			Helper.log("Se selecciona la dirección");
 		}
 		else{		
-			Helper.log("Se agrego la dirección existente por defecto");
+			Helper.log("No se posee una dirección existente por defecto");
 			Assert.fail("Error: no existe una dirección");
-		}		
+		}	
+		Helper.log("Se finaliza el proceso de verificación de la dirección de envío por defecto");
 	}
 	
 	

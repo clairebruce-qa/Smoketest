@@ -2,6 +2,7 @@ package claireandbruce.com.test.basicsFlows;
 
 import junit.framework.Assert;
 import lib.Claireandbruce;
+import lib.Helper;
 
 import org.junit.Test;
 
@@ -35,19 +36,29 @@ public class LibWithoutPurchase extends ClaireandbruceTestCase {
 				
 
 		//-----****** Verifíca que la pagina de Tu Compra esta desplegada de lo contrario la carga *****----\\
-		
-		if(!("Compra ahora").equals(selenium.getTitle()))
-		{
-			selenium.click("//a[contains(text(),'Compra ahora')]");
-			
-			selenium.waitForPageToLoad("15000");
-			selenium.click("xpath=html/body/div/div[3]/div[1]/div/div[6]/ul[1]/li[1]/button");
-			selenium.waitForPageToLoad("15000");			
+		Helper.log("Se verifica si se encuentra en la página 'Compra ahora'");
+		if(!("Compra ahora").equals(selenium.getTitle())) {	
+			Helper.log("Se busca método de ingreso a la interfaz 'Compra ahora'");
+			if(selenium.isElementPresent("xpath=//ol[@id='mini-cart']/li/div/button")){
+				Helper.log("Se busca ingresar a la interfaz 'Compra ahora' por el botón 'CÓMPRALO AHORA' del header");
+				selenium.click("xpath=//ol[@id='mini-cart']/li/div/button");
+				Helper.log("Se hace clic en el botón 'CÓMPRALO AHROA' del header");
+				selenium.waitForPageToLoad("30000");
+			} else {
+				Helper.log("Se busca ingresar a la interfaz 'Compra ahora' por el botón 'COMPRA AHORA' ubicado en la parte superior de la interfaz");
+				selenium.click("xpath=//div/div/div/a");
+				Helper.log("Se hace clic en el botón 'COMPRA AHORA' ubicado en la parte superior de la página");
+				selenium.waitForPageToLoad("30000");
+			}
+			Helper.log("Se presiona el botón 'CONTINUA' de la interfaz 'Shopping Cart'");
+			selenium.click("xpath=(//button[@type='button'])[3]");
+			selenium.waitForPageToLoad("20000");
 		}
 		
 		//------*****  Verifica que el pedido será sin factura *****-------\\
-				
+		Helper.log("Se verifica que no se encuentre activo el check 'Necesito una factura'");		
 		if(!("off").equals(selenium.getValue("id=showFakeBilling"))) {
+			Helper.log("Se está solicitando la factura por defecto");
 			Assert.fail("Error:  Se esta solicitando la factura");
 		}
 		

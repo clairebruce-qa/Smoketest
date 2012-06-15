@@ -13,22 +13,28 @@ import basics.ClaireandbruceTestCase;
 public class LibCorrectLogonCheckout extends ClaireandbruceTestCase {
 
 	public static void login_Checkout(Selenium selenium){
-		
-		Helper.log("\nLOGIN POR CHECKOUT");
+		Helper.log(" ");
+		Helper.log("\nSe inicia proceso de LOGIN POR CHECKOUT");
 				
 		//Alerta sobre "La cantidad solicitada no esta disponible en inventario"
 		if(selenium.isAlertPresent()){
+			Helper.log("Se mostró y capturó una alerta sobre producto no disponible en inventario");
 			selenium.getAlert();
 		}
 		
 		//Se presiona el botón "CONTINUA"
+		Helper.log("Se hace clic en el botón 'CONTINUA' de la interfaz 'Cesta de la Compra'");
 		selenium.click("xpath=html/body/div/div[3]/div[1]/div/div[6]/ul[1]/li[1]/button");
+		Helper.log("Se espera carga de la interfaz de login por checkout");
 		selenium.waitForPageToLoad("20000");
 	
+		Helper.log("Se ingresan datos de usuario para el proceso de login");
 		//Se ingresan los datos de usuario
 		selenium.type("id=email", username);
 		selenium.type("id=pass", password);
+		Helper.log("Se hace clic en el botón 'ENTRAR'");
 		selenium.click("id=send2");
+		Helper.log("Se espera carga de la página con el login OK");
 		selenium.waitForPageToLoad("30000");
 		
 		//Se verifica que se redireccionó al checkout

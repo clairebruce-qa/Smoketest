@@ -1,6 +1,7 @@
 package claireandbruce.com.test.cartShopping;
 
 import junit.framework.Assert;
+import lib.Helper;
 
 
 
@@ -25,7 +26,8 @@ public class TestShoppingCart1AddOtherItemShoppingCart extends ClaireandbruceTes
 	public void CBT22() throws Exception{
 		
 		//Previo ingreso a la pagina c+b
-		
+		Helper.log("Se inicia proceso para agregar otro producto al carrito de compras");
+		Helper.log("Se carga la página "+ClaireandbruceUrl);
 		selenium.open(ClaireandbruceUrl);
 		selenium.waitForPageToLoad("30000");
 		
@@ -40,5 +42,6 @@ public class TestShoppingCart1AddOtherItemShoppingCart extends ClaireandbruceTes
 		if(selenium.isTextPresent("0 artículos 0 €")){
 			Assert.fail("Error : product no add");
 		}		
+		Helper.log("Se ha añadido el producto al carrito de compras");
 	}
 }

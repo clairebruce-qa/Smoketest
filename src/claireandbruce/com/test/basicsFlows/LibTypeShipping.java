@@ -20,14 +20,18 @@ import basics.ClaireandbruceTestCase;
 public class LibTypeShipping extends ClaireandbruceTestCase {
 
 	public static void typeShipping(Selenium selenium){
+		Helper.log(" ");
+		Helper.log("Se inicia proceso de selección del 'Tipo de Envío' (Standard o Express)");
 		
 		if(selenium.isAlertPresent()){
+			Helper.log("Se ha capturado una alerta presente");
 			selenium.getAlert();
 		}
 		
 		
 		String titulo = selenium.getTitle();
 		if(!titulo.equals("Cesta de la Compra")) {
+		Helper.log("No se encontraba cargada la interfaz 'Cesta de la Compra' se ingresa a ésta");
 			selenium.click("xpath=.//*[@id='quick-access']/div[1]/div/a");
 			selenium.waitForPageToLoad("15000");
 		}		
@@ -51,23 +55,25 @@ public class LibTypeShipping extends ClaireandbruceTestCase {
 				index++;
 			}
 			
-			double subtotal = Double.parseDouble(str_subtotal);			
+			double subtotal = Double.parseDouble(str_subtotal);		
+			Helper.log("Se obtiene el subtotal del pedido para realizar la verificación posteriormente");
 			double valorEnvio = 0.00;		
 			String str_valorEnvio ="";
 			
 			double total=0.00;
-			
+			tipoEnvio=2;
 			//Envío 1= Standard - Envío 2= Express
 			if(tipoEnvio==1){
-				Helper.log("TIPO DE ENVÍO STANDARD");
+				Helper.log("Tipo de Envío seleccionado STANDARD");
 				//selenium.click("xpath=.//*[@id='s_method_flatrate_flatrate']");
 				//selenium.waitForPageToLoad("10000");
 				//Clic sobre tipo de envío Standard
-				//selenium.click("xpath=.//*[@id='s_method_flatrate_flatrate']");
+				//selenium.click("xpath=.//*[@id='s_method_tablerate_bestway']");
 				//selenium.waitForPageToLoad("10000");
 				
 				//Obtener valor de envío Standard
 				auxString = selenium.getText("css=div.value-method-checkout.float-right > span.price");
+				
 				//Se eliminan comas presentes, cambian por puntos para realizar los cálculos necesarios del valor de Envío
 				index = 0;
 				while(index < auxString.length()-2){
@@ -79,16 +85,16 @@ public class LibTypeShipping extends ClaireandbruceTestCase {
 					index++;
 				}
 				valorEnvio = Double.parseDouble(str_valorEnvio);
-				//Helper.log("VALOR ENVÍO "+valorEnvio);
+				Helper.log("El valor de envío encontrado es: "+valorEnvio);
 				//Total = subtotal + valorEnvio
 				total = subtotal+valorEnvio;
 				DecimalFormat myFormatter = new DecimalFormat("0.00");
 				precioTotalCalculado = myFormatter.format(total);			
 				
 			} else {
-				Helper.log("TIPO DE ENVÍO EXPRESS");
+				Helper.log("Tipo de Envío seleccionado EXPRESS");
 				//Clic en tipo de envío Express
-				selenium.click("xpath=.//*[@id='s_method_tablerate_bestway']");
+				selenium.click("xpath=.//*[@id='s_method_flatrate_flatrate']");
 				selenium.waitForPageToLoad("10000");
 				
 				//Se obtiene el valor de este tipo de envío
@@ -104,6 +110,7 @@ public class LibTypeShipping extends ClaireandbruceTestCase {
 					index++;
 				}
 				valorEnvio = Double.parseDouble(str_valorEnvio);
+				Helper.log("Valor de envío encontrado: "+valorEnvio);
 				total = subtotal+valorEnvio;
 				DecimalFormat myFormatter = new DecimalFormat("0.00");
 				precioTotalCalculado = myFormatter.format(total);
@@ -121,12 +128,12 @@ public class LibTypeShipping extends ClaireandbruceTestCase {
 				index++;
 			}
 			precioTotalCalculado = auxString;
-			Helper.log("Precio total Calculado "+precioTotalCalculado);
-			
+			Helper.log("Precio total Esperado: "+precioTotalCalculado);
+			Helper.log("Se obtiene el valor total del pedido con gastos de Envío");
 			//Se obtiene el valor total con gastos de Envío visualizada en la aplicación
 			String str_total = selenium.getText("css=html.cufon-active body.checkout-cart-index div.wrapper div.main div.col-main div.cart div.totals div#totals-block table#shopping-cart-totals-table tfoot#price-checkout-top.price-checkout-top tr td.a-right strong span.price cufon.cufon cufontext");
 			totalParaPayPal=str_total;
-			
+			Helper.log("Valor total del pedido con gastos de envío visualizado es: "+str_total);
 			//Se eliminan comas presentes, cambian por puntos para realizar los cálculos necesarios del total visualizado
 			index=0;
 			auxString ="";
@@ -138,7 +145,6 @@ public class LibTypeShipping extends ClaireandbruceTestCase {
 				}
 				index++;
 			}
-			Helper.log("valor mostrado "+auxString);
 			//Se comparan los valores calculados y los valores obtenidos de la aplicación
 			if(auxString.equals(precioTotalCalculado)){
 				Helper.log("VALOR PEDIDO "+subtotal+" + GASTOS DE ENVÍO "+valorEnvio+" = VALOR PEDIDO CON GASTOS DE ENVÍO "+precioTotalCalculado);

@@ -23,17 +23,22 @@ public class TestCatalogWomen2TestCatalogWomenFilterPriceViewsProductLook extend
 	@SuppressWarnings("unused")
 	@Test
 	public void CBT41() throws Exception{
+		Helper.log("Prueba de filtro de ordenamiento del catalogo de mujer");
+		Helper.log("Se ingresa a la página "+ClaireandbruceUrl);
 		selenium.open("");
 		selenium.waitForPageToLoad("15000");
 		
 		if(!selenium.isElementPresent("xpath=//div[5]/div/a")){
+			Helper.log("Se carga homepage");
 			selenium.click("xpath=//img");
 			selenium.waitForPageToLoad("15000");
 		}
 		int j = (int) (Math.random()*(3-2+1))+2;
 	
 		// Se selecciona una categoria
+		Helper.log("Se ingresa a una categoría");
 		selenium.click("xpath=.//*[@id='nav']/li[3]/h2/a/span/cufon/canvas");
+		Helper.log("Se espera carga de la interfaz");
 		selenium.waitForPageToLoad("30000");
 		
 		if(!selenium.isElementPresent("css=div.selreplace_selectbutton"))
@@ -46,7 +51,7 @@ public class TestCatalogWomen2TestCatalogWomenFilterPriceViewsProductLook extend
 		
 		// ---- **** ORDENAR DE MAYOR A MENOR **** ----\\
 		if(selenium.isElementPresent("xpath=html/body/div[1]/div[3]/div[1]/div/div[1]/div[3]/div/div[2]/div/div/div[2]")){
-			
+			Helper.log("Ordenar de precio mayor a menor");
 			
 			selenium.click("xpath=html/body/div[1]/div[3]/div[1]/div/div[1]/div[3]/div/div[2]/div/div/div[2]");
 			selenium.waitForPageToLoad("30000");
@@ -56,12 +61,12 @@ public class TestCatalogWomen2TestCatalogWomenFilterPriceViewsProductLook extend
 			
 			// Se extrae el precio Mayor
 			String texto ="";
-			
+			Helper.log("Se obtiene el precio mayor");
 				texto = selenium.getText("//span/span");
 			
 			
 			
-			Helper.log(texto);
+			Helper.log("Precio obtenido "+texto);
 			
 			while(cant<(texto.length()-2)){
 				if(texto.charAt(cant)!=',') {

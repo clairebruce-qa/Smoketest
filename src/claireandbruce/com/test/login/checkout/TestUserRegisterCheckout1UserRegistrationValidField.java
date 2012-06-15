@@ -21,10 +21,11 @@ public class TestUserRegisterCheckout1UserRegistrationValidField extends Clairea
 	@Test
 	public void CBT18() throws Exception{
 
-	
+		Helper.log("Se inicia proceso de registro con datos válidos por checkout");
 		// Elimina las cookies
+		Helper.log("Se eliminan cookies");
 		selenium.deleteAllVisibleCookies();
-		
+		Helper.log("Se carga la página "+ClaireandbruceUrl);
 		selenium.open(ClaireandbruceUrl);
 
 		selenium.waitForPageToLoad("50000");
@@ -33,8 +34,9 @@ public class TestUserRegisterCheckout1UserRegistrationValidField extends Clairea
 		}
 		// Verifica que el usuario no este logueado
 		 if(selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
-			 
+			 Helper.log("Se encuentra una sesión de usuario iniciada al cargar la página de C+B");
 				selenium.click("//a[contains(text(), 'Salir')]");
+				Helper.log("Se hace clic en 'Salir'");
 				selenium.waitForPageToLoad("30000");
 				if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")) {
 					Helper.log("Logout done!");
@@ -49,16 +51,18 @@ public class TestUserRegisterCheckout1UserRegistrationValidField extends Clairea
 			//R2
 		 if(!("Compra ahora").equals(selenium.getTitle()))
 			{
+			 Helper.log("Se ingresa a la interfaz 'Cesta de la Compra' para cargar posteriormente la interfaz 'Compra ahora'");
 				selenium.click("xpath=.//*[@id='quick-access']/div[1]/div/a");
 				
 				selenium.waitForPageToLoad("15000");
+				Helper.log("Se hace clic en el botón 'CONTINUA' para cargar la interfaz 'Compra ahora'");
 				selenium.click("xpath=html/body/div/div[3]/div[1]/div/div[6]/ul[1]/li[1]/button");
 				selenium.waitForPageToLoad("30000");			
 			}		
 			
 			//Si no esta presente el formulario para ingresar los datos de usuario
 			if(!selenium.isElementPresent("xpath=.//*[@id='login-form']/div")) {			
-				
+				Helper.log("No se encontró el campo para ingresar el correo electrónico para realizar el registro de usuario");
 				selenium.click("//a[contains(text(), 'Tu cuenta')]");
 				selenium.waitForPageToLoad("30000");			
 			}
@@ -66,23 +70,28 @@ public class TestUserRegisterCheckout1UserRegistrationValidField extends Clairea
 			// ---***Se ingresan los datos de e-mail para el logueo por check-out ***---\\
 			
 			if(selenium.isElementPresent("xpath=.//*[@id='emailreg']")){
-				int i =(int)(Math.random()*100);
-				
+				int i =(int)(Math.random()*1000);
+				Helper.log("Se ingresa el correo electrónico con el que se realizará el registro de usuario");
 				selenium.type("xpath=.//*[@id='emailreg']", "claireandbruce"+i+"@gmail.com");
+				Helper.log("Se hace clic en el botón 'Registrarme'");
 				selenium.click("xpath=.//*[@id='send3']");
+				Helper.log("Se espera carga de interfaz con campos para el registro de usuario");
 				selenium.waitForPageToLoad("30000");
-				
+				Helper.log("Se ingresan los datos del usuario a registrar");
 				selenium.type("id=shipping:firstname", "Sandra Milena");
 				selenium.type("id=shipping:lastname", "Torres Valencia");
 				selenium.click("id=shipping:street1");
 				selenium.type("id=shipping:street1", "Avenida Coruña 20 -"+i);
 				selenium.type("id=shipping:city","Barcelona");
+				Helper.log("Se selecciona la Provincia");
 				selenium.click("css=div.selreplace_selectinner");
 				selenium.click("//div[@value='139']");
 				selenium.type("id=shipping:postcode", "80808"+i);
 				selenium.type("id=shipping:telephone", "85827414"+i);
+				Helper.log("Se ingresan los datos de usuario en la sección 'SOBRE TI'");
 				selenium.type("id=firstname", "Claireandbruce");
 				selenium.type("id=lastname", "qa");
+				Helper.log("Se selecciona la fecha de nacimiento");
 				selenium.click("css=span.dob-day > div.selreplace_select > div > div.selreplace_selectbutton");
 				selenium.click("//div[@value='3']");
 				selenium.click("css=span.dob-month > div.selreplace_select > div > div.selreplace_selectbutton");
@@ -91,9 +100,13 @@ public class TestUserRegisterCheckout1UserRegistrationValidField extends Clairea
 				selenium.click("xpath=//div[@value='1989']");
 				selenium.type("id=email_address", "claireandbruceqa"+i+"@gmail.com");
 				selenium.type("id=password", "123456");
+				Helper.log("Se selecciona pago con Cheque");
 				selenium.click("id=p_method_checkmo");
+				Helper.log("Se aceptan términos y condiciones, y políticas de privacidad");
 				selenium.click("id=agreement-1");
+				Helper.log("Se hace clic en 'PAGAR'");
 				selenium.click("xpath=(//button[@type='button'])[2]");
+				Helper.log("Se espera carga de interfaz con mensaje de confirmación del pedido");
 				selenium.waitForPageToLoad("30000");
 				if(!("claireandbruceqa"+i+"@gmail.com").equals(selenium.getText("xpath=html/body/div[2]/div[2]/div[1]/div/div[2]/div[1]/div"))){
 					Assert.fail("Error: No registro el usuario");

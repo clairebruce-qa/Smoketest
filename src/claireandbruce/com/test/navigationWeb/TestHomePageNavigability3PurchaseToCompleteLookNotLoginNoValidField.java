@@ -16,35 +16,39 @@ public class TestHomePageNavigability3PurchaseToCompleteLookNotLoginNoValidField
 	public void CBT33 () throws Exception{
 		//Tener desplegada la interfaz del primer estilo (bohemian-style)
 		//selenium.open("bohemian-style.html");
+		Helper.log("Se prueba la navegabilidad por los Total Look");
+		Helper.log("Se carga la página "+ClaireandbruceUrl);
 		selenium.open("");
 		selenium.waitForPageToLoad("20000");
-		Helper.log("AMBIENTE DE PRUEBA: "+selenium.getLocation()+"\n");
+
 		//La prueba se realiza solo si el total look se encuentra
 		if(selenium.isElementPresent("xpath=html/body/div/div[2]/div/div/div[1]/div[3]/div[1]/a/img")){
+			Helper.log("Se ingresa al look");
 			selenium.click("xpath=html/body/div/div[2]/div/div/div[1]/div[3]/div[1]/a/img");
+			Helper.log("Se espera la carga de la interfaz");
 			selenium.waitForPageToLoad("15000");
 			
 			//Se verifica que se encuentren activos los elementos (Compra el total look, Envio y devolucion, Guia de tallas)
 			if(selenium.isElementPresent("xpath=.//*[@id='total-look']")){
-				Helper.log("Element Tab 'COMPRA EL TOTAL LOOK' present" );
+				Helper.log("Elemento 'COMPRA EL TOTAL LOOK' presente" );
 			} else { 
-				Helper.log("Element Tab 'COMPRA EL TOTAL LOOK' is not present" );
+				Helper.log("Elemento 'COMPRA EL TOTAL LOOK' no está presente" );
 			}
 			if(selenium.isElementPresent("xpath=.//*[@id='product_addtocart_form']/div[2]/div[3]/div[1]/div[1]")){
-				Helper.log("Element Tab 'ENVIO Y DEVOLUCION' present" );
+				Helper.log("Elemento 'ENVIO Y DEVOLUCION' presente" );
 			} else {
-				Helper.log("Element Tab 'ENVIO Y DEVOLUCION' is not present");
+				Helper.log("Elemento 'ENVIO Y DEVOLUCION' no está presente");
 			}
 			if(selenium.isElementPresent("xpath=.//*[@id='product_addtocart_form']/div[2]/div[3]/div[1]/div[2]")){
-				Helper.log("Element Tab 'GUIA DE TALLAS present" );
+				Helper.log("Elemento 'GUIA DE TALLAS presente" );
 			} else {
-				Helper.log("Element Tab 'GUIA DE TALLAS' is not present");
+				Helper.log("Elemento 'GUIA DE TALLAS' no está presente");
 			}
 			//Se verifica que se encuentre activo el boton Compra el total look
 			if(selenium.isElementPresent("xpath=.//*[@id='bundleSummary']/div/div[2]/div/button")) {
-				Helper.log("Button 'COMPRAR EL TOTAL LOOK' present" );
+				Helper.log("Botón 'COMPRAR EL TOTAL LOOK' presente" );
 			} else {
-				Helper.log("Button 'COMPRAR EL TOTAL LOOK' is not present" );
+				Helper.log("Button 'COMPRAR EL TOTAL LOOK' no está presente" );
 			}
 			
 			//Si el link Salir se encuentra presente se procede a realizar logout
@@ -55,17 +59,17 @@ public class TestHomePageNavigability3PurchaseToCompleteLookNotLoginNoValidField
 			if(selenium.isElementPresent("xpath=//div[@id='bundleSummary']/div/div[2]/div/button")){
 				selenium.click("xpath=//div[@id='bundleSummary']/div/div[2]/div/button");
 			}else {
-				Helper.log("Button 'COMPRAR EL TOTAL LOOK' is not present");
+				Helper.log("Botón 'COMPRAR EL TOTAL LOOK' no está presente");
 			}
 			
 			if(selenium.isTextPresent("0 artículos 0 €")){
-				Helper.log("Size unselected - Test OK");
+				Helper.log("Talla sin seleccionar - Test OK");
 				selenium.isTextPresent("ELIGE TALLA");
 			} else {
-				Helper.log("No products that require size");
+				Helper.log("El producto no exige la selección de una talla");
 			}			
 		} else {
-			Helper.log("ARE NOT ACTIVE IMAGES OF TOTAL LOOK FOR TESTING");
+			Helper.log("No se encuentran imagenes presentes para realizar la prueba");
 		}		
 	}
 }

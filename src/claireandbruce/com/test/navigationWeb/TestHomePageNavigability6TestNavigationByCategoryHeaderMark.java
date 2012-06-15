@@ -16,10 +16,13 @@ import basics.ClaireandbruceTestCase;
 public class TestHomePageNavigability6TestNavigationByCategoryHeaderMark extends ClaireandbruceTestCase{
 	@Test
 	public void CBT39() throws Exception{
+		Helper.log("Prueba de navegación por Marcas en el header");
+		Helper.log("Se carga la página "+ClaireandbruceUrl);
 		selenium.open("");
 		selenium.waitForPageToLoad("15000");
 		
 		if(selenium.isElementPresent("link=Salir")) {
+			Helper.log("Se encuentra activa una sesión de usuario");
 			selenium.click("link=Salir");
 			selenium.waitForPageToLoad("15000");
 		}
@@ -27,16 +30,20 @@ public class TestHomePageNavigability6TestNavigationByCategoryHeaderMark extends
 		
 		//Clic en el link MARCAS 
 		//if(selenium.isElementPresent("xpath=.//*[@id='nav']/li[5]/a/span/cufon/canvas")){
+		Helper.log("Se ingresa al link Marcas");
 			if(selenium.isElementPresent("xpath=.//*[@id='nav']/li[5]/h2/a/span/cufon/canvas")){
 			selenium.click("xpath=.//*[@id='nav']/li[5]/h2/a/span/cufon/canvas");
+			Helper.log("Se espera carga de la interfaz");
 			selenium.waitForPageToLoad("30000");
 			int cont=1; //Se tomaran como maximo de 4 marcas mostradas en el carrusel
 			//Se da click en el link hasta que vuelva a estar visible la primera imagen de marca presente (French Connection)
+			Helper.log("Se navega por el carrusel de marcas");
 			while(cont<=5){
 				selenium.click("xpath=.//*[@id='next']/img");
 				cont++;
 			}
 			cont=1;
+			Helper.log("Se navega por los links 'Descubrir la colección' y 'Ver las novedades'");
 			while(cont<=5){
 				//Click en Descubrir la coleccion
 				//Helper.log("Checking link 'Descubrir la coleccion' of "+selenium.getText("xpath=.//*[@id='carousel']/ul/li["+cont+"]/div/p[1]"));
@@ -82,11 +89,12 @@ public class TestHomePageNavigability6TestNavigationByCategoryHeaderMark extends
 						if(selenium.isElementPresent("xpath=.//*[@id='listBrands']/div["+columna+"]/ul["+lista+"]/li["+literal+"]/a")){
 							String texto = selenium.getText("xpath=.//*[@id='listBrands']/div["+columna+"]/ul["+lista+"]/li["+literal+"]/a");
 							//Si el enlace se encuentra ingresar en el
+							Helper.log("Se ingresa a la marca "+texto);
 							selenium.click("xpath=.//*[@id='listBrands']/div["+columna+"]/ul["+lista+"]/li["+literal+"]/a");
 							
 							selenium.waitForPageToLoad("30000");
 							if(selenium.getTitle().equals(texto.toUpperCase())) {
-								Helper.log("Link "+texto+" is active");
+								Helper.log("Link "+texto+" está activo");
 								selenium.click("//a[contains(text(),'Marcas')]");
 								selenium.waitForPageToLoad("20000");								
 							} else {								
@@ -98,7 +106,7 @@ public class TestHomePageNavigability6TestNavigationByCategoryHeaderMark extends
 							
 						}else if(selenium.isElementPresent("xpath=.//*[@id='listBrands']/div["+columna+"]/ul["+lista+"]/li["+literal+"]")){
 							String texto = selenium.getText("xpath=.//*[@id='listBrands']/div["+columna+"]/ul["+lista+"]/li["+literal+"]");
-							Helper.log("Link "+texto+" is not active");							
+							Helper.log("Link "+texto+" no se encuentra activo");							
 						}						
 						literal++;
 					}
@@ -110,7 +118,7 @@ public class TestHomePageNavigability6TestNavigationByCategoryHeaderMark extends
 				literal=2;
 			}			
 		} else {
-			Helper.log("Link 'MARCAS' is not present");
+			Helper.log("Link 'MARCAS' no se encuentra presente");
 			Assert.fail("link not found: Marcas");
 		}
 	}

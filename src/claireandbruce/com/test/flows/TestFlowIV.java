@@ -1,6 +1,7 @@
 package claireandbruce.com.test.flows;
 
 import lib.Claireandbruce;
+import lib.Helper;
 
 import org.junit.Test;
 
@@ -31,8 +32,11 @@ public class TestFlowIV  extends ClaireandbruceTestCase{
 	@Test
 	public void test_flujo4() throws Exception
 	{
+		Helper.log(" ");
+		Helper.log("Se carga página "+ClaireandbruceUrl);
 		selenium.open("");
 		if(selenium.isElementPresent("link=Salir")){
+			Helper.log("Se encontró una sesión de usuario iniciada al cargar la página de C+B");
 			Claireandbruce.logout(selenium);
 		}
 		

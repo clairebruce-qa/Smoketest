@@ -9,6 +9,7 @@ import org.junit.Test;
 import com.thoughtworks.selenium.Selenium;
 
 import junit.framework.Assert;
+import lib.Helper;
 import basics.ClaireandbruceTestCase;
 /**
  * 
@@ -39,14 +40,18 @@ public class LibShoppingCart3DeleterItemShoppingCart extends ClaireandbruceTestC
 		*/
 		
 		//------------Se verifica que el carrito de compras contenga productos-------
-		
+		Helper.log("Se da clic en el carrito de compras en el header");
 		selenium.click("id=cartHeader");
 	
+		Helper.log("Se busca el icono para eliminar un producto por el carrito de compras");
 		if(selenium.isElementPresent("class=btn-remove")){			
 			selenium.click("class=btn-remove");
+			Helper.log("Se remueve el producto del carrito de compras");
 			
 			// El sistema confirma que se eliminará el producto
+			Helper.log("Se carga mensaje de confirmación para eliminar el producto");
 			assertTrue(selenium.getConfirmation().matches("¿Está seguro de que desea eliminar este artículo de la cesta de la compra[\\s\\S]$"));
+			Helper.log("Se confirma que se eliminará el producto del carrito de compras");
 			selenium.waitForPageToLoad("10000");			
 		} else {
 			Assert.fail("Error: no hay productos en el carrito de compras");

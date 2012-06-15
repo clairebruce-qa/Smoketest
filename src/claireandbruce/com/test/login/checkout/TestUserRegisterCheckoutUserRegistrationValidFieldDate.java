@@ -25,10 +25,11 @@ public class TestUserRegisterCheckoutUserRegistrationValidFieldDate extends Clai
 	@Test
 	public void CBT21() throws Exception{
 
-	
+		Helper.log("Se inicia proceso de registro con fecha de nacimiento no válida");
+		Helper.log("Se eliminan las cookies");
 		// Elimina las cookies
 		selenium.deleteAllVisibleCookies();
-		
+		Helper.log("Se ingresa a la página "+ClaireandbruceUrl);
 		selenium.open(ClaireandbruceUrl);
 
 		selenium.waitForPageToLoad("50000");
@@ -37,7 +38,7 @@ public class TestUserRegisterCheckoutUserRegistrationValidFieldDate extends Clai
 		}
 		// Verifica que el usuario no este logueado
 		 if(selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
-			 
+			 Helper.log("Se presenta usuario con sesión iniciada al cargar la página de C+B");
 				selenium.click("//a[contains(text(), 'Salir')]");
 				selenium.waitForPageToLoad("30000");
 				if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")) {
@@ -53,15 +54,18 @@ public class TestUserRegisterCheckoutUserRegistrationValidFieldDate extends Clai
 			//R2
 		 if(!("Compra ahora").equals(selenium.getTitle()))
 			{
+			 Helper.log("Se ingresa a la página 'Cesta de la Compra' para posteriormente ingresar a 'Compra ahora'");
 				selenium.click("xpath=.//*[@id='quick-access']/div[1]/div/a");
 				
 				selenium.waitForPageToLoad("15000");
+				Helper.log("Se hace clic en el botón 'CONTINUA' para el ingreso a 'Compra ahora'");
 				selenium.click("xpath=html/body/div/div[3]/div[1]/div/div[6]/ul[1]/li[1]/button");
 				selenium.waitForPageToLoad("30000");			
 			}		
 			
 			//Si no esta presente el formulario para ingresar los datos de usuario
 			if(!selenium.isElementPresent("xpath=.//*[@id='login-form']/div")) {			
+				Helper.log("No se encuentra formulario para el registro de usuario en checkout");
 				
 				selenium.click("//a[contains(text(), 'Tu cuenta')]");
 				selenium.waitForPageToLoad("30000");			
@@ -71,8 +75,10 @@ public class TestUserRegisterCheckoutUserRegistrationValidFieldDate extends Clai
 			
 			if(selenium.isElementPresent("xpath=.//*[@id='emailreg']")){
 				int i =(int)(Math.random()*100);
+				Helper.log("Se ingresa el correo electrónico para el registro por checkout");
 				
 				selenium.type("xpath=.//*[@id='emailreg']", "claireandbruce"+i+"@gmail.com");
+				Helper.log("Se hace clic en el botón 'Registrarme'");
 				selenium.click("xpath=.//*[@id='send3']");
 				selenium.waitForPageToLoad("30000");
 			
@@ -90,12 +96,15 @@ public class TestUserRegisterCheckoutUserRegistrationValidFieldDate extends Clai
 							
 							
 				}*/
+				Helper.log("Se ingresa la fecha 31-12-2012");
+				
 				selenium.click("css=span.dob-day > div.selreplace_select > div > div.selreplace_selectbutton");
 				selenium.click("//div[@value='31']");
 				selenium.click("css=span.dob-month > div.selreplace_select > div > div.selreplace_selectbutton");
 				selenium.click("xpath=(//div[@value='12'])[2]");
 				selenium.click("css=span.dob-year > div.selreplace_select > div > div.selreplace_selectinner");
 				selenium.click("//div[@value='2012']");
+				Helper.log("Se hace clic en 'PAGAR'");
 				
 				selenium.click("xpath=(//button[@type='button'])[2]");
 				if(("31".equals(selenium.getText("css=span.dob-day > div.selreplace_select > div > div.selreplace_selectinner")))// Combo de selección de fecha de nacimiento

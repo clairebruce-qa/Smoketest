@@ -15,10 +15,13 @@ public class TestHomePageNavigability1NavigabilityForLookNotLogin extends Claire
 	public void CBT31 () throws Exception{
 		
 		//Pruebas unitarias
+		Helper.log("Se prueba la navegabilidad por los looks visibles en Homepage");
+		Helper.log("Se carga la página "+ClaireandbruceUrl);
 		selenium.open("");
 		selenium.waitForPageToLoad("20000");
 		int look= 2;
 		while(selenium.isElementPresent("xpath=//div["+look+"]/a/img")){
+			Helper.log("Se ingresa al look");
 			selenium.click("xpath=//div["+look+"]/a/img");
 			selenium.waitForPageToLoad("15000");
 			String migaDePan = selenium.getText("css=span.breadcrumbs-present");
@@ -30,6 +33,7 @@ public class TestHomePageNavigability1NavigabilityForLookNotLogin extends Claire
 			}
 			
 			//Volver a home
+			Helper.log("Se regresa a la Homepage");
 			selenium.click("xpath=//img");
 			selenium.waitForPageToLoad("15000");
 			look++;

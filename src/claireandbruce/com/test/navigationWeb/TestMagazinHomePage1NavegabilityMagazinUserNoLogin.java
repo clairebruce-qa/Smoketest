@@ -31,14 +31,16 @@ public class TestMagazinHomePage1NavegabilityMagazinUserNoLogin extends Clairean
 	@Test
 	public void CBT30() throws Exception{
 		
-		
+		Helper.log("Se carga la página "+ClaireandbruceUrl);
 		selenium.open("");
 		
 		if(selenium.isElementPresent("link=Salir")) {
+			Helper.log("Se presenta usuario con sesión iniciada al cargar la página de C+B");
 			selenium.click("link=Salir");
 			selenium.waitForPageToLoad("15000");
 			
 			if(selenium.isElementPresent("id=email")){
+				Helper.log("Se regresa a Homepage");
 				selenium.click("xpath=//img");
 				selenium.waitForPageToLoad("15000");
 			} 
@@ -46,7 +48,7 @@ public class TestMagazinHomePage1NavegabilityMagazinUserNoLogin extends Clairean
 		 //Verifica que las imagenes si esten disponibles en el carrusel
 		if(!selenium.isElementPresent("xpath=.//*[@id='carousel-subhome']/ul/li[2]/div/img"))
 		{
-			
+			Helper.log("No se encuentran imágenes disponibles en el carrusel");
 			message="ERROR: THIS ELEMENT NOT FOUND";
 			Helper.log(message);
 			
@@ -66,11 +68,13 @@ public class TestMagazinHomePage1NavegabilityMagazinUserNoLogin extends Clairean
 		int n =(int)(Math.random()*(1-1+1)+1);
 		int j =(int)(Math.random()*(4-1+1)+1);
 	
+		Helper.log("Se verifica si se agregan los productos al carrito de compras");
 		selenium.click("xpath=//div[2]/div/div/div/div/div/div[2]");
 			
 		//Se verifica que se encuentre vacío el carrito de compras.
 		while(!selenium.isTextPresent("0 artículos 0 €")){
 			//Remover artículos mientras el carrito no este vacío
+			Helper.log("Se elimina el producto añadido al carrito de compras");
 			selenium.click("id=cartHeader");
 			selenium.click("class=btn-remove");
 			assertTrue(selenium.getConfirmation().matches("¿Está seguro de que desea eliminar este artículo de la cesta de la compra[\\s\\S]$"));
@@ -81,7 +85,7 @@ public class TestMagazinHomePage1NavegabilityMagazinUserNoLogin extends Clairean
 		
 		// Se hace verificación de que si hay productos en el magazin
 		if(!selenium.isElementPresent("xpath=html/body/div/div[2]/div/div/div[1]/div[1]/p/map["+n+"]/area["+j+"]")){
-			//Helper.log("No se encuentra el link de detalle del producto");
+			Helper.log("No se encuentra el link de detalle del producto");
 		}
 			
 			selenium.click("xpath=html/body/div/div[2]/div/div/div[1]/div[1]/p/map["+n+"]/area["+j+"]");
@@ -97,6 +101,7 @@ public class TestMagazinHomePage1NavegabilityMagazinUserNoLogin extends Clairean
 			//Si se encuentra este botón se encuentra visualizado un producto configurable.
 			if(selenium.isElementPresent("class=selreplace_selectinner"))	{
 				//Click sobre combo seleccionar una talla
+				Helper.log("Se selecciona una talla");
 				selenium.click("class=selreplace_selectinner");
 					
 				int i =(int)(Math.random()*(5-2+1))+2;
@@ -108,7 +113,6 @@ public class TestMagazinHomePage1NavegabilityMagazinUserNoLogin extends Clairean
 						i=2;
 						break;
 					}
-					Helper.log("talla "+i);
 				}
 				
 				if(selenium.isElementPresent("xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[9]/div[4]/div/div/div["+i+"]"))
@@ -120,32 +124,34 @@ public class TestMagazinHomePage1NavegabilityMagazinUserNoLogin extends Clairean
 				}
 				
 				//Clic en botón "AÑADIR A LA CESTA"
-
+				Helper.log("Se hace clic en el botón 'AÑADIR A LA CESTA' de un producto configurable");
 				selenium.click("xpath=//div[9]/div/button");
 				Helper.log(nombreProducto);
 				String texto ="";
 				//Se comprueba con el precio del producto que este ha sido agregado
 				if(selenium.isElementPresent("class=special-price")) {
+					Helper.log("Se encuentra el producto con promoción");
 					texto = selenium.getText("class=special-price");
 				} else {
 					texto = selenium.getText("class=price");
 				}
-				
+				Helper.log("Se verifica el precio del producto añadido al carrito de compras");
 				Helper.clickAndVerify(selenium, "id=cartHeader", texto, "xpath=//p[2]/span");
 			} else {
 				//Se encuentra actualmente en un producto simple
 				//Clic en botón "AÑADIR A LA CESTA"
-
+				Helper.log("Clic en el botón 'AÑADIR A LA CESTA' de un producto simple");
 				selenium.click("xpath=//button");
 				Helper.log(nombreProducto);
 				String texto ="";
 				//Se comprueba con el precio del producto que este ha sido agregado
 				if(selenium.isElementPresent("class=special-price")) {
+					Helper.log("Se encuentra el producto con promoción");
 					texto = selenium.getText("class=special-price");
 				} else {
 					texto = selenium.getText("class=price");
 				}
-				
+				Helper.log("Se verifica el precio del producto añadido al carrito de compras");
 				Helper.clickAndVerify(selenium, "id=cartHeader", texto, "xpath=//p[2]/span");
 			}
 				

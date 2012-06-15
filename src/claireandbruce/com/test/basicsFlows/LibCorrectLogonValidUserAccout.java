@@ -23,19 +23,20 @@ public class LibCorrectLogonValidUserAccout extends ClaireandbruceTestCase {
 
 	public static void CBT55(Selenium selenium) throws Exception {
 		String mensaje = null;
-		
 		// Elimina las cookies
 		selenium.deleteAllVisibleCookies();
-		
+		Helper.log("Se eliminan cookies");
+		Helper.log("Se abre la interfaz "+ClaireandbruceUrl);
 		selenium.open(ClaireandbruceUrl);
-
+		Helper.log("Se inicia proceso de login en C+B");
+		
 		selenium.waitForPageToLoad("50000");
 		if (selenium.isElementPresent("xpath=//a[@id='overridelink']")){
 			selenium.click("//a[@id='overridelink']");
 		}
 		
 		 if(selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
-			 
+			 Helper.log("Se ha encontrado una sesión iniciada al abrir la página C+B");
 				selenium.click("//a[contains(text(), 'Salir')]");
 				selenium.waitForPageToLoad("30000");
 				if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")) {
@@ -48,22 +49,25 @@ public class LibCorrectLogonValidUserAccout extends ClaireandbruceTestCase {
 			//R2
 			String message = null;
 			Helper.log("Open Homepage");
-			
+			Helper.log("Se verifica que se encuentre presente el formulario para ingreso de datos de usuario para login");
 			//Si no esta presente el formulario para ingresar los datos de usuario
 			if(!selenium.isElementPresent("xpath=.//*[@id='login-form']/div")) {			
-				
+				Helper.log("No se ha encontrado el formulario por lo cual se ingresa al link 'Tu cuenta'");
 				selenium.click("//a[contains(text(), 'Tu cuenta')]");
 				selenium.waitForPageToLoad("30000");			
 			}
 			
+			Helper.log("Se ingresan los datos de usuario para el proceso de login");
 			//Formulario para autenticar usuario
 			selenium.type("xpath=.//*[@id='email']", username);
 			selenium.type("xpath=.//*[@id='pass']", password);		
+			Helper.log("Se hace clic en el botón 'ENTRAR'");
 			selenium.click("//button[contains(@id,'send2')]");	
 			selenium.waitForPageToLoad("38000");
 			
 			if (!selenium.isElementPresent( "class=validation-advice")){		
 				if (selenium.isTextPresent("Salir")){
+					Helper.log("LOGIN OK");
 					message = "loginOk";
 				}else if (selenium.isElementPresent("//div[@id='error-message-login']")){
 					message = "Fail";
@@ -78,6 +82,7 @@ public class LibCorrectLogonValidUserAccout extends ClaireandbruceTestCase {
 		
 		//Se comprueba en caso tal de que el usuario no se encuentre creado.
 		if(selenium.isTextPresent("Usuario o contraseña inválido")) {
+			Helper.log("Se ha producido un error durante el proceso de login. 'Usuario o contraseña inválido'");
 			assertEquals(username, selenium.getValue("id=emailreg"));
 		}
 		

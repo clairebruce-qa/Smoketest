@@ -1,6 +1,7 @@
 package claireandbruce.com.test.flows;
 
 import lib.Claireandbruce;
+import lib.Helper;
 
 import org.junit.Test;
 
@@ -31,8 +32,10 @@ public class TestFlowIII extends ClaireandbruceTestCase{
 	@Test
 	public void test_flow3() throws Exception{		
 				
+		Helper.log("Se carga la página "+ClaireandbruceUrl);
 		selenium.open("");
 		if(selenium.isElementPresent("link=Salir")){
+			Helper.log("Se ha encontrado una sesión inicada al cargar la página C+B");
 			Claireandbruce.logout(selenium);
 		}
 		
@@ -40,7 +43,7 @@ public class TestFlowIII extends ClaireandbruceTestCase{
 		LibCorrectAddProductCartSimpleProduct.CBT_SimpleProduct(selenium);
 		
 		//Se elimina el producto 
-		//Lib_Shopping_Cart_3_Deleter_Item_Shopping_Cart_CBT24.CBT24(selenium);
+		//LibShoppingCart3DeleterItemShoppingCart.CBT24(selenium);
 		
 		//Se agrega un producto simple 
 		//Lib_CorrectAddProduct_Cart_SimpleProduct.CBT_SimpleProduct(selenium);

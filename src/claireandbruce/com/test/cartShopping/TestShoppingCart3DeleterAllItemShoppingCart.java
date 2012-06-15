@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import claireandbruce.com.test.basicsFlows.LibCorrectAddProductCartSimpleProduct;
 import junit.framework.Assert;
+import lib.Helper;
 import basics.ClaireandbruceTestCase;
 /**	Se validara la funcionalidad del carrito de compras cuando se 
  * 	elimine un producto del carrito de compras, ademas 	la prueba 
@@ -34,9 +35,8 @@ public class TestShoppingCart3DeleterAllItemShoppingCart extends ClaireandbruceT
 		//----------***** SE DESPLIEGA LA VENTANA *****---------------------\\
 		
 		
-		// SE PONE EN COMENTARIO CUANDO SE CORRA EN EL FLUJO, SE ACTIVA CUANDO SE CORRE UNITARIO
-		
-		
+		Helper.log("Se inicia proceso para eliminar todos los productos que se encuentran en el carrito de compras");
+		Helper.log("Se carga la página "+ClaireandbruceUrl);
 		selenium.open("");
 		if (selenium.isElementPresent("xpath=//a[@id='overridelink']")){
 		selenium.click("//a[@id='overridelink']");
@@ -45,16 +45,20 @@ public class TestShoppingCart3DeleterAllItemShoppingCart extends ClaireandbruceT
 		
 		//------------Se verifica que el carrito de compras contenga productos-------
 		LibCorrectAddProductCartSimpleProduct.CBT_SimpleProduct(selenium);
+		Helper.log("Se hace clic en el header para desplegar el carrito de compras");
 		selenium.click("id=cartHeader");
 
 	
 		if(selenium.isElementPresent("class=btn-remove")){
-			
+			Helper.log("Se eliminan los artículos encontrados hasta que el carrito de compras quede vacío");
 			while(!selenium.isTextPresent("0 artículos 0 €")){
 				
 				//Remover  todos los artículos mientras el carrito no este vacío
+				Helper.log("Se hace clic en el header");
 				selenium.click("id=cartHeader");
+				Helper.log("Se hace clic en el icono para eliminar el artículo");
 				selenium.click("class=btn-remove");
+				Helper.log("Se confirma que se desea eliminar el artículo");
 				assertTrue(selenium.getConfirmation().matches("¿Está seguro de que desea eliminar este artículo de la cesta de la compra[\\s\\S]$"));
 				selenium.waitForPageToLoad("10000");
 			}

@@ -27,7 +27,7 @@ public class LibWindowPayPal extends ClaireandbruceTestCase {
 	public static void CBT_Paypal(Selenium selenium) throws Exception{
 	
 	
-		
+		Helper.log("Inicialización de la página de PayPal para iniciar sesión en ella");
 		selenium.open("https://developer.paypal.com");
 		if(selenium.isElementPresent("//input[@id='login_email']")){
  			selenium.type("id=login_email", "david.vinuales@privalia.com");
@@ -39,7 +39,7 @@ public class LibWindowPayPal extends ClaireandbruceTestCase {
 		
 		//selenium.waitForPopUp(ClaireandbruceUrl, "30000");
 		if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
-			
+			Helper.log("Se inicia sesión en la página de C+B");
 			LibCorrectLogonValidUserAccout.CBT55(selenium);
 		
 		}

@@ -24,8 +24,11 @@ public class LibWithPurchaseAndOtherAddress extends ClaireandbruceTestCase {
 				selenium.waitForPageToLoad("20000");
 			}
 		}*/
+		Helper.log(" ");
+		Helper.log("Se inicia proceso para seleccion de factura con dirección diferente a la de envío");
 		//Se verifica que se encuentre seleccionado "Necesito una factura" 
 		if(selenium.getValue("id=showFakeBilling").equals("off")){
+			Helper.log("Se selecciona la opción 'Necesito una factura'");
 			selenium.click("id=showFakeBilling");
 		}
 		
@@ -35,15 +38,16 @@ public class LibWithPurchaseAndOtherAddress extends ClaireandbruceTestCase {
 			selenium.click("id=showFakeBillingExtended");		 //Se desactiva para que al seleccionarlo de nuevo muestre los campos necesarios	
 		}
 		//Se selecciona la opción 'La dirección de factura es diferente a la de envío'
+		Helper.log("Se selecciona la opción 'La dirección de factura es diferente a la de envío'");
 		selenium.click("id=showFakeBillingExtended");
-		
+		Helper.log("Se ingresan datos de facturación");
 		//Se verifican que los campos 'Nombre' y 'Apellidos' se encuentren diligenciados
 		if(selenium.getValue("id=billing:firstname").equals("")){
-			Helper.log("EL CAMPO NOMBRE NO SE ENCUENTRA DILIGENCIADO CON LA INFORMACIÓN DEL USUARIO");
+			Helper.log("El campo Nombre no se encuentra diligenciado con la información del usuario");
 			selenium.type("id=billing:firstname","Claire");
 		}
 		if(!selenium.getValue("id=billing:lastname").equals("")){
-			Helper.log("EL CAMPO APELLIDOS NO SE ENCUENTRA DILIGENCIADO CON LA INFORMACIÓN DEL USUARIO");
+			Helper.log("El campo Apellidos no se encuentra diligenciado con la información del usuario");
 			selenium.type("id=billing:firstname","QA");
 		}
 		int i = (int)Math.random()*20;
@@ -54,7 +58,7 @@ public class LibWithPurchaseAndOtherAddress extends ClaireandbruceTestCase {
 		selenium.type("id=billing:postcode", "50080");
 		selenium.type("id=billing:telephone", "920512354");
 		
-		
+		Helper.log("Se finaliza ingreso de información sobre facturación con dirección diferente a la de envío");
 		
 	}
 }
