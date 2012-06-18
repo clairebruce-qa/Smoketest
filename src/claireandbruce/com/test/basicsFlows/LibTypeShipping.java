@@ -95,7 +95,7 @@ public class LibTypeShipping extends ClaireandbruceTestCase {
 				Helper.log("Tipo de Envío seleccionado EXPRESS");
 				//Clic en tipo de envío Express
 				selenium.click("xpath=.//*[@id='s_method_flatrate_flatrate']");
-				selenium.waitForPageToLoad("10000");
+				selenium.waitForPageToLoad("15000");
 				
 				//Se obtiene el valor de este tipo de envío
 				auxString = selenium.getText("//dd[2]/ul/li/div/div/span");				
