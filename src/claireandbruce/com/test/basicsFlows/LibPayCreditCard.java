@@ -39,7 +39,7 @@ public class LibPayCreditCard extends ClaireandbruceTestCase{
 			//selenium.click("xpath=.//*[@id='p_method_sermepa']");
 			//Se selecciona tipo de tarjeta
 			Helper.log("Se selecciona pago con Tarjeta de Crédito");
-			selenium.click("xpath=//ul[@id='payment_form_sermepa']/li/div/div/div/div[2]");
+			selenium.click("id=p_method_sermepa");
 			Helper.log("Se selecciona que la tarjeta es VISA");
 			selenium.click("xpath=//div[@value='VI']");
 			Helper.log("Se ingrea el número de la tarjeta de crédito");

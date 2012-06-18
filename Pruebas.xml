@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="4" failures="0" hostname="MAFEPC-NEWSHORE" name="FlowsSuite" tests="4" time="518.05" timestamp="2012-06-18T13:49:19">
+  <properties>
+    <property name="java.vendor" value="Oracle Corporation" />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="eclipse.pdebuild.templates" value="/C:/eclipse/plugins/org.eclipse.pde.build_3.6.2.R36x_20110203/templates/" />
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+    <property name="lib" value="C:\Users\NEWSHORE\workspace\ClaireandBruceSmoketestV2.5\lib" />
+    <property name="os.name" value="Windows 7" />
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.7.0_03\jre\lib\resources.jar;C:\Program Files\Java\jdk1.7.0_03\jre\lib\rt.jar;C:\Program Files\Java\jdk1.7.0_03\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.7.0_03\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.7.0_03\jre\lib\jce.jar;C:\Program Files\Java\jdk1.7.0_03\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.7.0_03\jre\classes" />
+    <property name="user.country.format" value="CO" />
+    <property name="ant.file.tbtesting" value="C:\Users\NEWSHORE\workspace\ClaireandBruceSmoketestV2.5\build_flows.xml" />
+    <property name="sun.desktop" value="windows" />
+    <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+    <property name="ant.home" value="C:\eclipse\plugins\org.apache.ant_1.7.1.v20100518-1145" />
+    <property name="java.runtime.version" value="1.7.0_03-b05" />
+    <property name="user.name" value="NEWSHORE" />
+    <property name="reports" value="C:\Users\NEWSHORE\workspace\ClaireandBruceSmoketestV2.5\reports" />
+    <property name="user.language" value="es" />
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_03\jre\bin" />
+    <property name="ant.project.name" value="tbtesting" />
+    <property name="java.version" value="1.7.0_03" />
+    <property name="user.timezone" value="" />
+    <property name="sun.arch.data.model" value="64" />
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.7.0_03\jre\lib\endorsed" />
+    <property name="sun.cpu.isalist" value="amd64" />
+    <property name="sun.jnu.encoding" value="Cp1252" />
+    <property name="file.encoding.pkg" value="sun.io" />
+    <property name="file.separator" value="\" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="selenium.tests.build" value="C:\Users\NEWSHORE\workspace\ClaireandBruceSmoketestV2.5\build" />
+    <property name="java.class.version" value="51.0" />
+    <property name="user.country" value="ES" />
+    <property name="java.home" value="C:\Program Files\Java\jdk1.7.0_03\jre" />
+    <property name="java.vm.info" value="mixed mode" />
+    <property name="ant.file" value="C:\Users\NEWSHORE\workspace\ClaireandBruceSmoketestV2.5\build_flows.xml" />
+    <property name="os.version" value="6.1" />
+    <property name="path.separator" value=";" />
+    <property name="java.vm.version" value="22.1-b02" />
+    <property name="user.variant" value="" />
+    <property name="ant.library.dir" value="C:\eclipse\plugins\org.apache.ant_1.7.1.v20100518-1145\lib" />
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob" />
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
+    <property name="user.script" value="" />
+    <property name="eclipse.pdebuild.scripts" value="/C:/eclipse/plugins/org.eclipse.pde.build_3.6.2.R36x_20110203/scripts/" />
+    <property name="user.home" value="C:\Users\NEWSHORE" />
+    <property name="java.specification.vendor" value="Oracle Corporation" />
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.7.0_03\jre\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files (x86)/Java/jre6/bin/client;C:/Program Files (x86)/Java/jre6/bin;C:/Program Files (x86)/Java/jre6/lib/i386;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files\Trend Micro\AMSP;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\Common Files\HP\Digital Imaging\bin;C:\Program Files (x86)\HP\Digital Imaging\bin\;C:\Program Files (x86)\HP\Digital Imaging\bin\Qt\Qt 4.3.3;C:\Program Files\TortoiseGit\bin;C:\Program Files\Java\jdk1.7.0_03\bin;C:\Program Files (x86)\WinAnt\bin;C:\eclipse;;." />
+    <property name="java.vendor.url" value="http://java.oracle.com/" />
+    <property name="java.vm.vendor" value="Oracle Corporation" />
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner FlowsSuite filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=true outputtoformatters=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.PlainJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\NEWSHORE\workspace\ClaireandBruceSmoketestV2.5\Pruebas.xml crashfile=C:\Users\NEWSHORE\workspace\ClaireandBruceSmoketestV2.5\junitvmwatcher6720770467570395586.properties propsfile=C:\Users\NEWSHORE\workspace\ClaireandBruceSmoketestV2.5\junit5174662421295152492.properties" />
+    <property name="java.class.path" value="C:\Users\NEWSHORE\workspace\ClaireandBruceSmoketestV2.5\build;C:\Users\NEWSHORE\workspace\ClaireandBruceSmoketestV2.5\lib\junit-4.8.1.jar;C:\Users\NEWSHORE\workspace\ClaireandBruceSmoketestV2.5\lib\logging-selenium-1.2.jar;C:\Users\NEWSHORE\workspace\ClaireandBruceSmoketestV2.5\lib\selenium-java-client-driver.jar;C:\Users\NEWSHORE\workspace\ClaireandBruceSmoketestV2.5\lib\selenium-server-standalone-2.5.0.jar;C:\Users\NEWSHORE\workspace\ClaireandBruceSmoketestV2.5\lib\testlink-api-client-2.0.jar;C:\Users\NEWSHORE\workspace\ClaireandBruceSmoketestV2.5\lib\ws-commons-util-1.0.2.jar;C:\Users\NEWSHORE\workspace\ClaireandBruceSmoketestV2.5\lib\xmlrpc-client-3.1-sources.jar;C:\Users\NEWSHORE\workspace\ClaireandBruceSmoketestV2.5\lib\xmlrpc-client-3.1.jar;C:\Users\NEWSHORE\workspace\ClaireandBruceSmoketestV2.5\lib\xmlrpc-common-3.1-sources.jar;C:\Users\NEWSHORE\workspace\ClaireandBruceSmoketestV2.5\lib\xmlrpc-common-3.1.jar;C:\eclipse\plugins\org.apache.ant_1.7.1.v20100518-1145\lib\ant-launcher.jar;C:\eclipse\plugins\org.apache.ant_1.7.1.v20100518-1145\lib\ant.jar;C:\eclipse\plugins\org.apache.ant_1.7.1.v20100518-1145\lib\ant-junit.jar" />
+    <property name="ant.version" value="Apache Ant version 1.7.1 compiled on June 27 2008" />
+    <property name="selenium.tests.src" value="C:\Users\NEWSHORE\workspace\ClaireandBruceSmoketestV2.5\src" />
+    <property name="reportdir" value="C:\Users\NEWSHORE\workspace\ClaireandBruceSmoketestV2.5" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="my.browser" value="*chrome" />
+    <property name="java.vm.specification.version" value="1.7" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="sun.os.patch.level" value="Service Pack 1" />
+    <property name="suite" value="FlowsSuite" />
+    <property name="eclipse.pdebuild.home" value="/C:/eclipse/plugins/org.eclipse.pde.build_3.6.2.R36x_20110203/./" />
+    <property name="java.io.tmpdir" value="C:\Users\NEWSHORE\AppData\Local\Temp\" />
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/" />
+    <property name="os.arch" value="amd64" />
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.7.0_03\jre\lib\ext;C:\Windows\Sun\Java\lib\ext" />
+    <property name="user.dir" value="C:\Users\NEWSHORE\workspace\ClaireandBruceSmoketestV2.5" />
+    <property name="browser" value="*chrome" />
+    <property name="line.separator" value="
+" />
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+    <property name="basedir" value="C:\Users\NEWSHORE\workspace\ClaireandBruceSmoketestV2.5" />
+    <property name="ant.java.version" value="1.6" />
+    <property name="ant.core.lib" value="C:\eclipse\plugins\org.apache.ant_1.7.1.v20100518-1145\lib\ant.jar" />
+    <property name="file.encoding" value="Cp1252" />
+    <property name="java.specification.version" value="1.7" />
+  </properties>
+  <testcase classname="claireandbruce.com.test.flows.TestFlowI" name="test_flow1" time="90.95">
+    <error message="ERROR: Element xpath=.//*[@id=&apos;p_method_paypal_express&apos;] not found" type="com.thoughtworks.selenium.SeleniumException">com.thoughtworks.selenium.SeleniumException: ERROR: Element xpath=.//*[@id=&apos;p_method_paypal_express&apos;] not found
+	at com.thoughtworks.selenium.HttpCommandProcessor.throwAssertionFailureExceptionOrError(HttpCommandProcessor.java:97)
+	at com.thoughtworks.selenium.HttpCommandProcessor.doCommand(HttpCommandProcessor.java:91)
+	at com.thoughtworks.selenium.HttpCommandProcessor.getString(HttpCommandProcessor.java:262)
+	at com.thoughtworks.selenium.DefaultSelenium.getValue(DefaultSelenium.java:431)
+	at claireandbruce.com.test.basicsFlows.LibPayPal.CBT_Paypal(Unknown Source)
+	at claireandbruce.com.test.flows.TestFlowI.test_flow1(Unknown Source)
+	at basics.RunAfterFailures.evaluate(Unknown Source)
+	at basics.RCRunner.run(Unknown Source)
+</error>
+  </testcase>
+  <testcase classname="claireandbruce.com.test.flows.TestFlowII" name="test_flow2" time="166.044">
+    <error message="multiple points" type="java.lang.NumberFormatException">java.lang.NumberFormatException: multiple points
+	at sun.misc.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:1101)
+	at java.lang.Double.parseDouble(Double.java:540)
+	at claireandbruce.com.test.basicsFlows.LibTypeShipping.typeShipping(Unknown Source)
+	at claireandbruce.com.test.flows.TestFlowII.test_flow2(Unknown Source)
+	at basics.RunAfterFailures.evaluate(Unknown Source)
+	at basics.RCRunner.run(Unknown Source)
+</error>
+  </testcase>
+  <testcase classname="claireandbruce.com.test.flows.TestFlowIII" name="test_flow3" time="104.336">
+    <error message="ERROR: Element xpath=.//*[@id=&apos;p_method_checkmo&apos;] not found" type="com.thoughtworks.selenium.SeleniumException">com.thoughtworks.selenium.SeleniumException: ERROR: Element xpath=.//*[@id=&apos;p_method_checkmo&apos;] not found
+	at com.thoughtworks.selenium.HttpCommandProcessor.throwAssertionFailureExceptionOrError(HttpCommandProcessor.java:97)
+	at com.thoughtworks.selenium.HttpCommandProcessor.doCommand(HttpCommandProcessor.java:91)
+	at com.thoughtworks.selenium.DefaultSelenium.click(DefaultSelenium.java:167)
+	at claireandbruce.com.test.basicsFlows.LibPayChecking.pay_checking(Unknown Source)
+	at claireandbruce.com.test.flows.TestFlowIII.test_flow3(Unknown Source)
+	at basics.RunAfterFailures.evaluate(Unknown Source)
+	at basics.RCRunner.run(Unknown Source)
+</error>
+  </testcase>
+  <testcase classname="claireandbruce.com.test.flows.TestFlowIV" name="test_flujo4" time="81.238">
+    <error message="Timed out after 60000ms" type="com.thoughtworks.selenium.SeleniumException">com.thoughtworks.selenium.SeleniumException: Timed out after 60000ms
+	at com.thoughtworks.selenium.HttpCommandProcessor.throwAssertionFailureExceptionOrError(HttpCommandProcessor.java:97)
+	at com.thoughtworks.selenium.HttpCommandProcessor.doCommand(HttpCommandProcessor.java:91)
+	at com.thoughtworks.selenium.DefaultSelenium.waitForPageToLoad(DefaultSelenium.java:635)
+	at claireandbruce.com.test.basicsFlows.LibCorrectAddProductCartConfigurableProduct.CBT_ConfigurableProduct(Unknown Source)
+	at claireandbruce.com.test.flows.TestFlowIV.test_flujo4(Unknown Source)
+	at basics.RunAfterFailures.evaluate(Unknown Source)
+	at basics.RCRunner.run(Unknown Source)
+</error>
+  </testcase>
+  <system-out><![CDATA[**** Start test **** test_flow1 ****
+
+Flujo 1. ProductoSimple + DirecciónExistente + SinFactura + PagoPayPal
+Inicialización de la página de PayPal para iniciar sesión en ella
+Se inicia sesión en la página de C+B
+Se eliminan cookies
+Se abre la interfaz http://pre-cb.newshore.es/
+Se inicia proceso de login en C+B
+Open Homepage
+Se verifica que se encuentre presente el formulario para ingreso de datos de usuario para login
+No se ha encontrado el formulario por lo cual se ingresa al link 'Tu cuenta'
+Se ingresan los datos de usuario para el proceso de login
+Se hace clic en el botón 'ENTRAR'
+LOGIN OK
+Login the user stress_test_qa@claireandbruce.com with password 123456
+Login message is loginOk
+ 
+Se busca un producto simple para agregar al carrito de compras
+Si el producto encontrado es configurable se continuará con la búsqueda
+Buscando categoría en la posición 3 del menú superior
+Se ingresa a la categoría ubicada en la posición 3 del menú superior
+Buscando Subcategoría en la posición 6 del menú lateral izquierdo
+Buscando categoría en la posición 4 del menú superior
+Se ingresa a la categoría ubicada en la posición 4 del menú superior
+Buscando Subcategoría en la posición 5 del menú lateral izquierdo
+Se ingresa a la subcategoría ubicada en la posición 5 del menú lateral izquierdo
+Subcategoría actual: Gafas de sol - Accesorios - Mujer
+Buscando Producto ubicado en la posición columna: 2 en la fila: 2
+Ingresando al producto Gafas sol estilo retro con pantalla tornasol
+Producto actual: Gafas sol estilo retro con pantalla tornasol - Gafas de sol - Accesorios - Mujer
+Se busca el botón 'AÑADIR A LA CESTA' para agregar el producto al carrito de compras
+Se ha presionado el botón 'AÑADIR A LA CESTA' se está esperando confirmación de que el producto ha sido añadido a la cesta
+El producto no ha sido añadido al carrito de compras xpath=//a[contains(text(),'Gafas sol estilo retro con pantalla tornasol')]
+ 
+Se verifica que se encuentre una dirección de envío por defecto señalada
+Se busca método de ingreso a la interfaz 'Compra ahora'
+Se busca ingresar a la interfaz 'Compra ahora' por el botón 'CÓMPRALO AHORA' del header
+Se hace clic en el botón 'CÓMPRALO AHROA' del header
+Se presiona el botón 'CONTINUA' de la interfaz 'Shopping Cart'
+Se busca si la dirección se encuentra seleccionada
+Se ha encontrado una dirección creada, se selecciona ésta
+Se selecciona la dirección
+Se finaliza el proceso de verificación de la dirección de envío por defecto
+Se verifica si se encuentra en la página 'Compra ahora'
+Se verifica que no se encuentre activo el check 'Necesito una factura'
+Se verifica si se encuentra en la página 'Compra ahora'
+Se verifica que se selecciona el pago con PayPal
+**** Test done ****test_flow1 ****
+
+failures tc: null com.thoughtworks.selenium.SeleniumException: ERROR: Element xpath=.//*[@id='p_method_paypal_express'] not found
+**** Start test **** test_flow2 ****
+
+Se eliminan cookies
+Se abre la interfaz http://pre-cb.newshore.es/
+Se inicia proceso de login en C+B
+Open Homepage
+Se verifica que se encuentre presente el formulario para ingreso de datos de usuario para login
+No se ha encontrado el formulario por lo cual se ingresa al link 'Tu cuenta'
+Se ingresan los datos de usuario para el proceso de login
+Se hace clic en el botón 'ENTRAR'
+LOGIN OK
+Login the user stress_test_qa@claireandbruce.com with password 123456
+Login message is loginOk
+ 
+Se busca un producto simple para agregar al carrito de compras
+Si el producto encontrado es configurable se continuará con la búsqueda
+Buscando categoría en la posición 3 del menú superior
+Se ingresa a la categoría ubicada en la posición 3 del menú superior
+Buscando Subcategoría en la posición 1 del menú lateral izquierdo
+Se ingresa a la subcategoría ubicada en la posición 1 del menú lateral izquierdo
+Subcategoría actual: * NUEVO * - Bolsos - Mujer
+Buscando Producto ubicado en la posición columna: 1 en la fila: 2
+Ingresando al producto Bolso rectangular nude
+Producto actual: Bolso rectangular nude
+Buscando categoría en la posición 3 del menú superior
+Se ingresa a la categoría ubicada en la posición 3 del menú superior
+Buscando Subcategoría en la posición 2 del menú lateral izquierdo
+Se ingresa a la subcategoría ubicada en la posición 2 del menú lateral izquierdo
+Subcategoría actual: * OFERTAS * - Bolsos - Mujer
+Buscando Producto ubicado en la posición columna: 2 en la fila: 1
+Ingresando al producto Bandolera colegial rígida color negro
+Producto actual: Bandolera colegial rígida color negro - * OFERTAS * - Bolsos - Mujer
+Buscando categoría en la posición 4 del menú superior
+Se ingresa a la categoría ubicada en la posición 4 del menú superior
+Buscando Subcategoría en la posición 3 del menú lateral izquierdo
+Se ingresa a la subcategoría ubicada en la posición 3 del menú lateral izquierdo
+Subcategoría actual: Relojes - Accesorios - Mujer
+Buscando Producto ubicado en la posición columna: 2 en la fila: 2
+Ingresando al producto Reloj cronógrafo blanco
+Producto actual: Reloj cronógrafo blanco - Relojes - Accesorios - Mujer
+Se busca el botón 'AÑADIR A LA CESTA' para agregar el producto al carrito de compras
+Se ha presionado el botón 'AÑADIR A LA CESTA' se está esperando confirmación de que el producto ha sido añadido a la cesta
+El producto ha sido añadido con éxito al carrito de compras
+ 
+Se inicia proceso de cambio de unidades de un producto
+La interfaz actual no corresponde a 'Cesta de la Compra' Se busca el ingreso a ésta
+Se ingrea a través del link 'Compra ahora'
+Se cambian las unidades actuales 1 por 2
+Se inicia verificación de los precios de acuerdo a la cantidad del producto nueva
+Precio unitario: 12.95
+Precio Total Esperado: 12.95
+Precio total visualizado en la aplicación: 25.90
+CantidadNueva= 1 PrecioUnitario= 12.95 precioTotal= 25.90 PrecioEsperado 25.90
+ 
+Se inicia proceso de selección del 'Tipo de Envío' (Standard o Express)
+**** Test done ****test_flow2 ****
+
+failures tc: null java.lang.NumberFormatException: multiple points
+**** Start test **** test_flow3 ****
+
+Se carga la página http://pre-cb.newshore.es/
+ 
+Se busca un producto simple para agregar al carrito de compras
+Si el producto encontrado es configurable se continuará con la búsqueda
+Buscando categoría en la posición 4 del menú superior
+Se ingresa a la categoría ubicada en la posición 4 del menú superior
+Buscando Subcategoría en la posición 7 del menú lateral izquierdo
+Se ingresa a la subcategoría ubicada en la posición 7 del menú lateral izquierdo
+Subcategoría actual: Cinturones - Accesorios - Mujer
+Buscando Producto ubicado en la posición columna: 3 en la fila: 1
+Ingresando al producto Cinturón ancho a cintura color turquesa
+Producto actual: Cinturón ancho a cintura color turquesa - Cinturones - Accesorios - Mujer
+Se busca el botón 'AÑADIR A LA CESTA' para agregar el producto al carrito de compras
+Se ha presionado el botón 'AÑADIR A LA CESTA' se está esperando confirmación de que el producto ha sido añadido a la cesta
+El producto ha sido añadido con éxito al carrito de compras
+ 
+Se inicia proceso de cambio de unidades de un producto
+La interfaz actual no corresponde a 'Cesta de la Compra' Se busca el ingreso a ésta
+Se ingrea a través del link 'Compra ahora'
+Se cambian las unidades actuales 1 por 2
+Se inicia verificación de los precios de acuerdo a la cantidad del producto nueva
+Precio unitario: 25.99
+Precio Total Esperado: 51.98
+Precio total visualizado en la aplicación: 51.98
+CantidadNueva= 2 PrecioUnitario= 25.99 precioTotal= 51.98 PrecioEsperado 51.98
+ 
+Se inicia proceso de selección del 'Tipo de Envío' (Standard o Express)
+Se obtiene el subtotal del pedido para realizar la verificación posteriormente
+Tipo de Envío seleccionado EXPRESS
+Valor de envío encontrado: 12.0
+Precio total Esperado: 63.98
+Se obtiene el valor total del pedido con gastos de Envío
+Valor total del pedido con gastos de envío visualizado es: 63,98
+VALOR PEDIDO 51.98 + GASTOS DE ENVÍO 12.0 = VALOR PEDIDO CON GASTOS DE ENVÍO 63.98
+OK
+ 
+
+Se inicia proceso de LOGIN POR CHECKOUT
+Se hace clic en el botón 'CONTINUA' de la interfaz 'Cesta de la Compra'
+Se espera carga de la interfaz de login por checkout
+Se ingresan datos de usuario para el proceso de login
+Se hace clic en el botón 'ENTRAR'
+Se espera carga de la página con el login OK
+SE DIRECCIONÓ AL CHECKOUT
+ 
+Se verifica que se encuentre una dirección de envío por defecto señalada
+Se busca si la dirección se encuentra seleccionada
+Se ha encontrado una dirección creada, se selecciona ésta
+Se selecciona la dirección
+Se finaliza el proceso de verificación de la dirección de envío por defecto
+ 
+Se inicia proceso de verificación de una dirección de envío por defecto señalada
+Se verifica que el pedido será con factura
+Se selecciona 'Necesito una factura'
+Se ingresan los datos de facturación
+ 
+Se inicia proceso para seleccion de factura con dirección diferente a la de envío
+Se selecciona la opción 'La dirección de factura es diferente a la de envío'
+Se ingresan datos de facturación
+El campo Apellidos no se encuentra diligenciado con la información del usuario
+Se finaliza ingreso de información sobre facturación con dirección diferente a la de envío
+ 
+
+Se inicia el PAGO CON CHEQUE
+Se verifica que se encuentre una dirección de envío por defecto señalada
+Se selecciona Pago con Cheque
+**** Test done ****test_flow3 ****
+
+failures tc: null com.thoughtworks.selenium.SeleniumException: ERROR: Element xpath=.//*[@id='p_method_checkmo'] not found
+**** Start test **** test_flujo4 ****
+
+ 
+Se carga página http://pre-cb.newshore.es/
+ 
+Se inicia proceso para añadir un producto configurable al carrito de compras
+Se busca un producto configurable para agregar al carrito de compras
+Si el producto encontrado es simple se continuará con la búsqueda
+Buscando categoría en la posición 4 del menú superior
+Se ingresa a la categoría ubicada en la posición 1 del menú superior
+Buscando Subcategoría en la posición 1 del menú lateral izquierdo
+Se ingresa a la subcategoría ubicada en la posición 1 del menú lateral izquierdo
+Subcategoría actual: * NUEVO * - Ropa - Mujer
+Buscando Producto ubicado en la posición columna: 1 en la fila: 2
+Ingresando al producto Camiseta tirantes encaje blanca
+Esperando carga de la interfaz con el detalle del producto Camiseta tirantes encaje blanca
+**** Test done ****test_flujo4 ****
+
+failures tc: null com.thoughtworks.selenium.SeleniumException: Timed out after 60000ms
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -74,9 +74,9 @@ public class LibPayPal extends ClaireandbruceTestCase {
 		//------*****  Verifica que el pedido es pagado con Paypal *****-------\\
 		
 		Helper.log("Se verifica que se selecciona el pago con PayPal");
-		if(("off").equals(selenium.getValue("xpath=.//*[@id='p_method_paypal_express']")))	{
+		if(("off").equals(selenium.getValue("id=p_method_paypal_standard")))	{
 			Helper.log("Se hace clic en la opción de Pago con PayPal");
-			selenium.click("xpath=.//*[@id='p_method_paypal_express']");			
+			selenium.click("id=p_method_paypal_standard");			
 		} else {
 			Assert.fail("Error:  No seleccionó el método de pago PAYPAL");
 		}
@@ -125,7 +125,7 @@ public class LibPayPal extends ClaireandbruceTestCase {
 		
 		// Selenium Redireccion a la página de ClaireandBruce y confirma que el pedido se ha enviado  \\
 		Helper.log("Se verifica que se encuentre el mensaje de confirmación sobre el pedido realizado con éxito");
-		assertEquals(selenium.getText("xpath=//p"),"Recibirás un e-mail con tu confirmación de compra a:");
+	   	assertEquals(selenium.isTextPresent("Recibirás un e-mail con tu confirmación de compra a:"),true);
 		Helper.log("PEDIDO REALIZADO!!");		
 		if(!selenium.isElementPresent("//span[2]")||!selenium.isElementPresent("css=span.button"))
 		{

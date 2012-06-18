@@ -47,9 +47,9 @@ public class LibTypeShipping extends ClaireandbruceTestCase {
 			String str_subtotal="";
 			int index = 0;
 			while(index < auxString.length()-2) {
-				if(auxString.charAt(index)!= ',') {
+				if(auxString.charAt(index)!= ',' && auxString.charAt(index)!='.') {
 					str_subtotal+=auxString.charAt(index);
-				} else {
+				} else if(auxString.charAt(index)==','){
 					str_subtotal+= ".";
 				}	
 				index++;
@@ -77,9 +77,9 @@ public class LibTypeShipping extends ClaireandbruceTestCase {
 				//Se eliminan comas presentes, cambian por puntos para realizar los cálculos necesarios del valor de Envío
 				index = 0;
 				while(index < auxString.length()-2){
-					if(auxString.charAt(index)!=','){
+					if(auxString.charAt(index)!=',' && auxString.charAt(index)!='.'){
 						str_valorEnvio += auxString.charAt(index);
-					} else {
+					} else if(auxString.charAt(index)==','){
 						str_valorEnvio += '.';
 					}					
 					index++;
@@ -102,9 +102,9 @@ public class LibTypeShipping extends ClaireandbruceTestCase {
 				//Se eliminan comas presentes, cambian por puntos para realizar los cálculos necesarios del valor de envío express
 				index = 0;
 				while(index < auxString.length()-2){
-					if(auxString.charAt(index)!=','){
+					if(auxString.charAt(index)!=',' && auxString.charAt(index)!='.'){
 						str_valorEnvio += auxString.charAt(index);
-					} else {
+					} else if(auxString.charAt(index)==','){
 						str_valorEnvio += '.';
 					}					
 					index++;
@@ -120,9 +120,9 @@ public class LibTypeShipping extends ClaireandbruceTestCase {
 			index=0;
 			auxString ="";
 			while(index < precioTotalCalculado.length()) {
-				if(precioTotalCalculado.charAt(index)!=','){
+				if(precioTotalCalculado.charAt(index)!=',' && precioTotalCalculado.charAt(index)!='.'){
 					auxString +=precioTotalCalculado.charAt(index);
-				} else {
+				} else if(precioTotalCalculado.charAt(index)==','){
 					auxString +=".";
 				}
 				index++;
@@ -138,9 +138,9 @@ public class LibTypeShipping extends ClaireandbruceTestCase {
 			index=0;
 			auxString ="";
 			while(index < str_total.length()) {
-				if(str_total.charAt(index)!=','){
+				if(str_total.charAt(index)!=',' && str_total.charAt(index)!='.'){
 					auxString +=str_total.charAt(index);
-				} else {
+				} else if(str_total.charAt(index)==','){
 					auxString +=".";
 				}
 				index++;
