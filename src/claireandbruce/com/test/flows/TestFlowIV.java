@@ -65,6 +65,9 @@ public class TestFlowIV  extends ClaireandbruceTestCase{
 		LibWithoutPurchase.CBT_WPurchase(selenium);
 		
 		// Se efectua el pago con cheque
-		LibPayChecking.pay_checking(selenium);	
+		//LibPayChecking.pay_checking(selenium);
+		
+		//Se efectua el pago con PayPal
+		LibPayPal.CBT_Paypal(selenium, nombreProducto);
 	}	
 }
