@@ -14,6 +14,7 @@ import claireandbruce.com.test.basicsFlows.LibPayPal;
 import claireandbruce.com.test.basicsFlows.LibPayChecking;
 import claireandbruce.com.test.basicsFlows.LibShoppingCart3DeleterItemShoppingCart;
 import claireandbruce.com.test.basicsFlows.LibTypeShipping;
+import claireandbruce.com.test.basicsFlows.LibWindowPayPal;
 import claireandbruce.com.test.basicsFlows.LibWithoutPurchase;
 
 import basics.ClaireandbruceTestCase;
@@ -32,7 +33,9 @@ public class TestFlowIV  extends ClaireandbruceTestCase{
 	@Test
 	public void test_flujo4() throws Exception
 	{
-		Helper.log(" ");
+		Helper.log("Se inicia sesión para pago con PayPal ");
+		LibWindowPayPal.CBT_Paypal(selenium);
+		
 		Helper.log("Se carga página "+ClaireandbruceUrl);
 		selenium.open("");
 		if(selenium.isElementPresent("link=Salir")){

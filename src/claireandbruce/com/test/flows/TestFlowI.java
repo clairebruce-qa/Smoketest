@@ -34,6 +34,11 @@ public class TestFlowI extends ClaireandbruceTestCase{
 		Helper.log("Flujo 1. ProductoSimple + DirecciónExistente + SinFactura + PagoPayPal");		
 		LibWindowPayPal.CBT_Paypal(selenium);
 		
+		if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
+			Helper.log("Se inicia sesión en la página de C+B");
+			LibCorrectLogonValidUserAccout.CBT55(selenium);
+		
+		}
 		// El Usuario se Autentica
 		//Lib_CorrectLogon_ValidUser_Accout.CBT55(selenium);
 			

@@ -38,11 +38,7 @@ public class LibWindowPayPal extends ClaireandbruceTestCase {
 		selenium.selectWindow("null");
 		
 		//selenium.waitForPopUp(ClaireandbruceUrl, "30000");
-		if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
-			Helper.log("Se inicia sesión en la página de C+B");
-			LibCorrectLogonValidUserAccout.CBT55(selenium);
 		
-		}
 		
 
 		
