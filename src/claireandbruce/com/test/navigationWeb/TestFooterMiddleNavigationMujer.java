@@ -26,7 +26,6 @@ public class TestFooterMiddleNavigationMujer extends ClaireandbruceTestCase{
 		
 			//Obtiene el texto de cada link para verificarlo en la ventana de despliegue
 			String text= selenium.getText("xpath=html/body/div/div[2]/div/div/div[1]/div[5]/div[1]/ul/li["+i+"]/a");
-			System.out.println("\n ESTE ES EL BENDITO TEXTO"+text);
 			
 			//Se Carga y verifica las interfaces de cada link 
 			Helper.clickAndVerify(selenium, "xpath=html/body/div/div[2]/div/div/div[1]/div[5]/div[1]/ul/li["+i+"]/a", text, "class=breadcrumbs-present");
@@ -42,7 +41,6 @@ public class TestFooterMiddleNavigationMujer extends ClaireandbruceTestCase{
 			//Verificacion de los links del foother para mujer
 				
 				String text= selenium.getText("xpath=html/body/div/div[2]/div/div/div[1]/div[5]/div[2]/ul/li["+i+"]/a");
-				System.out.println("\n ESTE ES EL BENDITO TEXTO"+text);
 				Helper.clickAndVerify(selenium, "xpath=html/body/div/div[2]/div/div/div[1]/div[5]/div[2]/ul/li["+i+"]/a", text, "class=breadcrumbs-present");
 				Helper.clickAndVerify(selenium, "xpath=html/body/div/div[2]/ul/li[1]/a", "Tu cuenta", "css=li..last > a.text-lucida-black");
 				i++;

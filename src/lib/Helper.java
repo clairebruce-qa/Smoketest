@@ -50,7 +50,7 @@ public class Helper {
 	   */
 	public static void waitForElement(Selenium selenium, String element, String error ) throws Exception{
 		
-		Helper.log("Waiting for element " + element + " in " + selenium.getLocation());
+		Helper.log("Esperando por el elemento " + element + " en la ubicación " + selenium.getLocation());
 		for (int second = 0;; second++) {
 			if (second >= 20) { SeleneseTestCase.fail(error);};
 			try { if (selenium.isElementPresent(element)) break; } catch (Exception e) {}
@@ -81,17 +81,17 @@ public class Helper {
 	
 	public static void clickAndVerify(Selenium selenium, String link, String check, String path ) throws Exception{
 		
-		Helper.log("clickAndVerify for link: " + link + " string to assert: " + check );
+		Helper.log("Clic en el link: " + selenium.getText(link) + " y verificación con el texto: " + check );
 		Thread.sleep(3000);
 		
 		waitForElement(selenium,link,"link "+ link + "not found");
 		selenium.click(link);
 		Thread.sleep(3000);
 		
-		System.out.print(link+" path "+path+"\n");
+		//System.out.print(link+" path "+path+"\n");
 		
 		for (int second = 0;; second++) {
-			if (second >= 60) SeleneseTestCase.fail("The string "+check+" was not found in "+path);
+			if (second >= 60) SeleneseTestCase.fail("El texto "+check+" no fue encontrado en el xpath "+path);
 			try { if (check.equals(selenium.getText(path))) break; } catch (Exception e) {}
 			Thread.sleep(1000);
 		}		
@@ -193,7 +193,7 @@ public class Helper {
 	  
 	  public static void waitForText(Selenium selenium,String locator, String text) throws InterruptedException, ElementNotFoundException {
 	        for (int second = 0;; second++) {
-	            if (second >= timeout) throw new ElementNotFoundException("Text '" + text + "' in element '"+ locator +"' not present.");
+	            if (second >= timeout) throw new ElementNotFoundException("El Texto '" + text + "' en el elemento '"+ locator +"' no está presente.");
 	            try {
 	                if (text.trim().equals(selenium.getText(locator).trim())) break;
 	            } catch (Exception e) {}

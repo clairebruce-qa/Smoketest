@@ -44,7 +44,6 @@ public class TestFooterMiddleNavigationAtencionAlCliente  extends Claireandbruce
 				//-----------------    SE DESPLIEGA LA INTERFAZ DEL LINK   ---------------------
 				selenium.click("xpath=html/body/div/div[4]/div/div[3]/div[7]/div[2]/ul/li["+i+"]/a");
 				selenium.waitForPageToLoad("30000");
-				System.out.println("\n ESTE ES EL BENDITO TEXTO"+"xpath=html/body/div/div[4]/div/div[3]/div[7]/div[2]/ul/li["+i+"]/a");
 				
 				
 				//--------------------- VERIFICACION DE LA INTERFAZ  -----------------------------

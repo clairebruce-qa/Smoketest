@@ -21,19 +21,19 @@ public class TestNavigationTopQuestions extends ClaireandbruceTestCase {
 		//Opciones: Link Ayuda [Footer], link DE COMPRAS [Footer], link ESPERANDO [Footer], link EN CASA [Footer], link MI CUENTA [Footer]
 		if(selenium.isElementPresent("xpath=html/body/div/div[4]/div/div[2]/div[4]/a/cufon/canvas")){
 			selenium.click("xpath=html/body/div/div[4]/div/div[2]/div[4]/a/cufon/canvas");
-			Helper.log("Entry is through the link 'AYUDA' in Footer-Top");
+			Helper.log("Se inicia proceso de navegación en el link 'AYUDA' en el Footer-Top");
 		} else if(selenium.isElementPresent("link=De compras")){
 			selenium.click("link=De compras");
-			Helper.log("Entry is through the link '"+selenium.getText("link=De compras")+"' in Footer-Middle");
+			Helper.log("Ingresando al link '"+selenium.getText("link=De compras")+"' en el Footer-Middle");
 		} else if(selenium.isElementPresent("link=Esperando")){
 			selenium.click("link=Esperando");
-			Helper.log("Entry is through the link '"+selenium.getText("link=Esperando")+"' in Footer-Middle");
+			Helper.log("Ingresando al link '"+selenium.getText("link=Esperando")+"' en el Footer-Middle");
 		} else if(selenium.isElementPresent("link=En casa")){
 			selenium.click("link=En casa");
-			Helper.log("Entry is through the link '"+selenium.getText("link=En casa")+"' in Footer-Middle");
+			Helper.log("Ingresando al link '"+selenium.getText("link=En casa")+"' en el Footer-Middle");
 		} else if(selenium.isElementPresent("link=Mi cuenta")){
 			selenium.click("link=Mi cuenta");
-			Helper.log("Entry is through the link '"+selenium.getText("link=Mi cuenta")+"' in Footer-Middle");
+			Helper.log("Ingresando al link '"+selenium.getText("link=Mi cuenta")+"' en el Footer-Middle");
 		}
 		selenium.waitForPageToLoad("15000");
 		
