@@ -99,29 +99,31 @@ public class LibPayPal extends ClaireandbruceTestCase {
 		
 		//----**** Se autentica el usuario en Paypal ****----\\
 		Helper.log("Se inicia proceso de autenticación del usuario en PayPal");
-		if(!selenium.isElementPresent("xpath=.//*[@id='loadLogin']"))
+	/*	if(!selenium.isElementPresent("xpath=//input[@id='loadLogin']"))
 		{
 			Assert.fail(selenium.getLocation());
 		}
 		Helper.log("Se cargan campos para login");
-		selenium.click("xpath=.//*[@id='loadLogin']");
+		selenium.click("xpath=//input[@id='loadLogin']");
 		selenium.waitForPageToLoad("30000");
-		
+		*/
 		Helper.log("Se ingresan los datos de usuario de PayPal");
-		selenium.type("xpath=.//*[@id='login_email']", "qualit_1337780842_per@privalia.com");
-		selenium.type("xpath=.//*[@id='login_password']", "337780714");
+		selenium.type("xpath=//input[@id='login_email']", "qualit_1337780842_per@privalia.com");
+		selenium.type("xpath=//input[@id='login_password']", "337780714");
 		Helper.log("Se hace clic en el botón para iniciar sesión");
-		selenium.click("id=submitLogin");
+		selenium.click("xpath=//input[@id='submitLogin']");
 		selenium.waitForPageToLoad("30000");
 		// Se confirma el pago en Paypal \\
 		Helper.log("Se confirma el pago en PayPal");
-		selenium.click("id=continue");
 		
-		selenium.waitForPageToLoad("30000");
-		Helper.log("Se presiona en el enlace que redirecciona a C+B");
-		selenium.click("xpath=.//*[@id='doneInfo']/ul/li[1]/a");
 		
-		selenium.waitForPageToLoad("30000");
+		selenium.click("xpath=//input[@id='continue']");
+		
+		selenium.waitForPageToLoad("60000");
+		//Helper.log("Se presiona en el enlace que redirecciona a C+B");
+		//selenium.click("xpath=.//*[@id='doneInfo']/ul/li[1]/a");
+		
+		//selenium.waitForPageToLoad("30000");
 		
 		// Selenium Redireccion a la página de ClaireandBruce y confirma que el pedido se ha enviado  \\
 		Helper.log("Se verifica que se encuentre el mensaje de confirmación sobre el pedido realizado con éxito");
