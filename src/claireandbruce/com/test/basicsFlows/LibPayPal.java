@@ -95,17 +95,17 @@ public class LibPayPal extends ClaireandbruceTestCase {
 		
 		//selenium.waitForPageToLoad("30000");
 		
-		
+		username="qualit_1337780842_per@privalia.com";
 		
 		//----**** Se autentica el usuario en Paypal ****----\\
 		Helper.log("Se inicia proceso de autenticación del usuario en PayPal");
-		if(!selenium.isElementPresent("xpath=.//*[@id='loadLogin']"))
+		/*if(!selenium.isElementPresent("xpath=.//*[@id='loadLogin']"))
 		{
 			Assert.fail(selenium.getLocation());
 		}
 		Helper.log("Se cargan campos para login");
 		selenium.click("xpath=.//*[@id='loadLogin']");
-		selenium.waitForPageToLoad("60000");
+		selenium.waitForPageToLoad("60000");*/
 		
 		Helper.log("Se ingresan los datos de usuario de PayPal");
 		selenium.type("xpath=.//*[@id='login_email']", "qualit_1337780842_per@privalia.com");
