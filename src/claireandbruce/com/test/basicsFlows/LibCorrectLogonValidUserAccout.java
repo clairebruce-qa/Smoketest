@@ -38,7 +38,7 @@ public class LibCorrectLogonValidUserAccout extends ClaireandbruceTestCase {
 		 if(selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
 			 Helper.log("Se ha encontrado una sesión iniciada al abrir la página C+B");
 				selenium.click("//a[contains(text(), 'Salir')]");
-				selenium.waitForPageToLoad("60000");
+				selenium.waitForPageToLoad("30000");
 				if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")) {
 					Helper.log("Logout done!");
 				} else {
@@ -54,7 +54,7 @@ public class LibCorrectLogonValidUserAccout extends ClaireandbruceTestCase {
 			if(!selenium.isElementPresent("xpath=.//*[@id='login-form']/div")) {			
 				Helper.log("No se ha encontrado el formulario por lo cual se ingresa al link 'Tu cuenta'");
 				selenium.click("//a[contains(text(), 'Tu cuenta')]");
-				selenium.waitForPageToLoad("60000");			
+				selenium.waitForPageToLoad("30000");			
 			}
 			
 			Helper.log("Se ingresan los datos de usuario para el proceso de login");
@@ -63,7 +63,7 @@ public class LibCorrectLogonValidUserAccout extends ClaireandbruceTestCase {
 			selenium.type("xpath=.//*[@id='pass']", password);		
 			Helper.log("Se hace clic en el botón 'ENTRAR'");
 			selenium.click("//button[contains(@id,'send2')]");	
-			selenium.waitForPageToLoad("60000");
+			selenium.waitForPageToLoad("38000");
 			
 			if (!selenium.isElementPresent( "class=validation-advice")){		
 				if (selenium.isTextPresent("Salir")){

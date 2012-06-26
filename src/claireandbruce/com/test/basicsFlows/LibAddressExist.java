@@ -44,11 +44,11 @@ public class LibAddressExist extends ClaireandbruceTestCase {
 			Helper.log("Se busca ingresar a la interfaz 'Compra ahora' por el botón 'COMPRA AHORA' ubicado en la parte superior de la interfaz");
 			selenium.click("xpath=//div/div/div/a");
 			Helper.log("Se hace clic en el botón 'COMPRA AHORA' ubicado en la parte superior de la página");
-			selenium.waitForPageToLoad("60000");
+			selenium.waitForPageToLoad("30000");
 		}
 		Helper.log("Se presiona el botón 'CONTINUA' de la interfaz 'Shopping Cart'");
 		selenium.click("xpath=(//button[@type='button'])[3]");
-		selenium.waitForPageToLoad("60000");
+		selenium.waitForPageToLoad("20000");
 	}
 		
 	//------***** Verifica que exista al menos una dirección ****------\\

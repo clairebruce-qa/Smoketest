@@ -27,13 +27,13 @@ public class LibWindowPayPal extends ClaireandbruceTestCase {
 	public static void CBT_Paypal(Selenium selenium) throws Exception{
 	
 	
-		Helper.log("Se despliega la página de PayPal para iniciar sesión.");
+		Helper.log("Inicialización de la página de PayPal para iniciar sesión en ella");
 		selenium.open("https://developer.paypal.com");
 		if(selenium.isElementPresent("//input[@id='login_email']")){
  			selenium.type("id=login_email", "david.vinuales@privalia.com");
  			selenium.type("id=login_password", "testing1111");
  			selenium.click("name=submit");
- 			selenium.waitForPageToLoad("60000");
+ 			selenium.waitForPageToLoad("30000");
  		}
 		selenium.selectWindow("null");
 		

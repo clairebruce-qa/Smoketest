@@ -11,6 +11,7 @@ import claireandbruce.com.test.basicsFlows.LibCorrectAddProductCartSimpleProduct
 import claireandbruce.com.test.basicsFlows.LibCorrectLogonCheckout;
 import claireandbruce.com.test.basicsFlows.LibCorrectLogonValidUserAccout;
 import claireandbruce.com.test.basicsFlows.LibPayChecking;
+import claireandbruce.com.test.basicsFlows.LibPayCreditCard;
 import claireandbruce.com.test.basicsFlows.LibShoppingCart3DeleterItemShoppingCart;
 import claireandbruce.com.test.basicsFlows.LibWithPurchase;
 import claireandbruce.com.test.basicsFlows.LibTypeShipping;
@@ -66,8 +67,8 @@ public class TestFlowIII extends ClaireandbruceTestCase{
 		//Se indica que la dirección de factura es diferente a la de envío
 		LibWithPurchaseAndOtherAddress.with_Purchase_and_Other_Address(selenium);
 		
-		//Se selecciona como forma de pago: Cheque
-		LibPayChecking.pay_checking(selenium);
+		//Se selecciona como forma de pago: Tarjeta de crédito
+		LibPayCreditCard.credit_Card(selenium);
 		
 	}
 }

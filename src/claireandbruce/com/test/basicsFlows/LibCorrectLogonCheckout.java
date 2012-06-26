@@ -24,7 +24,7 @@ public class LibCorrectLogonCheckout extends ClaireandbruceTestCase {
 		
 		//Se presiona el botón "CONTINUA"
 		Helper.log("Se hace clic en el botón 'CONTINUA' de la interfaz 'Cesta de la Compra'");
-		selenium.click("xpath=html/body/div/div[3]/div[1]/div/div[6]/ul[1]/li[1]/button");
+		selenium.click("xpath=//li[2]/button");
 		Helper.log("Se espera carga de la interfaz de login por checkout");
 		selenium.waitForPageToLoad("20000");
 	
