@@ -49,16 +49,16 @@ public class LibPayPal extends ClaireandbruceTestCase {
 				Helper.log("Se busca ingresar a la interfaz 'Compra ahora' por el botón 'CÓMPRALO AHORA' del header");
 				selenium.click("xpath=//ol[@id='mini-cart']/li/div/button");
 				Helper.log("Se hace clic en el botón 'CÓMPRALO AHROA' del header");
-				selenium.waitForPageToLoad("30000");
+				selenium.waitForPageToLoad("40000");
 			} else {
 				Helper.log("Se busca ingresar a la interfaz 'Compra ahora' por el botón 'COMPRA AHORA' ubicado en la parte superior de la interfaz");
 				selenium.click("xpath=//div/div/div/a");
 				Helper.log("Se hace clic en el botón 'COMPRA AHORA' ubicado en la parte superior de la página");
-				selenium.waitForPageToLoad("30000");
+				selenium.waitForPageToLoad("40000");
 			}
 			Helper.log("Se presiona el botón 'CONTINUA' de la interfaz 'Shopping Cart'");
 			selenium.click("xpath=(//button[@type='button'])[3]");
-			selenium.waitForPageToLoad("20000");
+			selenium.waitForPageToLoad("30000");
 		}	
 		
 		
@@ -89,7 +89,7 @@ public class LibPayPal extends ClaireandbruceTestCase {
 		Helper.log("Se hace clic en el botón 'PAGAR'");
 		selenium.click("xpath=.//*[@id='checkout-buttons-container']/button");
 		Helper.log("Se espera carga de la interfaz de PayPal a la que se redirecciona para finalizar el pago");
-		selenium.waitForPageToLoad("65000");
+		selenium.waitForPageToLoad("60000");
 		
 		//----**** Se confirma el pago en Paypal ----****\\
 		
@@ -105,23 +105,23 @@ public class LibPayPal extends ClaireandbruceTestCase {
 		}
 		Helper.log("Se cargan campos para login");
 		selenium.click("xpath=.//*[@id='loadLogin']");
-		selenium.waitForPageToLoad("30000");
+		selenium.waitForPageToLoad("60000");
 		
 		Helper.log("Se ingresan los datos de usuario de PayPal");
 		selenium.type("xpath=.//*[@id='login_email']", "qualit_1337780842_per@privalia.com");
 		selenium.type("xpath=.//*[@id='login_password']", "337780714");
 		Helper.log("Se hace clic en el botón para iniciar sesión");
 		selenium.click("id=submitLogin");
-		selenium.waitForPageToLoad("30000");
+		selenium.waitForPageToLoad("60000");
 		// Se confirma el pago en Paypal \\
 		Helper.log("Se confirma el pago en PayPal");
 		selenium.click("id=continue");
 		
-		selenium.waitForPageToLoad("30000");
+		selenium.waitForPageToLoad("60000");
 		Helper.log("Se presiona en el enlace que redirecciona a C+B");
 		selenium.click("xpath=.//*[@id='doneInfo']/ul/li[1]/a");
 		
-		selenium.waitForPageToLoad("30000");
+		selenium.waitForPageToLoad("60000");
 		
 		// Selenium Redireccion a la página de ClaireandBruce y confirma que el pedido se ha enviado  \\
 		Helper.log("Se verifica que se encuentre el mensaje de confirmación sobre el pedido realizado con éxito");
