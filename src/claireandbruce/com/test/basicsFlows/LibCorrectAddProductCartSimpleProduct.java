@@ -64,7 +64,7 @@ public class LibCorrectAddProductCartSimpleProduct extends ClaireandbruceTestCas
 							
 							selenium.click("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul["+filaArticulo+"]/li["+columnaArticulo+"]/div[3]/a");
 							Helper.log("Ingresando al producto "+nombreProducto);
-							selenium.waitForPageToLoad("60000");
+							selenium.waitForPageToLoad("50000");
 						}
 						Helper.log("Producto actual: "+selenium.getTitle());						
 					}
