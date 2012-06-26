@@ -30,7 +30,7 @@ public class LibCorrectAddProductCartSimpleProduct extends ClaireandbruceTestCas
 		//Haga mientras encuentre el menú de selección de talla (producto configurable)
 		do {
 
-			int categoria = (int) (Math.random()*(4-3+1))+3;
+			int categoria = (int) (Math.random()*(5-3+1))+3;
 			Helper.log("Buscando categoría en la posición "+categoria+" del menú superior");
 			
 			if(selenium.isElementPresent("xpath=//ul[@id='nav']/li["+categoria+"]/h2/a/span/cufon/canvas")){
@@ -39,34 +39,35 @@ public class LibCorrectAddProductCartSimpleProduct extends ClaireandbruceTestCas
 				selenium.click("//ul[@id='nav']/li["+categoria+"]/h2/a/span/cufon/canvas");				
 
 				selenium.waitForPageToLoad("30000");
-
-				
-				//Selecciona una subcategoría
-				int subcategoria =  (int)(Math.random()*(7))+1; 
-				Helper.log("Buscando Subcategoría en la posición "+subcategoria+" del menú lateral izquierdo");
-				if(selenium.isElementPresent("xpath=html/body/div/div[3]/div[2]/div[2]/div[1]/a["+subcategoria+"]/div/div")){
-					
-					Helper.log("Se ingresa a la subcategoría ubicada en la posición "+subcategoria+" del menú lateral izquierdo");
-					selenium.click("xpath=html/body/div/div[3]/div[2]/div[2]/div[1]/a["+subcategoria+"]/div/div");
-					selenium.waitForPageToLoad("30000");					
+				Helper.log("Categoría actual: "+selenium.getTitle());
+				if(selenium.getTitle().startsWith("Bolsos") || selenium.getTitle().startsWith("Accesorios")){
+					//Selecciona una subcategoría
+					int subcategoria =  (int)(Math.random()*(7))+1; 
+					Helper.log("Buscando Subcategoría en la posición "+subcategoria+" del menú lateral izquierdo");
+					if(selenium.isElementPresent("xpath=html/body/div/div[3]/div[2]/div[2]/div[1]/a["+subcategoria+"]/div/div")){
 						
-					//Se selecciona uno de los artículos de ésta subcategoría
-					int columnaArticulo = (int)(Math.random()*(3))+1;
-					int filaArticulo = (int)(Math.random()*(2))+1;
-					Helper.log("Subcategoría actual: "+selenium.getTitle());
-					Helper.log("Buscando Producto ubicado en la posición columna: "+columnaArticulo+" en la fila: "+filaArticulo);
-					if(!selenium.isElementPresent("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul["+filaArticulo+"]/li["+columnaArticulo+"]/div[3]/a")){
-						Helper.log("No se encontro el nombre del producto");
+						Helper.log("Se ingresa a la subcategoría ubicada en la posición "+subcategoria+" del menú lateral izquierdo");
+						selenium.click("xpath=html/body/div/div[3]/div[2]/div[2]/div[1]/a["+subcategoria+"]/div/div");
+						selenium.waitForPageToLoad("30000");					
+							
+						//Se selecciona uno de los artículos de ésta subcategoría
+						int columnaArticulo = (int)(Math.random()*(3))+1;
+						int filaArticulo = (int)(Math.random()*(2))+1;
+						Helper.log("Subcategoría actual: "+selenium.getTitle());
+						Helper.log("Buscando Producto ubicado en la posición columna: "+columnaArticulo+" en la fila: "+filaArticulo);
+						if(!selenium.isElementPresent("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul["+filaArticulo+"]/li["+columnaArticulo+"]/div[3]/a")){
+							Helper.log("No se encontro el nombre del producto");
+						}
+						else{
+							nombreProducto = selenium.getText("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul["+filaArticulo+"]/li["+columnaArticulo+"]/div[3]/a");
+							
+							selenium.click("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul["+filaArticulo+"]/li["+columnaArticulo+"]/div[3]/a");
+							Helper.log("Ingresando al producto "+nombreProducto);
+							selenium.waitForPageToLoad("70000");
+						}
+						Helper.log("Producto actual: "+selenium.getTitle());						
 					}
-					else{
-						nombreProducto = selenium.getText("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul["+filaArticulo+"]/li["+columnaArticulo+"]/div[3]/a");
-						
-						selenium.click("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul["+filaArticulo+"]/li["+columnaArticulo+"]/div[3]/a");
-						Helper.log("Ingresando al producto "+nombreProducto);
-						selenium.waitForPageToLoad("70000");
-					}
-					Helper.log("Producto actual: "+selenium.getTitle());						
-				}				
+				}								
 			} 
 		} while(!selenium.isElementPresent("xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[7]/div/button") );
 		

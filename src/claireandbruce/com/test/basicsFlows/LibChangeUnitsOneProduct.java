@@ -35,7 +35,7 @@ public class LibChangeUnitsOneProduct extends ClaireandbruceTestCase{
 		}		
 
 		//Se declaran variables string para separar los caracteres que pertenecen al precio sin unidad de moneda
-		String precio, precioTotal;
+		String precio = null, precioTotal;
 		if(selenium.isElementPresent("//table[@id='shopping-cart-table']/tbody/tr[2]/td[2]/input")){
 			//Se obtiene cantidad inicial para modificarla anexando una unidad mas
 			int cantidad=Integer.parseInt(selenium.getValue("//table[@id='shopping-cart-table']/tbody/tr[2]/td[2]/input"));	
@@ -51,23 +51,28 @@ public class LibChangeUnitsOneProduct extends ClaireandbruceTestCase{
 				int cantidadNueva=Integer.parseInt(selenium.getValue("//table[@id='shopping-cart-table']/tbody/tr[2]/td[2]/input"));
 				double precioUnitario, precioTotalProducto;
 				
-				precio = selenium.getText("//td[4]/span/span");
+				if(selenium.isElementPresent("xpath=//span/div/span/span")){
+					precio = selenium.getText("xpath=//span/div/span/span");
+				} else if(selenium.isElementPresent("xpath=//span/div/p/span")){
+					precio = selenium.getText("xpath=//p[3]/span");
+				}
 				precioTotal = selenium.getText("//td[5]/span/span");
 				
 				//Se separan los caracteres que pertenecen a la unidad de moneda 
 				int indexChar=0;
 				String auxPrecio="",auxPrecioT="";
 				while(indexChar <= (precio.length()-2)) {
-					if(precio.charAt(indexChar)!=','){
+					if(precio.charAt(indexChar)!= ',' && precio.charAt(indexChar)!='.') {
 						auxPrecio+=precio.charAt(indexChar);
-					}else {
-						auxPrecio+=".";
+					} else if(precio.charAt(indexChar)==','){
+						auxPrecio+= ".";
 					}
-					if(precioTotal.charAt(indexChar)!=','){
+					
+					if(precioTotal.charAt(indexChar)!= ',' && precioTotal.charAt(indexChar)!='.') {
 						auxPrecioT+=precioTotal.charAt(indexChar);
-					}else {
-						auxPrecioT+=".";
-					}				
+					} else if(precioTotal.charAt(indexChar)==','){
+						auxPrecioT+= ".";
+					}
 					indexChar++;
 				}
 				precioUnitario=Double.parseDouble(auxPrecio);
@@ -81,9 +86,9 @@ public class LibChangeUnitsOneProduct extends ClaireandbruceTestCase{
 				int indexCharCal=0;
 				String auxPrecioCal="";
 				while(indexCharCal < precioTotalCalculado.length()) {
-					if(precioTotalCalculado.charAt(indexCharCal)!=','){
+					if(precioTotalCalculado.charAt(indexCharCal)!=',' && precioTotalCalculado.charAt(indexCharCal)!='.'){
 						auxPrecioCal+=precioTotalCalculado.charAt(indexCharCal);
-					}else {
+					}else if(precioTotalCalculado.charAt(indexCharCal)!=','){
 						auxPrecioCal+=".";
 					}							
 					indexCharCal++;
@@ -94,9 +99,9 @@ public class LibChangeUnitsOneProduct extends ClaireandbruceTestCase{
 				indexCharCal=0;
 				auxPrecioCal="";
 				while(indexCharCal < precioTotalApp.length()) {
-					if(precioTotalApp.charAt(indexCharCal)!=','){
+					if(precioTotalApp.charAt(indexCharCal)!=',' && precioTotalApp.charAt(indexCharCal)!='.'){
 						auxPrecioCal+=precioTotalApp.charAt(indexCharCal);
-					}else {
+					}else if(precioTotalApp.charAt(indexCharCal)!=','){
 						auxPrecioCal+=".";
 					}							
 					indexCharCal++;

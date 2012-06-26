@@ -6,11 +6,8 @@ import org.junit.Test;
 
 import claireandbruce.com.test.basicsFlows.LibCorrectLogonValidUserAccout;
 import claireandbruce.com.test.basicsFlows.LibAddressExist;
-import claireandbruce.com.test.basicsFlows.LibChangeUnitsOneProduct;
 import claireandbruce.com.test.basicsFlows.LibCorrectAddProductCartSimpleProduct;
 import claireandbruce.com.test.basicsFlows.LibPayPal;
-import claireandbruce.com.test.basicsFlows.LibShoppingCart3DeleterItemShoppingCart;
-import claireandbruce.com.test.basicsFlows.LibTypeShipping;
 import claireandbruce.com.test.basicsFlows.LibWindowPayPal;
 import claireandbruce.com.test.basicsFlows.LibWithoutPurchase;
 
