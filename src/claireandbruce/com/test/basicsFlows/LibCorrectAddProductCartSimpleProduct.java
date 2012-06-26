@@ -38,7 +38,7 @@ public class LibCorrectAddProductCartSimpleProduct extends ClaireandbruceTestCas
 				Helper.log("Se ingresa a la categoría ubicada en la posición "+categoria+" del menú superior");
 				selenium.click("//ul[@id='nav']/li["+categoria+"]/h2/a/span/cufon/canvas");				
 
-				selenium.waitForPageToLoad("30000");
+				selenium.waitForPageToLoad("70000");
 				Helper.log("Categoría actual: "+selenium.getTitle());
 				if(selenium.getTitle().startsWith("Bolsos") || selenium.getTitle().startsWith("Accesorios")){
 					//Selecciona una subcategoría
@@ -47,8 +47,9 @@ public class LibCorrectAddProductCartSimpleProduct extends ClaireandbruceTestCas
 					if(selenium.isElementPresent("xpath=html/body/div/div[3]/div[2]/div[2]/div[1]/a["+subcategoria+"]/div/div")){
 						
 						Helper.log("Se ingresa a la subcategoría ubicada en la posición "+subcategoria+" del menú lateral izquierdo");
+						
 						selenium.click("xpath=html/body/div/div[3]/div[2]/div[2]/div[1]/a["+subcategoria+"]/div/div");
-						selenium.waitForPageToLoad("30000");					
+						selenium.waitForPageToLoad("70000");					
 							
 						//Se selecciona uno de los artículos de ésta subcategoría
 						int columnaArticulo = (int)(Math.random()*(3))+1;

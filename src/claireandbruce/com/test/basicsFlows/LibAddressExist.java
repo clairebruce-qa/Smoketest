@@ -32,6 +32,7 @@ public class LibAddressExist extends ClaireandbruceTestCase {
 */
 	//-----****** Verifíca que la pagina de Tu Compra esta desplegada de lo contrario la carga *****----\\
 	Helper.log(" ");
+	
 	Helper.log("Se verifica que se encuentre una dirección de envío por defecto señalada");
 	if(!("Compra ahora").equals(selenium.getTitle())) {	
 		Helper.log("Se busca método de ingreso a la interfaz 'Compra ahora'");

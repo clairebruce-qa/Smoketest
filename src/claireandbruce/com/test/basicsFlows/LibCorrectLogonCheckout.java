@@ -26,7 +26,7 @@ public class LibCorrectLogonCheckout extends ClaireandbruceTestCase {
 		Helper.log("Se hace clic en el botón 'CONTINUA' de la interfaz 'Cesta de la Compra'");
 		selenium.click("xpath=//li[2]/button");
 		Helper.log("Se espera carga de la interfaz de login por checkout");
-		selenium.waitForPageToLoad("20000");
+		selenium.waitForPageToLoad("60000");
 	
 		Helper.log("Se ingresan datos de usuario para el proceso de login");
 		//Se ingresan los datos de usuario
@@ -35,7 +35,7 @@ public class LibCorrectLogonCheckout extends ClaireandbruceTestCase {
 		Helper.log("Se hace clic en el botón 'ENTRAR'");
 		selenium.click("id=send2");
 		Helper.log("Se espera carga de la página con el login OK");
-		selenium.waitForPageToLoad("30000");
+		selenium.waitForPageToLoad("60000");
 		
 		//Se verifica que se redireccionó al checkout
 		if(selenium.isElementPresent("xpath=.//*[@id='checkout-step-shipping-child']/ul/li[1]/div/span")){
