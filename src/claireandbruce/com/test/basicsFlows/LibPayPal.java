@@ -49,16 +49,16 @@ public class LibPayPal extends ClaireandbruceTestCase {
 				Helper.log("Se busca ingresar a la interfaz 'Compra ahora' por el botón 'CÓMPRALO AHORA' del header");
 				selenium.click("xpath=//ol[@id='mini-cart']/li/div/button");
 				Helper.log("Se hace clic en el botón 'CÓMPRALO AHROA' del header");
-				selenium.waitForPageToLoad("30000");
+				selenium.waitForPageToLoad("60000");
 			} else {
 				Helper.log("Se busca ingresar a la interfaz 'Compra ahora' por el botón 'COMPRA AHORA' ubicado en la parte superior de la interfaz");
 				selenium.click("xpath=//div/div/div/a");
 				Helper.log("Se hace clic en el botón 'COMPRA AHORA' ubicado en la parte superior de la página");
-				selenium.waitForPageToLoad("30000");
+				selenium.waitForPageToLoad("60000");
 			}
 			Helper.log("Se presiona el botón 'CONTINUA' de la interfaz 'Shopping Cart'");
 			selenium.click("xpath=(//button[@type='button'])[3]");
-			selenium.waitForPageToLoad("20000");
+			selenium.waitForPageToLoad("60000");
 		}	
 		
 		
@@ -112,7 +112,7 @@ public class LibPayPal extends ClaireandbruceTestCase {
 		selenium.type("xpath=//input[@id='login_password']", "337780714");
 		Helper.log("Se hace clic en el botón para iniciar sesión");
 		selenium.click("xpath=//input[@id='submitLogin']");
-		selenium.waitForPageToLoad("40000");
+		selenium.waitForPageToLoad("60000");
 		// Se confirma el pago en Paypal \\
 		Helper.log("Se confirma el pago en PayPal");
 		
