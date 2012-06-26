@@ -89,7 +89,7 @@ public class LibPayPal extends ClaireandbruceTestCase {
 		Helper.log("Se hace clic en el botón 'PAGAR'");
 		selenium.click("xpath=.//*[@id='checkout-buttons-container']/button");
 		Helper.log("Se espera carga de la interfaz de PayPal a la que se redirecciona para finalizar el pago");
-		selenium.waitForPageToLoad("65000");
+		selenium.waitForPageToLoad("70000");
 		
 		//----**** Se confirma el pago en Paypal ----****\\
 		
@@ -112,14 +112,14 @@ public class LibPayPal extends ClaireandbruceTestCase {
 		selenium.type("xpath=//input[@id='login_password']", "337780714");
 		Helper.log("Se hace clic en el botón para iniciar sesión");
 		selenium.click("xpath=//input[@id='submitLogin']");
-		selenium.waitForPageToLoad("30000");
+		selenium.waitForPageToLoad("40000");
 		// Se confirma el pago en Paypal \\
 		Helper.log("Se confirma el pago en PayPal");
 		
 		
 		selenium.click("xpath=//input[@id='continue']");
 		
-		selenium.waitForPageToLoad("60000");
+		selenium.waitForPageToLoad("70000");
 		//Helper.log("Se presiona en el enlace que redirecciona a C+B");
 		//selenium.click("xpath=.//*[@id='doneInfo']/ul/li[1]/a");
 		
