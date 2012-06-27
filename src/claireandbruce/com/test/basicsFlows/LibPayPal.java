@@ -29,17 +29,6 @@ public class LibPayPal extends ClaireandbruceTestCase {
 	public static void CBT_Paypal(Selenium selenium, String nombreProducto) throws Exception{
 	
 	
-		
-		
-
-		/*
-		if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
-			
-			Claireandbruce.login(selenium, username, password);
-		
-		}
-		*/
-
 		//-----****** Verifíca que la pagina de Tu Compra esta desplegada de lo contrario la carga *****----\\
 		
 		Helper.log("Se verifica si se encuentra en la página 'Compra ahora'");
@@ -87,7 +76,7 @@ public class LibPayPal extends ClaireandbruceTestCase {
 			Assert.fail("Error:  Se deben aceptar los términos y condiciones y las políticas de privacidad");
 		}
 		Helper.log("Se hace clic en el botón 'PAGAR'");
-		selenium.click("xpath=.//*[@id='checkout-buttons-container']/button");
+		selenium.click("xpath=//div[@id='checkout-buttons-container']/button");
 		Helper.log("Se espera carga de la interfaz de PayPal a la que se redirecciona para finalizar el pago");
 		selenium.waitForPageToLoad("60000");
 		
@@ -115,13 +104,13 @@ public class LibPayPal extends ClaireandbruceTestCase {
 		selenium.waitForPageToLoad("60000");
 		// Se confirma el pago en Paypal \\
 		Helper.log("Se confirma el pago en PayPal");
-		selenium.click("id=continue");
-		
+		selenium.click("id=continue_abovefold");
+		username="stress_test_qa@claireandbruce.com"; //Se configura de nuevo el username para los test
 		selenium.waitForPageToLoad("60000");
-		Helper.log("Se presiona en el enlace que redirecciona a C+B");
-		selenium.click("xpath=.//*[@id='doneInfo']/ul/li[1]/a");
+		//Helper.log("Se presiona en el enlace que redirecciona a C+B"); Al cambiar el pago a PayPal Express no se posee esto
+		//selenium.click("xpath=.//*[@id='doneInfo']/ul/li[1]/a");
 		
-		selenium.waitForPageToLoad("60000");
+		//selenium.waitForPageToLoad("60000");
 		
 		// Selenium Redireccion a la página de ClaireandBruce y confirma que el pedido se ha enviado  \\
 		Helper.log("Se verifica que se encuentre el mensaje de confirmación sobre el pedido realizado con éxito");
@@ -131,7 +120,8 @@ public class LibPayPal extends ClaireandbruceTestCase {
 		{
 			Assert.fail("Error no se encontro el pedido");
 		}
-	
+		
+		
 	
 
 	}

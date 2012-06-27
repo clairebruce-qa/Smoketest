@@ -17,7 +17,7 @@ public class LibCorrectAddProductCartConfigurableProduct extends ClaireandbruceT
 		Helper.log("Se inicia proceso para añadir un producto configurable al carrito de compras");
 		Helper.log("Se busca un producto configurable para agregar al carrito de compras");
 		Helper.log("Si el producto encontrado es simple se continuará con la búsqueda");
-		int categoria = (int) (Math.random()*(4-1+1))+1;
+		int categoria = (int) (Math.random()*(5-1+1))+1;
 		//Para efecto de la prueba
 		//selenium.open(ClaireandbruceUrl);
 		//selenium.waitForPageToLoad("30000");
@@ -29,7 +29,7 @@ public class LibCorrectAddProductCartConfigurableProduct extends ClaireandbruceT
 		//Haga mientras encuentre el menú de selección de talla (producto configurable)
 		do {			
 			Helper.log("Buscando categoría en la posición "+categoria+" del menú superior");
-			categoria = (int) (Math.random()*(4-1+1))+1;
+			categoria = (int) (Math.random()*(5-1+1))+1;
 			if(contador == 4) {
 				categoria = 1;
 			}
