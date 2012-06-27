@@ -22,15 +22,15 @@ public class LibCorrectAddProductCartSimpleProduct extends ClaireandbruceTestCas
 		//Para efecto de la prueba
 		//selenium.open(ClaireandbruceUrl);
 		//selenium.waitForPageToLoad("30000");
-		
+		int contador = 0; //Se permitirá buscar un máximo de 10 categorías para evitar ciclos infinitos
 		Helper.log(" ");
 		Helper.log("Se busca un producto simple para agregar al carrito de compras");
 		Helper.log("Si el producto encontrado es configurable se continuará con la búsqueda");
 		//Se selecciona una categoría entre Bolsos y Accesorios (Categorías que poseen productos simples)		
 		//Haga mientras encuentre el menú de selección de talla (producto configurable)
 		do {
-
-			int categoria = (int) (Math.random()*(5-3+1))+3;
+			contador++;
+			int categoria = (int) (Math.random()*(5-4+1))+4;
 			Helper.log("Buscando categoría en la posición "+categoria+" del menú superior");
 			
 			if(selenium.isElementPresent("xpath=//ul[@id='nav']/li["+categoria+"]/h2/a/span/cufon/canvas")){
@@ -64,13 +64,13 @@ public class LibCorrectAddProductCartSimpleProduct extends ClaireandbruceTestCas
 							
 							selenium.click("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul["+filaArticulo+"]/li["+columnaArticulo+"]/div[3]/a");
 							Helper.log("Ingresando al producto "+nombreProducto);
-							selenium.waitForPageToLoad("50000");
+							selenium.waitForPageToLoad("60000");
 						}
 						Helper.log("Producto actual: "+selenium.getTitle());						
 					}
 				}								
 			} 
-		} while(!selenium.isElementPresent("xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[7]/div/button") );
+		} while(!selenium.isElementPresent("xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[7]/div/button") && contador<10);
 		
 		/*String texto ="";
 		if(selenium.isElementPresent("class=special-price")) {

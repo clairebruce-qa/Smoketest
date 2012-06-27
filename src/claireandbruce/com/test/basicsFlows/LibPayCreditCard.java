@@ -42,12 +42,16 @@ public class LibPayCreditCard extends ClaireandbruceTestCase{
 			selenium.click("id=p_method_sermepa");
 			Helper.log("Se selecciona que la tarjeta es VISA");
 			selenium.click("xpath=//div[@value='VI']");
-			Helper.log("Se ingrea el número de la tarjeta de crédito");
 			//Se ingresan datos de la tarjeta de crédito
+			Helper.log("Se ingresa el número de la tarjeta de crédito");
 			selenium.type("id=cc_number_part1","4548");
 			selenium.type("id=cc_number_part2","8120");
 			selenium.type("id=cc_number_part3","4940");
 			selenium.type("id=cc_number_part4","0004");
+			if(selenium.getValue("name=payment[cc_number]").equals("")){
+				selenium.type("name=payment[cc_number]", "4548812049400004");
+			}
+			//Helper.log("DATOS DE TARJETA DE CRÉDITO"+selenium.getValue("name=payment[cc_number]"));
 			Helper.log("Se selecciona como fecha de vigencia: Mes:12-DICIEMBRE y Año:2012");
 			//Se selecciona mes y año de vigencia
 			selenium.click("xpath=//li[3]/div/div/div/div/div");

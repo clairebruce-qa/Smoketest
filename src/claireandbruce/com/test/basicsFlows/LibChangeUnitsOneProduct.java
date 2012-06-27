@@ -25,12 +25,12 @@ public class LibChangeUnitsOneProduct extends ClaireandbruceTestCase{
 			if(selenium.isElementPresent("link=Compra ahora")){
 				Helper.log("Se ingrea a través del link 'Compra ahora'");
 				selenium.click("link=Compra ahora");
-				selenium.waitForPageToLoad("15000");
+				selenium.waitForPageToLoad("20000");
 			} else {
 				Helper.log("Se ingresa a través del carrito de compras");
 				selenium.click("id=cartHeader");
 				selenium.click("xpath=//ol[@id='mini-cart']/li/div/button");
-				selenium.waitForPageToLoad("15000");			
+				selenium.waitForPageToLoad("20000");			
 			}			
 		}		
 
