@@ -49,7 +49,7 @@ public class LibCorrectAddProductCartSimpleProduct extends ClaireandbruceTestCas
 						Helper.log("Se ingresa a la subcategoría ubicada en la posición "+subcategoria+" del menú lateral izquierdo");
 						
 						selenium.click("xpath=html/body/div/div[3]/div[2]/div[2]/div[1]/a["+subcategoria+"]/div/div");
-						selenium.waitForPageToLoad("50000");					
+						selenium.waitForPageToLoad("45000");					
 							
 						//Se selecciona uno de los artículos de ésta subcategoría
 						int columnaArticulo = (int)(Math.random()*(3))+1;
