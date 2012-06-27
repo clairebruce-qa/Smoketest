@@ -84,7 +84,6 @@ public class LibPayPal extends ClaireandbruceTestCase {
 		
 		//selenium.waitForPageToLoad("30000");
 		
-		username="qualit_1337780842_per@privalia.com";
 		
 		//----**** Se autentica el usuario en Paypal ****----\\
 		Helper.log("Se inicia proceso de autenticación del usuario en PayPal");
@@ -105,7 +104,7 @@ public class LibPayPal extends ClaireandbruceTestCase {
 		// Se confirma el pago en Paypal \\
 		Helper.log("Se confirma el pago en PayPal");
 		selenium.click("id=continue_abovefold");
-		username="stress_test_qa@claireandbruce.com"; //Se configura de nuevo el username para los test
+		
 		selenium.waitForPageToLoad("60000");
 		//Helper.log("Se presiona en el enlace que redirecciona a C+B"); Al cambiar el pago a PayPal Express no se posee esto
 		//selenium.click("xpath=.//*[@id='doneInfo']/ul/li[1]/a");
