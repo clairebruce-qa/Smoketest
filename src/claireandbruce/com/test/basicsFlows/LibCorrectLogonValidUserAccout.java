@@ -1,9 +1,5 @@
 package claireandbruce.com.test.basicsFlows;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-
-import org.junit.After;
-import org.junit.Test;
 
 import com.thoughtworks.selenium.Selenium;
 
@@ -63,7 +59,7 @@ public class LibCorrectLogonValidUserAccout extends ClaireandbruceTestCase {
 			selenium.type("xpath=.//*[@id='pass']", password);		
 			Helper.log("Se hace clic en el botón 'ENTRAR'");
 			selenium.click("//button[contains(@id,'send2')]");	
-			selenium.waitForPageToLoad("60000");
+			selenium.waitForPageToLoad("50000");
 			
 			if (!selenium.isElementPresent( "class=validation-advice")){		
 				if (selenium.isTextPresent("Salir")){
