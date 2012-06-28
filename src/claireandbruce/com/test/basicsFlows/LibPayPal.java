@@ -100,7 +100,7 @@ public class LibPayPal extends ClaireandbruceTestCase {
 		selenium.type("xpath=.//*[@id='login_password']", "337780714");
 		Helper.log("Se hace clic en el botón para iniciar sesión");
 		selenium.click("id=submitLogin");
-		selenium.waitForPageToLoad("40000");
+		selenium.waitForPageToLoad("35000");
 		// Se confirma el pago en Paypal \\
 		Helper.log("Se confirma el pago en PayPal");
 		selenium.click("id=continue_abovefold");
