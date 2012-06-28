@@ -59,7 +59,7 @@ public class TestUserRegisterCheckoutUserRegistrationValidFieldDate extends Clai
 				
 				selenium.waitForPageToLoad("15000");
 				Helper.log("Se hace clic en el botón 'CONTINUA' para el ingreso a 'Compra ahora'");
-				selenium.click("xpath=html/body/div/div[3]/div[1]/div/div[6]/ul[1]/li[1]/button");
+				selenium.click("xpath=(//button[@type='button'])[3]");
 				selenium.waitForPageToLoad("30000");			
 			}		
 			

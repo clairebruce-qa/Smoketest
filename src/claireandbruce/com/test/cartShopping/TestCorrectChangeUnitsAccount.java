@@ -50,7 +50,7 @@ public class TestCorrectChangeUnitsAccount extends ClaireandbruceTestCase {
 		int filaPrecio=4;
 		
 		//Se declaran variables string para separar los caracteres que pertenecen al precio sin unidad de moneda
-		String precio, precioTotal;
+		String precio = null, precioTotal;
 		int cantidad, cantidadNueva;
 		double precioUnitario, precioFinal = 0, precioFinalEsperado;
 		//Primer artículo el cual posee un xpath diferente
@@ -65,7 +65,11 @@ public class TestCorrectChangeUnitsAccount extends ClaireandbruceTestCase {
 					if(selenium.isAlertPresent()){
 						Helper.log("UNIDADES NO DISPONIBLES EN INVENTARIO\nSE VISUALIZA MENSAJE DE ALERTA!");
 					} else {
-						precio = selenium.getText("xpath=//td[4]/span/span");
+						if(selenium.isElementPresent("xpath=//span/div/span/span")){
+							precio = selenium.getText("xpath=//span/div/span/span");
+						} else if(selenium.isElementPresent("xpath=//span/div/p/span")){
+							precio = selenium.getText("xpath=//p[3]/span");
+						}
 									
 						//Se recorren los precios para eliminar referencia a unidad de moneda
 						int index=0;
@@ -133,7 +137,11 @@ public class TestCorrectChangeUnitsAccount extends ClaireandbruceTestCase {
 				} else {
 					cantidadNueva = Integer.parseInt(selenium.getValue("xpath=//tr["+fila+"]/td[2]/input[2]"));
 				
-					precio = selenium.getText("xpath=//tr["+filaPrecio+"]/td[4]/span/span");
+					if(selenium.isElementPresent("xpath=//tr["+filaPrecio+"]/td[4]/span/div/p[3]/span")){
+						precio =  selenium.getText("xpath=//tr["+filaPrecio+"]/td[4]/span/div/p[3]/span");
+					}else {
+						precio = selenium.getText("xpath=//tr["+filaPrecio+"]/td[4]/span/div/p/span");
+					}
 					precioTotal = selenium.getText("xpath=//tr["+filaPrecio+"]/td[5]/span/span");
 					
 					//Se recorren los precios para eliminar referencia a unidad de moneda

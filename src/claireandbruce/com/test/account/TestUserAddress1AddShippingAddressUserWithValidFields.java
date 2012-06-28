@@ -55,7 +55,7 @@ public class TestUserAddress1AddShippingAddressUserWithValidFields extends Clair
 	
 		//Ingresar a traves del botón 'TUS DIRECCIONES' Área privada'
 		Helper.log("Se ingresa a través del botón 'TUS DIRECCIONES' del Área privada");
-		selenium.click("xpath=//div[3]/li/a/span");
+		selenium.click("xpath=//a[2]/div/div/p");
 		Helper.log("Se espera carga de la interfaz");
 		selenium.waitForPageToLoad("60000");
 		

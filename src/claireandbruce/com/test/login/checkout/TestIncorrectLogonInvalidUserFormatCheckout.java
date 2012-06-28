@@ -51,14 +51,26 @@ public class TestIncorrectLogonInvalidUserFormatCheckout extends ClaireandbruceT
 		 // Se agrega el producto al carrito de compras 
 		 LibCorrectAddProductCartSimpleProduct.CBT_SimpleProduct(selenium);
 			//R2
-		 if(!("Compra ahora").equals(selenium.getTitle()))
-			{
-				selenium.click("xpath=.//*[@id='quick-access']/div[1]/div/a");
-				
-				selenium.waitForPageToLoad("15000");
-				selenium.click("xpath=html/body/div/div[3]/div[1]/div/div[6]/ul[1]/li[1]/button");
-				selenium.waitForPageToLoad("20000");			
-			}		
+		if(!("Compra ahora").equals(selenium.getTitle()))
+		{
+			Helper.log("Se busca método de ingreso a la interfaz 'Compra ahora'");
+			if(selenium.isElementPresent("xpath=//ol[@id='mini-cart']/li/div/button")){
+				Helper.log("Se busca ingresar a la interfaz 'Compra ahora' por el botón 'CÓMPRALO AHORA' del header");
+				if(!selenium.isElementPresent("xpath=//ol[@id='mini-cart']/li/div/button")){
+					selenium.click("id=cartHeader");
+				}
+				selenium.click("xpath=//ol[@id='mini-cart']/li/div/button");
+				Helper.log("Se hace clic en el botón 'CÓMPRALO AHORA' del header");
+			} else {
+				Helper.log("Se busca ingresar a la interfaz 'Compra ahora' por el botón 'COMPRA AHORA' ubicado en la parte superior de la interfaz");
+				selenium.click("xpath=//div/div/div/a");
+				Helper.log("Se hace clic en el botón 'COMPRA AHORA' ubicado en la parte superior de la página");			
+			}
+			selenium.waitForPageToLoad("30000");
+			Helper.log("Se presiona el botón 'CONTINUA' de la interfaz 'Shopping Cart'");
+			selenium.click("xpath=(//button[@type='button'])[3]");
+			selenium.waitForPageToLoad("20000");		
+		}		
 			
 			//Si no esta presente el formulario para ingresar los datos de usuario
 			if(!selenium.isElementPresent("xpath=.//*[@id='login-form']/div")) {			

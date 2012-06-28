@@ -48,7 +48,7 @@ public class TestUserRegister1UserRegistrationValidField extends ClaireandbruceT
 				selenium.click("css=div.selreplace_selectbutton");
 				selenium.click("//div[@value='14']");
 				selenium.click("css=span.dob-month > div.selreplace_select > div > div.selreplace_selectbutton");
-				selenium.click("xpath=(//div[@value='8'])[2]");
+				selenium.click("xpath=(//div[@value='2'])[2]");
 				selenium.click("css=span.dob-year > div.selreplace_select > div > div.selreplace_selectbutton");
 				selenium.click("//div[@value='1988']");
 				selenium.type("id=password", "123456");

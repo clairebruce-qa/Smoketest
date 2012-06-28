@@ -39,7 +39,7 @@ public class TestHomePageNavigability6TestNavigationByCategoryHeaderMark extends
 			//Se da click en el link hasta que vuelva a estar visible la primera imagen de marca presente (French Connection)
 			Helper.log("Se navega por el carrusel de marcas");
 			while(cont<=5){
-				selenium.click("xpath=.//*[@id='next']/img");
+				selenium.click("xpath=//a[@id='next']/img");
 				cont++;
 			}
 			cont=1;
