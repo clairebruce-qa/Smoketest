@@ -78,7 +78,7 @@ public class LibPayPal extends ClaireandbruceTestCase {
 		Helper.log("Se hace clic en el botón 'PAGAR'");
 		selenium.click("xpath=//div[@id='checkout-buttons-container']/button");
 		Helper.log("Se espera carga de la interfaz de PayPal a la que se redirecciona para finalizar el pago");
-		selenium.waitForPageToLoad("60000");
+		selenium.waitForPageToLoad("35000");
 		
 		//----**** Se confirma el pago en Paypal ----****\\
 		
