@@ -49,7 +49,7 @@ public class TestFlowI extends ClaireandbruceTestCase{
 		String nombreProducto= LibCorrectAddProductCartSimpleProduct.CBT_SimpleProduct(selenium);
 		
 		//Se añade un producto para realizar cambio de unidades
-		//Lib_ChangeUnits_OneProduct.changeUnits(selenium);
+		//LibChangeUnitsOneProduct.changeUnits(selenium);
 		
 		//Se selecciona el tipo de envío
 		//Lib_TypeShipping.typeShipping(selenium);

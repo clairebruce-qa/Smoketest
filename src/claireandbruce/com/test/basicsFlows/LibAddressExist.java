@@ -38,15 +38,17 @@ public class LibAddressExist extends ClaireandbruceTestCase {
 		Helper.log("Se busca método de ingreso a la interfaz 'Compra ahora'");
 		if(selenium.isElementPresent("xpath=//ol[@id='mini-cart']/li/div/button")){
 			Helper.log("Se busca ingresar a la interfaz 'Compra ahora' por el botón 'CÓMPRALO AHORA' del header");
+			if(!selenium.isElementPresent("xpath=//ol[@id='mini-cart']/li/div/button")){
+				selenium.click("id=cartHeader");
+			}
 			selenium.click("xpath=//ol[@id='mini-cart']/li/div/button");
-			Helper.log("Se hace clic en el botón 'CÓMPRALO AHROA' del header");
-			selenium.waitForPageToLoad("30000");
+			Helper.log("Se hace clic en el botón 'CÓMPRALO AHORA' del header");
 		} else {
 			Helper.log("Se busca ingresar a la interfaz 'Compra ahora' por el botón 'COMPRA AHORA' ubicado en la parte superior de la interfaz");
 			selenium.click("xpath=//div/div/div/a");
-			Helper.log("Se hace clic en el botón 'COMPRA AHORA' ubicado en la parte superior de la página");
-			selenium.waitForPageToLoad("30000");
+			Helper.log("Se hace clic en el botón 'COMPRA AHORA' ubicado en la parte superior de la página");			
 		}
+		selenium.waitForPageToLoad("30000");
 		Helper.log("Se presiona el botón 'CONTINUA' de la interfaz 'Shopping Cart'");
 		selenium.click("xpath=(//button[@type='button'])[3]");
 		selenium.waitForPageToLoad("20000");
