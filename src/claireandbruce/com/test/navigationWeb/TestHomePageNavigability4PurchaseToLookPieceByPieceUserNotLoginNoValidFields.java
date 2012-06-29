@@ -37,7 +37,7 @@ public class TestHomePageNavigability4PurchaseToLookPieceByPieceUserNotLoginNoVa
 		}
 		
 
-		if(!selenium.isElementPresent("xpath=html/body/div/div[2]/div/div/div[1]/div[3]/div[1]/a/img"))
+		if(!selenium.isElementPresent("xpath=//div/a/img"))
 		{
 			
 			message="ERROR: Elemento no encontrado";
@@ -46,7 +46,7 @@ public class TestHomePageNavigability4PurchaseToLookPieceByPieceUserNotLoginNoVa
 		}
 		else{
 			Helper.log("Se ingrea a la imagen");
-		selenium.click("xpath=html/body/div/div[2]/div/div/div[1]/div[3]/div[1]/a/img");
+		selenium.click("xpath=//div/a/img");
 		
 		selenium.waitForPageToLoad("30000");
 		assertTrue(selenium.isElementPresent("id=total-look-part"));

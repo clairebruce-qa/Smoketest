@@ -75,22 +75,17 @@ public class TestCatalogWomen2TestCatalogWomenFilterPriceViewsProductLook extend
 				else{
 					nuevoP+=".";
 				}
-				cant++;
-				Helper.log("PRECIO MAYOR "+nuevoP);
+				cant++;				
 			}
-			
+			Helper.log("PRECIO MAYOR "+nuevoP);
 			precio=Double.parseDouble(nuevoP);
 			
 			double precio2 =0.00;
 			// Se extrae el precio Menor
 			String texto2 ="";
-			String nuevoP2="";
-			
+			String nuevoP2="";			
 			
 			texto2 = selenium.getText("//li[3]/div[4]/div/span/span");
-			
-			
-			
 			
 			Helper.log(texto2);
 			int cant2=0;
@@ -103,8 +98,7 @@ public class TestCatalogWomen2TestCatalogWomenFilterPriceViewsProductLook extend
 				else{
 					nuevoP2+=".";
 				}
-				cant2++;
-				Helper.log("PRECIO MENOR "+nuevoP2);
+				cant2++;				
 			}
 			precio2=Double.parseDouble(nuevoP2);
 			Helper.log("// ---- **** ORDENAR DE MAYOR A MENOR **** ----\\");
@@ -118,7 +112,6 @@ public class TestCatalogWomen2TestCatalogWomenFilterPriceViewsProductLook extend
 		
 		// ---- **** ORDENAR DE MENOR A MAYOR **** ----\\
 		if(selenium.isElementPresent("xpath=html/body/div[1]/div[3]/div[1]/div/div[1]/div[3]/div/div[2]/div/div/div[1]")){
-			
 			
 			selenium.click("xpath=html/body/div[1]/div[3]/div[1]/div/div[1]/div[3]/div/div[2]/div/div/div[1]");
 			selenium.waitForPageToLoad("30000");
@@ -143,8 +136,7 @@ public class TestCatalogWomen2TestCatalogWomenFilterPriceViewsProductLook extend
 				else{
 					nuevoP+=".";
 				}
-				cant++;
-			
+				cant++;			
 			}
 			
 			precio=Double.parseDouble(nuevoP);
@@ -172,8 +164,7 @@ public class TestCatalogWomen2TestCatalogWomenFilterPriceViewsProductLook extend
 				else{
 					nuevoP2+=".";
 				}
-				cant2++;
-			
+				cant2++;			
 			}
 			precio2=Double.parseDouble(nuevoP2);
 			Helper.log("// ---- **** ORDENAR DE MENOR A MAYOR **** ----\\");
@@ -188,24 +179,18 @@ public class TestCatalogWomen2TestCatalogWomenFilterPriceViewsProductLook extend
 		// ---*** Se Carga el catalogo de Ropa ***---\\
 		selenium.click("xpath=.//*[@id='nav']/li[1]/h2/a/span/cufon/canvas");
 		selenium.waitForPageToLoad("30000");
-		
-		
-		
-		
+						
 		
 		// ---- **** VISTA POR LOOK **** ----\\
 		
 		
-
 		if(!selenium.isElementPresent("xpath=.//*[@id='productMode']") || !selenium.isElementPresent("xpath=.//*[@id='totalLookMode']") )
 		{
-			Assert.fail("El link de vista por producto y look no estan disponible");
-			
+			Assert.fail("El link de vista por producto y look no estan disponible");			
 		}
 		
 		
-		// ---- **** VISTA POR NOVEDADES  **** ----\\
-		
+		// ---- **** VISTA POR NOVEDADES  **** ----\\		
 		
 
 		if(!selenium.isElementPresent("xpath=html/body/div[1]/div[3]/div[1]/div/div[1]/div[3]/div/div[2]/div/div/div[3]") )
@@ -219,9 +204,11 @@ public class TestCatalogWomen2TestCatalogWomenFilterPriceViewsProductLook extend
 			selenium.waitForPageToLoad("30000");
 		}
 		
-		if(!selenium.isTextPresent("NEW"))
+		if(selenium.isTextPresent("NEW") || selenium.isTextPresent("Nueva Promoción"))
 		{
-			Assert.fail("El filtro por novedades no se aplico");
+			Helper.log("Se han encontrado productos con etiqueta de Nuevo o Nueva Promoción");
+		} else {
+			Helper.log("No se han encontrado productos con etiqueta de Nuevo o Nueva Promoción");
 		}
 	
 	}

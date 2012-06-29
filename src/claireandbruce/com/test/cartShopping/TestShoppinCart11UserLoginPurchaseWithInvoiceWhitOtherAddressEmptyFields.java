@@ -94,6 +94,7 @@ public class TestShoppinCart11UserLoginPurchaseWithInvoiceWhitOtherAddressEmptyF
 			 Assert.fail("Campo nombre acepta valores vacíos");
 		 }
 		selenium.click("id=billing:lastname");
+		selenium.type("id=billing:lastname", "");
 		if ( !selenium.isElementPresent("id=advice-required-entry-billing:lastname"))	{ 
 			Assert.fail("Campo Apellido acepta valores vacíos");
 		 }
@@ -119,30 +120,24 @@ public class TestShoppinCart11UserLoginPurchaseWithInvoiceWhitOtherAddressEmptyF
 				Assert.fail("Campo Provincia acepta valores vacíos");
 			}
 
-			if ("Campo obligatorio.".equals(selenium.getText("id=advice-required-entry-billing:postcode"))) {
+			if (!"Campo obligatorio.".equals(selenium.getText("id=advice-required-entry-billing:postcode"))) {
 				Assert.fail("Campo código postal acepta valores vacíos");
 			}
-
-	
-			 if ("España".equals(selenium.getText("//li[@id='billing-new-address-form']/fieldset/ul/li[6]/div[2]/div/div/div/div"))) {
-				 Assert.fail("Campo país es obligatorio");
-			 }
-
 	
 			if (!selenium.isElementPresent("id=advice-required-entry-billing:telephone")) {
 				 Assert.fail("Campo teléfono es obligatorio");
 			}
 
 	
-			if ("Seleccione una de las opciones.".equals(selenium.getText("xpath=.//*[@id='checkout-payment-method-load']/dt[1]"))) {
-				 Assert.fail("No selecciono ningún método");
+			if (!"Seleccione una de las opciones.".equals(selenium.getText("xpath=//div[@id='advice-validate-one-required-by-name-p_method_sermepa']"))) {
+				 Assert.fail("No seleccionó método de pago, no se muestra mensaje de advertencia");
 			}
-			if ("Seleccione una de las opciones.".equals(selenium.getText("xpath=.//*[@id='advice-validate-one-required-by-name-p_method_checkmo']"))) {
-				 Assert.fail("No selecciono ningún método");
+			if (!"Seleccione una de las opciones.".equals(selenium.getText("xpath=.//*[@id='advice-validate-one-required-by-name-p_method_checkmo']"))) {
+				 Assert.fail("No seleccionó método de pago, no se muestra mensaje de advertencia");
 			}
 
-			if ("Seleccione una de las opciones.".equals(selenium.getText("xpath=.//*[@id='advice-validate-one-required-by-name-p_method_checkmo']"))) {
-				 Assert.fail("No selecciono ningún método");
+			if (!"Seleccione una de las opciones.".equals(selenium.getText("xpath=.//*[@id='advice-validate-one-required-by-name-p_method_paypal_express']"))) {
+				 Assert.fail("No seleccionó método de pago, no se muestra mensaje de advertencia");
 			}
 			if(("off").equals(selenium.getValue("id=agreement-1"))) {
 				selenium.click("id=agreement-1");						

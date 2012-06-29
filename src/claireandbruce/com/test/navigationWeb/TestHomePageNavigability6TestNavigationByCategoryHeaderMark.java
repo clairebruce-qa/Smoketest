@@ -31,8 +31,8 @@ public class TestHomePageNavigability6TestNavigationByCategoryHeaderMark extends
 		//Clic en el link MARCAS 
 		//if(selenium.isElementPresent("xpath=.//*[@id='nav']/li[5]/a/span/cufon/canvas")){
 		Helper.log("Se ingresa al link Marcas");
-			if(selenium.isElementPresent("xpath=.//*[@id='nav']/li[5]/h2/a/span/cufon/canvas")){
-			selenium.click("xpath=.//*[@id='nav']/li[5]/h2/a/span/cufon/canvas");
+			if(selenium.isElementPresent("xpath=//li[6]/h2/a/span/cufon/canvas")){
+			selenium.click("xpath=//li[6]/h2/a/span/cufon/canvas");
 			Helper.log("Se espera carga de la interfaz");
 			selenium.waitForPageToLoad("30000");
 			int cont=1; //Se tomaran como maximo de 4 marcas mostradas en el carrusel

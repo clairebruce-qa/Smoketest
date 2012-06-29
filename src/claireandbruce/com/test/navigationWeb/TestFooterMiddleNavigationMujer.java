@@ -24,10 +24,10 @@ public class TestFooterMiddleNavigationMujer extends ClaireandbruceTestCase{
 		while(columna<=4){
 		
 			//Obtiene el texto de cada link para verificarlo en la ventana de despliegue
-			String texto= selenium.getText("xpath=html/body/div/div[4]/div/div[3]/div["+columna+"]/div[1]/a");
+			String texto= selenium.getText("xpath=//div[3]/div["+columna+"]/div/a");
 			
 			//Se Carga y verifica las interfaces de cada link 
-			Helper.clickAndVerify(selenium, "xpath=html/body/div/div[4]/div/div[3]/div["+columna+"]/div[1]/a", texto, "class=breadcrumbs-present");
+			Helper.clickAndVerify(selenium, "xpath=//div[3]/div["+columna+"]/div/a", texto, "class=breadcrumbs-present");
 			//Se Retorna a la página Principal de Bienvenida
 			Helper.clickAndVerify(selenium, "xpath=//img", "Tu cuenta", "link=Tu cuenta");
 			int div=2;
@@ -36,23 +36,35 @@ public class TestFooterMiddleNavigationMujer extends ClaireandbruceTestCase{
 				Helper.clickAndVerify(selenium, "xpath=//div[3]/div/div[2]/ul/li/a", texto, "class=breadcrumbs-present");
 				texto=selenium.getText("xpath=//div[3]/div/div[2]/ul/li[2]/a");
 				Helper.clickAndVerify(selenium, "xpath=//div[3]/div/div[2]/ul/li[2]/a", texto, "class=breadcrumbs-present");
-				int literal=4;
-				while(literal<=13){
-					texto=selenium.getText("xpath=//li["+4+"]/a");
-					if(literal!=8){
-						Helper.clickAndVerify(selenium, "xpath=//li["+4+"]/a", texto, "class=breadcrumbs-present");
+				Helper.clickAndVerify(selenium, "xpath=//img", "Tu cuenta", "link=Tu cuenta");
+				int literal=3;
+				while(literal<=13){					
+					if(literal==3){
+						texto = selenium.getText("xpath=//div[2]/ul/li[3]/a");
+						Helper.clickAndVerify(selenium, "xpath=//div[2]/ul/li[3]/a", texto, "class=breadcrumbs-present");						
+					}else if(literal!=8 && literal!=9 && literal!=10){
+						texto=selenium.getText("xpath=//li["+literal+"]/a");
+						Helper.clickAndVerify(selenium, "xpath=//li["+literal+"]/a", texto, "class=breadcrumbs-present");
 					} else {
-						Helper.clickAndVerify(selenium, "xpath=//div[2]/ul/li[8]/a", texto, "class=breadcrumbs-present");
+						texto = selenium.getText("xpath=//div[2]/ul/li["+literal+"]/a");
+						Helper.clickAndVerify(selenium, "xpath=//div[2]/ul/li["+literal+"]/a", texto, "class=breadcrumbs-present");
 					}
 					literal++;
 					Helper.clickAndVerify(selenium, "xpath=//img", "Tu cuenta", "link=Tu cuenta");
 				}
 			
 			} else {
-				texto=selenium.getText("xpath=//div["+div+"]/div[2]/ul/li/a");
-				Helper.clickAndVerify(selenium, "xpath=//div["+div+"]/div[2]/ul/li/a", texto, "class=breadcrumbs-present");
-				texto=selenium.getText("xpath=//div[3]/div/div[2]/ul/li[2]/a");
-				Helper.clickAndVerify(selenium, "xpath=//div[3]/div/div[2]/ul/li[2]/a", texto, "class=breadcrumbs-present");			
+				int literal=1;
+				texto = selenium.getText("xpath=//div["+columna+"]/div[2]/ul/li/a");
+				Helper.clickAndVerify(selenium, "xpath=//div["+columna+"]/div[2]/ul/li/a", texto, "class=breadcrumbs-present");
+				Helper.clickAndVerify(selenium, "xpath=//img", "Tu cuenta", "link=Tu cuenta");
+				literal++;
+				while(selenium.isElementPresent("xpath=//div["+columna+"]/div[2]/ul/li["+literal+"]/a")){
+					texto = selenium.getText("xpath=//div["+columna+"]/div[2]/ul/li["+literal+"]/a");
+					Helper.clickAndVerify(selenium, "xpath=//div["+columna+"]/div[2]/ul/li["+literal+"]/a", texto, "class=breadcrumbs-present");
+					Helper.clickAndVerify(selenium, "xpath=//img", "Tu cuenta", "link=Tu cuenta");
+					literal++;
+				}
 			}
 			
 			//Se Retorna a la página Principal de Bienvenida

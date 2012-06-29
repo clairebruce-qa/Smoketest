@@ -56,11 +56,11 @@ public class TestMagazinHomePage1NavegabilityMagazinUserNoLogin extends Clairean
 		
 		//Verifica si los botones de navegacion estan presentes
 		if(!selenium.isElementPresent("xpath=//div[@id='carousel-subhome']/div[2]")){
-			Helper.log("El boton de navegacion no se encuentra");
+			Helper.log("El botón de navegación no se encuentra");
 		}
 		
 		if(!selenium.isElementPresent("xpath=//div[@id='carousel-subhome']/div[3]")){
-			Helper.log("El boton de navegacion no se encuentra");
+			Helper.log("El botón de navegación no se encuentra");
 		}
 		
 		//verifica sin se agregan los productos correctamente al carrito de compras
@@ -98,15 +98,20 @@ public class TestMagazinHomePage1NavegabilityMagazinUserNoLogin extends Clairean
 			//Haga mientras NO encuentre el botón AÑADIR A LA CESTA
 			
 		
+			if(selenium.isElementPresent("xpath=//img[2]")){
+				selenium.click("xpath=//img[2]");
+				selenium.waitForPageToLoad("15000");
+			}
 			//Si se encuentra este botón se encuentra visualizado un producto configurable.
-			if(selenium.isElementPresent("class=selreplace_selectinner"))	{
+			if(selenium.isElementPresent("xpath=//div[9]/div/button"))	{
 				//Click sobre combo seleccionar una talla
-				Helper.log("Se selecciona una talla");
-				selenium.click("class=selreplace_selectinner");
+				Helper.log("Se despliega el combo para seleccionar talla");
+				selenium.click("xpath=//div[8]/div[3]/div/div");
 					
 				int i =(int)(Math.random()*(5-2+1))+2;
 				int cont=1;	
-				while(!selenium.isElementPresent("xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[9]/div[4]/div/div/div["+i+"]")) {
+				while(!selenium.isElementPresent("xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[8]/div[4]/div/div/div["+i+"]")) {
+					Helper.log("Buscando una talla disponible");
 					i =(int)(Math.random()*(5-2+1))+2;
 					cont++;
 					if(cont==4){
@@ -114,29 +119,27 @@ public class TestMagazinHomePage1NavegabilityMagazinUserNoLogin extends Clairean
 						break;
 					}
 				}
-				
-				if(selenium.isElementPresent("xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[9]/div[4]/div/div/div["+i+"]"))
-				{//Se selecciona una de las tallas disponibles del producto y se verifica que se seleccionó correctamente		
-					
-					Helper.clickAndVerify(selenium, "xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[9]/div[4]/div/div/div["+i+"]",selenium.getText("xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[9]/div[4]/div/div/div["+i+"]") , "xpath=//div[9]/div[3]/div/div");}
+				if(selenium.isElementPresent("xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[8]/div[4]/div/div/div["+i+"]"))
+				{//Se selecciona una de las tallas disponibles del producto y se verifica que se seleccionó correctamente
+					Helper.log("Se selecciona la talla");
+					Helper.clickAndVerify(selenium, "xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[8]/div[4]/div/div/div["+i+"]",selenium.getText("xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[8]/div[4]/div/div/div["+i+"]") , "xpath=//div[8]/div[3]/div/div");}
 				else{									   
-					Helper.clickAndVerify(selenium, "class=selreplace_option",selenium.getText("class=selreplace_option") , "class=selreplace_selectinner");
+					Helper.clickAndVerify(selenium, "xpath=//div[8]/div[3]/div/div",selenium.getText("xpath=//div[8]/div[3]/div/div") , "xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[8]/div[3]/div/div");
 				}
 				
 				//Clic en botón "AÑADIR A LA CESTA"
-				Helper.log("Se hace clic en el botón 'AÑADIR A LA CESTA' de un producto configurable");
+				Helper.log("Se ha presionado el botón 'AÑADIR A LA CESTA' se está esperando confirmación de que el producto ha sido añadido a la cesta");
 				selenium.click("xpath=//div[9]/div/button");
-				Helper.log(nombreProducto);
-				String texto ="";
-				//Se comprueba con el precio del producto que este ha sido agregado
-				if(selenium.isElementPresent("class=special-price")) {
-					Helper.log("Se encuentra el producto con promoción");
-					texto = selenium.getText("class=special-price");
+				//Se comprueba con el producto ha sido agregado a través de su nombre
+				Helper.log("Se da clic en el carrito de compras del header");
+				selenium.click("id=cartHeader");
+				Helper.log("Se verifica que el producto muestra en el carrito de compras");
+				String id= "xpath=//a[contains(text(),'"+nombreProducto+"')]";
+				if(selenium.isElementPresent(id)){
+					Helper.log("El producto ha sido añadido con éxito al carrito de compras");
 				} else {
-					texto = selenium.getText("class=price");
+					Helper.log("El producto no ha sido añadido al carrito de compras");
 				}
-				Helper.log("Se verifica el precio del producto añadido al carrito de compras");
-				Helper.clickAndVerify(selenium, "id=cartHeader", texto, "xpath=//p[2]/span");
 			} else {
 				//Se encuentra actualmente en un producto simple
 				//Clic en botón "AÑADIR A LA CESTA"
@@ -151,10 +154,13 @@ public class TestMagazinHomePage1NavegabilityMagazinUserNoLogin extends Clairean
 				} else {
 					texto = selenium.getText("class=price");
 				}
-				Helper.log("Se verifica el precio del producto añadido al carrito de compras");
-				Helper.clickAndVerify(selenium, "id=cartHeader", texto, "xpath=//p[2]/span");
-			}
-				
-		
+				Helper.log("Se verifica que el producto muestra en el carrito de compras");
+				String id= "xpath=//a[contains(text(),'"+nombreProducto+"')]";
+				if(selenium.isElementPresent(id)){
+					Helper.log("El producto ha sido añadido con éxito al carrito de compras");
+				} else {
+					Helper.log("El producto no ha sido añadido al carrito de compras");
+				}				
+			}		
 	}
 }

@@ -14,17 +14,16 @@ public class TestHomePageNavigability3PurchaseToCompleteLookNotLoginNoValidField
 	
 	@Test
 	public void CBT33 () throws Exception{
-		//Tener desplegada la interfaz del primer estilo (bohemian-style)
-		//selenium.open("bohemian-style.html");
+		//Tener desplegada la interfaz del primer estilo
 		Helper.log("Se prueba la navegabilidad por los Total Look");
 		Helper.log("Se carga la página "+ClaireandbruceUrl);
 		selenium.open("");
 		selenium.waitForPageToLoad("20000");
 
 		//La prueba se realiza solo si el total look se encuentra
-		if(selenium.isElementPresent("xpath=html/body/div/div[2]/div/div/div[1]/div[3]/div[1]/a/img")){
+		if(selenium.isElementPresent("xpath=//div/a/img")){
 			Helper.log("Se ingresa al look");
-			selenium.click("xpath=html/body/div/div[2]/div/div/div[1]/div[3]/div[1]/a/img");
+			selenium.click("xpath=//div/a/img");
 			Helper.log("Se espera la carga de la interfaz");
 			selenium.waitForPageToLoad("15000");
 			
@@ -52,7 +51,7 @@ public class TestHomePageNavigability3PurchaseToCompleteLookNotLoginNoValidField
 			}
 			
 			//Si el link Salir se encuentra presente se procede a realizar logout
-			if(selenium.isElementPresent("xpath=html/body/div/div[1]/div[1]/div[1]/div/ul/li[3]/a")){
+			if(selenium.isElementPresent("link=Salir")){
 				Claireandbruce.logout(selenium);
 			}
 							

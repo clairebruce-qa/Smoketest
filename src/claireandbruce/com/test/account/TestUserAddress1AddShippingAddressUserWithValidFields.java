@@ -50,6 +50,8 @@ public class TestUserAddress1AddShippingAddressUserWithValidFields extends Clair
 				
 				LibCorrectLogonValidUserAccout.CBT55(selenium);
 			}
+		} else {
+			LibCorrectLogonValidUserAccout.CBT55(selenium);
 		}
 			
 	
