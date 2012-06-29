@@ -140,8 +140,8 @@ public class TestCorrectChangeUnitsAccount extends ClaireandbruceTestCase {
 					if(selenium.isElementPresent("xpath=//tr["+filaPrecio+"]/td[4]/span/div/p[3]/span")){
 						precio =  selenium.getText("xpath=//tr["+filaPrecio+"]/td[4]/span/div/p[3]/span");
 					}else {
-						precio = selenium.getText("xpath=//tr["+filaPrecio+"]/td[4]/span/div/p/span");
-					}
+						precio = selenium.getText("xpath=//tr["+filaPrecio+"]/td[4]/span/div/span/span");
+					}					
 					precioTotal = selenium.getText("xpath=//tr["+filaPrecio+"]/td[5]/span/span");
 					
 					//Se recorren los precios para eliminar referencia a unidad de moneda

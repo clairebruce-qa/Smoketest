@@ -33,7 +33,7 @@ public class TestForgottenPasswordInvalidUserAccount extends ClaireandbruceTestC
 		  }	
 		  
 		  // Si el usuario esta autenticado se sale \\
-		  if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
+		  if(selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
 				Claireandbruce.logout(selenium);
 				
 			}
