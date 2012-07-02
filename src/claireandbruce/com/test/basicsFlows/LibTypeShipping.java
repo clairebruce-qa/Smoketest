@@ -61,7 +61,6 @@ public class LibTypeShipping extends ClaireandbruceTestCase {
 			String str_valorEnvio ="";
 			
 			double total=0.00;
-			tipoEnvio=2;
 			//Envío 1= Standard - Envío 2= Express
 			if(tipoEnvio==1){
 				Helper.log("Tipo de Envío seleccionado STANDARD");
@@ -87,9 +86,7 @@ public class LibTypeShipping extends ClaireandbruceTestCase {
 				valorEnvio = Double.parseDouble(str_valorEnvio);
 				Helper.log("El valor de envío encontrado es: "+valorEnvio);
 				//Total = subtotal + valorEnvio
-				total = subtotal+valorEnvio;
-				DecimalFormat myFormatter = new DecimalFormat("0.00");
-				precioTotalCalculado = myFormatter.format(total);			
+						
 				
 			} else {
 				Helper.log("Tipo de Envío seleccionado EXPRESS");
@@ -110,11 +107,13 @@ public class LibTypeShipping extends ClaireandbruceTestCase {
 					index++;
 				}
 				valorEnvio = Double.parseDouble(str_valorEnvio);
-				Helper.log("Valor de envío encontrado: "+valorEnvio);
-				total = subtotal+valorEnvio;
-				DecimalFormat myFormatter = new DecimalFormat("0.00");
-				precioTotalCalculado = myFormatter.format(total);
+				Helper.log("Valor de envío encontrado: "+valorEnvio);				
 			}
+			
+			total = subtotal+valorEnvio;
+			Helper.log("Subtotal: "+subtotal+" Valor de envío: "+valorEnvio);
+			DecimalFormat myFormatter = new DecimalFormat("0.00");
+			precioTotalCalculado = myFormatter.format(total);	
 			
 			//Se eliminan comas presentes, cambian por puntos para realizar los cálculos necesarios del total esperado
 			index=0;
@@ -131,7 +130,7 @@ public class LibTypeShipping extends ClaireandbruceTestCase {
 			Helper.log("Precio total Esperado: "+precioTotalCalculado);
 			Helper.log("Se obtiene el valor total del pedido con gastos de Envío");
 			//Se obtiene el valor total con gastos de Envío visualizada en la aplicación
-			String str_total = selenium.getText("css=html.cufon-active body.checkout-cart-index div.wrapper div.main div.col-main div.cart div.totals div#totals-block table#shopping-cart-totals-table tfoot#price-checkout-top.price-checkout-top tr td.a-right strong span.price cufon.cufon cufontext");
+			String str_total = selenium.getText("xpath=//li/div/div/span");
 			totalParaPayPal=str_total;
 			Helper.log("Valor total del pedido con gastos de envío visualizado es: "+str_total);
 			//Se eliminan comas presentes, cambian por puntos para realizar los cálculos necesarios del total visualizado

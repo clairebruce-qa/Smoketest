@@ -90,7 +90,7 @@ public class LibChangeUnitsOneProduct extends ClaireandbruceTestCase{
 				while(indexCharCal < precioTotalCalculado.length()) {
 					if(precioTotalCalculado.charAt(indexCharCal)!=',' && precioTotalCalculado.charAt(indexCharCal)!='.'){
 						auxPrecioCal+=precioTotalCalculado.charAt(indexCharCal);
-					}else if(precioTotalCalculado.charAt(indexCharCal)!=','){
+					}else if(precioTotalCalculado.charAt(indexCharCal)==','){
 						auxPrecioCal+=".";
 					}							
 					indexCharCal++;
@@ -103,15 +103,15 @@ public class LibChangeUnitsOneProduct extends ClaireandbruceTestCase{
 				while(indexCharCal < precioTotalApp.length()) {
 					if(precioTotalApp.charAt(indexCharCal)!=',' && precioTotalApp.charAt(indexCharCal)!='.'){
 						auxPrecioCal+=precioTotalApp.charAt(indexCharCal);
-					}else if(precioTotalApp.charAt(indexCharCal)!=','){
+					}else if(precioTotalApp.charAt(indexCharCal)==','){
 						auxPrecioCal+=".";
 					}							
 					indexCharCal++;
 				}
 				precioTotalApp = auxPrecioCal;
 				Helper.log("Precio total visualizado en la aplicación: "+precioTotalApp);
-				assertEquals(precioTotalApp, auxPrecioCal);
-				Helper.log("CantidadNueva= "+cantidadNueva+" PrecioUnitario= "+precioUnitario+" precioTotal= "+precioTotalApp+" PrecioEsperado "+auxPrecioCal);	
+				assertEquals(precioTotalCalculado, precioTotalApp);
+				Helper.log("CantidadNueva= "+cantidadNueva+" PrecioUnitario= "+precioUnitario+" precioTotal= "+precioTotalApp+" PrecioEsperado "+precioTotalCalculado);	
 			}					
 		} else {
 			Assert.fail("ELEMENTO NO ENCONTRADO PARA REALIZAR CAMBIO DE UNIDADES");
