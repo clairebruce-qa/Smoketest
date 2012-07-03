@@ -6,11 +6,8 @@ import lib.Helper;
 import org.junit.Test;
 
 import claireandbruce.com.test.basicsFlows.LibAddressExist;
-import claireandbruce.com.test.basicsFlows.LibChangeUnitsOneProduct;
 import claireandbruce.com.test.basicsFlows.LibCorrectAddProductCartSimpleProduct;
 import claireandbruce.com.test.basicsFlows.LibCorrectLogonCheckout;
-import claireandbruce.com.test.basicsFlows.LibCorrectLogonValidUserAccout;
-import claireandbruce.com.test.basicsFlows.LibPayChecking;
 import claireandbruce.com.test.basicsFlows.LibPayCreditCard;
 import claireandbruce.com.test.basicsFlows.LibShoppingCart3DeleterItemShoppingCart;
 import claireandbruce.com.test.basicsFlows.LibWithPurchase;
@@ -19,7 +16,7 @@ import claireandbruce.com.test.basicsFlows.LibWithPurchaseAndOtherAddress;
 
 import basics.ClaireandbruceTestCase;
 /**
- * FLUJOIII: ProductoSimple + CambioUnidades + TipoEnvío + LoginCheckout + DirecciónExistente + Factura + DirecciónFactura != DirecciónEnvío + PagoCheque
+ * FLUJOIII: ProductoSimple + EliminarProducto + ProductoSimple + TipoEnvío + LoginCheckout + DirecciónExistente + Factura + DirecciónFactura != DirecciónEnvío + PagoCheque
  * @author NEWSHORE
  *
  */
@@ -44,13 +41,13 @@ public class TestFlowIII extends ClaireandbruceTestCase{
 		LibCorrectAddProductCartSimpleProduct.CBT_SimpleProduct(selenium);
 		
 		//Se elimina el producto 
-		//LibShoppingCart3DeleterItemShoppingCart.CBT24(selenium);
+		LibShoppingCart3DeleterItemShoppingCart.CBT24(selenium);
 		
 		//Se agrega un producto simple 
-		//Lib_CorrectAddProduct_Cart_SimpleProduct.CBT_SimpleProduct(selenium);
+		LibCorrectAddProductCartSimpleProduct.CBT_SimpleProduct(selenium);
 		
 		//Se cambian las unidades del producto
-		LibChangeUnitsOneProduct.changeUnits(selenium);
+		//LibChangeUnitsOneProduct.changeUnits(selenium);
 		
 		//Se selecciona aleatoriamente el tipo de envío
 		LibTypeShipping.typeShipping(selenium);

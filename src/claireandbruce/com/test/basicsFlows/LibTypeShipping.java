@@ -59,7 +59,7 @@ public class LibTypeShipping extends ClaireandbruceTestCase {
 			Helper.log("Se obtiene el subtotal del pedido para realizar la verificación posteriormente");
 			double valorEnvio = 0.00;		
 			String str_valorEnvio ="";
-			
+			tipoEnvio=2;
 			double total=0.00;
 			//Envío 1= Standard - Envío 2= Express
 			if(tipoEnvio==1){
@@ -130,7 +130,7 @@ public class LibTypeShipping extends ClaireandbruceTestCase {
 			Helper.log("Precio total Esperado: "+precioTotalCalculado);
 			Helper.log("Se obtiene el valor total del pedido con gastos de Envío");
 			//Se obtiene el valor total con gastos de Envío visualizada en la aplicación
-			String str_total = selenium.getText("xpath=//li/div/div/span");
+			String str_total = selenium.getText("xpath=/html/body/div/div[3]/div/div/div[6]/div/table/tfoot/tr/td[2]/strong/span/cufon/cufontext");
 			totalParaPayPal=str_total;
 			Helper.log("Valor total del pedido con gastos de envío visualizado es: "+str_total);
 			//Se eliminan comas presentes, cambian por puntos para realizar los cálculos necesarios del total visualizado

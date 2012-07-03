@@ -44,7 +44,6 @@ public class LibChangeUnitsOneProduct extends ClaireandbruceTestCase{
 			cantidad=cantidad+1;
 			Helper.log("Se cambian las unidades actuales "+(cantidad-1)+" por "+cantidad);
 			selenium.type("//table[@id='shopping-cart-table']/tbody/tr[2]/td[2]/input[2]", ""+cantidad);
-			selenium.waitForPageToLoad("25000");
 			
 			if(selenium.isAlertPresent()){
 				Helper.log("UNIDADES NO DISPONIBLES EN INVENTARIO\nSE VISUALIZA MENSAJE DE ALERTA!");

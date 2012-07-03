@@ -30,14 +30,8 @@ public class LibShoppingCart3DeleterItemShoppingCart extends ClaireandbruceTestC
 	public static void CBT24(Selenium selenium) throws Exception
 	{		
 		//----------***** SE DESPLIEGA LA VENTANA *****---------------------\\
-				
-		// SE PONE EN COMENTARIO CUANDO SE CORRA EN EL FLUJO, SE ACTIVA CUANDO SE CORRE UNITARIO
-				
-		/*selenium.open("");
-		if (selenium.isElementPresent("xpath=//a[@id='overridelink']")){
-		selenium.click("//a[@id='overridelink']");
-		}
-		*/
+		Helper.log(" ");	
+		Helper.log("Se inicia prueba para eliminar un producto del carrito de compras");
 		
 		//------------Se verifica que el carrito de compras contenga productos-------
 		Helper.log("Se da clic en el carrito de compras en el header");
@@ -58,13 +52,6 @@ public class LibShoppingCart3DeleterItemShoppingCart extends ClaireandbruceTestC
 			selenium.waitForPageToLoad("10000");				
 		}		
 		
-		// Se termina la ejecución y se cierra el selenium
 	}
 	
-	//   SE PONE EN COMENTARIO PARA CORRER EN EL FLUJO
-	/*
-	@After
-	public void afterTest(){
-		selenium.stop();
-	}*/	
 }
