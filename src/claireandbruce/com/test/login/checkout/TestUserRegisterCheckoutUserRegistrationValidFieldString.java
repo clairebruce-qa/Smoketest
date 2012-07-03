@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import claireandbruce.com.test.basicsFlows.LibCorrectAddProductCartSimpleProduct;
 import claireandbruce.com.test.basicsFlows.LibCorrectLogonValidUserAccout;
+import claireandbruce.com.test.basicsFlows.LibPayCreditCard;
 
 import basics.ClaireandbruceTestCase;
 
@@ -130,9 +131,11 @@ public class TestUserRegisterCheckoutUserRegistrationValidFieldString extends Cl
 					Assert.fail("El campo apellido de registro usuario es obligatorio");
 				}
 				
-				if(!selenium.isElementPresent("id=advice-validate-one-required-by-name-p_method_checkmo") || !(selenium.isElementPresent("id=advice-validate-one-required-by-name-p_method_sermepa"))){
-					Assert.fail("Seleccione uno de los métodos de pago");
-				}
+				if(selenium.isTextPresent("Check/Money")){
+					if (!"Seleccione una de las opciones.".equals(selenium.getText("xpath=.//*[@id='advice-validate-one-required-by-name-p_method_checkmo']"))) {
+						Assert.fail("No seleccionó método de pago, no se muestra mensaje de advertencia sobre el Cheque");
+					}
+				}	
 				
 				if(!selenium.isElementPresent("id=advice-required-entry-confirmation")){
 					Assert.fail("Se deben aceptar los terminos y condiciones del servicio");
@@ -145,8 +148,6 @@ public class TestUserRegisterCheckoutUserRegistrationValidFieldString extends Cl
 				
 				selenium.type("id=shipping:lastname", "1234");// Apellido de envío
 		
-				//selenium.type("id=shipping:city", "1235415"); // Campo población
-				//selenium.type("id=shipping:postcode", "YEDGY");//Campo código postal
 				selenium.type("id=shipping:telephone", "Yrdytrdf"); // Campo teléfono
 				
 				selenium.type("id=firstname", "12551");// Nombre de Registro de Usuario
@@ -161,17 +162,6 @@ public class TestUserRegisterCheckoutUserRegistrationValidFieldString extends Cl
 				if(!selenium.isElementPresent("id=advice-validate-name-shipping:lastname")){
 					Assert.fail("Formato no válido para el campo");
 				}
-				/*if(!selenium.isElementPresent("id=advice-validate-shipping:city")){
-					Assert.fail("formato no valido para el campo");
-				}
-				/*if(!selenium.isElementPresent("id=advice-validate-select-shipping:region_id"))
-				{
-					Assert.fail("formato no valido para el campo");
-				}
-				if(!selenium.isElementPresent("id=advice-required-entry-shipping:postcode"))
-				{
-					Assert.fail("formato no valido para el campo");
-				}*/
 				if(!selenium.isElementPresent("id=advice-validate-phone-shipping:telephone"))
 				{
 					Assert.fail("Formato no válido para el campo");
@@ -187,8 +177,6 @@ public class TestUserRegisterCheckoutUserRegistrationValidFieldString extends Cl
 				
 				selenium.type("id=shipping:lastname", "·$$&%$$");// Apellido de envío
 		
-				//selenium.type("id=shipping:city", "1235415"); // Campo población
-				//selenium.type("id=shipping:postcode", "YEDGY");//Campo código postal
 				selenium.type("id=shipping:telephone", "$%&#@"); // Campo teléfono
 				
 				selenium.type("id=firstname", "$%&#@");// Nombre de Registro de Usuario
@@ -202,17 +190,6 @@ public class TestUserRegisterCheckoutUserRegistrationValidFieldString extends Cl
 				if(!selenium.isElementPresent("id=advice-validate-name-shipping:lastname")){
 					Assert.fail("Formato no válido para el campo");
 				}
-				/*if(!selenium.isElementPresent("id=advice-validate-shipping:city")){
-					Assert.fail("formato no valido para el campo");
-				}
-				/*if(!selenium.isElementPresent("id=advice-validate-select-shipping:region_id"))
-				{
-					Assert.fail("formato no valido para el campo");
-				}
-				if(!selenium.isElementPresent("id=advice-required-entry-shipping:postcode"))
-				{
-					Assert.fail("formato no valido para el campo");
-				}*/
 				if(!selenium.isElementPresent("id=advice-validate-phone-shipping:telephone"))
 				{
 					Assert.fail("Formato no válido para el campo");;
@@ -246,29 +223,13 @@ public class TestUserRegisterCheckoutUserRegistrationValidFieldString extends Cl
 				selenium.type("id=email_address", "claireandbruceqa"+i+"@gmail.com");
 				selenium.type("id=password", "123456");
 				Helper.log("Se selecciona método de pago: Cheque");
-				selenium.click("id=p_method_checkmo");
-				Helper.log("Se aceptan términos y condiciones, y políticas de privacidad");
-				selenium.click("id=agreement-1");
-				Helper.log("Se hace clic en 'PAGAR'");
-				selenium.click("xpath=(//button[@type='button'])[2]");
-				selenium.waitForPageToLoad("30000");
-				if(!("claireandbruceqa"+i+"@gmail.com").equals(selenium.getText("xpath=html/body/div[2]/div[2]/div[1]/div/div[2]/div[1]/div"))){
-					Assert.fail("Error: No registro el usuario");
-				}
-
-				
-
+				LibPayCreditCard.credit_Card(selenium);
 			}else
 			{
 				Assert.fail("Error: No carga el formulario de registro");
 			}
 			
-
 			// Validación del formulario para datos númericos en campos nombre de envío, apellido de envío, 
 			
-
-			
-	
-
 	}
 }

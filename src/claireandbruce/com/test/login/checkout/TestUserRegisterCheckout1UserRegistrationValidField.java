@@ -7,6 +7,7 @@ import lib.Helper;
 import org.junit.Test;
 
 import claireandbruce.com.test.basicsFlows.LibCorrectAddProductCartSimpleProduct;
+import claireandbruce.com.test.basicsFlows.LibPayCreditCard;
 
 import basics.ClaireandbruceTestCase;
 
@@ -20,7 +21,7 @@ public class TestUserRegisterCheckout1UserRegistrationValidField extends Clairea
 
 	@Test
 	public void CBT18() throws Exception{
-
+ 
 		Helper.log("Se inicia proceso de registro con datos válidos por checkout");
 		// Elimina las cookies
 		Helper.log("Se eliminan cookies");
@@ -100,17 +101,8 @@ public class TestUserRegisterCheckout1UserRegistrationValidField extends Clairea
 				selenium.click("xpath=//div[@value='1989']");
 				selenium.type("id=email_address", "claireandbruceqa"+i+"@gmail.com");
 				selenium.type("id=password", "123456");
-				Helper.log("Se selecciona pago con Cheque");
-				selenium.click("id=p_method_checkmo");
-				Helper.log("Se aceptan términos y condiciones, y políticas de privacidad");
-				selenium.click("id=agreement-1");
-				Helper.log("Se hace clic en 'PAGAR'");
-				selenium.click("xpath=(//button[@type='button'])[2]");
-				Helper.log("Se espera carga de interfaz con mensaje de confirmación del pedido");
-				selenium.waitForPageToLoad("30000");
-				if(!("claireandbruceqa"+i+"@gmail.com").equals(selenium.getText("xpath=html/body/div[2]/div[2]/div[1]/div/div[2]/div[1]/div"))){
-					Assert.fail("Error: No registro el usuario");
-				}
+				Helper.log("Se selecciona pago con Tarjeta");
+				LibPayCreditCard.credit_Card(selenium);				
 			}else
 			{
 				Assert.fail("Error: No carga el formulario de registro");

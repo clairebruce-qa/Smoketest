@@ -88,11 +88,20 @@ public class TestMagazinHomePage1NavegabilityMagazinUserNoLogin extends Clairean
 			Helper.log("No se encuentra el link de detalle del producto");
 		}
 			
+		int contador = 0;
+		while(!selenium.isElementPresent("xpath=html/body/div/div[2]/div/div/div[1]/div[1]/p/map["+n+"]/area["+j+"]")){
+			n =(int)(Math.random()*(8-1+1)+1);
+			j =(int)(Math.random()*(11-1+1)+1);
+			contador++;
+			if(contador>=4){
+				selenium.click("xpath=//div[@id='carousel-subhome']/div[2]");
+			}
+		}
 			selenium.click("xpath=html/body/div/div[2]/div/div/div[1]/div[1]/p/map["+n+"]/area["+j+"]");
 				
 			selenium.waitForPageToLoad("30000");
 			
-			int contador = 1;
+			contador = 1;
 			int categoria= 1;
 			
 			//Haga mientras NO encuentre el botón AÑADIR A LA CESTA

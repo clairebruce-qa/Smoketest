@@ -45,7 +45,7 @@ public class TestHomePageNavigability4PurchaseToLookPieceByPieceUserNotLoginNoVa
 			
 		}
 		else{
-			Helper.log("Se ingrea a la imagen");
+			Helper.log("Se ingresa a la imagen");
 		selenium.click("xpath=//div/a/img");
 		
 		selenium.waitForPageToLoad("30000");
@@ -56,17 +56,40 @@ public class TestHomePageNavigability4PurchaseToLookPieceByPieceUserNotLoginNoVa
 		
 		 int i=2;
 		 int j=1;
-		 
+		 int fila=7;
+		 int talla=1;
+		 boolean inventario = true;
 			while(selenium.isElementPresent("xpath=.//*[@id='product-options-wrapper']/dl/div["+i+"]/div[3]/div[7]/div[3]/div/button")){
-			
+				
+				inventario=true;
 				//Verificacion de la cantidad de botones
 				//Si existe la talla la selecciona si no solo agrega al carrito de compra
 				if(selenium.isElementPresent("//div[contains(@class, 'selreplace_selectinner')]")){
 					Helper.log("Se selecciona una talla");
-					//Click sobre combo seleccionar una talla
-					selenium.click("//div[contains(@class, 'selreplace_selectinner')]");
 					//Se selecciona la primera talla encontrada del producto y se verifica que se selecciono correctamente		
-					Helper.clickAndVerify(selenium, "//div[@class='selreplace_option']",selenium.getText("xpath=//div[@class='selreplace_option']") , "//div[contains(@class, 'selreplace_selectinner')]");
+					do {						
+						//Click sobre combo seleccionar una talla
+						selenium.click("//div[contains(@class, 'selreplace_selectinner')]");
+						//Se selecciona una talla
+						talla++;
+						if(selenium.isElementPresent("xpath=//div["+fila+"]/div/div/div["+talla+"]")){
+							selenium.click("xpath=//div["+fila+"]/div/div/div["+talla+"]");	
+							if(selenium.isElementPresent("xpath=//div["+(fila-1)+"]/div[2]/div[4]")){
+								selenium.click("xpath=//div["+(fila-1)+"]/div[2]/div[4]");
+								inventario=false;
+								Helper.log("El producto: "+selenium.getText("xpath=.//*[@id='product-options-wrapper']/dl/div["+i+"]/div[3]/div[3]/a")+
+										" no está en el inventario para la talla:"+selenium.getText("xpath=//div["+fila+"]/div/div/div["+talla+"]"));
+							} else {
+								inventario=true;
+								break;
+							}
+						} else {
+							inventario = true; //producto simple
+							break;
+						}
+						Helper.log("inventario                 *** "+inventario);
+					}while(inventario==false);
+					fila --;
 				}
 				
 				////div[contains(@class, 'selreplace_selectinner')]

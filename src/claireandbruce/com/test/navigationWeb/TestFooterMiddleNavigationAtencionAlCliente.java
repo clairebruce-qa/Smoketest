@@ -1,5 +1,6 @@
 package claireandbruce.com.test.navigationWeb;
 
+import static org.junit.Assert.assertTrue;
 import lib.Helper;
 
 import org.junit.Test;
@@ -16,51 +17,41 @@ import basics.ClaireandbruceTestCase;
 	 **/
 public class TestFooterMiddleNavigationAtencionAlCliente  extends ClaireandbruceTestCase{
 	
-	
-	
-	
-	
-	
 	@Test
 	public void CBT91() throws Exception{
 		
 		selenium.deleteAllVisibleCookies();
+		Helper.log("Se inicia prueba de Navegación por footer para Atención al Cliente");
+		selenium.open("");		
 		
-		selenium.open("");
-		
-		
-		int i=2;
-		if(selenium.isElementPresent("xpath=html/body/div/div[4]/div/div[3]/div[7]/div[2]/ul/li[1]/a")){
-			selenium.click("xpath=html/body/div/div[4]/div/div[3]/div[7]/div[2]/ul/li[1]/a");
-			Helper.waitForElement(selenium, "xpath=.//*[@id='question-category-block']/div["+i+"]/ul/li[2]/a", "Not present link page");
+		if(selenium.isElementPresent("xpath=//div[6]/div[2]/ul/li/a")){
+			Helper.log("Se ingresa a "+selenium.getText("xpath=//div[6]/div[2]/ul/li/a"));
+			selenium.click("xpath=//div[6]/div[2]/ul/li/a");
+			selenium.waitForPageToLoad("15000");
+			assertTrue(selenium.isElementPresent("xpath=//div[@id='question-category-block']/div/ul/li/a"));
+			//Se Retorna a la pagina Principal de Bienvenida
+			selenium.click("xpath=//img");
+			selenium.waitForPageToLoad("15000");
+		}
+		int literal=2;
+		while(selenium.isElementPresent("xpath=//div[6]/div[2]/ul/li["+literal+"]/a")){
+
+			//-----------------    SE DESPLIEGA LA INTERFAZ DEL LINK   ---------------------
+			Helper.log("Se ingresa a "+selenium.getText("xpath=//div[6]/div[2]/ul/li["+literal+"]/a"));
+			selenium.click("xpath=//div[6]/div[2]/ul/li["+literal+"]/a");
+			selenium.waitForPageToLoad("30000");
+				
+			//--------------------- VERIFICACION DE LA INTERFAZ  -----------------------------
+			selenium.waitForPageToLoad("15000");
+			assertTrue(selenium.isElementPresent("xpath=//div[@id='question-category-block']/div["+literal+"]/ul/li/a"));
 			
 			//Se Retorna a la pagina Principal de Bienvenida
-			Helper.clickAndVerify(selenium, "xpath=html/body/div/div[2]/ul/li[1]/a", "Tu cuenta", "link=Tu cuenta");
+			selenium.click("xpath=//img");
+			selenium.waitForPageToLoad("15000");
+			literal++;
+				
 		}
-		
-		while(selenium.isElementPresent("xpath=html/body/div/div[4]/div/div[3]/div[7]/div[2]/ul/li["+i+"]/a")){
-				
-				
-				//-----------------    SE DESPLIEGA LA INTERFAZ DEL LINK   ---------------------
-				selenium.click("xpath=html/body/div/div[4]/div/div[3]/div[7]/div[2]/ul/li["+i+"]/a");
-				selenium.waitForPageToLoad("30000");
-				
-				
-				//--------------------- VERIFICACION DE LA INTERFAZ  -----------------------------
-				Helper.waitForElement(selenium, "xpath=.//*[@id='question-category-block']/div["+i+"]/ul/li[2]/a", "Not present link page");
-				
-				//Se Retorna a la pagina Principal de Bienvenida
-				Helper.clickAndVerify(selenium, "xpath=html/body/div/div[2]/ul/li[1]/a", "Tu cuenta", "link=Tu cuenta");
-				i++;
-				
-			}
 		}
-		//Verificación de la presencia de los enlaces en la pagina de bienvenida
+		//Verificación de la existencia de los enlaces en la página de bienvenida
 		
-		
-		
-		
-	
-	
-
 }
