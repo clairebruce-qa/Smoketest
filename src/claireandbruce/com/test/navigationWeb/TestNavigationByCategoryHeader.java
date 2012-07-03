@@ -16,7 +16,7 @@ public class TestNavigationByCategoryHeader extends ClaireandbruceTestCase {
 	@Test
 	public void CBT90() throws Exception{
 		selenium.open("");
-		selenium.waitForPageToLoad("15000");
+		selenium.waitForPageToLoad("35000");
 		Helper.log("Ambiente de prueba: "+selenium.getLocation());
 		
 		int menu=1, literal=1;
@@ -24,78 +24,135 @@ public class TestNavigationByCategoryHeader extends ClaireandbruceTestCase {
 		
 		//Se ingresa al primer link del menú, el cual corresponde a Rebajas
 		Helper.log("Ingresando a Rebajas");
+		
 		if(selenium.isElementPresent("xpath=//ul[@id='nav']/li/h2/a/span/cufon/canvas")){
+			Helper.log("Se ingresa al primer menú: Rebajas");
 			selenium.click("xpath=//ul[@id='nav']/li/h2/a/span/cufon/canvas");
-			selenium.waitForPageToLoad("20000");
-			
-			if(selenium.getTitle().startsWith("Rebajas")){
-				textoMenu = "Rebajas";
-			}
-			
-			assertEquals(selenium.getText("class=breadcrumbs-present"), textoMenu);
-			
-			//Se recorre cada literal del menu
-			selenium.click("xpath=//h3/a/span");
-			selenium.waitForPageToLoad("15000");
-			Helper.log("Ingresando al menú "+selenium.getTitle());
-			
-			literal=2;
-			selenium.click("xpath=//li["+literal+"]/h3/a/span");
-			selenium.waitForPageToLoad("15000");
-			Helper.log("Ingresando al menú "+selenium.getTitle());			
+			selenium.waitForPageToLoad("25000");
+			Helper.log("Se ha ingresado a la interfaz: "+selenium.getTitle());
+		} else {
+			Helper.log("No se ha encontrado el primer link del menú en: xpath=//ul[@id='nav']/li/h2/a/span/cufon/canvas");
+		}
+		//Se ingresa a las subcategorías de Rebajas
+		Helper.log("Ingresando a Rebajas - Ropa");
+		textoMenu = selenium.getText("xpath=//h3/a");
+		Helper.clickAndVerify(selenium, "xpath=//h3/a", textoMenu, "css=span.breadcrumbs-present");
+		Helper.log("Se ha ingresado a la interfaz: "+selenium.getTitle());
+		
+		
+		literal=2;
+		
+		while(selenium.isElementPresent("xpath=//li["+literal+"]/h3/a/span") && literal<=5) {
+			textoMenu = selenium.getText("xpath=//li["+literal+"]/h3/a/span");
+			Helper.clickAndVerify(selenium, "xpath=//li["+literal+"]/h3/a/span", textoMenu, "css=span.breadcrumbs-present");
+			Helper.log("Se ha ingresado a la interfaz: "+selenium.getTitle());
 			literal++;
-			
-			selenium.click("xpath=//li["+literal+"]/h3/a");
-			selenium.waitForPageToLoad("15000");
-			Helper.log("Ingresando al menú "+selenium.getTitle());			
-			literal++;
-			
-			selenium.click("xpath=//li["+literal+"]/h3/a/span");
-			selenium.waitForPageToLoad("15000");
-			Helper.log("Ingresando al menú "+selenium.getTitle());
-			literal++;
-			menu++;
 		}
 		
-		//Se recorre los menus que se probaran
-		while(selenium.isElementPresent("xpath=//li["+menu+"]/h2/a/span/cufon/canvas") && menu<=5){
-			literal=1;			
-			
-			Helper.log("Se ingresa al menú en la posición "+menu);
-			selenium.click("xpath=.//*[@id='nav']/li["+menu+"]/a/span/cufon/canvas");			
-			selenium.waitForPageToLoad("20000");
-			
-			//Se verifica texto en la miga de pan
-			if(selenium.getTitle().startsWith("Ropa")) {
-				textoMenu="Ropa";
-			} else if(selenium.getTitle().startsWith("Zapatos")) {
-				textoMenu="Zapatos";
-			} else if(selenium.getTitle().startsWith("Bolsos")) {
-				textoMenu ="Bolsos";
-			} else if(selenium.getTitle().startsWith("Accesorios")) {
-				textoMenu = "Accesorios";
-			} else if(selenium.getTitle().startsWith("Rebajas")){
-				textoMenu = "Rebajas";
-			}
-			
-			Helper.log("Checking menu "+textoMenu);
-			assertEquals(selenium.getText("class=breadcrumbs-present"), textoMenu);
-			
-			//Se recorre cada literal del menu
-			while(selenium.isElementPresent("xpath=.//*[@id='nav']/li["+menu+"]/ul/li["+literal+"]/a/span")){
-				//Click en el submenu
-				String textoSubMenu =  selenium.getText("xpath=.//*[@id='nav']/li["+menu+"]/ul/li["+literal+"]/a/span");
-				Helper.log("Checking submenu "+textoSubMenu);
-				selenium.click("xpath=.//*[@id='nav']/li["+menu+"]/ul/li["+literal+"]/a/span");
-				selenium.waitForPageToLoad("20000");
-				//Se verifica texto en la miga de pan
-				assertEquals(selenium.getText("class=breadcrumbs-present"), textoSubMenu);
-				Helper.log("Check the bread crumbs "+textoSubMenu+". OK");
-				selenium.isElementPresent("xpath=html/body/div/div[3]/div[2]/div[2]/div[1]/a["+literal+"]/div/div/strong");
-				Helper.log("Check - underlined link "+textoSubMenu+". OK");
-				literal++;				
-			}			
+		menu=2;
+		//Se ingresan a las categorías del menú superior (Ropa, Zapatos, Bolsos, Accesorios)
+		Helper.log("Ingresando a las categorías del menú superior (Ropa, Zapatos, Bolsos, Accesorios)");
+		do {
+			selenium.click("xpath=//ul[@id='nav']/li["+menu+"]/h2/a/span/cufon/canvas");
+			selenium.waitForPageToLoad("15000");
+			Helper.log("Se ha ingresado a la interfaz: "+selenium.getTitle());
 			menu++;
+		}while(selenium.isElementPresent("xpath=//ul[@id='nav']/li["+menu+"]/h2/a/span/cufon/canvas"));
+		
+		Helper.log("Se ingresa a la sección Nuevo de Ropa");
+		textoMenu = selenium.getText("xpath=//li[2]/ul/li/h3/a/span");
+		Helper.clickAndVerify(selenium, "xpath=//li[2]/ul/li/h3/a/span", textoMenu, "css=span.breadcrumbs-present");
+		Helper.log("Se ha ingresado a la interfaz: "+selenium.getTitle());
+		
+		Helper.log("Se ingresa a las secciones Ofertas de Ropa");
+		textoMenu = selenium.getText("xpath=//li[2]/ul/li[2]/h3/a");
+		Helper.clickAndVerify(selenium, "xpath=//li[2]/ul/li[2]/h3/a", textoMenu, "css=span.breadcrumbs-present");
+		Helper.log("Se ha ingresado a la interfaz: "+selenium.getTitle());
+		
+		Helper.log("Se ingresa a la sección Vestidos, Blusas");
+		literal=3;
+		menu=2;
+		while(selenium.isElementPresent("xpath=//li["+menu+"]/ul/li["+literal+"]/h3/a/span") && literal<=4){
+			textoMenu = selenium.getText("xpath=//li["+menu+"]/ul/li["+literal+"]/h3/a/span");
+			Helper.clickAndVerify(selenium, "xpath=//li["+menu+"]/ul/li["+literal+"]/h3/a/span", textoMenu, "css=span.breadcrumbs-present");
+			Helper.log("Se ha ingresado a la interfaz1: "+selenium.getTitle());
+			literal++;
 		}
+		
+		//Se ingresa a las secciones (Camisetas, Sudaderas, Punto, Chaquetas, Faldas, Pantalones, Shorts, Monos, Jeans)
+		Helper.log("Se ingresa a las secciones (Camisetas, Sudaderas, Punto, Chaquetas, Faldas, Pantalones, Shorts, Monos, Jeans)");
+		literal=5;
+		while(selenium.isElementPresent("xpath=//li["+literal+"]/h3/a/span") && literal<=13){
+			textoMenu = selenium.getText("xpath=//li["+literal+"]/h3/a/span");
+			Helper.clickAndVerify(selenium, "xpath=//li["+literal+"]/h3/a/span", textoMenu, "css=span.breadcrumbs-present");
+			Helper.log("Se ha ingresado a la interfaz2: "+selenium.getTitle());
+			literal++;
+		}
+		
+		menu=3; //Zapatos
+		//Se ingresa a Zapatos - Nuevo
+		textoMenu = selenium.getText("xpath=//li["+menu+"]/ul/li/h3/a/span");
+		Helper.clickAndVerify(selenium, "xpath=//li["+menu+"]/ul/li/h3/a/span", textoMenu, "css=span.breadcrumbs-present");
+		Helper.log("Se ha ingresado a la interfaz: "+selenium.getTitle());
+		
+		//Se ingresa a la sección (Ofertas, Zapatos Tacón, Zapatos planos, Sandalias planas, Sandalias Tacón, Botas, Cuñas)
+		Helper.log("Se ingresa a las secciones (Ofertas, Zapatos Tacón, Zapatos planos, Sandalias planas, Sandalias Tacón, Botas, Cuñas)");
+		literal=2;
+		while(selenium.isElementPresent("xpath=//li["+menu+"]/ul/li["+literal+"]/h3/a/span")){
+			textoMenu = selenium.getText("xpath=//li["+menu+"]/ul/li["+literal+"]/h3/a/span");
+			Helper.clickAndVerify(selenium, "xpath=//li["+menu+"]/ul/li["+literal+"]/h3/a/span", textoMenu, "css=span.breadcrumbs-present");
+			Helper.log("Se ha ingresado a la interfaz: "+selenium.getTitle());
+			literal++;
+		}
+		
+		//Se ingresa a Sneakers
+		Helper.log("Se ingresa a Sneakers");
+		literal=9;
+		textoMenu = selenium.getText("xpath=//li["+menu+"]/ul/li["+literal+"]/h3/a/span");
+		Helper.clickAndVerify(selenium, "xpath=//li["+menu+"]/ul/li["+literal+"]/h3/a", textoMenu, "css=span.breadcrumbs-present");
+		Helper.log("Se ha ingresado a la interfaz: "+selenium.getTitle());
+		
+		//Se ingresa a las subcategorías de Bolsos
+		menu=4;
+		Helper.log("Se ingresa a las subcategorías de Bolsos");
+		textoMenu = selenium.getText("xpath=//li["+menu+"]/ul/li/h3/a/span");
+		Helper.clickAndVerify(selenium, "xpath=//li["+menu+"]/ul/li/h3/a/span", textoMenu, "css=span.breadcrumbs-present");
+		Helper.log("Se ha ingresado a la interfaz: "+selenium.getTitle());
+		
+		//Se ingresa a Ofertas, Clutches y Shoulder Bags
+		Helper.log("Se ingreaa a Ofertas, Clutches y Shoulder Bags");
+		literal=2;
+		while(selenium.isElementPresent("xpath=//li["+menu+"]/ul/li["+literal+"]/h3/a/span")){
+			textoMenu = selenium.getText("xpath=//li["+menu+"]/ul/li["+literal+"]/h3/a/span");
+			Helper.clickAndVerify(selenium, "xpath=//li["+menu+"]/ul/li["+literal+"]/h3/a/span", textoMenu, "css=span.breadcrumbs-present");
+			Helper.log("Se ha ingresado a la interfaz: "+selenium.getTitle());
+			literal++;
+			if(literal==4){
+				literal++;
+			}
+		}
+		
+		//Se ingresa a Totes
+		Helper.log("Se ingresa a Totes");
+		literal=3;
+		textoMenu = selenium.getText("xpath=//li["+menu+"]/ul/li["+literal+"]/h3/a");
+		Helper.clickAndVerify(selenium, "xpath=//li["+menu+"]/ul/li["+literal+"]/h3/a", textoMenu, "css=span.breadcrumbs-present");
+		Helper.log("Se ha ingresado a la interfaz: "+selenium.getTitle());
+		
+		//Se ingresa a las subcategorías de Accesorios
+		Helper.log("Se ingresa a las subcategorías de Accesorios");
+		menu=5;
+		textoMenu = selenium.getText("xpath=//li["+menu+"]/ul/li/h3/a");
+		Helper.clickAndVerify(selenium, "xpath=//li["+menu+"]/ul/li/h3/a", textoMenu, "css=span.breadcrumbs-present");
+		Helper.log("Se ha ingresado a la interfaz: "+selenium.getTitle());
+		
+		literal=2;
+		while(selenium.isElementPresent("xpath=//li["+menu+"]/ul/li["+literal+"]/h3/a/span")){
+			textoMenu = selenium.getText("xpath=//li["+menu+"]/ul/li["+literal+"]/h3/a/span");
+			Helper.clickAndVerify(selenium, "xpath=//li["+menu+"]/ul/li["+literal+"]/h3/a/span", textoMenu, "css=span.breadcrumbs-present");
+			Helper.log("Se ha ingresado a la interfaz: "+selenium.getTitle());
+			literal++;
+		}
+		
 	}
 }
