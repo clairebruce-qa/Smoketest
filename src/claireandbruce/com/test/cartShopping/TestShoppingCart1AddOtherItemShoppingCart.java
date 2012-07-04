@@ -34,11 +34,12 @@ public class TestShoppingCart1AddOtherItemShoppingCart extends ClaireandbruceTes
 		if(!selenium.isElementPresent("xpath=//a[contains(text(), 'Salir')]")){			
 			LibCorrectLogonValidUserAccout.CBT55(selenium);			
 		}			 
-			LibCorrectAddProductCartSimpleProduct.CBT_SimpleProduct(selenium);
-			//Lib_CorrectAddProduct_Cart_ConfigurableProduct.CBT_ConfigurableProduct(selenium);
+		LibCorrectAddProductCartSimpleProduct.CBT_SimpleProduct(selenium);
+		if(selenium.isTextPresent("1 artículo")){
+			LibCorrectAddProductCartConfigurableProduct.CBT_ConfigurableProduct(selenium);
+		}
+		
 			
-	
-	
 		if(selenium.isTextPresent("0 artículos 0 €")){
 			Assert.fail("Error : product no add");
 		}		

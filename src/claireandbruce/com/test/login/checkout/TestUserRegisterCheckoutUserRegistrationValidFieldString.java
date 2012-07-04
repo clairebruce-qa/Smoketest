@@ -81,7 +81,7 @@ public class TestUserRegisterCheckoutUserRegistrationValidFieldString extends Cl
 			if(selenium.isElementPresent("xpath=.//*[@id='emailreg']")){
 				int i =(int)(Math.random()*100);
 				
-				selenium.type("xpath=.//*[@id='emailreg']", "claireandbruce"+i+"@gmail.com");
+				selenium.type("xpath=.//*[@id='emailreg']", "claireandbruceqa"+i+"@gmail.com");
 				Helper.log("Se hace clic en el botón 'Registrarme'");
 				selenium.click("xpath=.//*[@id='send3']");
 				selenium.waitForPageToLoad("30000");

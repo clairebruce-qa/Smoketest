@@ -54,10 +54,27 @@ public class LibPayCreditCard extends ClaireandbruceTestCase{
 			//Helper.log("DATOS DE TARJETA DE CRÉDITO"+selenium.getValue("name=payment[cc_number]"));
 			Helper.log("Se selecciona como fecha de vigencia: Mes:12-DICIEMBRE y Año:2012");
 			//Se selecciona mes y año de vigencia
-			selenium.click("xpath=//li[3]/div/div/div/div/div");
-			selenium.click("xpath=//div[@value='12']");
-			selenium.click("xpath=//li[3]/div/div[2]/div/div/div[2]");
-			selenium.click("xpath=//div[@value='2012']");
+			
+			if(selenium.isElementPresent("xpath=(//div[@value='12'])[2]")){
+				selenium.click("//ul/li[3]/div/div/div/div/div");
+				selenium.click("xpath=//li[@id='sermepa_cc_type_exp_div']/div/div/div[2]/div/div/div[13]");
+				Helper.log("12 2:"+selenium.getText("//ul/li[3]/div/div/div/div/div"));
+				
+			} else {
+				selenium.click("xpath=//li[3]/div/div/div/div/div");
+				selenium.click("xpath=//div[@value='12']");
+				Helper.log("12 1");
+			}
+			
+			if(selenium.isElementPresent("xpath=(//div[@value='2012'])[2]")){
+				selenium.click("//ul/li[3]/div/div[2]/div/div/div");
+				selenium.click("xpath=(//div[@value='2012'])[2]");
+				Helper.log("2012 2");
+			} else {
+				selenium.click("xpath=//li[3]/div/div[2]/div/div/div[2]");
+				selenium.click("xpath=//div[@value='2012']");
+				Helper.log("2012 1");
+			}				
 			//Se ingresa código de seguridad
 			Helper.log("Se ingresa el código de seguridad: 123");
 			selenium.type("xpath=//li[@id='sermepa_cc_type_cvv_div']/div/div/input","123");
@@ -73,13 +90,14 @@ public class LibPayCreditCard extends ClaireandbruceTestCase{
 				Assert.fail("Datos de tarjeta de crédito no válidos");
 			} else {
 				Helper.log("Se espera carga de interfaz con mensaje de confirmación del pedido");
-				selenium.waitForPageToLoad("25000");
+				selenium.waitForPageToLoad("30000");
 				//SI EL TITULO DE LA PAGINA ES COMPRAR AHORA FALLAR
 		    }			
 			
-			if(selenium.getText("xpath=//p").equals("Recibirás un e-mail con tu confirmación de compra a:")){
+			if(selenium.isTextPresent("Recibirás un e-mail con tu confirmación de compra a:")){
 				Helper.log("PEDIDO REALIZADO!!");
 			} else {
+				Assert.fail("PEDIDO NO REALIZADO!!");
 				Helper.log("PEDIDO NO REALIZADO!!");
 			}
 							

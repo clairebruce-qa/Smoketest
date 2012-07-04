@@ -38,7 +38,7 @@ public class LibCorrectAddProductCartSimpleProduct extends ClaireandbruceTestCas
 				Helper.log("Se ingresa a la categoría ubicada en la posición "+categoria+" del menú superior");
 				selenium.click("//ul[@id='nav']/li["+categoria+"]/h2/a/span/cufon/canvas");				
 
-				selenium.waitForPageToLoad("50000");
+				selenium.waitForPageToLoad("55000");
 				Helper.log("Categoría actual: "+selenium.getTitle());
 				if(selenium.getTitle().startsWith("Bolsos") || selenium.getTitle().startsWith("Accesorios")){
 					//Selecciona una subcategoría

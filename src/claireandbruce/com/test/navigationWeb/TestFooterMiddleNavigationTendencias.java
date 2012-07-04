@@ -4,6 +4,7 @@ import lib.Claireandbruce;
 import lib.Helper;
 
 import org.junit.Test;
+import org.testng.Assert;
 
 import basics.ClaireandbruceTestCase;
 /**
@@ -62,6 +63,7 @@ public class TestFooterMiddleNavigationTendencias extends ClaireandbruceTestCase
 				literal++;
 			}
 		}else {
+			Assert.fail("Enlace de Tendencias en el Footer no encontrado");
 			Helper.log("Link "+selenium.getText("xpath=//div[6]/div[2]/ul/li["+literal+"]/a")+" no encontrado en el Footer");
 		}		
 	}

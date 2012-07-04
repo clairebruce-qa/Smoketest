@@ -7,6 +7,8 @@ import lib.Helper;
 import org.junit.Test;
 
 import claireandbruce.com.test.basicsFlows.LibAddressExist;
+import claireandbruce.com.test.basicsFlows.LibCorrectAddProductCartConfigurableProduct;
+import claireandbruce.com.test.basicsFlows.LibCorrectAddProductCartSimpleProduct;
 import claireandbruce.com.test.basicsFlows.LibCorrectLogonValidUserAccout;
 
 import basics.ClaireandbruceTestCase;
@@ -21,27 +23,25 @@ import basics.ClaireandbruceTestCase;
  */
 public class TestShoppinCart11UserLoginPurchaseWithInvoiceWhitOtherAddressEmptyFields extends ClaireandbruceTestCase{
 
-	TestShoppingCart1AddOtherItemShoppingCart tb = new TestShoppingCart1AddOtherItemShoppingCart();
+	//TestShoppingCart1AddOtherItemShoppingCart tb = new TestShoppingCart1AddOtherItemShoppingCart();
 	@Test
 	public void CBT48() throws Exception {
-		 
-		
-		
-		if(!selenium.isElementPresent("xpath=//a[contains(text(), 'Salir')]")){
-			
-			LibCorrectLogonValidUserAccout.CBT55(selenium);
-			
+		 		
+		if(!selenium.isElementPresent("xpath=//a[contains(text(), 'Salir')]")){			
+			LibCorrectLogonValidUserAccout.CBT55(selenium);			
 		}
 		
 		while(!selenium.isTextPresent("0 artículos 0 €")){
-			
 			//Remover  todos los artículos mientras el carrito no este vacío
 			selenium.click("id=cartHeader");
 			selenium.click("class=btn-remove");
 			assertTrue(selenium.getConfirmation().matches("¿Está seguro de que desea eliminar este artículo de la cesta de la compra[\\s\\S]$"));
 			selenium.waitForPageToLoad("10000");
 		}
-		tb.CBT22();
+		//tb.CBT22();
+		Helper.log("Se añaden dos productos al carrito de compras (Configurable y Simple)");
+		LibCorrectAddProductCartConfigurableProduct.CBT_ConfigurableProduct(selenium);
+		LibCorrectAddProductCartSimpleProduct.CBT_SimpleProduct(selenium);
 		//-----****** Verifíca que la pagina de Tu Compra esta desplegada de lo contrario la carga *****----\\
 		
 		if(!("Compra ahora").equals(selenium.getTitle())) {		
@@ -82,13 +82,11 @@ public class TestShoppinCart11UserLoginPurchaseWithInvoiceWhitOtherAddressEmptyF
 		
 		
 		//----- Dirección diferente a la dirección por defecto ------\\
-		
-	
+			
 		selenium.click("id=showFakeBillingExtended");
 		assertTrue(selenium.isElementPresent("id=showFakeBillingExtended"));
 		assertTrue(selenium.isElementPresent("id=billing:firstname"));
-		
-			
+					
 		selenium.type("id=billing:firstname", "");
 		 if (!selenium.isElementPresent("id=advice-required-entry-billing:firstname")){
 			 Assert.fail("Campo nombre acepta valores vacíos");
@@ -101,24 +99,18 @@ public class TestShoppinCart11UserLoginPurchaseWithInvoiceWhitOtherAddressEmptyF
 
 		// Validaciones 
 		selenium.click("xpath=.//*[@id='checkout-buttons-container']/button");
-		
-		
-		
-	
-		if ( !selenium.isElementPresent("id=advice-required-entry-billing:street1")) {
-			Assert.fail("Campo dirección acepta valores vacíos");
 			
+		if ( !selenium.isElementPresent("id=advice-required-entry-billing:street1")) {
+			Assert.fail("Campo dirección acepta valores vacíos");			
 		}
 
-		
-			if (!selenium.isElementPresent("id=advice-required-entry-billing:city")) {
-				Assert.fail("Campo Población acepta valores vacíos");
-			}
+		if (!selenium.isElementPresent("id=advice-required-entry-billing:city")) {
+			Assert.fail("Campo Población acepta valores vacíos");
+		}
 
-		
-			if("Por favor selecciona una provincia".equals(selenium.getText("//li[@id='billing-new-address-form']/fieldset/ul/li[5]/div[2]/div/div/div/div"))) {
-				Assert.fail("Campo Provincia acepta valores vacíos");
-			}
+		if("Por favor selecciona una provincia".equals(selenium.getText("//li[@id='billing-new-address-form']/fieldset/ul/li[5]/div[2]/div/div/div/div"))) {
+			Assert.fail("Campo Provincia acepta valores vacíos");
+		}
 
 			if (!"Campo obligatorio.".equals(selenium.getText("id=advice-required-entry-billing:postcode"))) {
 				Assert.fail("Campo código postal acepta valores vacíos");
@@ -146,10 +138,8 @@ public class TestShoppinCart11UserLoginPurchaseWithInvoiceWhitOtherAddressEmptyF
 				selenium.click("id=agreement-1");						
 			} else {
 				Assert.fail("Error:  Se deben aceptar los términos y condiciones y las políticas de privacidad");
-			}
-		
-	
-	}
+			}	
+		}
 	}
 
 }

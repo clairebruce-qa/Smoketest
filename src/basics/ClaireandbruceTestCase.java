@@ -56,7 +56,7 @@ public class ClaireandbruceTestCase{
 		selenium.windowMaximize();
 		selenium.windowFocus();
 		selenium.setSpeed("500");
-		selenium.setTimeout("40000");	
+		selenium.setTimeout("50000");	
 		
 	
 	}
