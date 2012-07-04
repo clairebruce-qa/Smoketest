@@ -6,13 +6,10 @@ import lib.Helper;
 import org.junit.Test;
 
 import claireandbruce.com.test.basicsFlows.LibCorrectLogonCheckout;
-import claireandbruce.com.test.basicsFlows.LibCorrectLogonValidUserAccout;
 import claireandbruce.com.test.basicsFlows.LibAddressExist;
 import claireandbruce.com.test.basicsFlows.LibChangeUnitsOneProduct;
 import claireandbruce.com.test.basicsFlows.LibCorrectAddProductCartConfigurableProduct;
 import claireandbruce.com.test.basicsFlows.LibPayPal;
-import claireandbruce.com.test.basicsFlows.LibPayChecking;
-import claireandbruce.com.test.basicsFlows.LibShoppingCart3DeleterItemShoppingCart;
 import claireandbruce.com.test.basicsFlows.LibTypeShipping;
 import claireandbruce.com.test.basicsFlows.LibWindowPayPal;
 import claireandbruce.com.test.basicsFlows.LibWithoutPurchase;
@@ -20,7 +17,7 @@ import claireandbruce.com.test.basicsFlows.LibWithoutPurchase;
 import basics.ClaireandbruceTestCase;
 
 /**
- * FlujoIV: ProductoConfigurable + CambioUnidades + TipoEnvío + LoginCheckout + DirecciónExistente + SinFactura + PagoCheque
+ * FlujoIV: ProductoConfigurable + CambioUnidades + TipoEnvío + LoginCheckout + DirecciónExistente + SinFactura + PagoPayPal
  * @author NEWSHORE
  *
  */
@@ -33,6 +30,8 @@ public class TestFlowIV  extends ClaireandbruceTestCase{
 	@Test
 	public void test_flujo4() throws Exception
 	{
+		Helper.log("FlujoIV: ProductoConfigurable + CambioUnidades + TipoEnvío + LoginCheckout + DirecciónExistente + SinFactura + PagoPayPal");
+		Helper.log(" ");
 		Helper.log("Se inicia sesión para pago con PayPal ");
 		LibWindowPayPal.CBT_Paypal(selenium);
 		

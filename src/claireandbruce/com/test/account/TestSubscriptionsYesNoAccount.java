@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 import lib.Claireandbruce;
 import lib.Helper;
 
+import claireandbruce.com.test.basicsFlows.LibCorrectLogonValidUserAccout;
+
 import com.thoughtworks.selenium.*;
 
 import org.junit.Test;
@@ -26,7 +28,7 @@ public class TestSubscriptionsYesNoAccount extends ClaireandbruceTestCase{
 		
 		//-----------------------------------Autentica el Usuario----------------------------------
 		if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
-			  Claireandbruce.login(selenium, username, password);				  
+			  LibCorrectLogonValidUserAccout.CBT55(selenium);				  
 		}
 	
 		if(!selenium.getTitle().equals("Mi cuenta")){

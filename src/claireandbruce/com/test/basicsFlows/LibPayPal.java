@@ -67,7 +67,7 @@ public class LibPayPal extends ClaireandbruceTestCase {
 			Helper.log("Se hace clic en la opción de Pago con PayPal");
 			selenium.click("id=p_method_paypal_express");			
 		} else {
-			Assert.fail("Error:  No seleccionó el método de pago PAYPAL");
+			Assert.fail("Error:  El método de pago PAYPAL se encuentra señalado por defecto");
 		}
 		if(("off").equals(selenium.getValue("id=agreement-1"))) {
 			Helper.log("Se aceptan términos y condiciones y políticas de privacidad");

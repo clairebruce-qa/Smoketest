@@ -33,7 +33,6 @@ public class Claireandbruce {
 		if(!selenium.isElementPresent("xpath=//form[@id='login-form']/div/cufon[3]/canvas")) {
 			
 			
-			// comente prueba
 			selenium.deleteAllVisibleCookies();
 			
 			selenium.open("");

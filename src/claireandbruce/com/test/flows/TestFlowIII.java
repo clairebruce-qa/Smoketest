@@ -29,7 +29,9 @@ public class TestFlowIII extends ClaireandbruceTestCase{
 	
 	@Test
 	public void test_flow3() throws Exception{		
-				
+		
+		Helper.log("FLUJOIII: ProductoSimple + EliminarProducto + ProductoSimple + TipoEnvío + LoginCheckout + \nDirecciónExistente + Factura + DirecciónFactura != DirecciónEnvío + PagoTarjetaCrédito");
+		Helper.log(" ");
 		Helper.log("Se carga la página "+ClaireandbruceUrl);
 		selenium.open("");
 		if(selenium.isElementPresent("link=Salir")){

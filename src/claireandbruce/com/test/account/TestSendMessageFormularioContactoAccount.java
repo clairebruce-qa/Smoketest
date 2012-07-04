@@ -2,17 +2,9 @@ package claireandbruce.com.test.account;
 
 
 import static org.junit.Assert.*;
-import junit.framework.AssertionFailedError;
-import lib.Claireandbruce;
 import lib.Helper;
-
-import org.junit.Assert;
 import org.junit.Test;
-
 import claireandbruce.com.test.basicsFlows.LibCorrectLogonValidUserAccout;
-
-
-import basics.AfterFailure;
 import basics.ClaireandbruceTestCase;
 
 /**

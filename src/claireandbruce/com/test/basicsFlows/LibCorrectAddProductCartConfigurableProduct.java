@@ -30,8 +30,8 @@ public class LibCorrectAddProductCartConfigurableProduct extends ClaireandbruceT
 		do {			
 			Helper.log("Buscando categoría en la posición "+categoria+" del menú superior");
 			categoria = (int) (Math.random()*(5-1+1))+1;
-			if(contador == 4) {
-				categoria = 1;
+			if(contador >= 4) {
+				categoria = (int) (Math.random()*(3-1+1))+1;
 			}
 			if(selenium.isElementPresent("xpath=//ul[@id='nav']/li["+categoria+"]/h2/a/span/cufon/canvas")){
 

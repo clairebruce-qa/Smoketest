@@ -55,8 +55,8 @@ public class ClaireandbruceTestCase{
 		selenium.start();
 		selenium.windowMaximize();
 		selenium.windowFocus();
-		selenium.setSpeed("500");
-		selenium.setTimeout("50000");	
+		selenium.setSpeed("600");
+		selenium.setTimeout("60000");	
 		
 	
 	}
@@ -77,7 +77,7 @@ public class ClaireandbruceTestCase{
 	
 	@After
 	public void aftertest(){
-		System.out.println("**** Test done ****"+ RCRunner.getTestName()+" ****\n");		
+		System.out.println("\n**** Test done ****"+ RCRunner.getTestName()+" ****\n");		
 	}
     
     @AfterFailure

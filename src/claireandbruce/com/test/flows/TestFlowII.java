@@ -1,5 +1,7 @@
 package claireandbruce.com.test.flows;
 
+import lib.Helper;
+
 import org.junit.Test;
 
 import claireandbruce.com.test.basicsFlows.LibCorrectLogonValidUserAccout;
@@ -27,6 +29,8 @@ public class TestFlowII extends ClaireandbruceTestCase {
 	@Test
 	public void test_flow2() throws Exception{		
 		
+		Helper.log("FlujoII: Login + ProductoSimple + CambioUnidad de un Producto + TipoEnvío + \nDirecciónExistente + Factura + PagoTarjetaCrédito");
+		Helper.log(" ");
 		// El Usuario se Autentica
 		LibCorrectLogonValidUserAccout.CBT55(selenium);
 				

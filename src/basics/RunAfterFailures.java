@@ -46,7 +46,7 @@ public class RunAfterFailures extends Statement {
             return;
         }
         if (fErrors.size() == 1) {
-        	System.out.println("failures tc: "+ ClaireandbruceTestCase.tc + " "+fErrors.get(0).toString());
+        	System.out.println("failures tc: "+ ClaireandbruceTestCase.tc + " "+fErrors.get(0).toString()+"\n");
         	throw fErrors.get(0);
         }
         throw new MultipleFailureException(fErrors);

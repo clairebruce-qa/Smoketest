@@ -59,9 +59,10 @@ public class LibCorrectLogonValidUserAccout extends ClaireandbruceTestCase {
 			selenium.type("xpath=.//*[@id='pass']", password);		
 			Helper.log("Se hace clic en el botón 'ENTRAR'");
 			selenium.click("//button[contains(@id,'send2')]");	
-			selenium.waitForPageToLoad("40000");
 			
-			if (!selenium.isElementPresent( "class=validation-advice")){		
+			
+			if (!selenium.isElementPresent( "class=validation-advice")){	
+				selenium.waitForPageToLoad("40000");
 				if (selenium.isTextPresent("Salir")){
 					Helper.log("LOGIN OK");
 					message = "loginOk";

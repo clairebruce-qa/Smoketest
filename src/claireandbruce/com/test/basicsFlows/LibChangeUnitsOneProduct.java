@@ -52,7 +52,7 @@ public class LibChangeUnitsOneProduct extends ClaireandbruceTestCase{
 				int cantidadNueva=Integer.parseInt(selenium.getValue("//table[@id='shopping-cart-table']/tbody/tr[2]/td[2]/input"));
 				double precioUnitario, precioTotalProducto;
 				
-				if(!selenium.isElementPresent("xpath=//p[3]/span")){
+				if(!selenium.isElementPresent("xpath=//p[3]/span") && selenium.isElementPresent("xpath=//span/div/p/span")){
 					precio = selenium.getText("xpath=//span/div/p/span");
 				} else if(selenium.isElementPresent("xpath=//span/div/p/span")){
 					precio = selenium.getText("xpath=//p[3]/span");
@@ -64,14 +64,18 @@ public class LibChangeUnitsOneProduct extends ClaireandbruceTestCase{
 				//Se separan los caracteres que pertenecen a la unidad de moneda 
 				int indexChar=0;
 				String auxPrecio="",auxPrecioT="";
-				Helper.log("*****precio unitario "+precio);
+				Helper.log("*****precio total "+precioTotal);
 				while(indexChar <= (precio.length()-2)) {
 					if(precio.charAt(indexChar)!= ',' && precio.charAt(indexChar)!='.') {
 						auxPrecio+=precio.charAt(indexChar);
 					} else if(precio.charAt(indexChar)==','){
 						auxPrecio+= ".";
-					}
-					
+					}					
+					indexChar++;
+				}
+				precioUnitario=Double.parseDouble(auxPrecio);
+				indexChar=0;
+				while(indexChar<= (precioTotal.length()-2)){
 					if(precioTotal.charAt(indexChar)!= ',' && precioTotal.charAt(indexChar)!='.') {
 						auxPrecioT+=precioTotal.charAt(indexChar);
 					} else if(precioTotal.charAt(indexChar)==','){
@@ -79,7 +83,7 @@ public class LibChangeUnitsOneProduct extends ClaireandbruceTestCase{
 					}
 					indexChar++;
 				}
-				precioUnitario=Double.parseDouble(auxPrecio);
+				
 				precioTotalProducto=Double.parseDouble(auxPrecioT);
 				Helper.log("Precio unitario: "+precioUnitario);
 				DecimalFormat myFormatter = new DecimalFormat("0.00");
