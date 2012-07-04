@@ -4,7 +4,6 @@ import static org.junit.Assert.assertEquals;
 import java.text.DecimalFormat;
 import junit.framework.Assert;
 import lib.Helper;
-import org.junit.Test;
 
 import com.thoughtworks.selenium.Selenium;
 
@@ -53,16 +52,19 @@ public class LibChangeUnitsOneProduct extends ClaireandbruceTestCase{
 				int cantidadNueva=Integer.parseInt(selenium.getValue("//table[@id='shopping-cart-table']/tbody/tr[2]/td[2]/input"));
 				double precioUnitario, precioTotalProducto;
 				
-				if(selenium.isElementPresent("xpath=//span/div/span/span")){
-					precio = selenium.getText("xpath=//span/div/span/span");
+				if(!selenium.isElementPresent("xpath=//p[3]/span")){
+					precio = selenium.getText("xpath=//span/div/p/span");
 				} else if(selenium.isElementPresent("xpath=//span/div/p/span")){
 					precio = selenium.getText("xpath=//p[3]/span");
+				} else {
+					precio = selenium.getText("xpath=//span/div/span/span");
 				}
 				precioTotal = selenium.getText("//td[5]/span/span");
 				
 				//Se separan los caracteres que pertenecen a la unidad de moneda 
 				int indexChar=0;
 				String auxPrecio="",auxPrecioT="";
+				Helper.log("*****precio unitario "+precio);
 				while(indexChar <= (precio.length()-2)) {
 					if(precio.charAt(indexChar)!= ',' && precio.charAt(indexChar)!='.') {
 						auxPrecio+=precio.charAt(indexChar);

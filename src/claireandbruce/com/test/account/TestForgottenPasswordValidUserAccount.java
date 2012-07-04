@@ -18,7 +18,6 @@ import basics.ClaireandbruceTestCase;
  */
 public class TestForgottenPasswordValidUserAccount extends ClaireandbruceTestCase{
 	
-	public static String username2="";
 	@Test
 	public void CBT83() throws Exception{
 		selenium.deleteAllVisibleCookies();  
@@ -41,7 +40,7 @@ public class TestForgottenPasswordValidUserAccount extends ClaireandbruceTestCas
 		selenium.waitForPageToLoad("15000");
 			
 		if(!selenium.isElementPresent("xpath=/html/body/div/div[3]/div/div/div/div/form/div/ul/li[3]/div")){
-			Claireandbruce.login(selenium,"claireandbruceqa39@gmail.com", "123458");
+			Claireandbruce.login(selenium,"stress_test_qa125@claireandbruce.com", "123458");
 			Assert.fail("Error: elemento OLVIDO SU CONTRASEÑA no encontrado");
 		}
 
