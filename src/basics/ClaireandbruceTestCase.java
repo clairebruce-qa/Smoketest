@@ -72,12 +72,12 @@ public class ClaireandbruceTestCase{
 	@Before
 	public void beforetest(){
 		 // Get test method name
-         System.out.println("**** Start test **** " + RCRunner.getTestName()+" ****\n");               
+         System.out.println("\n**** Start test **** " + RCRunner.getTestName()+" ****\n");               
 	}
 	
 	@After
 	public void aftertest(){
-		System.out.println("\n**** Test done ****"+ RCRunner.getTestName()+" ****\n");		
+		System.out.println("\n**** Test done ****"+ RCRunner.getTestName()+" ****");		
 	}
     
     @AfterFailure

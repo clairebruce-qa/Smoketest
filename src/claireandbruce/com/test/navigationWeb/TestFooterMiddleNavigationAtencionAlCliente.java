@@ -26,34 +26,32 @@ public class TestFooterMiddleNavigationAtencionAlCliente  extends Claireandbruce
 		Helper.log("Se inicia prueba de Navegación por footer para Atención al Cliente");
 		selenium.open("");		
 		
-		if(selenium.isElementPresent("xpath=//div[6]/div[2]/ul/li/a")){
-			Helper.log("Se ingresa a "+selenium.getText("xpath=//div[6]/div[2]/ul/li/a"));
-			selenium.click("xpath=//div[6]/div[2]/ul/li/a");
+		if(selenium.isElementPresent("xpath=//div[7]/div[2]/ul/li/a")){
+			Helper.log("Se ingresa al link '"+selenium.getText("xpath=//div[7]/div[2]/ul/li/a")+"'");
+			selenium.click("xpath=//div[7]/div[2]/ul/li/a");
 			selenium.waitForPageToLoad("15000");
-			assertTrue(selenium.isElementPresent("xpath=//div[@id='question-category-block']/div/ul/li/a"));
+			Helper.log("Se verifica el texto: '"+selenium.getText("xpath=//div[@id='question-category-block']/div/ul/li/a")+"'");
+			assertTrue("No se ha encontrado la información consultada", selenium.isElementPresent("xpath=//div[@id='question-category-block']/div/ul/li/a"));
 			//Se Retorna a la pagina Principal de Bienvenida
 			selenium.click("xpath=//img");
 			selenium.waitForPageToLoad("15000");
 		}
 		int literal=2;
-		while(selenium.isElementPresent("xpath=//div[6]/div[2]/ul/li["+literal+"]/a")){
+		while(selenium.isElementPresent("xpath=//div[7]/div[2]/ul/li["+literal+"]/a")){
 
 			//-----------------    SE DESPLIEGA LA INTERFAZ DEL LINK   ---------------------
-			Helper.log("Se ingresa a "+selenium.getText("xpath=//div[6]/div[2]/ul/li["+literal+"]/a"));
-			selenium.click("xpath=//div[6]/div[2]/ul/li["+literal+"]/a");
+			Helper.log("Se ingresa al link '"+selenium.getText("xpath=//div[7]/div[2]/ul/li["+literal+"]/a")+"'");
+			selenium.click("xpath=//div[7]/div[2]/ul/li["+literal+"]/a");
 			selenium.waitForPageToLoad("30000");
 				
 			//--------------------- VERIFICACION DE LA INTERFAZ  -----------------------------
-			selenium.waitForPageToLoad("15000");
-			assertTrue(selenium.isElementPresent("xpath=//div[@id='question-category-block']/div["+literal+"]/ul/li/a"));
+			Helper.log("Se verifica el texto: '"+selenium.getText("xpath=//div[@id='question-category-block']/div["+literal+"]/ul/li/a")+"'");
+			assertTrue("No se ha encontrado la información consultada", selenium.isElementPresent("xpath=//div[@id='question-category-block']/div["+literal+"]/ul/li/a"));
 			
 			//Se Retorna a la pagina Principal de Bienvenida
 			selenium.click("xpath=//img");
 			selenium.waitForPageToLoad("15000");
-			literal++;
-				
+			literal++;				
 		}
-		}
-		//Verificación de la existencia de los enlaces en la página de bienvenida
-		
+	}		
 }

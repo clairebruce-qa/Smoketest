@@ -120,15 +120,16 @@ public class TestShoppinCart11UserLoginPurchaseWithInvoiceWhitOtherAddressEmptyF
 				 Assert.fail("No seleccionó método de pago, no se muestra mensaje de advertencia sobre Tarjeta de Crédito");
 			}
 			
-			if(selenium.isTextPresent("Check/Money")){
-				if (!"Seleccione una de las opciones.".equals(selenium.getText("xpath=.//*[@id='advice-validate-one-required-by-name-p_method_checkmo']"))) {
-					Assert.fail("No seleccionó método de pago, no se muestra mensaje de advertencia sobre el Cheque");
-				}
-			}			
-
-			if (!"Seleccione una de las opciones.".equals(selenium.getText("xpath=.//*[@id='advice-validate-one-required-by-name-p_method_paypal_express']"))) {
-				 Assert.fail("No seleccionó método de pago, no se muestra mensaje de advertencia sobre PayPal");
-			}
+			//No se tendrán en cuenta estos mensajes
+//			if(selenium.isTextPresent("Check/Money")){
+//				if (!"Seleccione una de las opciones.".equals(selenium.getText("xpath=.//*[@id='advice-validate-one-required-by-name-p_method_checkmo']"))) {
+//					Assert.fail("No seleccionó método de pago, no se muestra mensaje de advertencia sobre el Cheque");
+//				}
+//			}			
+//
+//			if (!"Seleccione una de las opciones.".equals(selenium.getText("xpath=.//*[@id='advice-validate-one-required-by-name-p_method_paypal_express']"))) {
+//				 Assert.fail("No seleccionó método de pago, no se muestra mensaje de advertencia sobre PayPal");
+//			}
 			if(("off").equals(selenium.getValue("id=agreement-1"))) {
 				selenium.click("id=agreement-1");						
 			} else {

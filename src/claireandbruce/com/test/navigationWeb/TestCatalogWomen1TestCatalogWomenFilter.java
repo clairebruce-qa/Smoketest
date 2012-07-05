@@ -38,25 +38,36 @@ public class TestCatalogWomen1TestCatalogWomenFilter extends ClaireandbruceTestC
 			
 		}
 		
-		int i = (int) (Math.random()*(10-4+1))+4;
+		int i = (int) (Math.random()*(110-4+1))+4;
+		int contador=0;
+		//Se busca un filtro por marcas visible en la interfaz
+		Helper.log("Se busca un filtro por marcas visible");
+		Helper.log("marca "+i+" editable"+selenium.isEditable("xpath=//dd[@id='filter-2']/ol/li["+i+"]/input"));
+		while(!selenium.isEditable("xpath=//dd[@id='filter-2']/ol/li["+i+"]/input")){
+			if(contador<=4) {
+				i = (int) (Math.random()*(110-6+1))+6;
+			} else if(i<110){
+				i++;
+			}			
+			contador++;					
+		}
 		
 		// Selecciona una Marca aleatoria
-		if(selenium.isElementPresent("xpath=.//*[@id='filter-2']/ol[1]/li["+i+"]/a")){
-			Helper.log("Se ingreas a una marca aleatoria del filtro");
-				
-				String check= selenium.getText("xpath=.//*[@id='filter-2']/ol[1]/li["+i+"]/a");
+		if(selenium.isElementPresent("xpath=//dd[@id='filter-2']/ol/li["+i+"]/input")){
+			Helper.log("Se ingresa a una marca aleatoria del filtro");				
+			String check= selenium.getText("xpath=//dd[@id='filter-2']/ol/li["+i+"]/a");
 								
-				Helper.log("Marca seleccionada "+check);
-				// Se verifica que un producto efectivamente pertenece a esa Marca
-				Helper.log("Se verifica que se encuentre un producto de dicha marca");
-				selenium.click("xpath=.//*[@id='filter-2']/ol[1]/li["+i+"]/a");
-				selenium.waitForPageToLoad("30000");
+			Helper.log("Marca seleccionada "+check);
+			// Se verifica que un producto efectivamente pertenece a esa Marca
+			Helper.log("Se verifica que se encuentre un producto de dicha marca");
+			selenium.click("xpath=//dd[@id='filter-2']/ol/li["+i+"]/input");
+			selenium.waitForPageToLoad("30000");
 				
-				if(!(check).equals(selenium.getText("//li/div[2]"))){
-					Assert.fail("No se efectuó el filtro");
-				}
-				selenium.click("xpath=.//*[@id='filter-2']/ol[1]/li["+i+"]/a");
-				selenium.waitForPageToLoad("30000");
+			if(!(check).equals(selenium.getText("//li/div[2]"))){
+				Assert.fail("No se efectuó el filtro");
+			}
+			selenium.click("xpath=//dd[@id='filter-2']/ol/li["+i+"]/input");
+			selenium.waitForPageToLoad("30000");
 			
 		}
 		
@@ -93,20 +104,23 @@ public class TestCatalogWomen1TestCatalogWomenFilter extends ClaireandbruceTestC
 			Helper.log("Se selecciona el filtro "+check);
 			selenium.click("//div["+n+"]/a/div[2]/div");
 			selenium.waitForPageToLoad("30000");
-			String precioN=selenium.getText("//span/span");
+			String precioN="";
+			if(selenium.isElementPresent("xpath=//p/span")){
+				precioN=selenium.getText("xpath=//p[3]/span");
+			} else {
+				precioN= selenium.getText("xpath=//span/span");
+			}
+			
 			Helper.log(precioN);
 			int cant=0;
 			String nuevoP="";
 			while(cant<(precioN.length()-2)){
 				if(precioN.charAt(cant)!=',') {
 					nuevoP+=""+precioN.charAt(cant);
-				}
-				else{
+				} else{
 					nuevoP+=".";
-				}
-				
-				cant++;
-				
+				}				
+				cant++;				
 			}
 			precio=Double.parseDouble(nuevoP);
 			
@@ -116,36 +130,30 @@ public class TestCatalogWomen1TestCatalogWomenFilter extends ClaireandbruceTestC
 					Assert.fail("Error el filtro no se aplico");
 				}
 			}
-			if((check).equals("Entre 100 y 200 €")){
-				
+			if((check).equals("Entre 100 y 200 €")){				
 				if((precio>200)){
 					Assert.fail("Error el filtro no se aplico");
-				}
-				
+				}				
 			}	
-			if((check).equals("Entre 200 y 300 €")){
-				
+			if((check).equals("Entre 200 y 300 €")){				
 				if((precio>300)){
 					Assert.fail("Error el filtro no se aplico");
-				}
-				
+				}				
 			}	
 				
-			if((check).equals("Entre 300 y 400 €")){
-				
+			if((check).equals("Entre 300 y 400 €")){				
 				if((precio>400)){
 					Assert.fail("Error el filtro no se aplico");
 				}
 			}
-			if((check).equals("Entre 400 y 500 €")){
-	
+			if((check).equals("Entre 400 y 500 €")){	
 				if((precio>500)){
 					Assert.fail("Error el filtro no se aplico");
 				}
 			}
 			Helper.log(check);
 			// Se verifica que un producto efectivamente pertenece a ese precio
-			Helper.log("Se verifica que un producto posea este rango de precio");
+			Helper.log("Se verifica que un producto posee este rango de precio");
 			selenium.click("//div["+n+"]/a/div[2]/div");
 			selenium.waitForPageToLoad("30000");
 		}

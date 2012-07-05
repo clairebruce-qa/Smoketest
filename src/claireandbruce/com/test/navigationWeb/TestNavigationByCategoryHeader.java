@@ -50,7 +50,7 @@ public class TestNavigationByCategoryHeader extends ClaireandbruceTestCase {
 		Helper.log("Ingresando a las categorías del menú superior (Ropa, Zapatos, Bolsos, Accesorios)");
 		do {
 			selenium.click("xpath=//ul[@id='nav']/li["+menu+"]/h2/a/span/cufon/canvas");
-			selenium.waitForPageToLoad("15000");
+			selenium.waitForPageToLoad("20000");
 			Helper.log("Se ha ingresado a la interfaz: "+selenium.getTitle());
 			menu++;
 		}while(selenium.isElementPresent("xpath=//ul[@id='nav']/li["+menu+"]/h2/a/span/cufon/canvas"));
