@@ -13,15 +13,14 @@ import basics.ClaireandbruceTestCase;
  * (AYUDA, CONDICIONES DE USO, POLÍTICAS DE PRIVACIDAD, QUIÉNES SOMOS) encontrados en el Footer.
  * 
  * @author NEWSHORE
- * CBT93
+ * Testlink: Local CBT93  - Privalia CBT22
  */
 
 
 public class TestFooterTopNavigation extends ClaireandbruceTestCase {
 	
 	@Test
-	public void CBT93() throws Exception {
-		
+	public void cbt22() throws Exception {		
 		
 		//Validacion del Menu de Navegacion del Footer AYUDAS, Condiciones de Uso, Politicas de Privacidad y Sobre Nosotros
 		Helper.log("Se inicia prueba de Navegación por Footer Top");

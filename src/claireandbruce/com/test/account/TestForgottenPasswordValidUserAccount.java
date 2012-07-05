@@ -12,14 +12,14 @@ import basics.ClaireandbruceTestCase;
  *  del proceso recuperación de la contraseña de un   usuario 
  *  registrado.
  * 
- * CBT83
+ *  Testlink: Local CBT83  - Privalia CBT17
  * @author NEWSHORE
  *
  */
 public class TestForgottenPasswordValidUserAccount extends ClaireandbruceTestCase{
 	
 	@Test
-	public void CBT83() throws Exception{
+	public void cbt17() throws Exception{
 		selenium.deleteAllVisibleCookies();  
 		selenium.open("");
 		 if (selenium.isElementPresent("xpath=//a[@id='overridelink']")){

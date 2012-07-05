@@ -17,14 +17,13 @@ import basics.ClaireandbruceTestCase;
  * la posterior muestra del mensaje de advertencia sobre formato de email no válido.
  * 
  * @author 	NEWSHORE 
- * CBT72
+ * Testlink: Local CBT72  - Privalia CBT25
  */
 
 public class TestIncorrectLogonInvalidUserFormatCheckout extends ClaireandbruceTestCase{
 
 	@Test
-	public void CBT72() throws Exception{
-
+	public void cbt25() throws Exception{
 		
 		// Elimina las cookies
 		selenium.deleteAllVisibleCookies();

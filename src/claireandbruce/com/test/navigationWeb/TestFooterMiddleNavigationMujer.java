@@ -1,21 +1,17 @@
 package claireandbruce.com.test.navigationWeb;
 
-import static org.junit.Assert.*;
 import lib.Helper;
-
 import org.junit.Test;
-
 import basics.ClaireandbruceTestCase;
 /**
  * 
  * @author NEWSHORE
- * CBT94
+ * Testlink: Local CBT94  - Privalia CBT71 
  */
 public class TestFooterMiddleNavigationMujer extends ClaireandbruceTestCase{
 	
 	@Test
-	public void CBT94() throws Exception{
-		
+	public void cbt71() throws Exception{		
 		
 		selenium.open("");
 		int columna=1;
@@ -30,7 +26,6 @@ public class TestFooterMiddleNavigationMujer extends ClaireandbruceTestCase{
 			Helper.clickAndVerify(selenium, "xpath=//div[3]/div["+columna+"]/div/a", texto, "class=breadcrumbs-present");
 			//Se Retorna a la página Principal de Bienvenida
 			Helper.clickAndVerify(selenium, "xpath=//img", "Tu cuenta", "link=Tu cuenta");
-			int div=2;
 			if(columna==1){
 				texto=selenium.getText("xpath=//div[3]/div/div[2]/ul/li/a");
 				Helper.clickAndVerify(selenium, "xpath=//div[3]/div/div[2]/ul/li/a", texto, "class=breadcrumbs-present");

@@ -16,15 +16,14 @@ import basics.ClaireandbruceTestCase;
  * electrónico  pertenece a un usuario no  registrado  en   el 
  * sistema.
  * 
- * CBT84
+ * Testlink: Local CBT84  - Privalia CBT33
  * @author NEWSHORE
  *
  */
 public class TestForgottenPasswordInvalidUserAccount extends ClaireandbruceTestCase{
 	
-
 	@Test
-	public void CBT84() throws Exception{
+	public void cbt33() throws Exception{
 		
 		// Se ingresa a la pagina principal de ClaireandBruce
 		Helper.log("Se eliminan cookies");

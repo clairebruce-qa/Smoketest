@@ -11,14 +11,14 @@ import basics.ClaireandbruceTestCase;
  * 
  * Caso de prueba diseñado para verificar el correcto despliegue y funcionamiento 
  * de la interfaz del formulario "Contáctenos".
- * CBT97
+ * Testlink: Local CBT97  - Privalia CBT29
  * @author NEWSHORE
  *
  */
 public class TestSendMessageFormularioContactoAccount extends ClaireandbruceTestCase {
 	
 	@Test
-	public void CBT97() throws Exception{
+	public void cbt29() throws Exception{
 		
 		Helper.log("\n*** CASO DE PRUEBA *** CBT97. ENVÍO DE FORMULARIO DE CONTACTO");
 		

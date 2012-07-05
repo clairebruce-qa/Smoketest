@@ -1,7 +1,6 @@
 package claireandbruce.com.test.navigationWeb;
 
 import static org.junit.Assert.*;
-import lib.Claireandbruce;
 import lib.Helper;
 
 import org.junit.Test;
@@ -10,12 +9,12 @@ import basics.ClaireandbruceTestCase;
 /**
  * 
  * @author NEWSHORE
- * CBT95
+ * Testlink: Local CBT95  - Privalia CBT12
  */
 public class TestFooterMiddleNavigationMarcas extends ClaireandbruceTestCase {
 	
 	@Test
-	public void CBT95() throws Exception{
+	public void cbt12() throws Exception{
 		selenium.open("");
 		selenium.waitForPageToLoad("15000");
 		

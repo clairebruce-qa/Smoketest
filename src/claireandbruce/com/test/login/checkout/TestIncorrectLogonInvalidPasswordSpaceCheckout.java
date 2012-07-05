@@ -15,7 +15,7 @@ import basics.ClaireandbruceTestCase;
  * durante el  checkout,  al validar la  información ingresada por el usuario al momento de realizar
  * esta acción. El éxito del caso de prueba será la validación del campo contraseña ingresado y por consecuencia 
  * la posterior muestra del mensaje de advertencia sobre formato de contraseña no válido.
- * CBT74
+ * Testlink: Local CBT74  - Privalia CBT27
  * @author 	NEWSHORE 
  *
  */
@@ -23,7 +23,7 @@ import basics.ClaireandbruceTestCase;
 public class TestIncorrectLogonInvalidPasswordSpaceCheckout extends ClaireandbruceTestCase{
 
 	@Test
-	public void CBT74() throws Exception{
+	public void cbt27() throws Exception{
 
 		
 		// Elimina las cookies

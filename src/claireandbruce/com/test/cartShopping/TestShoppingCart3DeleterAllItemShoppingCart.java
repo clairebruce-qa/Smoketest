@@ -20,12 +20,12 @@ import basics.ClaireandbruceTestCase;
 	o todos los items del carrito de compras y  este vacio
 	
 	@author NEWSHORE
-	CBT24
+	Testlink: Local CBT24  - Privalia CBT65
 	*/
 public class TestShoppingCart3DeleterAllItemShoppingCart extends ClaireandbruceTestCase {
 	
 	@Test
-	public void CBT24() throws Exception
+	public void cbt65() throws Exception
 	{			
 		//----------***** SE DESPLIEGA LA VENTANA *****---------------------\\
 				

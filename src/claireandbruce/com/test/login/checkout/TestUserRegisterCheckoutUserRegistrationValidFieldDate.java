@@ -17,13 +17,13 @@ import basics.ClaireandbruceTestCase;
  *
  * 
  * @author 	NEWSHORE 
- * CBT21
+ * Testlink: Local CBT21  - Privalia CBT47
  */
 
 public class TestUserRegisterCheckoutUserRegistrationValidFieldDate extends ClaireandbruceTestCase{
 
 	@Test
-	public void CBT21() throws Exception{
+	public void cbt47() throws Exception{
 
 		Helper.log("Se inicia proceso de registro con fecha de nacimiento no válida");
 		Helper.log("Se eliminan las cookies");

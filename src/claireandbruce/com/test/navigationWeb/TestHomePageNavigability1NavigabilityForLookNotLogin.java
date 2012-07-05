@@ -7,12 +7,12 @@ import basics.ClaireandbruceTestCase;
 /**
  * 
  * @author NEWSHORE
- * CBT31
+ * Testlink: Local CBT31  - Privalia CBT7
  */
 public class TestHomePageNavigability1NavigabilityForLookNotLogin extends ClaireandbruceTestCase {
 
 	@Test
-	public void CBT31 () throws Exception{
+	public void cbt7 () throws Exception{
 		
 		//Pruebas unitarias
 		Helper.log("Se prueba la navegabilidad por los looks visibles en Homepage");

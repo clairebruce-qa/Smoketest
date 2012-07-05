@@ -22,13 +22,13 @@ import basics.ClaireandbruceTestCase;
  * la posterior muestra del mensaje de advertencia sobre formato de contraseña no válido.
  * 
  * @author 	NEWSHORE 
- * CBT20
+ * Testlink: Local CBT20  - Privalia CBT44
  */
 
 public class TestUserRegisterCheckoutUserRegistrationValidFieldString extends ClaireandbruceTestCase{
 
 	@Test
-	public void CBT20() throws Exception{
+	public void cbt44() throws Exception{
 
 		Helper.log("Se inicia proceso de registro por checkout con contraseña no válida");
 		// Elimina las cookies

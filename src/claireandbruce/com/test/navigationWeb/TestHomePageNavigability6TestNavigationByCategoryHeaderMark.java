@@ -1,21 +1,18 @@
 package claireandbruce.com.test.navigationWeb;
 
 import junit.framework.Assert;
-import lib.Claireandbruce;
 import lib.Helper;
-
 import org.junit.Test;
-
 import basics.ClaireandbruceTestCase;
 
 /**
  * 
  * @author NEWSHORE
- * CBT39
+ * Testlink: Local CBT39  - Privalia CBT8
  */
 public class TestHomePageNavigability6TestNavigationByCategoryHeaderMark extends ClaireandbruceTestCase{
 	@Test
-	public void CBT39() throws Exception{
+	public void cbt8() throws Exception{
 		Helper.log("Prueba de navegación por Marcas en el header");
 		Helper.log("Se carga la página "+ClaireandbruceUrl);
 		selenium.open("");

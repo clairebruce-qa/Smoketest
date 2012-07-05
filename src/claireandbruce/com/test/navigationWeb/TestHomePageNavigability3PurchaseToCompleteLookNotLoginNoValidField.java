@@ -8,12 +8,12 @@ import basics.ClaireandbruceTestCase;
 /**
  * 
  * @author NEWSHORE
- *
+ * Testlink: Local CBT33  - Privalia CBT67
  */
 public class TestHomePageNavigability3PurchaseToCompleteLookNotLoginNoValidField extends ClaireandbruceTestCase {
 	
 	@Test
-	public void CBT33 () throws Exception{
+	public void cbt67 () throws Exception{
 		//Tener desplegada la interfaz del primer estilo
 		Helper.log("Se prueba la navegabilidad por los Total Look");
 		Helper.log("Se carga la página "+ClaireandbruceUrl);

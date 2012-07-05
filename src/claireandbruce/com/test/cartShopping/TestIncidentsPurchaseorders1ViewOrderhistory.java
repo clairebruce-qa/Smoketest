@@ -11,7 +11,7 @@ import basics.ClaireandbruceTestCase;
 /**
  * El usuario autenticado puede ver el historial de pedidos a través del menú
  * de navegación derecho o a través de la pagina de bienvenida de account.
- * CBT49
+ * Testlink: Local CBT49  - Privalia CBT13
  * @author NEWSHORE
  *
  */
@@ -21,7 +21,7 @@ public class TestIncidentsPurchaseorders1ViewOrderhistory extends Claireandbruce
 	private String message;
 
 	@Test
-	public void CBT49() throws Exception{
+	public void cbt13() throws Exception{
 		message="";
 	
 		selenium.open(ClaireandbruceUrl);

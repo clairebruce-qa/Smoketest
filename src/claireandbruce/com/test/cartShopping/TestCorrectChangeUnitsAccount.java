@@ -1,35 +1,25 @@
 package claireandbruce.com.test.cartShopping;
 
 import static org.junit.Assert.assertEquals;
-
 import java.text.DecimalFormat;
-
 import junit.framework.Assert;
-
 import lib.Helper;
-
 import org.junit.Test;
-
-//import claireandbruce.com.test.basicosFlujos.Test_CorrectAddProduct_Cart_SimpleProduct;
-
 import claireandbruce.com.test.basicsFlows.LibCorrectAddProductCartConfigurableProduct;
 import claireandbruce.com.test.basicsFlows.LibCorrectAddProductCartSimpleProduct;
-import claireandbruce.com.test.basicsFlows.LibCorrectLogonValidUserAccout;
-
-import com.thoughtworks.selenium.Selenium;
 import basics.ClaireandbruceTestCase;
 /**
  * 
  * @author NEWSHORE
- *
+ * Testlink: Local CBT78  - Privalia CBT15
  */
 public class TestCorrectChangeUnitsAccount extends ClaireandbruceTestCase {
 		
 	@Test
-	public void CBT78() throws Exception{
+	public void cbt15() throws Exception{
+		
 		selenium.open("");
 		selenium.waitForPageToLoad("20000");
-		//Lib_CorrectLogon_ValidUser_Accout.CBT55(selenium);
 		LibCorrectAddProductCartConfigurableProduct.CBT_ConfigurableProduct(selenium);
 		LibCorrectAddProductCartSimpleProduct.CBT_SimpleProduct(selenium);
 		LibCorrectAddProductCartSimpleProduct.CBT_SimpleProduct(selenium);
@@ -52,7 +42,7 @@ public class TestCorrectChangeUnitsAccount extends ClaireandbruceTestCase {
 		//Se declaran variables string para separar los caracteres que pertenecen al precio sin unidad de moneda
 		String precio = null, precioTotal;
 		int cantidad, cantidadNueva;
-		double precioUnitario, precioFinal = 0, precioFinalEsperado;
+		double precioUnitario, precioFinalEsperado;
 		//Primer artículo el cual posee un xpath diferente
 		do {
 			if(fila==2){

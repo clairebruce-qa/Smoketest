@@ -9,14 +9,14 @@ import claireandbruce.com.test.basicsFlows.LibCorrectLogonValidUserAccout;
 import basics.ClaireandbruceTestCase;
 
 /**
- * CBT61
+ * Testlink: Local CBT61  - Privalia CBT21
  * @author NEWSHORE
  *
  */
 public class TestIncorrectPasswordChangeInvalidOldPassAccount extends ClaireandbruceTestCase {
 
 	@Test
-	public void CBT61() throws Exception {
+	public void cbt21() throws Exception {
 		Helper.log("\n*** CASO DE PRUEBA *** CBT61. CAMBIO DE CONTRASEÑA CON CONTRASEÑA ACTUAL NO VÁLIDA");
 		LibCorrectLogonValidUserAccout.CBT55(selenium);
 		

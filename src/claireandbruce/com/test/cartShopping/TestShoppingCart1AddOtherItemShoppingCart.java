@@ -17,13 +17,13 @@ import basics.ClaireandbruceTestCase;
 /**
  * 
  * @author NEWSHORE
- * CBT22
+ * Testlink: Local CBT22  - Privalia CBT14
  */
 
 public class TestShoppingCart1AddOtherItemShoppingCart extends ClaireandbruceTestCase{
 
 	@Test
-	public void CBT22() throws Exception{
+	public void cbt14() throws Exception{
 		
 		//Previo ingreso a la pagina c+b
 		Helper.log("Se inicia proceso para agregar otro producto al carrito de compras");

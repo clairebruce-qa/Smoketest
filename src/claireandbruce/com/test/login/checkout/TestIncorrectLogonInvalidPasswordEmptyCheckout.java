@@ -15,7 +15,7 @@ import basics.ClaireandbruceTestCase;
  * durante el  checkout,  al validar la  información ingresada por el usuario al momento de realizar
  * esta acción. El éxito del caso de prueba será la validación del campo contraseña =vacío  y por consecuencia 
  * la posterior muestra del mensaje de advertencia sobre formato de contraseña no válido.
- * CBT75
+ * Testlink: Local CBT75  - Privalia CBT28
  * @author 	NEWSHORE 
  *
  */
@@ -23,8 +23,7 @@ import basics.ClaireandbruceTestCase;
 public class TestIncorrectLogonInvalidPasswordEmptyCheckout extends ClaireandbruceTestCase{
 
 	@Test
-	public void CBT75() throws Exception{
-
+	public void cbt28() throws Exception{
 		
 		// Elimina las cookies
 		selenium.deleteAllVisibleCookies();
@@ -45,8 +44,7 @@ public class TestIncorrectLogonInvalidPasswordEmptyCheckout extends Claireandbru
 				} else {
 					Helper.log("NO Logout!");
 				}
-		  }
-		  
+		  }		  
 		 
 		 // Se agrega el producto al carrito de compras 
 		 LibCorrectAddProductCartSimpleProduct.CBT_SimpleProduct(selenium);
@@ -73,25 +71,19 @@ public class TestIncorrectLogonInvalidPasswordEmptyCheckout extends Claireandbru
 		}			
 			
 			//Si no esta presente el formulario para ingresar los datos de usuario
-			if(!selenium.isElementPresent("xpath=.//*[@id='login-form']/div")) {			
-				
+			if(!selenium.isElementPresent("xpath=.//*[@id='login-form']/div")) {				
 				selenium.click("//a[contains(text(), 'Tu cuenta')]");
 				selenium.waitForPageToLoad("30000");			
 			}
 			
 			// ---***Se ingresan los datos de e-mail para el logueo por check-out ***---\\
 			
-			
 			selenium.type("xpath=.//*[@id='email']", "claireandbruce@gmail.com");
 			selenium.type("xpath=.//*[@id='pass']", "");		
 			selenium.click("//button[contains(@id,'send2')]");	
 			
-			if (!selenium.isElementPresent( "class=validation-advice")){		
-				
+			if (!selenium.isElementPresent( "class=validation-advice")){					
 					Assert.fail("Error: el formato de correo no es válido");
 			}
-			
-	
-
 	}
 }

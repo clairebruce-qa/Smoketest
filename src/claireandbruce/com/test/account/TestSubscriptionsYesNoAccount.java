@@ -81,6 +81,7 @@ public class TestSubscriptionsYesNoAccount extends ClaireandbruceTestCase{
 			assertTrue("Mensaje no visualizado",selenium.isTextPresent("La suscripción ha sido eliminada."));
 		}
 	
+		Helper.log("Se realiza un logout de la cuenta");
 		Claireandbruce.logout(selenium);
 		selenium.stop();		
 	}

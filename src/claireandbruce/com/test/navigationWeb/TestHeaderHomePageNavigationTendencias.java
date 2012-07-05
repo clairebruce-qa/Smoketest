@@ -2,11 +2,7 @@ package claireandbruce.com.test.navigationWeb;
 
 import lib.Claireandbruce;
 import lib.Helper;
-
 import org.junit.Test;
-
-import com.thoughtworks.selenium.Selenium;
-
 import basics.ClaireandbruceTestCase;
 
 /** @author NEWSHORE
@@ -15,11 +11,12 @@ import basics.ClaireandbruceTestCase;
  * de los items (After Work, Bohemian Chic, Denim Overload, Rocky Attitude, 
  * Romantic Countryside, Sailing In Saint Tropez, Working Girl) encontrados 
  * en el Header-Category.
+ * Testlink: Local CBT100 -  Privalia CBT5	
  */
 public class TestHeaderHomePageNavigationTendencias extends ClaireandbruceTestCase {
 			
 	@Test
-	public void CBT100() throws Exception{
+	public void cbt5() throws Exception{
 		
 		//Para efectos de pruebas unitarias
 		selenium.open("");
@@ -39,7 +36,6 @@ public class TestHeaderHomePageNavigationTendencias extends ClaireandbruceTestCa
 		selenium.waitForPageToLoad("15000");
 		Helper.log("Checking link 'TENDENCIAS'");
 		
-		String ubicacionActual = selenium.getLocation();
 		if(selenium.getLocation().startsWith("Tendencias")){
 			Helper.log("The link 'TENDENCIAS' load a page with content of all tendencies");
 		} else {

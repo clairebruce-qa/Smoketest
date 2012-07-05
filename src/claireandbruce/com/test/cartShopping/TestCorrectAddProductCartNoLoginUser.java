@@ -1,12 +1,9 @@
 package claireandbruce.com.test.cartShopping;
 
-
 import static org.junit.Assert.assertTrue;
 import lib.Claireandbruce;
 import lib.Helper;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
 import basics.ClaireandbruceTestCase;
@@ -18,14 +15,14 @@ import basics.ClaireandbruceTestCase;
  *  observar el producto en la cesta al hacer clic en el link de artículos  ubicado 
  *  en el header.
  *  @author NEWSHORE
- *  CBT76
+ *  Testlink: Local CBT76  - Privalia CBT9
  * */
 
 
 public class TestCorrectAddProductCartNoLoginUser extends ClaireandbruceTestCase {
 
 	@Test
-	public void CBT76() throws Exception{
+	public void cbt9() throws Exception{
 		
 		selenium.open("");
 		if (selenium.isElementPresent("xpath=//a[@id='overridelink']")){

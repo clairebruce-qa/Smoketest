@@ -7,14 +7,14 @@ import org.junit.Test;
 import basics.ClaireandbruceTestCase;
 import claireandbruce.com.test.basicsFlows.LibCorrectLogonValidUserAccout;
 /**
- * CBT62
+ * Testlink: Local CBT62  - Privalia CBT23
  * @author NEWSHORE
  *
  */
 public class TestCorrectPasswordChangeSpacesNewPassAccount extends ClaireandbruceTestCase {
 
 	@Test
-	public void CBT62() throws Exception{
+	public void cbt23() throws Exception{
 		
 		Helper.log("\n*** CASO DE PRUEBA *** CBT62. CAMBIO CORRECTO DE CONTRASEÑA - NUEVA CONTRASEÑA CON ESPACIOS EN ELLA");
 		

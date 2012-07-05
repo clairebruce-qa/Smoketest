@@ -1,16 +1,13 @@
 package claireandbruce.com.test.navigationWeb;
 
 import static org.junit.Assert.*;
-import junit.framework.AssertionFailedError;
-import lib.Claireandbruce;
 import lib.Helper;
-
 import org.junit.Test;
-
 import basics.ClaireandbruceTestCase;
+
 /**
  * @author NEWSHORE
- * CBT34
+ * Testlink: Local CBT34 - Privalia CBT68
  */
 public class TestHomePageNavigability4PurchaseToLookPieceByPieceUserNotLoginNoValidFields extends ClaireandbruceTestCase{
 	
@@ -18,7 +15,7 @@ public class TestHomePageNavigability4PurchaseToLookPieceByPieceUserNotLoginNoVa
 	private String message;
 
 	@Test
-	public void CBT34() throws Exception
+	public void cbt68() throws Exception
 	{
 		Helper.log("Prueba de navegabilidad por total look compra prenda por prenda");
 		Helper.log("Se carga la página "+ClaireandbruceUrl);

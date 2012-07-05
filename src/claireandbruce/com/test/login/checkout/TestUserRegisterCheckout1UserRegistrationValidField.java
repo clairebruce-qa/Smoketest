@@ -14,13 +14,13 @@ import basics.ClaireandbruceTestCase;
 /**
  * 
  * @author 	NEWSHORE 
- * CBT18
+ * Testlink: Local CBT18 -  Privalia CBT35
  */
 
 public class TestUserRegisterCheckout1UserRegistrationValidField extends ClaireandbruceTestCase{
 
 	@Test
-	public void CBT18() throws Exception{
+	public void cbt35() throws Exception{
  
 		Helper.log("Se inicia proceso de registro con datos válidos por checkout");
 		// Elimina las cookies

@@ -14,14 +14,15 @@ import basics.ClaireandbruceTestCase;
  * Especificación de prueba para la verificación  y validación de una dirección de envío 
  * de pedido para ser añadida a las direcciones con datos validos.
  * El éxito de la prueba será el ingreso al sistema de la nueva dirección 
- * CBT13
+ * Testlink: Local CBT13 -  Privalia CBT6
  * @author NEWSHORE
  *
  */
 public class TestUserAddress1AddShippingAddressUserWithValidFields extends ClaireandbruceTestCase {
 		
 	@Test
-	public void CBT13() throws Exception{
+	public void cbt6() throws Exception{
+		
 		Helper.log("Se inicia proceso de prueba: Agregar una dirección de envío con datos válidos");
 		Helper.log("Se eliminan cookies del navegador");
 		selenium.deleteAllVisibleCookies();

@@ -6,7 +6,8 @@ import lib.Helper;
 import org.junit.Test;
 import basics.ClaireandbruceTestCase;
 /**
- * CBT2
+ * Testlink
+ * Local  CBT2 -  Privalia CBT31
  * @author NEWSHORE
  *
  */
@@ -15,7 +16,7 @@ public class TestUserRegister1UserRegistrationValidField extends ClaireandbruceT
 	public static String username2;
 
 	@Test
-	public void CBT2() throws Exception{
+	public void cbt31() throws Exception{
 		
 		Helper.log("Se eliminan cookies");
 		selenium.deleteAllVisibleCookies();  

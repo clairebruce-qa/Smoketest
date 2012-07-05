@@ -8,15 +8,14 @@ import lib.Helper;
 import org.junit.Test;
 
 import basics.ClaireandbruceTestCase;
-/**
- * 
- * 
+/** 
+ * Testlink: Local CBT86  - Privalia CBT66
  * @author NEWSHORE
  *
  */
 public class TestMenCatalogNoUserLogin extends ClaireandbruceTestCase {
 	@Test
-	public void CBT86() throws Exception{
+	public void cbt66() throws Exception{
 		selenium.open("");
 		selenium.waitForPageToLoad("15000");
 		

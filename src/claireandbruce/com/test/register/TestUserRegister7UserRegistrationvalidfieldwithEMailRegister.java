@@ -14,7 +14,7 @@ import basics.ClaireandbruceTestCase;
  * registrado, el exito del caso de prueba será un mensaje de  error 
  * del sistema con  la  confirmacion  de correo electronico de  otro 
  * usuario, solicitando nuevamente el ingreso del correo electrónico.
- * CBT28
+ * Testlink: Local CBT28  - Privalia CBT30
  * @author NEWSHORE
  *
  */
@@ -24,7 +24,7 @@ public class TestUserRegister7UserRegistrationvalidfieldwithEMailRegister extend
 	public static String username2;
 
 	@Test
-	public void CBT28() throws Exception{
+	public void cbt30() throws Exception{
 		
 		Helper.log("Se inicia proceso de registro de usuario con correo electrónico de un usuario ya registrado");
 		// Elimina las cookies

@@ -14,11 +14,13 @@ import basics.ClaireandbruceTestCase;
 	 *pregunta relacionada con el item seleccionado.
 	 *
 	 *@author NEWSHORE
+	 * Testlink: Local CBT91  - Privalia CBT19
 	 **/
+
 public class TestFooterMiddleNavigationAtencionAlCliente  extends ClaireandbruceTestCase{
 	
 	@Test
-	public void CBT91() throws Exception{
+	public void cbt19() throws Exception{
 		
 		selenium.deleteAllVisibleCookies();
 		Helper.log("Se inicia prueba de Navegación por footer para Atención al Cliente");

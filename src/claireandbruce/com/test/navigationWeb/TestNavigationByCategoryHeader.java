@@ -1,20 +1,16 @@
 package claireandbruce.com.test.navigationWeb;
 
-import static org.junit.Assert.assertEquals;
 import lib.Helper;
-
 import org.junit.Test;
-
 import basics.ClaireandbruceTestCase;
-/**
- * 
+/** 
  * @author NEWSHORE
- * CBT90
+ * Testlink: Local CBT90  - Privalia CBT70
  */
 public class TestNavigationByCategoryHeader extends ClaireandbruceTestCase {
 		
 	@Test
-	public void CBT90() throws Exception{
+	public void cbt70() throws Exception{
 		selenium.open("");
 		selenium.waitForPageToLoad("35000");
 		Helper.log("Ambiente de prueba: "+selenium.getLocation());

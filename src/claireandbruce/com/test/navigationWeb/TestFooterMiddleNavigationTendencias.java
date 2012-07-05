@@ -10,12 +10,12 @@ import basics.ClaireandbruceTestCase;
 /**
  * 
  * @author NEWSHORE
- * CBT96
+ * TestLink: Local CBT96  - Privalia CBT18
  */
 public class TestFooterMiddleNavigationTendencias extends ClaireandbruceTestCase {
 		
 	@Test
-	public void CBT96() throws Exception{
+	public void cbt18() throws Exception{
 		selenium.open("");
 		selenium.waitForPageToLoad("15000");
 		

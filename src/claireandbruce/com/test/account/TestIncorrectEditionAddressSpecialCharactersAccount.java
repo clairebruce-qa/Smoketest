@@ -14,18 +14,16 @@ import basics.ClaireandbruceTestCase;
  *Nombre, Apellidos y  Población; luego de ingresar en ellos caracteres especiales 
  *( $%&# ) y números.
  * 
- * CBT70
+ * Testlink: Local CBT70  - Privalia CBT34
  * @author NEWSHORE
  *
  */
 public class TestIncorrectEditionAddressSpecialCharactersAccount extends ClaireandbruceTestCase {
 
 	@Test
-	public void CBT70() throws Exception{
-		
-		
-		
-		Helper.log("*** CBT70 *** ");
+	public void cbt34() throws Exception{
+				
+		Helper.log("*** CBT34 *** ");
 		selenium.open("");
 		selenium.waitForPageToLoad("15000");
 		int i =(int)(Math.random()*100);

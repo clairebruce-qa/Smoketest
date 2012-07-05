@@ -9,13 +9,13 @@ import basics.ClaireandbruceTestCase;
 
 /**Este caso de prueba valida la funcionalidad del sistema frente al cambio de idioma
  * @author NEWSHORE
- * CBT42
+ * Testlink: Local CBT42  - Privalia CBT69
  * */
 
 public class TestHomePageNavegability7NavigabilityMenuLanguage extends ClaireandbruceTestCase {
 
 	@Test
-	public void CBT42() throws Exception {
+	public void cbt69() throws Exception {
 		
 		Helper.log("Se inicia prueba de cambio de idioma en la aplicación");
 		//se despliega la pagina de claire and bruce en idioma español

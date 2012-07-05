@@ -55,7 +55,7 @@ import claireandbruce.com.test.register.*;
 	TestUserRegisterCheckoutUserRegistrationValidFieldString.class, 			//CBT20  - CBT44
 	TestUserRegisterCheckoutUserRegistrationValidFieldDate.class, 				//CBT21  - CBT47
 	TestShoppingCart1AddOtherItemShoppingCart.class, 							//CBT22  - CBT14
-	TestShoppingCart3DeleterAllItemShoppingCart.class, 							//CBT24  - CBT64
+	TestShoppingCart3DeleterAllItemShoppingCart.class, 							//CBT24  - CBT65
 	TestUserRegister7UserRegistrationvalidfieldwithEMailRegister.class, 		//CBT28  - CBT30
 	TestUserRegisterAccount1UserRegistrationValidFieldForAccount.class, 		//CBT29  - CBT50
 	TestMagazinHomePage1NavegabilityMagazinUserNoLogin.class, 					//CBT30  - CBT10
@@ -63,8 +63,8 @@ import claireandbruce.com.test.register.*;
 	TestHomePageNavigability3PurchaseToCompleteLookNotLoginNoValidField.class,  //CBT33  - CBT67
 	TestHomePageNavigability4PurchaseToLookPieceByPieceUserNotLoginNoValidFields.class, //CBT34 - CBT68
 	TestHomePageNavigability6TestNavigationByCategoryHeaderMark.class, 			//CBT39  - CBT8
-	TestCatalogWomen1TestCatalogWomenFilter.class, 								//CBT40  - CBT62
-	TestCatalogWomen2TestCatalogWomenFilterPriceViewsProductLook.class, 		//CBT41  - CBT51
+	TestCatalogWomen1TestCatalogWomenFilter.class, 								//CBT40  - CBT51
+	TestCatalogWomen2TestCatalogWomenFilterPriceViewsProductLook.class, 		//CBT41  - CBT62
 	TestHomePageNavegability7NavigabilityMenuLanguage.class, 					//CBT42  - CBT69
 	TestShoppinCart11UserLoginPurchaseWithInvoiceWhitOtherAddressEmptyFields.class, //CBT48 - CBT16
 	TestIncidentsPurchaseorders1ViewOrderhistory.class, 						//CBT49  - CBT13
@@ -89,7 +89,7 @@ import claireandbruce.com.test.register.*;
 	TestFooterMiddleNavigationMarcas.class, 									//CBT95  - CBT12
 	TestFooterMiddleNavigationTendencias.class, 								//CBT96  - CBT18
 	TestSendMessageFormularioContactoAccount.class, 							//CBT97  - CBT29
-	TestAyudaFAQsAccount.class, 												//CBT99  - CBT65
+	TestAyudaFAQsAccount.class, 												//CBT99  - CBT64
 	TestHeaderHomePageNavigationTendencias.class, 								//CBT100 - CBT5	
 	
 	

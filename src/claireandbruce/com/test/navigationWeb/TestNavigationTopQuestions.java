@@ -8,12 +8,12 @@ import basics.ClaireandbruceTestCase;
 /**
  * 
  * @author NEWSHORE
- * CBT92
+ * Testlink: Local CBT92  - Privalia CBT11
  */
 public class TestNavigationTopQuestions extends ClaireandbruceTestCase {
 		
 	@Test
-	public void CBT92() throws Exception{
+	public void cbt11() throws Exception{
 		selenium.open("");
 		selenium.waitForPageToLoad("15000");
 		

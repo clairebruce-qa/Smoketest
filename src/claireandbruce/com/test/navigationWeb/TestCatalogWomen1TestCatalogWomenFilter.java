@@ -1,29 +1,21 @@
 package claireandbruce.com.test.navigationWeb;
 
-
 import junit.framework.Assert;
-
 import lib.Helper;
-
 import org.junit.Test;
-import org.omg.CORBA.INTERNAL;
-
 import basics.ClaireandbruceTestCase;
 
 /**
  * Verificar la correcta validación del sistema para 
  * el filtro de marcas en el catalogo de mujer.
  * @author NEWSHORE
- * CBT40
+ * Testlink: Local CBT40  - Privalia CBT51
  */
 
 public class TestCatalogWomen1TestCatalogWomenFilter extends ClaireandbruceTestCase {
 	
-
-
-	@SuppressWarnings("unused")
 	@Test
-	public void CBT40() throws Exception{
+	public void cbt51() throws Exception{
 		Helper.log("Prueba de filtros del catalogo de mujer");
 		Helper.log("Se carga la página "+ClaireandbruceUrl);
 		selenium.open("");

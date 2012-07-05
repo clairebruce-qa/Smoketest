@@ -6,14 +6,14 @@ import lib.Helper;
 import claireandbruce.com.test.basicsFlows.LibCorrectLogonValidUserAccout;
 import basics.ClaireandbruceTestCase;
 /**
- * CBT60
+ * Testlink: Local CBT60  - Privalia CBT20
  * @author NEWSHORE
  *
  */
 public class TestCorrectPasswordChangeAccount extends ClaireandbruceTestCase {
 
 	@Test
-	public void CBT60() throws Exception{
+	public void cbt20() throws Exception{
 		
 		Helper.log("\n*** CASO DE PRUEBA *** CBT60. CAMBIO CORRECTO DE CONTRASEÑA");
 		

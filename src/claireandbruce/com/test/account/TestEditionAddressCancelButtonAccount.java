@@ -13,14 +13,14 @@ import basics.ClaireandbruceTestCase;
  * cancelar las modificaciones realizadas a las direcciones previamente ingresadas a la 
  * cuenta de un usuario. El éxito del proceso se evaluará al NO mostrar el mensaje "Se 
  * guardó la dirección." 
- * CBT82
+ * Testlink: Local CBT82  - Privalia CBT63
  * @author NEWSHORE
  *
  */
 public class TestEditionAddressCancelButtonAccount extends ClaireandbruceTestCase {
 		
 	@Test
-	public void CBT82() throws Exception{
+	public void cbt63() throws Exception{
 		Claireandbruce.login(selenium, username, password);
 		Helper.log("Ambiente de prueba "+selenium.getLocation());
 		
@@ -35,7 +35,7 @@ public class TestEditionAddressCancelButtonAccount extends ClaireandbruceTestCas
 		
 		if(selenium.isTextPresent("No tienes ninguna dirección de envío por defecto en tu libreta de direcciones.")){
 			TestUserAddress1AddShippingAddressUserWithValidFields tb = new TestUserAddress1AddShippingAddressUserWithValidFields();
-			tb.CBT13();
+			tb.cbt6();
 			Helper.log("Address was added");
 		}
 		

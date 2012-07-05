@@ -13,16 +13,14 @@ import basics.ClaireandbruceTestCase;
  *Verificar  la validacion del filtro de precio en el catalogo de mujer, en orden ascendente, descente
  *Verificar el correcto despliegue de las vistas de los articulos en el catalogo de mujer (look, producto)
  * @author NEWSHORE
- * CBT41
+ * Testlink: Local CBT41  - Privalia CBT62
  */
 
 public class TestCatalogWomen2TestCatalogWomenFilterPriceViewsProductLook extends ClaireandbruceTestCase {
-	
-
 
 	@SuppressWarnings("unused")
 	@Test
-	public void CBT41() throws Exception{
+	public void cbt62() throws Exception{
 		Helper.log("Prueba de filtro de ordenamiento del catalogo de mujer");
 		Helper.log("Se ingresa a la página "+ClaireandbruceUrl);
 		selenium.open("");

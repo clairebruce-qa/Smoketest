@@ -9,14 +9,15 @@ import basics.ClaireandbruceTestCase;
 /**
  * 	Verificar la validación del campo contraseña en longitud, este campo recibe cualquier tipo de carácter numérico, alfabético.
  * 	El éxito del caso de prueba se reflejara en el aviso de correcciones para el usuario de los datos ingresados.
- *  CBT7
+ *  
+ *  Testlink: Local CBT7 -  Privalia CBT24
  * @author NEWSHORE
  * 
  */
 public class TestUserRegister6UserRegistrationFieldPasswordValid extends ClaireandbruceTestCase{
 	
 	@Test
-	public void CBT7(){
+	public void cbt24(){
 		
 		Helper.log("Se carga la página "+ClaireandbruceUrl);
 		selenium.open("");

@@ -1,13 +1,8 @@
 package claireandbruce.com.test.navigationWeb;
 
 import static org.junit.Assert.assertTrue;
-import lib.Claireandbruce;
 import lib.Helper;
-
 import org.junit.Test;
-
-import claireandbruce.com.test.basicsFlows.LibCorrectLogonValidUserAccout;
-
 import basics.ClaireandbruceTestCase;
 
 
@@ -20,7 +15,7 @@ import basics.ClaireandbruceTestCase;
  * de los productos seleccionados por el cliente.
  * 
  * @author NEWSHORE
- * CBT30
+ * Testlink: Local CBT30  - Privalia CBT10
  * 
  * */
 public class TestMagazinHomePage1NavegabilityMagazinUserNoLogin extends ClaireandbruceTestCase{
@@ -29,7 +24,7 @@ public class TestMagazinHomePage1NavegabilityMagazinUserNoLogin extends Clairean
 	private String message;
 
 	@Test
-	public void CBT30() throws Exception{
+	public void cbt10() throws Exception{
 		
 		Helper.log("Se carga la página "+ClaireandbruceUrl);
 		selenium.open("");
@@ -102,7 +97,6 @@ public class TestMagazinHomePage1NavegabilityMagazinUserNoLogin extends Clairean
 			selenium.waitForPageToLoad("30000");
 			
 			contador = 1;
-			int categoria= 1;
 			
 			//Haga mientras NO encuentre el botón AÑADIR A LA CESTA
 			

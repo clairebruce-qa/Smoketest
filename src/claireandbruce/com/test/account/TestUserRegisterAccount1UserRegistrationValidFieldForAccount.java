@@ -15,7 +15,7 @@ import basics.ClaireandbruceTestCase;
  * página de Tu Cuenta de ClaireandBruce, el ingreso para el registro sera mediante el 
  * enlace de tu cuenta.
  * 
- * CBT29
+ * Testlink: Local CBT29  - Privalia CBT50
  * @author NEWSHORE
  *
  */
@@ -25,7 +25,7 @@ public class TestUserRegisterAccount1UserRegistrationValidFieldForAccount extend
 	public static String username2;
 
 	@Test
-	public void CBT29() throws Exception{
+	public void cbt50() throws Exception{
 		
 		Helper.log("Se inicia proceso de registro por Tu Cuenta, con datos válidos");
 		// Elimina las cookies

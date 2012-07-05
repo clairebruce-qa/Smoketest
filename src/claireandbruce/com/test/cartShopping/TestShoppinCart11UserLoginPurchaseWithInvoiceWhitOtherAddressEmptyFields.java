@@ -3,10 +3,7 @@ package claireandbruce.com.test.cartShopping;
 import static org.junit.Assert.*;
 import junit.framework.Assert;
 import lib.Helper;
-
 import org.junit.Test;
-
-import claireandbruce.com.test.basicsFlows.LibAddressExist;
 import claireandbruce.com.test.basicsFlows.LibCorrectAddProductCartConfigurableProduct;
 import claireandbruce.com.test.basicsFlows.LibCorrectAddProductCartSimpleProduct;
 import claireandbruce.com.test.basicsFlows.LibCorrectLogonValidUserAccout;
@@ -19,13 +16,12 @@ import basics.ClaireandbruceTestCase;
  * dirección de la factura, los campos a ingresar están vacíos.
  * 
  * @author NEWSHORE
- *
+ * Testlink: Local CBT48 - Privalia CBT16
  */
 public class TestShoppinCart11UserLoginPurchaseWithInvoiceWhitOtherAddressEmptyFields extends ClaireandbruceTestCase{
 
-	//TestShoppingCart1AddOtherItemShoppingCart tb = new TestShoppingCart1AddOtherItemShoppingCart();
 	@Test
-	public void CBT48() throws Exception {
+	public void cbt16() throws Exception {
 		 		
 		if(!selenium.isElementPresent("xpath=//a[contains(text(), 'Salir')]")){			
 			LibCorrectLogonValidUserAccout.CBT55(selenium);			
@@ -38,7 +34,6 @@ public class TestShoppinCart11UserLoginPurchaseWithInvoiceWhitOtherAddressEmptyF
 			assertTrue(selenium.getConfirmation().matches("¿Está seguro de que desea eliminar este artículo de la cesta de la compra[\\s\\S]$"));
 			selenium.waitForPageToLoad("10000");
 		}
-		//tb.CBT22();
 		Helper.log("Se añaden dos productos al carrito de compras (Configurable y Simple)");
 		LibCorrectAddProductCartConfigurableProduct.CBT_ConfigurableProduct(selenium);
 		LibCorrectAddProductCartSimpleProduct.CBT_SimpleProduct(selenium);
