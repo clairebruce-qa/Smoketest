@@ -8,7 +8,7 @@ import org.junit.Test;
 import basics.ClaireandbruceTestCase;
 
 /**
- * CBT4
+ * Testlink: Local CBT4 - Privalia CBT53
  * @author NEWSHORE
  *
  */
@@ -34,7 +34,7 @@ public class TestUserRegister3UserRegistrationFieldEMailInvalid extends Clairean
 	}
 
 	@Test
-	public void CBT4() throws Exception {
+	public void cbt53() throws Exception {
 	
 		Helper.log("Se ingresan datos no válidos de email: @gmail.com");
 		selenium.type("id=email_address", "@gmail.com");

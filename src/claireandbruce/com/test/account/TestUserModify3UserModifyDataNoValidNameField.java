@@ -12,7 +12,7 @@ import basics.ClaireandbruceTestCase;
  * apellido, el exito del caso de prueba sera la notificación al usuario
  * acerca de los formatos validos para los datos en los campos
  * 
- * CBT10
+ * Testlink: Local CBT10 - Privalia CBT55
  * @author NEWSHORE
  * */
 
@@ -21,7 +21,7 @@ public class TestUserModify3UserModifyDataNoValidNameField extends Claireandbruc
 		
 	
 	@Test
-	public void CBT10 () throws Exception{
+	public void cbt55 () throws Exception{
 		
 		Helper.log("Se inicia prueba de modificación de datos con valores no válidos");
 		//El usuario no debe tener su sesión iniciada

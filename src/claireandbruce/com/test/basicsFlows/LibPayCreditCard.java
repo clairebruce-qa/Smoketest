@@ -57,13 +57,10 @@ public class LibPayCreditCard extends ClaireandbruceTestCase{
 			
 			if(selenium.isElementPresent("xpath=(//div[@value='12'])[2]")){
 				selenium.click("//ul/li[3]/div/div/div/div/div");
-				selenium.click("xpath=//li[@id='sermepa_cc_type_exp_div']/div/div/div[2]/div/div/div[13]");
-				Helper.log("12 2:"+selenium.getText("//ul/li[3]/div/div/div/div/div"));
-				
+				selenium.click("xpath=//li[@id='sermepa_cc_type_exp_div']/div/div/div[2]/div/div/div[13]");				
 			} else {
 				selenium.click("xpath=//li[3]/div/div/div/div/div");
 				selenium.click("xpath=//div[@value='12']");
-				Helper.log("12 1");
 			}
 			
 			if(selenium.isElementPresent("xpath=(//div[@value='2012'])[2]")){

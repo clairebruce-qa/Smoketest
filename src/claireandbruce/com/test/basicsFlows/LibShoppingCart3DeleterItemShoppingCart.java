@@ -1,13 +1,7 @@
 package claireandbruce.com.test.basicsFlows;
 
 import static org.junit.Assert.assertTrue;
-
-
-import org.junit.After;
-import org.junit.Test;
-
 import com.thoughtworks.selenium.Selenium;
-
 import junit.framework.Assert;
 import lib.Helper;
 import basics.ClaireandbruceTestCase;

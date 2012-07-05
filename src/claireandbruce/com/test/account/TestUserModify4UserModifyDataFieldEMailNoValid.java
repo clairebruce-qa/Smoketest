@@ -6,14 +6,14 @@ import org.junit.Test;
 import claireandbruce.com.test.basicsFlows.LibCorrectLogonValidUserAccout;
 import basics.ClaireandbruceTestCase;
 /**
- * CBT11
+ * Testlink: Local CBT11 - Privalia CBT56
  * @author NEWSHORE
  *
  */
 public class TestUserModify4UserModifyDataFieldEMailNoValid extends ClaireandbruceTestCase {
 
 	@Test
-	public void CBT11 () throws Exception{
+	public void cbt56 () throws Exception{
 		Helper.log("Se inicia prueba de modificación de datos con email en formato no válido");
 		LibCorrectLogonValidUserAccout.CBT55(selenium);
 		

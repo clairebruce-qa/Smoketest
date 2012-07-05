@@ -7,16 +7,16 @@ import claireandbruce.com.test.basicsFlows.LibCorrectLogonValidUserAccout;
 import basics.ClaireandbruceTestCase;
 
 /**
- * CBT9
+ * Testlink: Local CBT9 - Privalia CBT32
  * @author NEWSHORE
  *
  */
 public class TestUserModify2UserModifyDataEmptyField extends ClaireandbruceTestCase{
 
 	@Test
-	public void CBT9 () throws Exception{
+	public void cbt32 () throws Exception{
 		
-		Helper.log("*** CBT9 *** MODIFICACIÓN DE DATOS BÁSICOS - CAMPOS VACÍOS");
+		Helper.log("*** CBT32 *** MODIFICACIÓN DE DATOS BÁSICOS - CAMPOS VACÍOS");
 		LibCorrectLogonValidUserAccout.CBT55(selenium);
 	
 		if(!selenium.getTitle().equals("Mi cuenta")) {

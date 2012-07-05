@@ -13,7 +13,7 @@ import basics.ClaireandbruceTestCase;
  * comprobando   el éxito  de  la  operación al realizar
  * modificar los datos del usuario logueado en el sistema. 
  * 
- * CBT8
+ * Testlink: Local CBT8 - Privalia CBT54
  * @author NEWSHORE
  * */
 
@@ -22,7 +22,7 @@ public class TestUserModify1UserModifyDataValidField extends ClaireandbruceTestC
 
 	
 	@Test
-	public void CBT8() throws Exception{		
+	public void cbt54() throws Exception{		
 		//Despliega la pagina de Claireandbruce
 		Helper.log("Se inicia prueba sobre modificación de datos personales");
 		selenium.open("");

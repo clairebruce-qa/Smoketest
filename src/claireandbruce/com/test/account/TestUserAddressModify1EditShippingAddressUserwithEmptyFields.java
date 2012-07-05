@@ -10,13 +10,13 @@ import basics.ClaireandbruceTestCase;
 	 * se cambian  los  valores en los campos por vacío, el éxito de
 	 * la prueba  se reflejará en la no aceptación de los campos por
 	 * parte del  sistema y pedirá las correcciones del mismo.
-	 * CBT16
+	 * Testlink: Local CBT16 - Privalia CBT57
 	 * @author NEWSHORE
 	 * */
-public class TestUserAddresModify1EditShippingAddressUserwithEmptyFields extends ClaireandbruceTestCase{
+public class TestUserAddressModify1EditShippingAddressUserwithEmptyFields extends ClaireandbruceTestCase{
 
 	@Test
-	public void CBT16() throws Exception{		
+	public void cbt57() throws Exception{		
 	
 		Helper.log("Se inicia prueba de modificación de las direcciones de envío por datos vacíos");
 		//Despliega la página de Claireandbruce

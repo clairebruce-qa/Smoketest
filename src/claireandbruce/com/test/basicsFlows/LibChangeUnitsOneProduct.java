@@ -46,6 +46,14 @@ public class LibChangeUnitsOneProduct extends ClaireandbruceTestCase{
 			
 			if(selenium.isAlertPresent()){
 				Helper.log("UNIDADES NO DISPONIBLES EN INVENTARIO\nSE VISUALIZA MENSAJE DE ALERTA!");
+				Helper.log("Se busca otro producto");
+				int producto = (int)(Math.random()*(2-1+1))+1;
+				if(producto==1){
+					LibCorrectAddProductCartConfigurableProduct.CBT_ConfigurableProduct(selenium);
+				} else {
+					LibCorrectAddProductCartSimpleProduct.CBT_SimpleProduct(selenium);
+				}
+				LibChangeUnitsOneProduct.changeUnits(selenium);
 			} else {
 				Helper.log("Se inicia verificación de los precios de acuerdo a la cantidad del producto nueva");
 				//Se obtienen los valores para verificarlos 

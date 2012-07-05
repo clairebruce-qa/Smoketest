@@ -12,13 +12,13 @@ import basics.ClaireandbruceTestCase;
  * email ingresado y por consecuencia la posterior muestra del mensaje de advertencia sobre formato 
  * de email no válido
  * @author NEWSHORE
- * CBT57
+ * Testlink: Local CBT57 - Privalia CBT59
  */
 
 public class TestIncorrectLogonInvalidPasswordAccount extends ClaireandbruceTestCase{
 	
 	@Test
-	public void CBT57() throws Exception {
+	public void cbt59() throws Exception {
 			
 		selenium.deleteAllVisibleCookies();
 		Helper.log("Se eliminan cookies");

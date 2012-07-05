@@ -98,7 +98,7 @@ public class TestCorrectAddProductCartNoLoginUser extends ClaireandbruceTestCase
 				
 			int i =(int)(Math.random()*(5-2+1))+2;
 			int cont=1;	
-			while(!selenium.isElementPresent("xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[8]/div[4]/div/div/div["+i+"]")) {
+			while(!selenium.isElementPresent("xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[9]/div[4]/div/div/div["+i+"]")) {
 				i =(int)(Math.random()*(5-2+1))+2;
 				cont++;
 				if(cont==4){
@@ -130,7 +130,7 @@ public class TestCorrectAddProductCartNoLoginUser extends ClaireandbruceTestCase
 		} else {
 			//Se encuentra actualmente en un producto simple
 			//Clic en botón "AÑADIR A LA CESTA"
-			selenium.click("xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[8]/div/button");
+			selenium.click("xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[7]/div/button");
 			Helper.log("Se ha presionado el botón 'AÑADIR A LA CESTA' se está esperando confirmación de que el producto ha sido añadido a la cesta");
 			String id= "xpath=//a[contains(text(),'"+nombreProducto+"')]";
 			selenium.click("id=cartHeader");
@@ -139,8 +139,6 @@ public class TestCorrectAddProductCartNoLoginUser extends ClaireandbruceTestCase
 			} else {
 				Helper.log("El producto no ha sido añadido al carrito de compras "+id);
 			} 
-		}
-			
-			
+		}			
 	}	
 }

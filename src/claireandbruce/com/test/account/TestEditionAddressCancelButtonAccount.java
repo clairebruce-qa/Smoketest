@@ -36,22 +36,20 @@ public class TestEditionAddressCancelButtonAccount extends ClaireandbruceTestCas
 		if(selenium.isTextPresent("No tienes ninguna dirección de envío por defecto en tu libreta de direcciones.")){
 			TestUserAddress1AddShippingAddressUserWithValidFields tb = new TestUserAddress1AddShippingAddressUserWithValidFields();
 			tb.cbt6();
-			Helper.log("Address was added");
+			Helper.log("Durección editada");
 		}
 		
 		selenium.click("class=edit");
-		Helper.log("Editing Address");
+		Helper.log("Editando dirección");
 		String nombreCompleto = selenium.getText("xpath=html/body/div/div[2]/div[1]/div/div[2]/div[2]/div[2]/div[1]");
 		selenium.type("xpath=.//*[@id='firstname']", "Sandra M");
-		Helper.log("Editing name: Sandra M");
+		Helper.log("Editando Nombre: Sandra M");
 		selenium.type("xpath=.//*[@id='lastname']", "Torres C");
-		Helper.log("Editing lastname: Torres C");
+		Helper.log("Editando Apellidos: Torres C");
 		selenium.type("xpath=.//*[@id='city']", "Rojas");
-		Helper.log("Editing Población: Rojas");
+		Helper.log("Editando Población: Rojas");
 		
 		selenium.click("xpath=(//button[@type='submit'])[2]");
-		assertTrue(selenium.getText("xpath=html/body/div/div[2]/div[1]/div/div[2]/div[2]/div[2]/div[1]").equals(nombreCompleto));
-		
+		assertTrue(selenium.getText("xpath=html/body/div/div[2]/div[1]/div/div[2]/div[2]/div[2]/div[1]").equals(nombreCompleto));		
 	}
-
 }

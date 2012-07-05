@@ -1,13 +1,9 @@
 package claireandbruce.com.test.basicsFlows;
 
 import java.text.DecimalFormat;
-
 import junit.framework.Assert;
 import lib.Helper;
-import org.junit.Test;
-
 import com.thoughtworks.selenium.Selenium;
-
 import basics.ClaireandbruceTestCase;
 
 /**

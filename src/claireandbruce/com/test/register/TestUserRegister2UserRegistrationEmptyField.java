@@ -9,7 +9,7 @@ import org.junit.Test;
 
 import basics.ClaireandbruceTestCase;
 /**
- * CBT3
+ * Testlink: Local CBT3 - Privalia CBT52
  * @author NEWSHORE
  *
  */
@@ -34,7 +34,7 @@ public class TestUserRegister2UserRegistrationEmptyField extends ClaireandbruceT
 	}
 
 	@Test
-	public void CBT3() throws Exception {
+	public void cbt52() throws Exception {
 	
 		Helper.log("Se hace clic en el botón 'SIGUE CON TU COMPRA' sin ingresar datos");
 		selenium.click("id=registerSubmitButton");

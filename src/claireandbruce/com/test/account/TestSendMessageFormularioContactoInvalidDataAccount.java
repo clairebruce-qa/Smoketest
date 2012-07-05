@@ -9,14 +9,14 @@ import basics.ClaireandbruceTestCase;
  * Caso de prueba diseñado para verificar la correcto despliegue y funcionamiento de la 
  * interfaz del formulario de contacto "Contáctenos". Cuando las listas de despliegue no 
  * son seleccionadas o los datos ingresados no son datos válidos, antes de enviar el mensaje.
- * CBT98
+ * Testlink: Local CBT98 - Privalia CBT61
  * @author NEWSHORE
  *
  */
 public class TestSendMessageFormularioContactoInvalidDataAccount  extends ClaireandbruceTestCase {
 
 	@Test
-	public void CBT98() throws Exception{
+	public void cbt61() throws Exception{
 		
 		LibCorrectLogonValidUserAccout.CBT55(selenium);
 		

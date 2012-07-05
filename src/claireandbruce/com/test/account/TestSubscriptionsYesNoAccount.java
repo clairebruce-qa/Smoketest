@@ -12,14 +12,14 @@ import basics.ClaireandbruceTestCase;
  * modificar  las  suscripciones  que posee  el usuario a través  de su cuenta en el portal. 
  * El éxito del proceso  se evaluará al mostrar el mensaje "La suscripción ha sido guardada".  
  * 
- * CBT81
+ * Testlink: Local CBT81 - Privalia CBT60
  * @author NEWSHORE
  * */
 
 public class TestSubscriptionsYesNoAccount extends ClaireandbruceTestCase{
 	
 	@Test
-	public void CBT81() throws Exception {
+	public void cbt60() throws Exception {
 		
 		//-----------------------------------Autentica el Usuario----------------------------------
 		if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")){

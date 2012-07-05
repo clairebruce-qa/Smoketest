@@ -1,13 +1,9 @@
 package claireandbruce.com.test.login.checkout;
 
-
 import junit.framework.Assert;
 import lib.Helper;
-
 import org.junit.Test;
-
 import claireandbruce.com.test.basicsFlows.LibCorrectAddProductCartSimpleProduct;
-import claireandbruce.com.test.basicsFlows.LibCorrectLogonValidUserAccout;
 import claireandbruce.com.test.basicsFlows.LibPayCreditCard;
 
 import basics.ClaireandbruceTestCase;

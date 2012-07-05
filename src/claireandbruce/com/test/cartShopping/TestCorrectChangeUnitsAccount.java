@@ -2,9 +2,10 @@ package claireandbruce.com.test.cartShopping;
 
 import static org.junit.Assert.assertEquals;
 import java.text.DecimalFormat;
-import junit.framework.Assert;
 import lib.Helper;
 import org.junit.Test;
+
+import claireandbruce.com.test.basicsFlows.LibChangeUnitsOneProduct;
 import claireandbruce.com.test.basicsFlows.LibCorrectAddProductCartConfigurableProduct;
 import claireandbruce.com.test.basicsFlows.LibCorrectAddProductCartSimpleProduct;
 import basics.ClaireandbruceTestCase;
@@ -21,7 +22,6 @@ public class TestCorrectChangeUnitsAccount extends ClaireandbruceTestCase {
 		selenium.open("");
 		selenium.waitForPageToLoad("20000");
 		LibCorrectAddProductCartConfigurableProduct.CBT_ConfigurableProduct(selenium);
-		LibCorrectAddProductCartSimpleProduct.CBT_SimpleProduct(selenium);
 		LibCorrectAddProductCartSimpleProduct.CBT_SimpleProduct(selenium);
 		
 		if(!selenium.getTitle().equals("Cesta de la Compra")){
@@ -54,13 +54,20 @@ public class TestCorrectChangeUnitsAccount extends ClaireandbruceTestCase {
 					cantidadNueva = Integer.parseInt(selenium.getValue("xpath=//td[2]/input[2]"));
 					if(selenium.isAlertPresent()){
 						Helper.log("UNIDADES NO DISPONIBLES EN INVENTARIO\nSE VISUALIZA MENSAJE DE ALERTA!");
-					} else {
-						if(selenium.isElementPresent("xpath=//span/div/span/span")){
-							precio = selenium.getText("xpath=//span/div/span/span");
-						} else if(selenium.isElementPresent("xpath=//span/div/p/span")){
-							precio = selenium.getText("xpath=//p[3]/span");
+						selenium.getAlert();
+						Helper.log("Se elimina el producto y se busca otro producto");
+						selenium.click("link=Eliminar");
+						int producto = (int)(Math.random()*(2-1+1))+1;
+						if(producto==1){
+							LibCorrectAddProductCartConfigurableProduct.CBT_ConfigurableProduct(selenium);
+						} else {
+							LibCorrectAddProductCartSimpleProduct.CBT_SimpleProduct(selenium);
 						}
-									
+						TestCorrectChangeUnitsAccount test = new TestCorrectChangeUnitsAccount();
+						test.cbt15();
+					} else {
+						precio = selenium.getText("//td[5]/span/span");
+						Helper.log("Precio unitario**** "+precio);
 						//Se recorren los precios para eliminar referencia a unidad de moneda
 						int index=0;
 						String auxString="";
@@ -73,23 +80,11 @@ public class TestCorrectChangeUnitsAccount extends ClaireandbruceTestCase {
 							index++;
 						}
 						precioUnitario = Double.parseDouble(auxString);
-						precioTotal = selenium.getText("//td[5]/span/span");
-						auxString="";
-						index=0;
-						while(index<precioTotal.length()-2) {
-							if(precioTotal.charAt(index)!=','){
-								auxString+=precioTotal.charAt(index);
-							} else {
-								auxString+=".";
-							}
-							index++;					
-						}
-						String str_precioFinal = auxString;
+						precioTotal = ""+precioUnitario;
 										
 						//Se multiplica la cantidad por el precio unitario para obtener el precio esperado.
 						precioFinalEsperado = cantidadNueva*precioUnitario;
 		
-						//Se transforma a formato de dos decimales
 						//Se transforma a formato de dos decimales
 						DecimalFormat myFormatter = new DecimalFormat("0.00");
 						String precioTotalEsperado = myFormatter.format(precioFinalEsperado);
@@ -106,11 +101,11 @@ public class TestCorrectChangeUnitsAccount extends ClaireandbruceTestCase {
 							index++;					
 						}
 						precioTotalEsperado = auxString;
-						Helper.log("precio esperado "+precioTotalEsperado);
-						Helper.log("precio final "+str_precioFinal);
+						Helper.log("Precio Esperado "+precioTotalEsperado);
+						Helper.log("Precio Final "+precioTotal);
 						cantidadNueva = Integer.parseInt(selenium.getValue("xpath=//td[2]/input[2]"));
-						assertEquals(str_precioFinal, precioTotalEsperado);
-						Helper.log("CantidadNueva= "+cantidadNueva+" PrecioUnitario= "+precioUnitario+" precioTotal= "+str_precioFinal+" assertEquals "+precioTotalEsperado);						
+						assertEquals(precioTotal, precioTotalEsperado);
+						Helper.log("CantidadNueva= "+cantidadNueva+" PrecioUnitario= "+precioUnitario+" precioTotal= "+precioTotal+" assertEquals "+precioTotalEsperado);						
 					}	
 					fila+=3;
 				}
@@ -121,18 +116,21 @@ public class TestCorrectChangeUnitsAccount extends ClaireandbruceTestCase {
 				selenium.type("xpath=//tr["+fila+"]/td[2]/input[2]", ""+cantidad);
 				
 				if(selenium.isAlertPresent()){
-					selenium.getAlert();
 					Helper.log("UNIDADES NO DISPONIBLES EN INVENTARIO\nSE VISUALIZA MENSAJE DE ALERTA!");
-					Assert.fail("UNIDADES NO DISPONIBLES EN INVENTARIO\nSE VISUALIZA MENSAJE DE ALERTA!");
+					selenium.getAlert();
+					Helper.log("Se elimina el producto y se busca otro producto");
+					selenium.click("link=Eliminar");
+					int producto = (int)(Math.random()*(2-1+1))+1;
+					if(producto==1){
+						LibCorrectAddProductCartConfigurableProduct.CBT_ConfigurableProduct(selenium);
+					} else {
+						LibCorrectAddProductCartSimpleProduct.CBT_SimpleProduct(selenium);
+					}
+					LibChangeUnitsOneProduct.changeUnits(selenium);
 				} else {
 					cantidadNueva = Integer.parseInt(selenium.getValue("xpath=//tr["+fila+"]/td[2]/input[2]"));
 				
-					if(selenium.isElementPresent("xpath=//tr["+filaPrecio+"]/td[4]/span/div/p[3]/span")){
-						precio =  selenium.getText("xpath=//tr["+filaPrecio+"]/td[4]/span/div/p[3]/span");
-					}else {
-						precio = selenium.getText("xpath=//tr["+filaPrecio+"]/td[4]/span/div/span/span");
-					}					
-					precioTotal = selenium.getText("xpath=//tr["+filaPrecio+"]/td[5]/span/span");
+					precio = selenium.getText("xpath=//tr["+filaPrecio+"]/td[5]/span/span");
 					
 					//Se recorren los precios para eliminar referencia a unidad de moneda
 					int index=0;
@@ -146,17 +144,7 @@ public class TestCorrectChangeUnitsAccount extends ClaireandbruceTestCase {
 						index++;
 					}
 					precioUnitario = Double.parseDouble(auxString);
-					auxString="";
-					index=0;
-					while(index<precioTotal.length()-2) {
-						if(precioTotal.charAt(index)!=','){
-							auxString+=precioTotal.charAt(index);
-						} else {
-							auxString+=".";
-						}
-						index++;					
-					}
-					String str_precioFinal = auxString;
+					precioTotal = ""+precioUnitario;
 									
 					//Se multiplica la cantidad por el precio unitario para obtener el precio esperado.
 					precioFinalEsperado = cantidadNueva*precioUnitario;
@@ -177,8 +165,8 @@ public class TestCorrectChangeUnitsAccount extends ClaireandbruceTestCase {
 					}
 					precioTotalEsperado = auxString;
 					cantidadNueva = Integer.parseInt(selenium.getValue("xpath=//tr["+fila+"]/td[2]/input[2]"));
-					assertEquals(str_precioFinal, precioTotalEsperado);
-					Helper.log("CantidadNueva= "+cantidadNueva+" PrecioUnitario= "+precioUnitario+" precioTotal= "+str_precioFinal+" assertEquals "+precioTotalEsperado);	
+					assertEquals(precioTotal, precioTotalEsperado);
+					Helper.log("CantidadNueva= "+cantidadNueva+" PrecioUnitario= "+precioUnitario+" precioTotal= "+precioTotal+" assertEquals "+precioTotalEsperado);	
 				
 					filaPrecio+=3;
 					fila+=3;
