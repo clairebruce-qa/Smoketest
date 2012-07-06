@@ -58,7 +58,6 @@ public class LibChangeUnitsOneProduct extends ClaireandbruceTestCase{
 			} else {
 				Helper.log("Se inicia verificación de los precios de acuerdo a la cantidad del producto nueva");
 				//Se obtienen los valores para verificarlos 
-				int cantidadNueva=Integer.parseInt(selenium.getValue("//table[@id='shopping-cart-table']/tbody/tr[2]/td[2]/input"));
 				double precioUnitario, precioTotalProducto;
 				
 				precioTotal = selenium.getText("//td[5]/span/span");
@@ -94,7 +93,7 @@ public class LibChangeUnitsOneProduct extends ClaireandbruceTestCase{
 				}
 				precioUnitario = Double.parseDouble(auxPrecioCal);
 				Helper.log("Precio unitario: "+precioUnitario);
-				double precioTC=cantidadNueva*precioUnitario;
+				double precioTC=cantidadNueva1*precioUnitario;
 				//Se da formato al precio total calculado
 				String precioTotalCalculado = myFormatter.format(precioTC);
 				
@@ -142,7 +141,7 @@ public class LibChangeUnitsOneProduct extends ClaireandbruceTestCase{
 				precioTotalApp = auxPrecioCal;
 				Helper.log("Precio total visualizado en la aplicación: "+precioTotalApp);
 				assertEquals(precioTotalCalculado, precioTotalApp);
-				Helper.log("CantidadNueva= "+cantidadNueva+" PrecioUnitario= "+precioUnitario+" precioTotal= "+precioTotalApp+" PrecioEsperado "+precioTotalCalculado);	
+				Helper.log("CantidadNueva= "+cantidadNueva1+" PrecioUnitario= "+precioUnitario+" precioTotal= "+precioTotalApp+" PrecioEsperado "+precioTotalCalculado);	
 			}					
 		} else {
 			Assert.fail("ELEMENTO NO ENCONTRADO PARA REALIZAR CAMBIO DE UNIDADES");
