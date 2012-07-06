@@ -80,22 +80,8 @@ public class TestUserRegisterCheckoutUserRegistrationValidFieldDate extends Clai
 				selenium.type("xpath=.//*[@id='emailreg']", "claireandbruce"+i+"@gmail.com");
 				Helper.log("Se hace clic en el botón 'Registrarme'");
 				selenium.click("xpath=.//*[@id='send3']");
-				selenium.waitForPageToLoad("30000");
-			
+				selenium.waitForPageToLoad("35000");			
 				
-				//selenium.click("xpath=(//button[@type='button'])[2]");
-				//selenium.waitForPageToLoad("30000");
-				// Se validan la fecha, si no existe una selección para valores vacíos
-				
-				
-				/*if(("02".equals(selenium.getText("css=span.dob-day > div.selreplace_select > div > div.selreplace_selectinner")))// Combo de selección de fecha de nacimiento
-						&& ("01".equals(selenium.getText("css=span.dob-month > div.selreplace_select > div > div.selreplace_selectinner")))
-						&& ("2012".equals(selenium.getText("css=span.dob-year > div.selreplace_select > div > div.selreplace_selectinner")))){
-					
-					Assert.fail("El usuario debe seleccionar una fecha de nacimiento válida");
-							
-							
-				}*/
 				Helper.log("Se ingresa la fecha 31-12-2012");
 				
 				selenium.click("css=span.dob-day > div.selreplace_select > div > div.selreplace_selectbutton");
@@ -111,141 +97,12 @@ public class TestUserRegisterCheckoutUserRegistrationValidFieldDate extends Clai
 						&& ("12".equals(selenium.getText("css=span.dob-month > div.selreplace_select > div > div.selreplace_selectinner")))
 						&& ("2012".equals(selenium.getText("css=span.dob-year > div.selreplace_select > div > div.selreplace_selectinner")))){
 					
-					Assert.fail("El usuario debe seleccionar una fecha de nacimiento válida");
+				Assert.fail("El usuario debe seleccionar una fecha de nacimiento válida");							
 							
-							
-				}
-				/*if(!selenium.isElementPresent("id=advice-required-entry-shipping:firstname")){
-					Assert.fail("El campo nombre  de envío es obligatorio");
-				}
-				if(!selenium.isElementPresent("id=advice-required-entry-shipping:lastname")){
-					Assert.fail("El campo apellido de envío es obligatorio");
-				}
-				if(!selenium.isElementPresent("id=advice-required-entry-shipping:city")){
-					Assert.fail("El campo ciudad es obligatorio");
-				}
-				if(!selenium.isElementPresent("id=advice-validate-select-shipping:region_id"))
-				{
-					Assert.fail("El campo población es obligatorio");
-				}
-				if(!selenium.isElementPresent("id=advice-required-entry-shipping:postcode"))
-				{
-					Assert.fail("El campo código postal es obligatorio");
-				}
-				if(!selenium.isElementPresent("id=advice-required-entry-shipping:telephone"))
-				{
-					Assert.fail("El campo teléfono es obligatorio");
-				}
-				if(!selenium.isElementPresent("id=advice-required-entry-firstname")){
-					Assert.fail("El campo nombre de registro usuario es obligatorio");
-				}
-				if(!selenium.isElementPresent("id=advice-required-entry-lastname")){
-					Assert.fail("El campo apellido de registro usuario es obligatorio");
-				}
-				
-				if(!selenium.isElementPresent("id=advice-validate-one-required-by-name-p_method_checkmo") || !(selenium.isElementPresent("id=advice-validate-one-required-by-name-p_method_sermepa"))){
-					Assert.fail("Seleccione uno de los métodos de pago");
-				}
-				
-				if(!selenium.isElementPresent("id=advice-required-entry-confirmation")){
-					Assert.fail("Se deben aceptar los terminos y condiciones del servicio");
-				}
-
-				// Validación del formulario para datos no validos
-				
-				selenium.type("id=shipping:firstname", "1234"); //Nombre de envío
-				
-				selenium.type("id=shipping:lastname", "1234");// Apellido de envío
-		
-				//selenium.type("id=shipping:city", "1235415"); // Campo población
-				//selenium.type("id=shipping:postcode", "YEDGY");//Campo código postal
-				selenium.type("id=shipping:telephone", "Yrdytrdf"); // Campo teléfono
-				
-				selenium.type("id=firstname", "12551");// Nombre de Registro de Usuario
-				
-				selenium.type("id=lastname", "1554142"); // Apellido de Registro de Usuario
-				
-				selenium.type("id=password", "32323");// Campo Contraseña
-				
-				if(!selenium.isElementPresent("id=advice-validate-name-shipping:firstname")){
-					Assert.fail("formato no valido para el campo");
-				}
-				if(!selenium.isElementPresent("id=advice-validate-name-shipping:lastname")){
-					Assert.fail("formato no valido para el campo");
-				}
-				/*if(!selenium.isElementPresent("id=advice-validate-shipping:city")){
-					Assert.fail("formato no valido para el campo");
-				}
-				/*if(!selenium.isElementPresent("id=advice-validate-select-shipping:region_id"))
-				{
-					Assert.fail("formato no valido para el campo");
-				}
-				if(!selenium.isElementPresent("id=advice-required-entry-shipping:postcode"))
-				{
-					Assert.fail("formato no valido para el campo");
-				}
-				if(!selenium.isElementPresent("id=advice-validate-phone-shipping:telephone"))
-				{
-					Assert.fail("formato no valido para el campo");;
-				}
-				if(!selenium.isElementPresent("id=advice-validate-name-firstname")){
-					Assert.fail("El campo nombre de registro usuario es obligatorio");
-				}
-				if(!selenium.isElementPresent("id=advice-validate-name-lastname")){
-					Assert.fail("El campo apellido de registro usuario es obligatorio");
-				}
-				
-				selenium.type("id=shipping:firstname", "%$·$·"); //Nombre de envío
-				
-				selenium.type("id=shipping:lastname", "·$$&%$$");// Apellido de envío
-		
-				//selenium.type("id=shipping:city", "1235415"); // Campo población
-				//selenium.type("id=shipping:postcode", "YEDGY");//Campo código postal
-				selenium.type("id=shipping:telephone", "$%&#@"); // Campo teléfono
-				
-				selenium.type("id=firstname", "$%&#@");// Nombre de Registro de Usuario
-				
-				selenium.type("id=lastname", "$%&#@"); // Apellido de Registro de Usuario
-				
-				
-				if(!selenium.isElementPresent("id=advice-validate-name-shipping:firstname")){
-					Assert.fail("formato no valido para el campo");
-				}
-				if(!selenium.isElementPresent("id=advice-validate-name-shipping:lastname")){
-					Assert.fail("formato no valido para el campo");
-				}
-				if(!selenium.isElementPresent("id=advice-validate-shipping:city")){
-					Assert.fail("formato no valido para el campo");
-				}
-				if(!selenium.isElementPresent("id=advice-validate-select-shipping:region_id"))
-				{
-					Assert.fail("formato no valido para el campo");
-				}
-				if(!selenium.isElementPresent("id=advice-required-entry-shipping:postcode"))
-				{
-					Assert.fail("formato no valido para el campo");
-				}
-				if(!selenium.isElementPresent("id=advice-validate-phone-shipping:telephone"))
-				{
-					Assert.fail("formato no valido para el campo");;
-				}
-				if(!selenium.isElementPresent("id=advice-validate-name-firstname")){
-					Assert.fail("El campo nombre de registro usuario es obligatorio");
-				}
-				if(!selenium.isElementPresent("id=advice-validate-name-lastname")){
-					Assert.fail("El campo apellido de registro usuario es obligatorio");
-				}*/
-				
+				}								
 			}else
 			{
 				Assert.fail("Error: No carga el formulario de registro");
 			}
-			
-
-			
-
-			
-	
-
 	}
 }

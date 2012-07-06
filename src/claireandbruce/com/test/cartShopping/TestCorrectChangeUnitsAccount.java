@@ -5,7 +5,6 @@ import java.text.DecimalFormat;
 import lib.Helper;
 import org.junit.Test;
 
-import claireandbruce.com.test.basicsFlows.LibChangeUnitsOneProduct;
 import claireandbruce.com.test.basicsFlows.LibCorrectAddProductCartConfigurableProduct;
 import claireandbruce.com.test.basicsFlows.LibCorrectAddProductCartSimpleProduct;
 import basics.ClaireandbruceTestCase;
@@ -40,40 +39,34 @@ public class TestCorrectChangeUnitsAccount extends ClaireandbruceTestCase {
 		int filaPrecio=4;
 		
 		//Se declaran variables string para separar los caracteres que pertenecen al precio sin unidad de moneda
-		String precio = null, precioTotal;
-		int cantidad, cantidadNueva;
+		String precioTotal;
+		int cantidad;
 		double precioUnitario, precioFinalEsperado;
 		//Primer artículo el cual posee un xpath diferente
 		do {
 			if(fila==2){
 				if(selenium.isElementPresent("xpath=//td[2]/input[2]")){
+				
 					cantidad = Integer.parseInt(selenium.getValue("xpath=//td[2]/input[2]"));
-					cantidad = cantidad +1;
-					selenium.type("xpath=//td[2]/input[2]", ""+cantidad);
+					int cantidadNueva1=cantidad+1;
+					selenium.type("xpath=//td[2]/input[2]", ""+cantidadNueva1);
 					
-					cantidadNueva = Integer.parseInt(selenium.getValue("xpath=//td[2]/input[2]"));
+					cantidadNueva1 = Integer.parseInt(selenium.getValue("xpath=//td[2]/input[2]"));
 					if(selenium.isAlertPresent()){
 						Helper.log("UNIDADES NO DISPONIBLES EN INVENTARIO\nSE VISUALIZA MENSAJE DE ALERTA!");
 						selenium.getAlert();
 						Helper.log("Se elimina el producto y se busca otro producto");
 						selenium.click("link=Eliminar");
-						int producto = (int)(Math.random()*(2-1+1))+1;
-						if(producto==1){
-							LibCorrectAddProductCartConfigurableProduct.CBT_ConfigurableProduct(selenium);
-						} else {
-							LibCorrectAddProductCartSimpleProduct.CBT_SimpleProduct(selenium);
-						}
 						TestCorrectChangeUnitsAccount test = new TestCorrectChangeUnitsAccount();
 						test.cbt15();
 					} else {
-						precio = selenium.getText("//td[5]/span/span");
-						Helper.log("Precio unitario**** "+precio);
+						precioTotal = selenium.getText("//td[5]/span/span");
 						//Se recorren los precios para eliminar referencia a unidad de moneda
 						int index=0;
 						String auxString="";
-						while(index<precio.length()-2){
-							if(precio.charAt(index)!=','){
-								auxString+=precio.charAt(index);
+						while(index<precioTotal.length()-2){
+							if(precioTotal.charAt(index)!=','){
+								auxString+=precioTotal.charAt(index);
 							} else {
 								auxString+=".";
 							}
@@ -81,12 +74,31 @@ public class TestCorrectChangeUnitsAccount extends ClaireandbruceTestCase {
 						}
 						precioUnitario = Double.parseDouble(auxString);
 						precioTotal = ""+precioUnitario;
-										
+						precioUnitario = precioUnitario/cantidad;
+						
+						DecimalFormat myFormatter = new DecimalFormat("0.00");
+						//Se da formato al precio unitario obtenido
+						String auxPrecio = myFormatter.format(precioUnitario);
+						
+						//Se cambia la coma por punto para hacer los cálculos necesarios Precio unitario
+						int indexCharCal=0;
+						String auxPrecioCal="";
+						while(indexCharCal < auxPrecio.length()) {
+							if(auxPrecio.charAt(indexCharCal)!=',' && auxPrecio.charAt(indexCharCal)!='.'){
+								auxPrecioCal+=auxPrecio.charAt(indexCharCal);
+							}else if(auxPrecio.charAt(indexCharCal)==','){
+								auxPrecioCal+=".";
+							}							
+							indexCharCal++;
+						}
+						precioUnitario = Double.parseDouble(auxPrecioCal);
+						Helper.log("Precio unitario: "+precioUnitario);
+						
+						int cantidadNueva = Integer.parseInt(selenium.getValue("xpath=//td[2]/input[2]"));				
 						//Se multiplica la cantidad por el precio unitario para obtener el precio esperado.
 						precioFinalEsperado = cantidadNueva*precioUnitario;
 		
 						//Se transforma a formato de dos decimales
-						DecimalFormat myFormatter = new DecimalFormat("0.00");
 						String precioTotalEsperado = myFormatter.format(precioFinalEsperado);
 						//Se recorre el valor para cambiar comas por puntos
 						
@@ -120,36 +132,49 @@ public class TestCorrectChangeUnitsAccount extends ClaireandbruceTestCase {
 					selenium.getAlert();
 					Helper.log("Se elimina el producto y se busca otro producto");
 					selenium.click("link=Eliminar");
-					int producto = (int)(Math.random()*(2-1+1))+1;
-					if(producto==1){
-						LibCorrectAddProductCartConfigurableProduct.CBT_ConfigurableProduct(selenium);
-					} else {
-						LibCorrectAddProductCartSimpleProduct.CBT_SimpleProduct(selenium);
-					}
-					LibChangeUnitsOneProduct.changeUnits(selenium);
+					TestCorrectChangeUnitsAccount test = new TestCorrectChangeUnitsAccount();
+					test.cbt15();
 				} else {
-					cantidadNueva = Integer.parseInt(selenium.getValue("xpath=//tr["+fila+"]/td[2]/input[2]"));
+					int cantidadNueva = Integer.parseInt(selenium.getValue("xpath=//tr["+fila+"]/td[2]/input[2]"));
 				
-					precio = selenium.getText("xpath=//tr["+filaPrecio+"]/td[5]/span/span");
+					precioTotal = selenium.getText("xpath=//tr["+filaPrecio+"]/td[5]/span/span");
 					
 					//Se recorren los precios para eliminar referencia a unidad de moneda
 					int index=0;
 					String auxString="";
-					while(index<precio.length()-2){
-						if(precio.charAt(index)!=','){
-							auxString+=precio.charAt(index);
+					while(index<precioTotal.length()-2){
+						if(precioTotal.charAt(index)!=','){
+							auxString+=precioTotal.charAt(index);
 						} else {
 							auxString+=".";
 						}
 						index++;
 					}
 					precioUnitario = Double.parseDouble(auxString);
+					DecimalFormat myFormatter = new DecimalFormat("0.00");
+					//Se da formato al precio unitario obtenido
+					String auxPrecio = myFormatter.format(precioUnitario);
+					
+					//Se cambia la coma por punto para hacer los cálculos necesarios Precio unitario
+					int indexCharCal=0;
+					String auxPrecioCal="";
+					while(indexCharCal < auxPrecio.length()) {
+						if(auxPrecio.charAt(indexCharCal)!=',' && auxPrecio.charAt(indexCharCal)!='.'){
+							auxPrecioCal+=auxPrecio.charAt(indexCharCal);
+						}else if(auxPrecio.charAt(indexCharCal)==','){
+							auxPrecioCal+=".";
+						}							
+						indexCharCal++;
+					}
+					precioUnitario = Double.parseDouble(auxPrecioCal);
+					Helper.log("Precio unitario: "+precioUnitario);
+					
 					precioTotal = ""+precioUnitario;
+					precioUnitario = precioUnitario/cantidad;					
 									
 					//Se multiplica la cantidad por el precio unitario para obtener el precio esperado.
 					precioFinalEsperado = cantidadNueva*precioUnitario;
 					//Se transforma a formato de dos decimales
-					DecimalFormat myFormatter = new DecimalFormat("0.00");
 					String precioTotalEsperado = myFormatter.format(precioFinalEsperado);
 					//Se recorre el valor para cambiar comas por puntos
 					

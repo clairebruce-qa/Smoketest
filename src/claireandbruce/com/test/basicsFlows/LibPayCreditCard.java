@@ -66,11 +66,9 @@ public class LibPayCreditCard extends ClaireandbruceTestCase{
 			if(selenium.isElementPresent("xpath=(//div[@value='2012'])[2]")){
 				selenium.click("//ul/li[3]/div/div[2]/div/div/div");
 				selenium.click("xpath=(//div[@value='2012'])[2]");
-				Helper.log("2012 2");
 			} else {
 				selenium.click("xpath=//li[3]/div/div[2]/div/div/div[2]");
 				selenium.click("xpath=//div[@value='2012']");
-				Helper.log("2012 1");
 			}				
 			//Se ingresa código de seguridad
 			Helper.log("Se ingresa el código de seguridad: 123");

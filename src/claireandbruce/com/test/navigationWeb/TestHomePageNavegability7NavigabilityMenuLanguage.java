@@ -39,8 +39,8 @@ public class TestHomePageNavegability7NavigabilityMenuLanguage extends Claireand
 		Helper.log("Se hace clic en el botón 'Cambiar idioma'");
 		//Boton de Cambiar Idioma
 		selenium.click("//div[@onclick='redirectWebsite()']");
-		selenium.waitForPageToLoad("60000");
-		//Verificacion que la pagina esta en idioma Italiano 
+		selenium.waitForPageToLoad("50000");
+		//Verificacion que la pagina esta en idioma Italiano
 		Helper.log("Se verifica el texto 'Registrati' y 'Accedi'");
 		selenium.isElementPresent("link=Registrati");
 		selenium.isElementPresent("link=Accedi");

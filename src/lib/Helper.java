@@ -1,11 +1,7 @@
 package lib;
 
-import java.io.*;
-import java.util.*;
 import java.util.regex.*;
 import lib.ElementNotFoundException;
- 
-
 import com.thoughtworks.selenium.*;
 
 public class Helper {

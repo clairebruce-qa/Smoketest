@@ -71,15 +71,18 @@ public class TestMagazinHomePage1NavegabilityMagazinUserNoLogin extends Clairean
 			//Remover artículos mientras el carrito no este vacío
 			Helper.log("Se elimina el producto añadido al carrito de compras");
 			selenium.click("id=cartHeader");
-			selenium.click("class=btn-remove");
-			assertTrue(selenium.getConfirmation().matches("¿Está seguro de que desea eliminar este artículo de la cesta de la compra[\\s\\S]$"));
-			selenium.waitForPageToLoad("10000");
-		}
-			
-		
+			if(selenium.isElementPresent("class=btn-remove")) {
+				Helper.log("Se elimina el producto del carrito de compras");
+				selenium.click("class=btn-remove");
+				assertTrue(selenium.getConfirmation().matches("¿Está seguro de que desea eliminar este artículo de la cesta de la compra[\\s\\S]$"));
+				selenium.waitForPageToLoad("10000");
+			}
+		}	
 		
 		// Se hace verificación de que si hay productos en el magazin
-		if(!selenium.isElementPresent("xpath=html/body/div/div[2]/div/div/div[1]/div[1]/p/map["+n+"]/area["+j+"]")){
+		while(!selenium.isElementPresent("xpath=html/body/div/div[2]/div/div/div[1]/div[1]/p/map["+n+"]/area["+j+"]")){
+			n =(int)(Math.random()*(1-1+1)+1);
+			j =(int)(Math.random()*(4-1+1)+1);
 			Helper.log("No se encuentra el link de detalle del producto");
 		}
 			
@@ -149,20 +152,13 @@ public class TestMagazinHomePage1NavegabilityMagazinUserNoLogin extends Clairean
 				Helper.log("Clic en el botón 'AÑADIR A LA CESTA' de un producto simple");
 				selenium.click("xpath=//button");
 				Helper.log(nombreProducto);
-				String texto ="";
-				//Se comprueba con el precio del producto que este ha sido agregado
-				if(selenium.isElementPresent("class=special-price")) {
-					Helper.log("Se encuentra el producto con promoción");
-					texto = selenium.getText("class=special-price");
-				} else {
-					texto = selenium.getText("class=price");
-				}
 				Helper.log("Se verifica que el producto muestra en el carrito de compras");
+				selenium.click("id=cartHeader");
 				String id= "xpath=//a[contains(text(),'"+nombreProducto+"')]";
 				if(selenium.isElementPresent(id)){
-					Helper.log("El producto ha sido añadido con éxito al carrito de compras");
+					Helper.log("El producto "+nombreProducto+" ha sido añadido con éxito al carrito de compras");
 				} else {
-					Helper.log("El producto no ha sido añadido al carrito de compras");
+					Helper.log("El producto "+nombreProducto+" no ha sido añadido al carrito de compras");
 				}				
 			}		
 	}

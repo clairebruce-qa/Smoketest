@@ -33,19 +33,17 @@ public class TestUserRegister7UserRegistrationvalidfieldwithEMailRegister extend
 		Helper.log("Se carga la página "+ClaireandbruceUrl); 
 		selenium.open("");
 		  if (selenium.isElementPresent("xpath=//a[@id='overridelink']")){
-		   selenium.click("//a[@id='overridelink']");
-		 
+		   selenium.click("//a[@id='overridelink']");		 
 		  }	
 		
 		  if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
 				
-				int i =(int)(Math.random()*100);
 				Helper.log("Prueba realizada con el correo electrónico stress_test_qa@claireandbruce.com ");
 				username2 = System.getProperty("my.username","stress_test_qa@claireandbruce.com");
 				//String username= "usuarioQa"+i+"@gmail.com";
 				Helper.log("Se hace clic en el link 'Regístrate'");
 				selenium.click("//a[contains(text(),'Regístrate')]");
-				selenium.waitForPageToLoad("30000");
+				selenium.waitForPageToLoad("35000");
 				selenium.isElementPresent("css=label.required");
 				
 				if(selenium.isTextPresent("")){
@@ -68,21 +66,15 @@ public class TestUserRegister7UserRegistrationvalidfieldwithEMailRegister extend
 				Helper.log("Se espera carga de la interfaz con el mensaje de advertencia");
 				selenium.waitForPageToLoad("30000");
 				  
-				if (!selenium.isTextPresent( "Ya existe una cuenta con esta dirección de correo electrónico.")){		
-					
+				if (!selenium.isTextPresent( "Ya existe una cuenta con esta dirección de correo electrónico.")){					
 					Assert.fail("Error: el formato de correo no es válido");
-			}
-				Helper.log("Se encuentra el mensaje de advertencia 'Ya existe una cuenta con esta dirección de correo electrónico");
-				
-				
+				}
+				Helper.log("Se encuentra el mensaje de advertencia 'Ya existe una cuenta con esta dirección de correo electrónico");				
 			  }
 			
-			if(!("Mi cuenta").equals(selenium.getTitle())){
-				  selenium.open("/es_es/customer/account/");
-				  
-			  }
-		
-		}}
-			
-	
+				if(!("Mi cuenta").equals(selenium.getTitle())){
+				  selenium.open("/es_es/customer/account/");				  
+				}	
+		  	}
+		  }	
 }

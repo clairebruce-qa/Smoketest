@@ -20,7 +20,7 @@ public class TestHeaderHomePageNavigationTendencias extends ClaireandbruceTestCa
 		
 		//Para efectos de pruebas unitarias
 		selenium.open("");
-		selenium.waitForPageToLoad("15000");
+		selenium.waitForPageToLoad("25000");
 		
 		Helper.log("\nNAVEGACIÓN POR TENDENCIAS EN HEADER");
 		//Se carga la home

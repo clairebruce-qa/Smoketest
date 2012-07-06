@@ -26,7 +26,7 @@ public class LibCorrectLogonValidUserAccout extends ClaireandbruceTestCase {
 		selenium.open(ClaireandbruceUrl);
 		Helper.log("Se inicia proceso de login en C+B");
 		
-		selenium.waitForPageToLoad("50000");
+		selenium.waitForPageToLoad("45000");
 		if (selenium.isElementPresent("xpath=//a[@id='overridelink']")){
 			selenium.click("//a[@id='overridelink']");
 		}

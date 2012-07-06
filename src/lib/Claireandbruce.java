@@ -1,10 +1,7 @@
 package lib;
-import static org.junit.Assert.assertEquals;
 
 import java.awt.event.KeyEvent;
-
 import com.thoughtworks.selenium.*;
-
 import junit.framework.Assert;
 
 public class Claireandbruce {

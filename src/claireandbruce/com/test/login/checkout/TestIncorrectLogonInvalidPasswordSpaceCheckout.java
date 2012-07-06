@@ -24,7 +24,6 @@ public class TestIncorrectLogonInvalidPasswordSpaceCheckout extends Claireandbru
 
 	@Test
 	public void cbt27() throws Exception{
-
 		
 		// Elimina las cookies
 		selenium.deleteAllVisibleCookies();
@@ -45,8 +44,7 @@ public class TestIncorrectLogonInvalidPasswordSpaceCheckout extends Claireandbru
 				} else {
 					Helper.log("NO Logout!");
 				}
-		  }
-		  
+		  }		  
 		 
 		 // Se agrega el producto al carrito de compras 
 		 LibCorrectAddProductCartSimpleProduct.CBT_SimpleProduct(selenium);

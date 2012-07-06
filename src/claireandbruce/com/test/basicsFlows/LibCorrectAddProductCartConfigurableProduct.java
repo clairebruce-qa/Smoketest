@@ -62,7 +62,7 @@ public class LibCorrectAddProductCartConfigurableProduct extends ClaireandbruceT
 						Helper.log("Ingresando al producto "+nombreProducto);
 						selenium.click("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul["+filaArticulo+"]/li["+columnaArticulo+"]/div[3]/a");
 						Helper.log("Esperando carga de la interfaz con el detalle del producto "+nombreProducto);
-						selenium.waitForPageToLoad("65000");
+						selenium.waitForPageToLoad("70000");
 					}
 				
 					Helper.log("Producto actual: "+selenium.getTitle());						

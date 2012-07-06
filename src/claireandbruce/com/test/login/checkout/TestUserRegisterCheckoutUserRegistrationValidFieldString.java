@@ -80,7 +80,7 @@ public class TestUserRegisterCheckoutUserRegistrationValidFieldString extends Cl
 				selenium.type("xpath=.//*[@id='emailreg']", "claireandbruceqa"+i+"@gmail.com");
 				Helper.log("Se hace clic en el botón 'Registrarme'");
 				selenium.click("xpath=.//*[@id='send3']");
-				selenium.waitForPageToLoad("30000");
+				selenium.waitForPageToLoad("35000");
 
 				Helper.log("Se ingresan campos vacíos en la información del usuario");
 				selenium.type("id=shipping:firstname", "");

@@ -77,7 +77,7 @@ public class TestUserRegisterCheckout1UserRegistrationValidField extends Clairea
 				Helper.log("Se hace clic en el botón 'Registrarme'");
 				selenium.click("xpath=.//*[@id='send3']");
 				Helper.log("Se espera carga de interfaz con campos para el registro de usuario");
-				selenium.waitForPageToLoad("30000");
+				selenium.waitForPageToLoad("35000");
 				Helper.log("Se ingresan los datos del usuario a registrar");
 				selenium.type("id=shipping:firstname", "Sandra Milena");
 				selenium.type("id=shipping:lastname", "Torres Valencia");
