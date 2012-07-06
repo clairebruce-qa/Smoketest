@@ -147,7 +147,7 @@ public class LibTypeShipping extends ClaireandbruceTestCase {
 			} else {
 				Helper.log("KO. TOTAL: "+auxString+" TOTAL ESPERADO: "+precioTotalCalculado);
 				Helper.log("KO. VALOR PEDIDO "+subtotal+" + GASTOS DE ENVÍO "+valorEnvio+" = VALOR PEDIDO CON GASTOS DE ENVÍO "+precioTotalCalculado);
-				Assert.fail("TOTAL NO PRESENTE");
+				Assert.fail("EL PRECIO  TOTAL VISUALIZADO NO COINCIDE CON EL PRECIO TOTAL ESPERADO");
 			}			
 		} else {			
 			Assert.fail("CARRITO DE COMPRAS VACÍO");

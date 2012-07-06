@@ -33,6 +33,7 @@ public class LibCorrectAddProductCartConfigurableProduct extends ClaireandbruceT
 			if(contador >= 4) {
 				categoria = (int) (Math.random()*(3-1+1))+1;
 			}
+			categoria=2;
 			if(selenium.isElementPresent("xpath=//ul[@id='nav']/li["+categoria+"]/h2/a/span/cufon/canvas")){
 
 				Helper.log("Se ingresa a la categoría ubicada en la posición "+categoria+" del menú superior");
@@ -42,6 +43,7 @@ public class LibCorrectAddProductCartConfigurableProduct extends ClaireandbruceT
 				
 				//Selecciona una subcategoría
 				int subcategoria =  (int)(Math.random()*(7))+1; 
+				subcategoria =4;
 				Helper.log("Buscando Subcategoría en la posición "+subcategoria+" del menú lateral izquierdo");
 				if(selenium.isElementPresent("xpath=html/body/div/div[3]/div[2]/div[2]/div[1]/a["+subcategoria+"]/div/div")){
 										
@@ -52,6 +54,8 @@ public class LibCorrectAddProductCartConfigurableProduct extends ClaireandbruceT
 					//Se selecciona uno de los artículos de ésta subcategoría
 					int columnaArticulo = (int)(Math.random()*(3))+1;
 					int filaArticulo = (int)(Math.random()*(2))+1;
+					columnaArticulo=1;
+					filaArticulo=1;
 					Helper.log("Subcategoría actual: "+selenium.getTitle());
 					Helper.log("Buscando Producto ubicado en la posición columna: "+columnaArticulo+" en la fila: "+filaArticulo);
 					if(!selenium.isElementPresent("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul["+filaArticulo+"]/li["+columnaArticulo+"]/div[3]/a")){

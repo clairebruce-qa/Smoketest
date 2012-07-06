@@ -77,7 +77,6 @@ public class LibChangeUnitsOneProduct extends ClaireandbruceTestCase{
 				precioUnitario=Double.parseDouble(auxPrecio);
 				precioTotalProducto = precioUnitario;
 				precioUnitario=precioUnitario/cantidad;			
-				
 				DecimalFormat myFormatter = new DecimalFormat("0.00");
 				//Se da formato al precio unitario obtenido
 				auxPrecio = myFormatter.format(precioUnitario);
@@ -95,10 +94,24 @@ public class LibChangeUnitsOneProduct extends ClaireandbruceTestCase{
 				}
 				precioUnitario = Double.parseDouble(auxPrecioCal);
 				Helper.log("Precio unitario: "+precioUnitario);
-				
+				double precioTC=cantidadNueva*precioUnitario;
 				//Se da formato al precio total calculado
-				String precioTotalCalculado = myFormatter.format(cantidadNueva*precioUnitario);
+				String precioTotalCalculado = myFormatter.format(precioTC);
+				
 				//Se da formato al precio total que se visualiza en la aplicación
+				String auxPrecioApp = selenium.getText("//td[5]/span/span");
+				//Se cambia la coma por punto para hacer los cálculos necesarios Precio total visualizado
+				indexCharCal=0;
+				auxPrecioCal="";
+				while(indexCharCal <= (auxPrecioApp.length()-2)) {
+					if(auxPrecioApp.charAt(indexCharCal)!= ',' && auxPrecioApp.charAt(indexCharCal)!='.') {
+						auxPrecioCal+=auxPrecioApp.charAt(indexCharCal);
+					} else if(auxPrecioApp.charAt(indexCharCal)==','){
+						auxPrecioCal+= ".";
+					}					
+					indexCharCal++;
+				}
+				precioTotalProducto = Double.parseDouble(auxPrecioCal);
 				String precioTotalApp = myFormatter.format(precioTotalProducto);
 				
 				//Se cambia la coma por punto para hacer los cálculos necesarios Precio total calculado
@@ -114,6 +127,7 @@ public class LibChangeUnitsOneProduct extends ClaireandbruceTestCase{
 				}
 				precioTotalCalculado = auxPrecioCal;
 				Helper.log("Precio Total Esperado: "+precioTotalCalculado);
+				
 				//Se cambia la coma por punto para hacer los cálculos necesarios precio total visualizado
 				indexCharCal=0;
 				auxPrecioCal="";
