@@ -70,24 +70,16 @@ public class LibCorrectAddProductCartSimpleProduct extends ClaireandbruceTestCas
 					}
 				}								
 			} 
-		} while(!selenium.isElementPresent("xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[7]/div/button") && contador<10);
-		
-		/*String texto ="";
-		if(selenium.isElementPresent("class=special-price")) {
-			texto = selenium.getText("class=special-price");
-		} else {
-			texto = selenium.getText("class=price");
-		}
-		//Clic en botón "AÑADIR A LA CESTA"
-		selenium.click("xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[7]/div/button");
-		Helper.log(nombreProducto);
-		Helper.clickAndVerify(selenium, "id=cartHeader", texto, "xpath=//p[2]/span");
-		*/
+		} while(!selenium.isElementPresent("xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[7]/div/button") && !selenium.isElementPresent("xpath=//form[@id='product_addtocart_form']/div[3]/div[3]/div/div[8]/div/button") && contador<10);
 		
 		//Se comprueba con el producto ha sido agregado a través de su nombre
 		Helper.log("Se busca el botón 'AÑADIR A LA CESTA' para agregar el producto al carrito de compras");
 		//Clic en botón "AÑADIR A LA CESTA"
-		selenium.click("xpath=//div[7]/div/button");
+		if(selenium.isElementPresent("xpath=//div[7]/div/button")) {
+			selenium.click("xpath=//div[7]/div/button");
+		} else {
+			selenium.click("xpath=//div[8]/div/button");
+		}
 		Helper.log("Se ha presionado el botón 'AÑADIR A LA CESTA' se está esperando confirmación de que el producto ha sido añadido a la cesta");
 		String id= "xpath=//a[contains(text(),'"+nombreProducto+"')]";
 		selenium.click("id=cartHeader");

@@ -48,9 +48,6 @@ public class TestFlowIII extends ClaireandbruceTestCase{
 		//Se agrega un producto simple 
 		LibCorrectAddProductCartSimpleProduct.CBT_SimpleProduct(selenium);
 		
-		//Se cambian las unidades del producto
-		//LibChangeUnitsOneProduct.changeUnits(selenium);
-		
 		//Se selecciona aleatoriamente el tipo de envío
 		LibTypeShipping.typeShipping(selenium);
 		

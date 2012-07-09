@@ -8,10 +8,10 @@ import claireandbruce.com.test.flows.TestFlowIII;
 import claireandbruce.com.test.flows.TestFlowIV;
 
 /**
- * FlujoI: ProductoSimple + DirecciónExistente + SinFactura + PagoPayPal
+ * FlujoI: Login + ProductoSimple + DirecciónExistente + SinFactura + PagoPayPal
  * FlujoII: Login + ProductoSimple + CambioUnidad de un Producto + TipoEnvío + DirecciónExistente + Factura + PagoTarjetaCrédito
- * FlujoIII: ProductoSimple + CambioUnidades + TipoEnvío + LoginCheckout + DirecciónExistente + Factura + DirecciónFactura != DirecciónEnvío + PagoCheque
- * FlujoIV: ProductoConfigurable + CambioUnidades + TipoEnvío + LoginCheckout + DirecciónExistente + SinFactura + PagoCheque
+ * FlujoIII: ProductoSimple + EliminarProducto + ProductoSimple + TipoEnvío + LoginCheckout + \nDirecciónExistente + Factura + DirecciónFactura != DirecciónEnvío + PagoTarjetaCrédito
+ * FlujoIV: ProductoConfigurable + CambioUnidades + TipoEnvío + LoginCheckout + DirecciónExistente + SinFactura + PagoPayPal
  * @author NEWSHORE
  *
  */
