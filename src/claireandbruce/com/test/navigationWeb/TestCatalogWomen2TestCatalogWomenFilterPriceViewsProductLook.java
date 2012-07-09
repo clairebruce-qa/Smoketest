@@ -60,7 +60,11 @@ public class TestCatalogWomen2TestCatalogWomenFilterPriceViewsProductLook extend
 			// Se extrae el precio Mayor
 			String texto ="";
 			Helper.log("Se obtiene el precio mayor");
+			if(selenium.isElementPresent("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul[1]/li[1]/div[4]/div/p[1]")){
+				texto = selenium.getText("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul[1]/li[1]/div[4]/div/p[3]");
+			} else {
 				texto = selenium.getText("//span/span");
+			}
 			
 			
 			
@@ -83,7 +87,11 @@ public class TestCatalogWomen2TestCatalogWomenFilterPriceViewsProductLook extend
 			String texto2 ="";
 			String nuevoP2="";			
 			
-			texto2 = selenium.getText("//li[3]/div[4]/div/span/span");
+			if(selenium.isElementPresent("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul[1]/li[2]/div[4]/div/p[1]")){
+				texto2 = selenium.getText("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul[1]/li[2]/div[4]/div/p[3]");
+			} else {
+				texto2 = selenium.getText("//li[3]/div[4]/div/span/span");
+			}
 			
 			Helper.log(texto2);
 			int cant2=0;
@@ -119,10 +127,10 @@ public class TestCatalogWomen2TestCatalogWomenFilterPriceViewsProductLook extend
 			
 			// Se extrae el precio Mayor
 			String texto ="";
-			if(selenium.isElementPresent("class=special-price")) {
-				texto = selenium.getText("class=special-price");
+			if(selenium.isElementPresent("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul[1]/li[1]/div[4]/div/p[1]")){
+				texto = selenium.getText("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul[1]/li[1]/div[4]/div/p[3]");
 			} else {
-				texto = selenium.getText("class=price");
+				texto = selenium.getText("//span/span");
 			}
 			
 			Helper.log(texto);
@@ -145,10 +153,10 @@ public class TestCatalogWomen2TestCatalogWomenFilterPriceViewsProductLook extend
 			String nuevoP2="";
 			
 			
-			if(selenium.isElementPresent("//ul[2]/li[2]/div[4]/div/p[3]/span")) {
-				texto2 = selenium.getText("//ul[2]/li[2]/div[4]/div/p[3]/span");
+			if(selenium.isElementPresent("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul[1]/li[2]/div[4]/div/p[1]")){
+				texto2 = selenium.getText("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul[1]/li[2]/div[4]/div/p[3]");
 			} else {
-				texto2 = selenium.getText("//ul[2]/li[2]/div[4]/div/p/span");
+				texto2 = selenium.getText("//li[3]/div[4]/div/span/span");
 			}
 			
 			Helper.log(texto2);
@@ -167,7 +175,7 @@ public class TestCatalogWomen2TestCatalogWomenFilterPriceViewsProductLook extend
 			precio2=Double.parseDouble(nuevoP2);
 			Helper.log("// ---- **** ORDENAR DE MENOR A MAYOR **** ----\\");
 			Helper.log("PRECIO MAYOR "+nuevoP2);
-			Helper.log("PRECIO MENOR"+nuevoP);
+			Helper.log("PRECIO MENOR "+nuevoP);
 			if(precio>precio2){
 				Assert.fail("Los productos no estan ordenados");
 			}
