@@ -60,12 +60,10 @@ public class TestCatalogWomen2TestCatalogWomenFilterPriceViewsProductLook extend
 			// Se extrae el precio Mayor
 			String texto ="";
 			Helper.log("Se obtiene el precio mayor");
-			if(selenium.isElementPresent("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul[1]/li[1]/div[4]/div/p[1]")){
-				texto = selenium.getText("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul[1]/li[1]/div[4]/div/p[3]");
-			} else {
-				texto = selenium.getText("//li[3]/div[4]/div/span/span");
-			}
-						
+				texto = selenium.getText("//span/span");
+			
+			
+			
 			Helper.log("Precio obtenido "+texto);
 			
 			while(cant<(texto.length()-2)){
@@ -85,12 +83,7 @@ public class TestCatalogWomen2TestCatalogWomenFilterPriceViewsProductLook extend
 			String texto2 ="";
 			String nuevoP2="";			
 			
-			if(selenium.isElementPresent("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul[1]/li[3]/div[4]/div/p[1]")){
-				texto2 = selenium.getText("xpath=html/body/div/div[3]/div[1]/div/div[2]/ul[1]/li[3]/div[4]/div/p[3]");
-			} else {
-				texto2 = selenium.getText("//li[3]/div[4]/div/span/span");
-			}
-			
+			texto2 = selenium.getText("//li[3]/div[4]/div/span/span");
 			
 			Helper.log(texto2);
 			int cant2=0;
@@ -126,10 +119,10 @@ public class TestCatalogWomen2TestCatalogWomenFilterPriceViewsProductLook extend
 			
 			// Se extrae el precio Mayor
 			String texto ="";
-			if(selenium.isElementPresent("//ul[2]/li[1]/div[4]/div/p[3]/span")) {
-				texto = selenium.getText("//ul[2]/li[1]/div[4]/div/p[3]/span");
+			if(selenium.isElementPresent("class=special-price")) {
+				texto = selenium.getText("class=special-price");
 			} else {
-				texto = selenium.getText("//ul[2]/li[1]/div[4]/div/p/span");
+				texto = selenium.getText("class=price");
 			}
 			
 			Helper.log(texto);

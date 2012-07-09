@@ -22,22 +22,37 @@ public class TestFlowI extends ClaireandbruceTestCase{
 
 	/** En este metodo de test se hace una prueba unitaria para el flujo I
 	 * 
-	 *  FlujoI: Login + ProductoSimple + DirecciónExistente + SinFactura + PagoPayPal
+	 *  FlujoI: ProductoSimple + DirecciónExistente + SinFactura + PagoPayPal
 	 * @throws Exception
 	 */
 	@Test
 	public void test_flow1() throws Exception {
 		
-		Helper.log("Flujo 1. Login + ProductoSimple + DirecciónExistente + SinFactura + PagoPayPal");		
+		Helper.log("Flujo 1. ProductoSimple + DirecciónExistente + SinFactura + PagoPayPal");		
 		LibWindowPayPal.CBT_Paypal(selenium);
 		
 		if(!selenium.isElementPresent("//a[contains(text(), 'Salir')]")){
 			Helper.log("Se inicia sesión en la página de C+B");
-			LibCorrectLogonValidUserAccout.CBT55(selenium);		
+			LibCorrectLogonValidUserAccout.CBT55(selenium);
+		
 		}
+		// El Usuario se Autentica
+		//Lib_CorrectLogon_ValidUser_Accout.CBT55(selenium);
+			
+		//Se añade un producto para realizar para eliminarlo posteriormente 
+	//	Lib_CorrectAddProduct_Cart_SimpleProduct.CBT_SimpleProduct(selenium);
+		
+		// Se Elimina el producto
+		//Lib_Shopping_Cart_3_Deleter_Item_Shopping_Cart_CBT24.CBT24(selenium);
 		
 		//Se añade un producto nuevamente
 		String nombreProducto= LibCorrectAddProductCartSimpleProduct.CBT_SimpleProduct(selenium);
+		
+		//Se añade un producto para realizar cambio de unidades
+		//LibChangeUnitsOneProduct.changeUnits(selenium);
+		
+		//Se selecciona el tipo de envío
+		//Lib_TypeShipping.typeShipping(selenium);
 		
 		// Se verifica si existe una dirección por defecto y si esta seleccionada
 		LibAddressExist.CBT_Address(selenium);

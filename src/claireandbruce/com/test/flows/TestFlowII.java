@@ -37,6 +37,12 @@ public class TestFlowII extends ClaireandbruceTestCase {
 		//Se añade un producto para realizar para eliminarlo posteriormente 
 		LibCorrectAddProductCartSimpleProduct.CBT_SimpleProduct(selenium);
 		
+		// Se Elimina el producto
+		//Lib_Shopping_Cart_3_Deleter_Item_Shopping_Cart_CBT24.CBT24(selenium);
+		
+		//Se añade un producto nuevamente
+		//String nombreProducto= Lib_CorrectAddProduct_Cart_SimpleProduct.CBT_SimpleProduct(selenium);
+		
 		//Se añade un producto para realizar cambio de unidades
 		LibChangeUnitsOneProduct.changeUnits(selenium);
 		

@@ -45,6 +45,12 @@ public class TestFlowIV  extends ClaireandbruceTestCase{
 		//Se añade un producto para realizar para eliminarlo posteriormente 
 		LibCorrectAddProductCartConfigurableProduct.CBT_ConfigurableProduct(selenium);
 		
+		// Se Elimina el producto
+		//Test_Shopping_Cart_3_Deleter_Item_Shopping_Cart_CBT24.CBT24(selenium);
+		
+		//Se añade un producto nuevamente
+		//String nombreProducto= Test_CorrectAddProduct_Cart_ConfigurableProduct.CBT_ConfigurableProduct(selenium);
+		
 		//Se añade un producto para realizar cambio de unidades
 		LibChangeUnitsOneProduct.changeUnits(selenium);
 		
@@ -59,6 +65,9 @@ public class TestFlowIV  extends ClaireandbruceTestCase{
 		
 		// Se verifica que el envío se hara sin factura
 		LibWithoutPurchase.CBT_WPurchase(selenium);
+		
+		// Se efectua el pago con cheque
+		//LibPayChecking.pay_checking(selenium);
 		
 		//Se efectua el pago con PayPal
 		LibPayPal.CBT_Paypal(selenium, nombreProducto);

@@ -63,14 +63,8 @@ public class TestForgottenPasswordValidUserAccount extends ClaireandbruceTestCas
 		selenium.waitForPageToLoad("30000");
 		
 		if(!selenium.isTextPresent("Te hemos enviado un e-mail a stress_test_qa125@claireandbruce.com con las instrucciones para cambiar tu contraseña.")){
-			  if(selenium.isTextPresent("No se encontró esta dirección de correo electrónico en nuestros registros.")){
-				  Assert.fail("El usuario ingresado no se encuentra en la base de datos de C+B");
-			  } else {
-				  Assert.fail("No se envío e-mail de la contraseña");
-			  }
-		} 
-		
-	
+			  Assert.fail("No se envío e-mail de la contraseña");
+		}
 			
 	//}/
 	}
