@@ -36,21 +36,8 @@ public class LibCorrectAddProductCartSimpleProduct extends ClaireandbruceTestCas
 			if(selenium.isElementPresent("xpath=//ul[@id='nav']/li["+categoria+"]/h2/a/span/cufon/canvas")){
 
 				Helper.log("Se ingresa a la categoría ubicada en la posición "+categoria+" del menú superior");
-				
-				//Alerta sobre "La cantidad solicitada no esta disponible en inventario"
-				if(selenium.isAlertPresent()){
-					Helper.log("Se mostró y capturó una alerta sobre producto no disponible en inventario");
-					selenium.getAlert();
-				}
-				
 				selenium.click("//ul[@id='nav']/li["+categoria+"]/h2/a/span/cufon/canvas");				
 
-				//Alerta sobre "La cantidad solicitada no esta disponible en inventario"
-				if(selenium.isAlertPresent()){
-					Helper.log("Se mostró y capturó una alerta sobre producto no disponible en inventario");
-					selenium.getAlert();
-				}
-				
 				selenium.waitForPageToLoad("55000");
 				Helper.log("Categoría actual: "+selenium.getTitle());
 				if(selenium.getTitle().startsWith("Bolsos") || selenium.getTitle().startsWith("Accesorios")){
