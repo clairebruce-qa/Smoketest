@@ -85,7 +85,7 @@ public class LibPayCreditCard extends ClaireandbruceTestCase{
 				Assert.fail("Datos de tarjeta de crédito no válidos");
 			} else {
 				Helper.log("Se espera carga de interfaz con mensaje de confirmación del pedido");
-				selenium.waitForPageToLoad("30000");
+				selenium.waitForPageToLoad("40000");
 				//SI EL TITULO DE LA PAGINA ES COMPRAR AHORA FALLAR
 		    }			
 			

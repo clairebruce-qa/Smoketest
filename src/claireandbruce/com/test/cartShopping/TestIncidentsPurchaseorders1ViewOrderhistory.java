@@ -40,8 +40,7 @@ public class TestIncidentsPurchaseorders1ViewOrderhistory extends Claireandbruce
 			
 		selenium.click("//a[contains(text(),'Mi cuenta')]");
 			
-		selenium.waitForPageToLoad("30000");
-		
+		selenium.waitForPageToLoad("30000");		
 	
 		if(!selenium.isElementPresent("//a[contains(text(),'VER HISTORIAL DE PEDIDOS')]")){
 			Assert.fail("Link Historial de pedidos no se encuentra");
@@ -52,28 +51,27 @@ public class TestIncidentsPurchaseorders1ViewOrderhistory extends Claireandbruce
 		
 		if(!selenium.isElementPresent("//span[2]/a"))
 		{
-			Assert.fail("No se encuentran los pedidos");
-		}
+			Helper.log("No se encuentran lo pedidos en el historial de pedidos");
+		} else {
+			Assert.assertTrue(selenium.isElementPresent("link=Abierto"));
 		
-		Assert.assertTrue(selenium.isElementPresent("link=Abierto"));
+			if ((selenium.isElementPresent("xpath=//div[2]/a"))){
+				message = "Ok";
+				selenium.click("xpath=//div[2]/a");
+				
+				selenium.waitForPageToLoad("30000");
+				Assert.assertTrue(selenium.isElementPresent("css=tr.totals > td.right-item > span.price"));
+				Assert.assertTrue(selenium.isElementPresent("css=div.open.selected > span"));
+				if(message == null){
+					Helper.log("Login Error " + selenium.getLocation());
+					Assert.fail("Login Error " + selenium.getLocation());
+					//SeleneseTestCase.fail("Login Error " + selenium.getLocation());
+				}
 		
-		if ((selenium.isElementPresent("link=Abierto"))){
-			message = "Ok";
-		}else {
-			message = selenium.getText("Error");
-		}
-		selenium.click("link=Abierto");
-		
-		selenium.waitForPageToLoad("30000");
-		Assert.assertTrue(selenium.isElementPresent("css=tr.totals > td.right-item > span.price"));
-		Assert.assertTrue(selenium.isElementPresent("css=div.open.selected > span"));
-		if(message == null){
-			Helper.log("Login Error " + selenium.getLocation());
-			Assert.fail("Login Error " + selenium.getLocation());
-			//SeleneseTestCase.fail("Login Error " + selenium.getLocation());
-		}
-
-		Helper.log("Si existen pedidos abiertos " + message);
-	
+				Helper.log("Si existen pedidos en el historial de pedidos " + message);
+			}else {
+				message = selenium.getText("Error");
+			}			
+		}	
 	}
 }
