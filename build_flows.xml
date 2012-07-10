@@ -32,12 +32,12 @@
 			<test name="${suite}" haltonfailure="no" outfile="Pruebas"/>
 		</junit>
 		<echo message="running JUnit Reports"/>
-		<junitreport todir="${test-output}">
+		<junitreport todir="${reports}">
 			<fileset dir="${reportdir}">
 				<include name="result*.xml"/>
 			</fileset>
-			<report format="frames" todir="${test-output}"/>
+			<report format="frames" todir="${reports}"/>
 		</junitreport>
-		<echo message="To see your Junit results, please open ${test-output}/index.html}"/>
+		<echo message="To see your Junit results, please open ${reports}/index.html}"/>
 	</target>
 </project>
