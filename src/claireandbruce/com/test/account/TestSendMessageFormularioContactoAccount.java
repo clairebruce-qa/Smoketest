@@ -51,7 +51,7 @@ public class TestSendMessageFormularioContactoAccount extends ClaireandbruceTest
 		
 		//assertTrue(selenium.getConfirmation().matches("Aunque esta página está cifrada, la información que ha introducido va a enviarse por una conexión sin cifrar, y podría ser leída fácilmente por terceras personas.\n¿Está seguro de que desea enviar esta información[\\s\\S]$"));
 		selenium.waitForPageToLoad("10000");
-		assertTrue("Mensaje de confirmación, sobre el mensaje enviado, no encontrado",selenium.isTextPresent("Su solicitud ha sido enviada y le responderemos con la mayor brevedad posible.Gracias por contactar con nosotros"));
+		assertTrue("Mensaje de confirmación, sobre el mensaje enviado, no encontrado",selenium.isTextPresent("Su solicitud ha sido enviada y le responderemos con la mayor brevedad posible. Gracias por contactar con nosotros"));
 		
 	}
 }

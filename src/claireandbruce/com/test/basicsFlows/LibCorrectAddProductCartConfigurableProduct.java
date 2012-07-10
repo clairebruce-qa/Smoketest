@@ -35,8 +35,20 @@ public class LibCorrectAddProductCartConfigurableProduct extends ClaireandbruceT
 			}
 			if(selenium.isElementPresent("xpath=//ul[@id='nav']/li["+categoria+"]/h2/a/span/cufon/canvas")){
 
+				//Alerta sobre "La cantidad solicitada no esta disponible en inventario"
+				if(selenium.isAlertPresent()){
+					Helper.log("Se mostró y capturó una alerta sobre producto no disponible en inventario");
+					selenium.getAlert();
+				}
+				
 				Helper.log("Se ingresa a la categoría ubicada en la posición "+categoria+" del menú superior");
 				selenium.click("//ul[@id='nav']/li["+categoria+"]/h2/a/span/cufon/canvas");
+				
+				//Alerta sobre "La cantidad solicitada no esta disponible en inventario"
+				if(selenium.isAlertPresent()){
+					Helper.log("Se mostró y capturó una alerta sobre producto no disponible en inventario");
+					selenium.getAlert();
+				}
 				
 				selenium.waitForPageToLoad("40000");
 				
