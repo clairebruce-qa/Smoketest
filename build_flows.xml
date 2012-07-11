@@ -34,7 +34,7 @@
 		<echo message="running JUnit Reports"/>
 		<junitreport todir="${reports}">
 			<fileset dir="${reportdir}">
-				<include name="Pruebas*.xml"/>
+				<include name="Prueba*.xml"/>
 			</fileset>
 			<report format="frames" todir="${reports}"/>
 		</junitreport>
