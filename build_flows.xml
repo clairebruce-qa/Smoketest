@@ -36,7 +36,7 @@
 			<fileset dir="${reportdir}">
 				<include name="Pruebas*.xml"/>
 			</fileset>
-			<report format="frames" todir="${test-output}"/>
+			<report format="frames" todir="${reports}"/>
 		</junitreport>
 		<echo message="To see your Junit results, please open ${reports}/index.html}"/>
 	</target>
