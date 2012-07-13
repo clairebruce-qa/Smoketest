@@ -74,7 +74,7 @@ public class TestUserRegisterCheckoutUserRegistrationValidFieldDate extends Clai
 			// ---***Se ingresan los datos de e-mail para el registro por check-out ***---\\
 			
 			if(selenium.isElementPresent("xpath=.//*[@id='emailreg']")){
-				int i =(int)(Math.random()*100);
+				int i =(int)(Math.random()*1000);
 				Helper.log("Se ingresa el correo electrónico para el registro por checkout");
 				
 				selenium.type("xpath=.//*[@id='emailreg']", "claireandbruce"+i+"@gmail.com");
@@ -93,13 +93,13 @@ public class TestUserRegisterCheckoutUserRegistrationValidFieldDate extends Clai
 				Helper.log("Se hace clic en 'PAGAR'");
 				
 				selenium.click("xpath=(//button[@type='button'])[2]");
-				if(("31".equals(selenium.getText("css=span.dob-day > div.selreplace_select > div > div.selreplace_selectinner")))// Combo de selección de fecha de nacimiento
-						&& ("12".equals(selenium.getText("css=span.dob-month > div.selreplace_select > div > div.selreplace_selectinner")))
-						&& ("2012".equals(selenium.getText("css=span.dob-year > div.selreplace_select > div > div.selreplace_selectinner")))){
-					
-				Assert.fail("El usuario debe seleccionar una fecha de nacimiento válida");							
-							
-				}								
+				if(!selenium.isTextPresent("Por favor, introduzca una fecha válida menor o igual a la fecha actual")){
+					Helper.log("No se visualiza el mensaje de advertencia sobre una fecha válida");
+					Assert.fail("No se visualiza el mensaje de advertencia sobre una fecha válida");
+				} else {
+					Helper.log("Prueba OK. Se visualiza el mensaje de advertencia sobre la fecha de nacimiento");
+				}
+				
 			}else
 			{
 				Assert.fail("Error: No carga el formulario de registro");
